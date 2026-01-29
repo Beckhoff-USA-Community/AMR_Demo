@@ -7,18 +7,6 @@ VAR
 	EventReactor	  : EventReactorPackMLVisitor('Event Reaction', THIS^);
 	SyncedSquareWaves : SyncedSquareWaves('Waves');
 
-// 	// Statemachine
-// 	_Statemachine : PackMLStatemachine('AMR Module');
-// 
-// 	// States 
-// 	State_Aborted  : MachineState_Aborted(E_PMLState.Aborted, _Statemachine, THIS^);
-// 	State_Aborting : MachineState_Aborting(E_PMLState.Aborting, _Statemachine, THIS^);
-// 	State_Clearing : MachineState_Clearing(E_PMLState.Clearing, _Statemachine, THIS^);
-// 	State_Stopping : MachineState_Stopping(E_PMLState.Stopping, _Statemachine, THIS^);
-// 	State_Stopped  : MachineState_Stopped(E_PMLState.Stopped, _Statemachine, THIS^);
-// 	State_Starting : MachineState_Starting(E_PMLState.Starting, _Statemachine, THIS^);
-// 	State_Execute  : MachineState_Execute(E_PMLState.Execute, _Statemachine, THIS^);
-
 	// Recipe
 	_Recipe	   : ST_Recipe;
 END_VAR
@@ -44,7 +32,8 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[Aborted := TRUE;
+]]></ST>
       </Implementation>
     </Method>
     <Method Name="Aborting" Id="{755825bc-45d3-4a1e-a737-990fd6f04e9f}" FolderPath="States\">
@@ -54,7 +43,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[Aborting := TRUE;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Clearing" Id="{c49d8f56-8fe1-4d61-91ef-4aa1ce88bb08}" FolderPath="States\">
@@ -111,7 +100,7 @@ Events.RegisterWithParent(THIS^);
 EventReactor.RegisterWithParent(THIS^);
 AmrModule_HMI.RegisterWithParent(THIS^);
 SyncedSquareWaves.RegisterWithParent(THIS^);
-]]></ST>
+Statemachine.Name := Name;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Initializing" Id="{c8083393-3d77-421f-ac74-5801e126b038}" FolderPath="Initialize\">
@@ -200,10 +189,7 @@ END_IF
 
 //
 SetOverride.Set(THIS^, _Override);
-// Test Logic
-IF NOT EStopOK THEN
-	Events.RaiseEvent(E_AmrModule.EStop);
-END_IF]]></ST>
+]]></ST>
       </Implementation>
     </Method>
     <Property Name="Override" Id="{51b25a69-95dc-4c63-80ad-d72d67aeab6f}" FolderPath="Machine\">
@@ -262,7 +248,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[Stopped := TRUE;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Stopping" Id="{e84b8901-bbe3-4da3-bf45-8e91119ba89a}" FolderPath="States\">
@@ -272,7 +258,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[Stopping := TRUE;]]></ST>
       </Implementation>
     </Method>
   </POU>

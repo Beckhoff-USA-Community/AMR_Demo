@@ -59,6 +59,10 @@
       <DefaultResolution>CoreMotionNc2, * (Beckhoff Automation LLC)</DefaultResolution>
       <Namespace>CoreMotionNc2</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_EtherCAT">
+      <DefaultResolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_EtherCAT</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_MC2</Namespace>
@@ -89,6 +93,7 @@
     <Folder Include="AMR" />
     <Folder Include="AMR\DUT" />
     <Folder Include="AMR\Interface" />
+    <Folder Include="Components" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PLC.tmc">
