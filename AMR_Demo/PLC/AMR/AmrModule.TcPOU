@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="AmrModule" Id="{1c221102-f9eb-45b9-a8a9-c8f3619c7ca3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK AmrModule EXTENDS PackMLModule IMPLEMENTS I_AmrModule
+VAR
+	Events			  : TcEventClass('AMR Module');
+	EventReactor	  : EventReactorPackMLVisitor('Event Reaction', THIS^);
+	SyncedSquareWaves : SyncedSquareWaves('Waves');
+
+// 	// Statemachine
+// 	_Statemachine : PackMLStatemachine('AMR Module');
+// 
+// 	// States 
+// 	State_Aborted  : MachineState_Aborted(E_PMLState.Aborted, _Statemachine, THIS^);
+// 	State_Aborting : MachineState_Aborting(E_PMLState.Aborting, _Statemachine, THIS^);
+// 	State_Clearing : MachineState_Clearing(E_PMLState.Clearing, _Statemachine, THIS^);
+// 	State_Stopping : MachineState_Stopping(E_PMLState.Stopping, _Statemachine, THIS^);
+// 	State_Stopped  : MachineState_Stopped(E_PMLState.Stopped, _Statemachine, THIS^);
+// 	State_Starting : MachineState_Starting(E_PMLState.Starting, _Statemachine, THIS^);
+// 	State_Execute  : MachineState_Execute(E_PMLState.Execute, _Statemachine, THIS^);
+
+	// Recipe
+	_Recipe	   : ST_Recipe;
+END_VAR
+
+VAR
+	AmrModule_HMI : AmrModule_HMI('AMR Module', _Statemachine, THIS^);
+END_VAR
+
+VAR
+	_Override : LREAL := 100.0;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{e8c7b93a-9c8e-409c-a9b9-237ad71a7294}" />
+    <Folder Name="Initialize" Id="{70b9343c-77d9-49a3-90a5-9b646639ca3b}" />
+    <Folder Name="Machine" Id="{3cb7e1c0-f151-4fc7-922b-b09d2ff3f440}" />
+    <Folder Name="States" Id="{05110e06-e11f-46b9-88f7-3bfc3a25010e}" />
+    <Method Name="Aborted" Id="{876f74e0-789f-4bc8-b46c-1e88114891b3}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Aborted : BOOL
+VAR_INPUT
+	SequenceState	: REFERENCE TO UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Aborting" Id="{755825bc-45d3-4a1e-a737-990fd6f04e9f}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Aborting : BOOL
+VAR_INPUT
+	SequenceState	: REFERENCE TO UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Clearing" Id="{c49d8f56-8fe1-4d61-91ef-4aa1ce88bb08}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Clearing : BOOL
+VAR_INPUT
+	SequenceState	: REFERENCE TO UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		IF ResetComponents() THEN
+			NextStep(SequenceState);
+		END_IF
+
+	10:
+		Clearing := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Execute" Id="{79ee8b11-cefd-49be-82d3-443402d5686f}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Execute : BOOL
+VAR_INPUT
+	SequenceState	: REFERENCE TO UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE Statemachine.Mode.CurrentMode OF
+	E_PMLProtectedUnitMode.Production:
+		Execute := TRUE;
+
+	E_PMLProtectedUnitMode.Maintenance, E_PMLProtectedUnitMode.Manual:
+		Execute := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{11bebe7b-f5aa-4649-b653-f25163a7158f}" FolderPath="Constructor\">
+      <Declaration><![CDATA[(*FB_Init is always available implicitly and it is used primarily for initialization.
+The return value is not evaluated. For a specific influence, you can also declare the
+methods explicitly and provide additional code there with the standard initialization
+code. You can evaluate the return value.*)
+METHOD FB_Init : BOOL
+VAR_INPUT
+	(* TRUE: the retain variables are initialized (reset warm / reset cold)*)
+	bInitRetains : BOOL;
+
+	(* TRUE: the instance will be copied to the copy code afterward (online change)   *)
+	bInCopyCode : BOOL;
+	Name		: Core.T_MaxString;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Events.GenerateTcEvents(Name, ADR(TC_Events.AmrModule), SIZEOF(ST_AmrModule));
+Events.RegisterWithParent(THIS^);
+EventReactor.RegisterWithParent(THIS^);
+AmrModule_HMI.RegisterWithParent(THIS^);
+SyncedSquareWaves.RegisterWithParent(THIS^);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Initializing" Id="{c8083393-3d77-421f-ac74-5801e126b038}" FolderPath="Initialize\">
+      <Declaration><![CDATA[(* This Module will be done initializeing when ModuleInitialized := TRUE;, subequently all subitems will be called to be initialized*)
+METHOD Initializing
+VAR_INST
+	UnitModeConfig : FB_PMLUnitModeConfig;
+	SequenceState  : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		UnitModeConfig(eMode						  := E_PMLProtectedUnitMode.Production,
+					   sName						  := 'Production',
+					   bDisableClearing				  := FALSE,
+					   bDisableStarting				  := FALSE,
+					   bDisableSuspended			  := TRUE,
+					   bDisableStopping				  := FALSE,
+					   bDisableAborting				  := FALSE,
+					   bDisableHolding				  := TRUE,
+					   bDisableHeld					  := TRUE,
+					   bDisableUnholding			  := TRUE,
+					   bDisableSuspending			  := TRUE,
+					   bDisableUnsuspending			  := TRUE,
+					   bDisableResetting			  := TRUE,
+					   bDisableIdle					  := TRUE,
+					   bDisableCompleting			  := TRUE,
+					   bDisableComplete				  := TRUE,
+					   bEnableUnitModeChangeStopped	  := TRUE,
+					   bEnableUnitModeChangeIdle	  := FALSE,
+					   bEnableUnitModeChangeSuspended := FALSE,
+					   bEnableUnitModeChangeExecute	  := FALSE,
+					   bEnableUnitModeChangeAborted	  := TRUE,
+					   bEnableUnitModeChangeHeld	  := FALSE,
+					   bEnableUnitModeChangeComplete  := FALSE,
+					   bError						  =>,
+					   nErrorId						  =>);
+
+		UnitModeConfig(eMode						  := E_PMLProtectedUnitMode.Manual,
+					   sName						  := 'Manual',
+					   bDisableClearing				  := FALSE,
+					   bDisableStarting				  := FALSE,
+					   bDisableSuspended			  := TRUE,
+					   bDisableStopping				  := FALSE,
+					   bDisableAborting				  := FALSE,
+					   bDisableHolding				  := TRUE,
+					   bDisableHeld					  := TRUE,
+					   bDisableUnholding			  := TRUE,
+					   bDisableSuspending			  := TRUE,
+					   bDisableUnsuspending			  := TRUE,
+					   bDisableResetting			  := TRUE,
+					   bDisableIdle					  := TRUE,
+					   bDisableCompleting			  := TRUE,
+					   bDisableComplete				  := TRUE,
+					   bEnableUnitModeChangeStopped	  := TRUE,
+					   bEnableUnitModeChangeIdle	  := FALSE,
+					   bEnableUnitModeChangeSuspended := FALSE,
+					   bEnableUnitModeChangeExecute	  := FALSE,
+					   bEnableUnitModeChangeAborted	  := TRUE,
+					   bEnableUnitModeChangeHeld	  := FALSE,
+					   bEnableUnitModeChangeComplete  := FALSE,
+					   bError						  =>,
+					   nErrorId						  =>);
+
+		SequenceState := SequenceState + 10;
+
+	10:
+		ModuleInitialized := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnCyclicCall" Id="{1af674b7-aa0e-4a9f-951b-2be57a1bf86c}">
+      <Declaration><![CDATA[METHOD OnCyclicCall
+VAR_INST
+	HmiEnableDisable : HmiEnableDisableAllVisitor;
+	SetOverride		 : SetAllOverrideVisitor;
+	EStopOK			 : BOOL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Manual THEN
+	HmiEnableDisable.EnableHmi(THIS^);
+ELSE
+	HmiEnableDisable.DisableHmi(THIS^);
+	AmrModule_HMI.Enable();
+END_IF
+
+//
+SetOverride.Set(THIS^, _Override);
+// Test Logic
+IF NOT EStopOK THEN
+	Events.RaiseEvent(E_AmrModule.EStop);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Override" Id="{51b25a69-95dc-4c63-80ad-d72d67aeab6f}" FolderPath="Machine\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Override : LREAL]]></Declaration>
+      <Set Name="Set" Id="{81673d3a-e0de-4ca7-8817-7af98515d670}">
+        <Declaration><![CDATA[]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Override := Override;
+//SetOverrideVisitor.SetOverride(THIS^, _Override);]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Recipe" Id="{7fc4c167-dfc7-493c-8dda-8520a3f801e9}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY Recipe : REFERENCE TO ST_Recipe]]></Declaration>
+      <Get Name="Get" Id="{35aee85b-d2f0-4bc9-87bb-91bf25988a8b}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Recipe REF= _Recipe;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Starting" Id="{7925974e-150d-4cac-a5f5-7b406a3730b8}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Starting : BOOL
+VAR_INPUT
+	SequenceState	: REFERENCE TO UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE Statemachine.Mode.CurrentMode OF
+	E_PMLProtectedUnitMode.Production:
+		Starting := TRUE;
+
+	E_PMLProtectedUnitMode.Maintenance, E_PMLProtectedUnitMode.Manual:
+		Starting := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Statemachine" Id="{1806b39c-5a57-475a-91c8-2d1caefcb1d6}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY Statemachine : I_Statemachine]]></Declaration>
+      <Get Name="Get" Id="{937c7eb2-5a44-4520-8995-633489117e5c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Statemachine := _Statemachine;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Stopped" Id="{334a1254-2309-4e67-b029-781e7ed73cba}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Stopped : BOOL
+VAR_INPUT
+	SequenceState	: REFERENCE TO UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stopping" Id="{e84b8901-bbe3-4da3-bf45-8e91119ba89a}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Stopping : BOOL
+VAR_INPUT
+	SequenceState	: REFERENCE TO UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

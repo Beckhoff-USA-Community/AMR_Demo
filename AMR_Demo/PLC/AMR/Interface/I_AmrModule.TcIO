@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_AmrModule" Id="{9169f098-efd6-41e1-afc0-6d9ff7eb0ed9}">
+    <Declaration><![CDATA[INTERFACE I_AmrModule EXTENDS I_Module, I_Override, I_ContainStatemachine]]></Declaration>
+    <Property Name="Recipe" Id="{c2c47cc4-7369-4db4-a009-072c27abdf86}">
+      <Declaration><![CDATA[PROPERTY Recipe : REFERENCE TO ST_Recipe]]></Declaration>
+      <Get Name="Get" Id="{d304655f-a872-4e83-8ceb-ef93abce9f7b}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

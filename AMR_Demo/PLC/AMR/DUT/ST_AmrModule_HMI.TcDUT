@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_AmrModule_HMI" Id="{6373cca3-230c-4786-9bdb-9be1cdb0f308}">
+    <Declaration><![CDATA[TYPE ST_AmrModule_HMI :
+	STRUCT
+		Override : LREAL := 100.0;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

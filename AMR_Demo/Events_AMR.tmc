@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TcModuleClass>
+	<DataTypes>
+		<DataType>
+			<Name GUID="{A3201C03-8C76-4312-91F0-0CB86A9C2AB3}">AmrModule</Name>
+			<DisplayName TxtId=""><![CDATA[AmrModule]]></DisplayName>
+			<EventId>
+				<Name Id="1">Estop</Name>
+				<DisplayName TxtId=""><![CDATA[E-Stop pressed!]]></DisplayName>
+				<Severity>Error</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{564FD58B-FB2D-46CA-991F-40708CCB8505}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+</TcModuleClass>
