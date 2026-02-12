@@ -443,8 +443,7 @@ VAR_INST
 	ProductionRT	 : R_TRIG;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[SUPER^.OnCyclicCall();
-ProductionRT(CLK := _Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Production);
+        <ST><![CDATA[ProductionRT(CLK := _Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Production);
 IF _Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Manual THEN
 	HmiEnableDisable.EnableHmi(THIS^);
 	IF Navitrol_HMI.NavitrolHasControl THEN
