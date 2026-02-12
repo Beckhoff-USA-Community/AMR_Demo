@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Msg1016_MeasurmentUpdateDifferentialDrive" Id="{e3ed981e-4772-4d1b-be9d-e175c99b2494}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Msg1016_MeasurmentUpdateDifferentialDrive EXTENDS TcpIpCommandResultFilter IMPLEMENTS I_Navitrol_DifferentialDriveMotorControl
+VAR
+	CycleTime							  : TIME := T#30MS; //This needs to match the Navitrol parameter "control_interval_us"
+	Timer								  : TON;
+	Command								  : ST_TcpIpPayload;
+	ReceiveBuffer						  : U_Recived_bytes_from_Navitrol;
+	Measurement_update_differential_drive : ST_1016_Measurement_update_differential_drive;
+	Motor_Control_Differential			  : ST_1116_Motor_Control_Differential;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="CyclicLogic" Id="{d5f5ca05-a106-471a-9fb4-224f9608d4af}">
+      <Declaration><![CDATA[METHOD CyclicLogic]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.CyclicLogic();
+Measurement_update_differential_drive.Timestamp := Measurement_update_differential_drive.Timestamp + TO_UINT(_Taskinfo[GETCURTASKINDEXEX()].CycleTime);
+Timer(IN := NOT Timer.Q, PT := CycleTime);
+IF Timer.Q AND TcpIpConnection.ConnectionState = eSOCKET_CONNECTED THEN
+	F_SetHeaderInfo(Measurement_update_differential_drive);
+	Measurement_update_differential_drive.Message_number := Measurement_update_differential_drive.Message_number + 1;
+
+	//
+	MEMSET(ADR(Command), 0, SIZEOF(Command));
+	Command.Size := SIZEOF(Measurement_update_differential_drive);
+	MEMCPY(ADR(Command.Data), ADR(Measurement_update_differential_drive), Command.Size);
+	TcpIpConnection.SendPriorityCommand(ADR(Command));
+	CommandActive := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="EncoderCountWheelLeft" Id="{0a1d8d3e-7b0c-4b09-b0ac-fbeed6e341ee}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY EncoderCountWheelLeft : UDINT]]></Declaration>
+      <Set Name="Set" Id="{1205c776-45ff-4a42-86c9-97fef6dcaaa9}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Measurement_update_differential_drive.Odometry_left_wheel := EncoderCountWheelLeft;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="EncoderCountWheelRight" Id="{fdfe03ab-57aa-455b-a538-e0547d8ab395}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY EncoderCountWheelRight : UDINT]]></Declaration>
+      <Set Name="Set" Id="{e0bd9473-f14c-48b9-a91f-ce36fad2918a}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Measurement_update_differential_drive.Odometry_right_wheel := EncoderCountWheelRight;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="SetPointSpeedLeft" Id="{95cbd96b-422c-4e3e-820c-c11d9da3ac7e}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY SetPointSpeedLeft : REAL]]></Declaration>
+      <Get Name="Get" Id="{8bc4d24d-6455-405e-82ed-0f3d1e0c1cff}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[SetPointSpeedLeft := Motor_Control_Differential.Speed_Left;
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="SetPointSpeedRight" Id="{8619fd68-f047-4be3-acf1-7f7ec6b03b23}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY SetPointSpeedRight : REAL]]></Declaration>
+      <Get Name="Get" Id="{7c7f246a-c5fc-48ce-8137-0f1801054c73}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[SetPointSpeedRight := Motor_Control_Differential.Speed_Right;
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="UpdateCommandResult" Id="{e84fd3a5-216e-4b63-90d9-827aa9a07bfc}">
+      <Declaration><![CDATA[METHOD UpdateCommandResult
+VAR_INPUT
+	Response : POINTER TO ST_TcpIpPayload;
+END_VAR
+
+VAR_INST
+	ReceiveCounter : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MEMCPY(ADR(ReceiveBuffer), ADR(Response^.Data), SIZEOF(ReceiveBuffer));
+IF ReceiveBuffer.Header.Message_ID = 1116 THEN
+	ReceiveCounter := ReceiveCounter + 1;
+	MEMCPY(destAddr := ADR(Motor_Control_Differential), srcAddr := ADR(ReceiveBuffer), n := SIZEOF(Motor_Control_Differential));
+	CommandActive := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

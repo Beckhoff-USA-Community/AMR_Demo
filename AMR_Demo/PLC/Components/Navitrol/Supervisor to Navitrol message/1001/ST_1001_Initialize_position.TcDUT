@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1001_Initialize_position" Id="{bc9f0d1c-ab16-4cd1-be97-b6a9753db434}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1001_Initialize_position EXTENDS ST_SupervisorHeader :
+	STRUCT
+		X	  : REAL; //		X - map coordinate OF the AGV in meters
+		Y	  : REAL; //		Y - map coordinate of the AGV in meters
+		H	  : REAL; //		Heading of the AGV on the map in radians
+		Level : DINT; //	The level ID on which the AGV is located
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

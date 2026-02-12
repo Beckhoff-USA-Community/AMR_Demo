@@ -1,0 +1,45 @@
+{
+  "function": {
+    "name": "GetKinematicStatus",
+    "namespace": "TcHmi.Functions.HmiProj",
+    "displayName": "GetKinematicStatus",
+    "description": "",
+    "waitMode": "Synchronous",
+    "category": "",
+    "returnValue": {
+      "type": "tchmi:general#/definitions/String"
+    },
+    "visible": true,
+    "injectContextObject": false,
+    "arguments": [
+      {
+        "name": "KinStatus",
+        "displayName": "KinStatus",
+        "type": "tchmi:server#/definitions/ADS-PLC1.Tc2_NcKinematicTransformation.E_KinStatus",
+        "description": "",
+        "defaultValue": 0,
+        "required": true,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      }
+    ]
+  },
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.178/runtimes/native1.12-tchmi/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "0.0.0.0",
+    "major": 0,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "GetKinematicStatus.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ]
+}

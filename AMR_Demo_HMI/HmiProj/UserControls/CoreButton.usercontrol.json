@@ -1,0 +1,58 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": true,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setText",
+      "propertyGetterName": "getText",
+      "refTo": "",
+      "name": "data-tchmi-text",
+      "displayName": "Text",
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "Text"
+    },
+    {
+      "allowSymbolExpressionsInObject": true,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setButton",
+      "propertyGetterName": "getButton",
+      "refTo": "",
+      "name": "data-tchmi-button",
+      "displayName": "Button",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.Core.Button",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "Button"
+    },
+    {
+      "allowSymbolExpressionsInObject": true,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setIcon",
+      "propertyGetterName": "getIcon",
+      "refTo": "",
+      "name": "data-tchmi-icon",
+      "displayName": "Icon",
+      "visible": true,
+      "type": "tchmi:framework#/definitions/Path",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "Icon"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.178/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

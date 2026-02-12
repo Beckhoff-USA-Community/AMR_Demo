@@ -1,0 +1,478 @@
+<div id="System_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1536" data-tchmi-creator-viewport-height="1000" data-tchmi-zindex="2" data-tchmi-creator-locked="True">
+<div id="system-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidth": 310.0,
+    "minWidthUnit": "px",
+    "overflow": false
+  },
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidth": 310.0,
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="system-grid-pcmonitoring" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10">
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="system-grid-usage" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  },
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 7.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="system-rg-memusage" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.RadialGauge" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-max-value="100" data-tchmi-min-value="0" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-show-value="true" data-tchmi-show-min-max="true" data-tchmi-gauge-width="35" data-tchmi-unit="%" data-tchmi-value="%f%(((parseFloat(%s%TcHmiMdp.Local.Memory.0.ProgramMemoryAllocated_MoreThan4GbRam%/s%)-parseFloat(%s%TcHmiMdp.Local.Memory.0.ProgramMemoryAvailable_MoreThan4GbRam%/s%))/(parseFloat(%s%TcHmiMdp.Local.Memory.0.ProgramMemoryAllocated_MoreThan4GbRam%/s%))) * 100).toFixed(0)%/f%" data-tchmi-zindex="2">
+
+
+</div>
+<div id="system-rg-cpuusage" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.RadialGauge" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-max-value="100" data-tchmi-min-value="0" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-gauge-width="35" data-tchmi-show-value="true" data-tchmi-show-min-max="true" data-tchmi-unit="%" data-tchmi-value="%s%TcHmiMdp.Local.CPU.0.CurrentCpuUsage%/s%" data-tchmi-zindex="2">
+
+
+</div>
+<div id="system-lbl-memusage" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-text="Memory Usage" data-tchmi-zindex="2">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+<div id="system-lbl-cpuusage" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="CPU Usage" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-zindex="2">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div id="system-grid-temps" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  },
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 7.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="system-rg-cputemp" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.RadialGauge" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-max-value="100" data-tchmi-min-value="0" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-gauge-width="35" data-tchmi-show-value="true" data-tchmi-show-min-max="true" data-tchmi-unit="°C" data-tchmi-value="%s%TcHmiMdp.Local.CPU.0.CurrentCpuTemperature%/s%" data-tchmi-zindex="2">
+
+
+</div>
+<div id="system-lbl-cputemp" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="CPU Temperature" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-zindex="2">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+<div id="system-rg-mbtemp" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.RadialGauge" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-max-value="100" data-tchmi-min-value="0" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-show-value="true" data-tchmi-show-min-max="true" data-tchmi-gauge-width="35" data-tchmi-unit="°C" data-tchmi-value="%f%%s%TcHmiMdp.Local.Mainboard.0.MainboardTemperature%/s%%/f%" data-tchmi-zindex="2">
+
+
+</div>
+<div id="system-lbl-mbtemp" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-text="Mainboard Temperature" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+</div>
+<div id="system-grid-misc" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="2" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  },
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 7.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="system-rg-hdusage" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.RadialGauge" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="2" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-max-value="100" data-tchmi-min-value="0" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-show-value="true" data-tchmi-show-min-max="true" data-tchmi-gauge-width="35" data-tchmi-unit="%" data-tchmi-value="%f%(((parseFloat(%s%TcHmiMdp.Local.DiskManagement.0.TotalSize.0%/s%)-parseFloat(%s%TcHmiMdp.Local.DiskManagement.0.FreeSpace.0%/s%))/(parseFloat(%s%TcHmiMdp.Local.DiskManagement.0.TotalSize.0%/s%))) * 100).toFixed(0)%/f%" data-tchmi-zindex="2">
+
+
+</div>
+<div id="system-rg-routermem" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.RadialGauge" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-max-value="100" data-tchmi-min-value="0" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-gauge-width="35" data-tchmi-show-value="true" data-tchmi-show-min-max="true" data-tchmi-unit="%" data-tchmi-value="%f%(((parseFloat(%s%TcHmiMdp.Local.TwinCAT.0.RouterMemoryMaximum%/s%)-parseFloat(%s%TcHmiMdp.Local.TwinCAT.0.RouterMemoryAvailable%/s%))/(parseFloat(%s%TcHmiMdp.Local.TwinCAT.0.RouterMemoryMaximum%/s%))) * 100).toFixed(0)%/f%" data-tchmi-zindex="2">
+
+
+</div>
+<div id="system-lbl-routermem" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="Router Memory Usage" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+<div id="system-lbl-hdusage" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-text="Hard Drive Usage" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+</div>
+</div>
+<div id="system-grid-systeminfo" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 2.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="system-grid-pcinfo" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" id="system-ddt-imagever" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="true" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-label="Image Version" data-tchmi-value="%s%TcHmiMdp.Local.GeneralArea.OperatingSystemAndImageVersion%/s%" data-tchmi-label-font-size="18" data-tchmi-value-font-size="27" data-tchmi-label-to-value-ratio="1:2" data-tchmi-zindex="2">
+</div>
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="system-ddt-ipaddr" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="true" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-label="IP Address" data-tchmi-value="%s%TcHmiMdp.Local.NetworkInterfaceController.0.IPv4Address%/s%" data-tchmi-label-font-size="18" data-tchmi-value-font-size="27" data-tchmi-label-to-value-ratio="1:2" data-tchmi-zindex="2">
+</div>
+</div>
+<div id="system-grid-tcinfo" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="system-ddt-tcver" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="true" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-label="TwinCAT Version" data-tchmi-value="%f%%s%TcHmiMdp.Local.TwinCAT.0.MajorVersion%/s%+'.'+
+%s%TcHmiMdp.Local.TwinCAT.0.MinorVersion%/s%+'.'+
+%s%TcHmiMdp.Local.TwinCAT.0.Build%/s%+'.'+
+%s%TcHmiMdp.Local.TwinCAT.0.TwinCatRevision%/s%%/f%" data-tchmi-label-font-size="18" data-tchmi-value-font-size="27" data-tchmi-label-to-value-ratio="1:2" data-tchmi-zindex="1">
+</div>
+<div data-tchmi-grid-row-index="2" data-tchmi-grid-column-index="0" id="system-ddt-hmiver" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="true" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-label="TcHMI Version" data-tchmi-value="%s%ListDomains::TcHmiSrv::version%/s%" data-tchmi-label-font-size="18" data-tchmi-value-font-size="27" data-tchmi-label-to-value-ratio="1:2" data-tchmi-zindex="2">
+</div>
+<div data-tchmi-grid-row-index="3" data-tchmi-grid-column-index="0" id="system-ddt-amsnetid" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="true" data-tchmi-left="11" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="9" data-tchmi-bottom="10" data-tchmi-label="AMS Net ID" data-tchmi-value="%s%TcHmiMdp.Local.TwinCAT.0.AmsNetID%/s%" data-tchmi-label-font-size="18" data-tchmi-value-font-size="27" data-tchmi-label-to-value-ratio="1:2" data-tchmi-zindex="0">
+</div>
+<div id="system-grid-tcstates" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-zindex="2">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  },
+  {
+    "width": 1.0,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="system-state-plc" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiAdsState" data-tchmi-ads-runtime="PLC1" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="%ctrl%system-state-plc::RenderedHeight%/ctrl%" data-tchmi-width-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-zindex="4">
+
+<script data-tchmi-target-attribute="data-tchmi-state-images" type="application/json">
+{
+  "Fallback": "Images/Icons/PLC/plc_fallback.svg",
+  "Run": "Images/Icons/PLC/plc_run.svg",
+  "Stop": "Images/Icons/PLC/plc_stop.svg",
+  "Config": "Images/Icons/PLC/plc_config.svg",
+  "Exception": "Images/Icons/PLC/plc_exception.svg"
+}
+</script>
+</div>
+<div id="system-state-tc" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiAdsState" data-tchmi-ads-runtime="TcSysService" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="%ctrl%system-state-tc::RenderedHeight%/ctrl%" data-tchmi-width-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-zindex="3">
+
+<script data-tchmi-target-attribute="data-tchmi-state-images" type="application/json">
+{
+  "Fallback": "Images/Icons/TwinCAT/twincat_fallback.svg",
+  "Run": "Images/Icons/TwinCAT/twincat_run.svg",
+  "Stop": "Images/Icons/TwinCAT/twincat_stop.svg",
+  "Config": "Images/Icons/TwinCAT/twincat_config.svg",
+  "Exception": "Images/Icons/TwinCAT/twincat_exception.svg"
+}
+</script>
+</div>
+<div id="system-lbl-plc" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="PLC State" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-bottom="20" data-tchmi-zindex="2" data-tchmi-right="%ctrl%system-state-plc::RenderedWidth%/ctrl%">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container",
+  "text-centered"
+]
+</script>
+
+
+</div>
+<div id="system-lbl-tc" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="TwinCAT State" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-bottom="20" data-tchmi-zindex="2" data-tchmi-right="%ctrl%system-state-tc::RenderedWidth%/ctrl%">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container",
+  "text-centered"
+]
+</script>
+</div>
+
+
+
+
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+</div>
+</div>
+</div>
+</div>

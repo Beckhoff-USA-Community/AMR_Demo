@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="DEGREE_TO_RADIAN" Id="{1ebde5b6-531c-4aef-a1be-0aadab2b0f18}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION DEGREE_TO_RADIAN : LREAL
+VAR_INPUT
+	Degree : LREAL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[DEGREE_TO_RADIAN := Degree * (PI / 180.0);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Msg3024_ReturnToRoute" Id="{440e430b-03cf-4c77-a37b-3bcf7e6888b3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Msg3024_ReturnToRoute EXTENDS TcpIpCommandResultFilter IMPLEMENTS I_Navitrol_ReturnToRoute
+VAR
+	Command				: ST_TcpIpPayload;
+	ReceiveBuffer		: U_Recived_bytes_from_Navitrol;
+	ReturnToRoute		: ST_3024_ReturnToRoute;
+	ReturnToRouteResult : ST_3124_ReturnToRouteResponse;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{fc9e07b3-675e-4a79-b279-893a95732df4}">
+      <Declaration><![CDATA[METHOD Execute : BOOL;]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF TcpIpConnection.ConnectionState = eSOCKET_CONNECTED THEN
+	F_SetHeaderInfo(ReturnToRoute);
+	MEMSET(ADR(Command), 0, SIZEOF(Command));
+	Command.Size := SIZEOF(ReturnToRoute);
+	MEMCPY(ADR(Command.Data), ADR(ReturnToRoute), Command.Size);
+	TcpIpConnection.SendCommand(ADR(Command));
+	CommandActive := TRUE;
+	Execute		  := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="UpdateCommandResult" Id="{97b1c510-647f-44d2-b9f9-9af240d1e3c6}">
+      <Declaration><![CDATA[METHOD UpdateCommandResult
+VAR_INPUT
+	Response : POINTER TO ST_TcpIpPayload;
+END_VAR
+
+VAR_INST
+	ReceiveCounter : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MEMCPY(ADR(ReceiveBuffer), ADR(Response^.Data), SIZEOF(ReceiveBuffer));
+IF ReceiveBuffer.Header.Message_ID = 3124 THEN
+	ReceiveCounter := ReceiveCounter + 1;
+	MEMCPY(destAddr := ADR(ReturnToRouteResult), srcAddr := ADR(ReceiveBuffer), n := SIZEOF(ReturnToRouteResult));
+	CommandActive := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

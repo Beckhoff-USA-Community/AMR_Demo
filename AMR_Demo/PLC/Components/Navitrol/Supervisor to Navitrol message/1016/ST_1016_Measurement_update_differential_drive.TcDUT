@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1016_Measurement_update_differential_drive" Id="{8fec08a6-63e1-431c-bdfe-c12cec1501eb}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1016_Measurement_update_differential_drive EXTENDS ST_SupervisorHeader :
+	STRUCT
+		Message_number		 : UDINT;
+		Odometry_left_wheel	 : UDINT; // The cumulative encoder value from the left wheel. The scale from encoder value to meters is defined by mot_ctrl_left_dist_scale-parameter The overflow point must be from 0xffffffff to 0
+		Odometry_right_wheel : UDINT;
+		Drive_control		 : E_DriveControl := E_DriveControl.Activate_auto_mode;
+		Timestamp			 : UDINT; // Cumulative time in milliseconds. Time base can be chosen freely.
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

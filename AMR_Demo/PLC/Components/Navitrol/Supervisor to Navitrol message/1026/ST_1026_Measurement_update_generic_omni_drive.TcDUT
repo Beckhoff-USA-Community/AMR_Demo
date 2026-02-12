@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1026_Measurement_update_generic_omni_drive" Id="{055eaa3b-4fd2-44f2-b846-f3e6021d5aa1}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1026_Measurement_update_generic_omni_drive EXTENDS ST_SupervisorHeader :
+	STRUCT
+		Message_number	  : UDINT;
+		Set_drive_mode	  : E_1026_Set_drive_mode;
+		Supervisor_status : ST_1026_Supervisor_status_bits			  := (Brake_released := TRUE);
+		Number_of_wheels  : UINT									  := 2;
+		Omni_wheels		  : ARRAY[0..1] OF ST_1026_Omni_wheels_struct := [2((Steer_angle := 0.1))];
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

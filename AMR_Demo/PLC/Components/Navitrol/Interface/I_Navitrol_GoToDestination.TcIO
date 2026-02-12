@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Navitrol_GoToDestination" Id="{148bd4f8-dff8-4d2e-b2c2-5ea3b1f68b1e}">
+    <Declaration><![CDATA[INTERFACE I_Navitrol_GoToDestination EXTENDS I_Base
+]]></Declaration>
+    <Method Name="Execute" Id="{7cb8a7fc-e728-4d57-bb1c-7cc1dac518a0}">
+      <Declaration><![CDATA[METHOD Execute : BOOL;
+VAR_INPUT
+	DestinationID : UDINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Property Name="Result" Id="{a7740c36-5e14-496f-a851-c9b36e8bc52e}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Result : UDINT]]></Declaration>
+      <Get Name="Get" Id="{9c18610b-28bd-4980-a2b4-86046ca21467}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

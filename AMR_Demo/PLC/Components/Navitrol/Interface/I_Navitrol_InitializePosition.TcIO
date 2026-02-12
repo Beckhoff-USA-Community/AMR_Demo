@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Navitrol_InitializePosition" Id="{f2fa53b6-af75-4050-bb52-11243c0cf205}">
+    <Declaration><![CDATA[INTERFACE I_Navitrol_InitializePosition EXTENDS I_Base]]></Declaration>
+    <Method Name="InitializePosition" Id="{9a663ce5-db4e-40f8-ba41-7e26e665f392}">
+      <Declaration><![CDATA[METHOD InitializePosition : BOOL
+VAR_INPUT
+	X	  : REAL;	   //		X - map coordinate OF the AGV in meters
+	Y	  : REAL;	   //		Y - map coordinate of the AGV in meters
+	H	  : REAL := 0; //		Heading of the AGV on the map in radians
+	Level : DINT := 0; //	The level ID on which the AGV is located
+END_VAR]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

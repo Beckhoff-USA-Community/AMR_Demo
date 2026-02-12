@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Msg3001_HoldRelease" Id="{6768bc0e-9991-49a4-8ec3-789fd55770e9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Msg3001_HoldRelease EXTENDS TcpIpCommandResultFilter IMPLEMENTS I_Navitrol_ReturnToRoute
+VAR
+	Command		  : ST_TcpIpPayload;
+	ReceiveBuffer : U_Recived_bytes_from_Navitrol;
+	ReleaseHold	  : ST_3001_ReleaseHoldState;
+	HoldReleased  : ST_3101_HoldReleased;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{76f568aa-aa9b-40b0-9b99-e9742db5ad72}">
+      <Declaration><![CDATA[METHOD Execute : BOOL]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF TcpIpConnection.ConnectionState = eSOCKET_CONNECTED THEN
+	F_SetHeaderInfo(ReleaseHold);
+	MEMSET(ADR(Command), 0, SIZEOF(Command));
+	Command.Size := SIZEOF(ReleaseHold);
+	MEMCPY(ADR(Command.Data), ADR(ReleaseHold), Command.Size);
+	TcpIpConnection.SendCommand(ADR(Command));
+	CommandActive := TRUE;
+	Execute		  := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="UpdateCommandResult" Id="{6bcc92ca-0e66-4617-b04c-77d44c42869c}">
+      <Declaration><![CDATA[METHOD UpdateCommandResult
+VAR_INPUT
+	Response : POINTER TO ST_TcpIpPayload;
+END_VAR
+
+VAR_INST
+	ReceiveCounter : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MEMCPY(ADR(ReceiveBuffer), ADR(Response^.Data), SIZEOF(ReceiveBuffer));
+IF ReceiveBuffer.Header.Message_ID = 3101 THEN
+	ReceiveCounter := ReceiveCounter + 1;
+	MEMCPY(destAddr := ADR(HoldReleased), srcAddr := ADR(ReceiveBuffer), n := SIZEOF(HoldReleased));
+	CommandActive := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

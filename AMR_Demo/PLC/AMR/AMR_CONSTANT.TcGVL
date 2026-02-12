@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="AMR_CONSTANT" Id="{870d3a2a-3407-41dc-a2d8-9aa0d2d3750c}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	WHEEL_DIAMETER : LREAL := 0.160; // Wheel Diameter in m
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -3,7 +3,8 @@
   <DUT Name="ST_Recipe" Id="{5ad52013-de8a-4f34-9327-e4b2e37f9d37}">
     <Declaration><![CDATA[TYPE ST_Recipe :
 	STRUCT
-		Axis : ST_AxisRecipe;
+		LiftPosition_Up	  : LREAL := 100;
+		LiftPosition_Down : LREAL := 0;
 	END_STRUCT
 END_TYPE]]></Declaration>
   </DUT>

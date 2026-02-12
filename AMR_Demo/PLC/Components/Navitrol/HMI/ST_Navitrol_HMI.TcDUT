@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_Navitrol_HMI" Id="{ade0003f-7ec7-4165-bd78-ad1212e1e5ec}">
+    <Declaration><![CDATA[TYPE ST_Navitrol_HMI EXTENDS ST_HmiFunction :
+	STRUCT
+		CommunicationActive : BOOL;
+		Status				: E_3102_State;
+		ControlFromNavitrol : BOOL;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

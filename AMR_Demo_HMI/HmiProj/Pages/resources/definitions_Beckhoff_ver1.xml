@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <file_info>
+    <SW>Tools 6.2.1</SW>
+    <user />
+    <production_area>Beckhoff</production_area>
+    <filetype>xml</filetype>
+    <version>1</version>
+    <status />
+    <timestamp>10.02.2026 11:01</timestamp>
+  </file_info>
+  <environment_info>
+    <environment>
+      <machine_type_id>10016</machine_type_id>
+      <env_version>1</env_version>
+      <seg_version>1</seg_version>
+    </environment>
+  </environment_info>
+  <levels>
+    <level>
+      <id>0</id>
+      <name>Beckhoff</name>
+      <gates />
+      <zones />
+      <cads />
+    </level>
+  </levels>
+  <waypoints>
+    <node id="1">
+      <point>
+        <x>21.233169555664063</x>
+        <y>36.951534271240234</y>
+        <level>0</level>
+      </point>
+      <node_segments>
+        <segment_set machine_type_id="10016">
+          <seg id="39" />
+          <seg id="43" />
+          <seg id="47" />
+          <seg id="51" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="39" />
+          <seg id="43" />
+          <seg id="40" />
+          <seg id="36" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="48" />
+          <seg id="44" />
+          <seg id="40" />
+          <seg id="36" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="48" />
+          <seg id="44" />
+          <seg id="47" />
+          <seg id="51" />
+        </segment_set>
+      </node_segments>
+    </node>
+    <node id="2">
+      <point>
+        <x>18.254633712768559</x>
+        <y>28.580802917480469</y>
+        <level>0</level>
+      </point>
+      <node_segments>
+        <segment_set machine_type_id="10016">
+          <seg id="79" />
+          <seg id="7" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="79" />
+          <seg id="76" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="4" />
+          <seg id="76" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="4" />
+          <seg id="7" />
+        </segment_set>
+      </node_segments>
+    </node>
+    <link id="1001">
+      <start_point>
+        <point>
+          <x>16.628426461044473</x>
+          <y>28.580802917480469</y>
+          <level>0</level>
+        </point>
+        <connecting_node id="2" />
+      </start_point>
+      <end_point>
+        <point>
+          <x>20.440004944708036</x>
+          <y>32.648153994276264</y>
+          <level>0</level>
+        </point>
+        <connecting_node id="1" />
+      </end_point>
+      <link_segments>
+        <segment_set machine_type_id="10016">
+          <seg id="32" />
+          <seg id="28" />
+          <seg id="24" />
+          <seg id="20" />
+          <seg id="16" />
+          <seg id="12" />
+          <seg id="8" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="11" />
+          <seg id="15" />
+          <seg id="19" />
+          <seg id="23" />
+          <seg id="27" />
+          <seg id="31" />
+          <seg id="35" />
+        </segment_set>
+      </link_segments>
+    </link>
+    <link id="1002">
+      <start_point>
+        <point>
+          <x>21.233169555664063</x>
+          <y>31.542897979547345</y>
+          <level>0</level>
+        </point>
+        <connecting_node id="1" />
+      </start_point>
+      <end_point>
+        <point>
+          <x>18.254633712768559</x>
+          <y>27.367589551325235</y>
+          <level>0</level>
+        </point>
+        <connecting_node id="2" />
+      </end_point>
+      <link_segments>
+        <segment_set machine_type_id="10016">
+          <seg id="72" />
+          <seg id="68" />
+          <seg id="64" />
+          <seg id="60" />
+          <seg id="56" />
+          <seg id="52" />
+        </segment_set>
+        <segment_set machine_type_id="10016">
+          <seg id="55" />
+          <seg id="59" />
+          <seg id="63" />
+          <seg id="67" />
+          <seg id="71" />
+          <seg id="75" />
+        </segment_set>
+      </link_segments>
+    </link>
+  </waypoints>
+  <virtual_access_points>
+    <version>0</version>
+  </virtual_access_points>
+  <resource_types>
+    <version>0</version>
+    <resource_type>
+      <id>520</id>
+      <name>Unknown</name>
+    </resource_type>
+  </resource_types>
+  <elevators />
+</definitions>

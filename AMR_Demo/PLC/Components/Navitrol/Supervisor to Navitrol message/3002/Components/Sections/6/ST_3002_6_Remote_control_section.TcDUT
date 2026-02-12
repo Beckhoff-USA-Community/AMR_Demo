@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3002_6_Remote_control_section" Id="{80e38c9e-2a65-4ea3-a48c-b26e6787c26b}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_3002_6_Remote_control_section EXTENDS ST_SectionHeader :
+	STRUCT
+		Joystick1_control_mode : E_3002_6_Joystick1_control_mode;
+		Joystick1_x			   : REAL;
+		Joystick1_y			   : REAL;
+		Joystick2_control_mode : E_3002_6_Joystick2_control_mode;
+		Joystick2_x			   : REAL; //0 - Not in use
+		Joystick2_y			   : REAL; (*Lift actuator height reference control.
+										If the given y-value is larger than 0.1 actuator control is enabled. 
+										And the y-value is scaled with actuator_eth_ctrl_scale-parameter and added to the previous actuator reference. 
+										The actuator reference can be controlled only between values of actuator_min_val and actuator_max_val parameters.Valid values [-1...1]*)
+		Steer_type_selection : E_3002_6_Steer_type_selection;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

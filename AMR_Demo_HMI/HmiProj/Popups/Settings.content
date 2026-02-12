@@ -1,0 +1,470 @@
+<div id="Settings_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="800" data-tchmi-creator-viewport-height="450">
+<div id="settings-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1.0,
+    "heightUnit": "factor",
+    "heightMode": "Value",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
+<div id="settings-grid-theme" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+<div id="settings-lbl-theme" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Theme Select" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="20" data-tchmi-bottom="20">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="settings-dd-theme" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiThemeSelect" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="30" data-tchmi-top-unit="px" data-tchmi-zindex="2" data-tchmi-right="20" data-tchmi-bottom="30">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+<div id="settings_ts_systemtheme" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Use OS Theme" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-right="20" data-tchmi-bottom="35" data-tchmi-text-position="Left" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%i%useOsTheme%/i%">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%i%useOsTheme%/i%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "symbolExpression": "%i%useOsTheme%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%settings-dd-theme::IsEnabled%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "value": true
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "Function",
+                "active": true,
+                "fn": "TcHmi.Functions.TcHmiExtendedControls.UseSystemTheme",
+                "fnParams": [
+                  {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:general#/definitions/Boolean",
+                    "value": false
+                  },
+                  {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:framework#/definitions/ThemeName",
+                    "value": "Base"
+                  },
+                  {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:framework#/definitions/ThemeName",
+                    "value": "Base-Dark"
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%settings-dd-theme::IsEnabled%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "value": false
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "Function",
+                "active": true,
+                "fn": "TcHmi.Functions.TcHmiExtendedControls.UseSystemTheme",
+                "fnParams": [
+                  {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:general#/definitions/Boolean",
+                    "value": true
+                  },
+                  {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:framework#/definitions/ThemeName",
+                    "value": "Base"
+                  },
+                  {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:framework#/definitions/ThemeName",
+                    "value": "Base-Dark"
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+</div>
+<div id="settings-grid-language" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+<div id="settings-lbl-language" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Language Select" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="20" data-tchmi-bottom="20">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "text-centered"
+]
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="settings-dd-language" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiLocalizationSelect" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="30" data-tchmi-top-unit="px" data-tchmi-zindex="3" data-tchmi-right="20" data-tchmi-bottom="30">
+<script data-tchmi-target-attribute="data-tchmi-localization-mapping" type="application/json">
+[
+  {
+    "code": "de",
+    "text": "German"
+  },
+  {
+    "code": "de-DE",
+    "text": "German (Germany)"
+  },
+  {
+    "code": "en",
+    "text": "English"
+  },
+  {
+    "code": "en-US",
+    "text": "English (United States)"
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+<div id="settings_ts_lockmachinecontrol" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Lock Machine Control Flyout" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-right="20" data-tchmi-bottom="35" data-tchmi-text-position="Left" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%i%machineControlLocked%/i%">
+
+</div>
+</div>
+<div id="settings-grid-system" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="2" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div id="system-btn-refresh" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.ConfirmationButton" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Refresh Browser" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="20" data-tchmi-bottom="20" data-tchmi-confirmation-message="Are you sure you would like to refresh the browser?">
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onConfirmed",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "location.reload()"
+        ],
+        "asyncWait": true,
+        "injectContextObject": false,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="settings-btn-close" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.ConfirmationButton" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Close HMI" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="20" data-tchmi-bottom="20" data-tchmi-confirmation-message="Are you sure you would like to close the HMI?">
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onConfirmed",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "window.close()"
+        ],
+        "asyncWait": true,
+        "injectContextObject": false,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="settings-btn-restartserver" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.ConfirmationButton" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Restart HMI Server" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="20" data-tchmi-bottom="20" data-tchmi-confirmation-message="Are you sure you would like to restart the HMI Server?">
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onConfirmed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%Restart%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/String",
+          "value": null
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "JavaScript",
+        "active": false,
+        "sourceLines": [
+          "// Request object.",
+          "/** @type {TcHmi.Server.IMessage} */",
+          "var request = {",
+          "    \"commands\": [",
+          "        {",
+          "            \"commandOptions\": [",
+          "                \"SendErrorMessage\",",
+          "                \"SendWriteValue\"",
+          "            ],",
+          "            \"symbol\": \"Restart\"",
+          "        }",
+          "    ],",
+          "    \"requestType\": \"ReadWrite\"",
+          "};",
+          "",
+          "// Send request to TwinCAT HMI Server.",
+          "TcHmi.Server.requestEx(request, { timeout: 2000 }, function(data){",
+          "    // Callback handling.",
+          "    if(data.error !== TcHmi.Errors.NONE){",
+          "        // Handle TcHmi.Server class level error here.",
+          "        console.log(data.error)",
+          "        return;",
+          "    }",
+          "    var response = data.response;",
+          "    if (!response || response.error !== undefined) {",
+          "        // Handle TwinCAT HMI Server response level error here.",
+          "        console.log(response)",
+          "        return;",
+          "    }",
+          "    var commands = response.commands;",
+          "    if(commands === undefined){",
+          "        console.log(commands)",
+          "        return;",
+          "    }",
+          "    for(var i = 0, ii = commands.length; i < ii; i++){",
+          "        var command = commands[i];",
+          "        if(command === undefined){",
+          "        \tconsole.log(command)",
+          "            return;",
+          "        }",
+          "        if(command.error !== undefined){",
+          "            // Handle TwinCAT HMI Server command level error here.",
+          "        \tconsole.log(command.error)",
+          "            return;",
+          "        }",
+          "        // Handle result...",
+          "        console.log(command)",
+          "        TcHmi.Log.debugEx(command.symbol, ':', command.readValue);",
+          "    }",
+          "});"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="settings-btn-centermachinecontrol" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Center Machine Control Flyout" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-right="20" data-tchmi-bottom="20">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%desktop-grid-machinecontrol::Top%/ctrl%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:framework#/definitions/MeasurementValue",
+          "symbolExpression": "%f%%ctrl%Desktop::RenderedHeight%/ctrl%/2-%ctrl%desktop-grid-machinecontrol::RenderedHeight%/ctrl%/2%/f%"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+</div>
+</div>
+
+
+</div>

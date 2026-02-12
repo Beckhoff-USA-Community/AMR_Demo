@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="E_DriveControl" Id="{2c489590-5ba0-4f71-996f-2df7f8433b0a}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE E_DriveControl : (
+		Idle := 0,
+		Activate_auto_mode,
+		Activate_supervisor_error,
+		Activate_manual_mode,
+		Activate_emergency_stop
+	) UINT;
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

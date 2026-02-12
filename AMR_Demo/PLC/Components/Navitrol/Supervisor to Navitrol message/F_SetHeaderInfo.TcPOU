@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="F_SetHeaderInfo" Id="{c0cb69a6-d7df-4110-b29a-d4f544266ffe}" SpecialFunc="None">
+    <Declaration><![CDATA[//Use this to populate "ST_SupervisorHeader" in the message being sent from Supervisor to Navitrol
+FUNCTION F_SetHeaderInfo : HRESULT;
+VAR_INPUT
+	Msg : ANY;
+END_VAR
+
+VAR
+	MsgHeader			  : ST_SupervisorHeader;
+	JsonDataType		  : FB_JsonReadWriteDataType;
+	DataTypeName		  : STRING;
+	Message_ID			  : UINT;
+	GetDataTypeNameResult : HRESULT;
+	i					  : INT;
+	StartPos			  : INT;
+	EndPos				  : INT;
+	IDString			  : STRING;
+	ParseSuccess		  : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Msg.diSize < 0 THEN
+	F_SetHeaderInfo := S_FALSE;
+	RETURN;
+END_IF
+
+DataTypeName := JsonDataType.GetDataTypeNameByAddress(nData := TO_UDINT(Msg.diSize), pData := Msg.pValue, hrErrorCode => GetDataTypeNameResult);
+
+// Parse Message_ID from DataTypeName (e.g., 'ST_3002_Supervisor_Status' -> 3002)
+ParseSuccess := FALSE;
+StartPos	 := FIND(DataTypeName, 'ST_');
+IF StartPos > 0 THEN
+	StartPos := StartPos + 3; // Move past 'ST_'
+
+	// Find the next underscore after the ID
+	EndPos := 0;
+	FOR i := StartPos TO LEN(DataTypeName) DO
+		IF MID(DataTypeName, 1, i) = '_' THEN
+			EndPos := i;
+			EXIT;
+		END_IF
+	END_FOR
+
+	IF EndPos > StartPos THEN
+		// Extract the ID substring
+		IDString	 := MID(DataTypeName, EndPos - StartPos, StartPos);
+		Message_ID	 := STRING_TO_UINT(IDString);
+		ParseSuccess := TRUE;
+	END_IF
+END_IF
+
+// Fallback if parsing fails
+IF NOT ParseSuccess THEN
+	Message_ID		:= 0;
+	F_SetHeaderInfo := S_FALSE;
+	RETURN;
+END_IF
+
+// All messages start with ST_SupervisorHeader
+MsgHeader.Protocol_version := 4;
+MsgHeader.Message_ID	   := Message_ID;
+MsgHeader.Message_length   := TO_UDINT(Msg.diSize);
+
+// Copy populated header into Msg
+MEMCPY(destAddr := Msg.pValue, srcAddr := ADR(MsgHeader), n := SIZEOF(MsgHeader));
+F_SetHeaderInfo := S_OK;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

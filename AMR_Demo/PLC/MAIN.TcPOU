@@ -3,13 +3,23 @@
   <POU Name="MAIN" Id="{967e055d-0eb5-42dc-b18d-7f8d4f634f3d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	AmrModule	   : AmrModule('AMR Module');
-	MachineHmiTree : GetSystemTreeJsonHmiVisitor<1000>('MAIN');
+	Simulated				   : BOOL := FALSE;
+	AmrModule				   : AmrModule('AMR Module');
+	MachineHmiTree			   : GetSystemTreeJsonHmiVisitor<1000>('MAIN');
+	SetSafetySimulationVisitor : SetSafetySimulationVisitor;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF NOT AmrModule.Initialized THEN
+      <ST><![CDATA[_AppInfo.KeepOutputsOnBP := TRUE;
+IF NOT AmrModule.Initialized THEN
 	AmrModule.Initialize();
 	MachineHmiTree.GetTree(AmrModule);
+	//
+	IF Simulated THEN
+		SetSafetySimulationVisitor.Diag	 := 0;
+		SetSafetySimulationVisitor.State := 1;
+		AmrModule.Components.Accept(SetSafetySimulationVisitor);
+	END_IF
+
 	RETURN;
 END_IF
 

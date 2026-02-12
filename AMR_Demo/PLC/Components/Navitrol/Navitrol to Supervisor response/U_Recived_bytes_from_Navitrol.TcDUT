@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="U_Recived_bytes_from_Navitrol" Id="{6436758d-6468-4e03-9bd1-aa20a5bb5423}">
+    <Declaration><![CDATA[// Bytes bucket to buffer received messages.
+
+// Header info is parsed before being copied into the correct message structure.
+
+// PLC logic is built expecting to receive the entire TCP message payload with one call to FB_SocketReceive.
+
+// FB_SocketReceive will fragment the received data if the receive buffer is not large enough.
+
+// Make sure this is large enough to fit the biggest received message.
+TYPE U_Recived_bytes_from_Navitrol : UNION
+		Header : ST_SupervisorHeader;
+		Bytes  : ARRAY[0..2047] OF UINT;
+	END_UNION
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

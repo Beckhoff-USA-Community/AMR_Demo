@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Navitrol_StreamVelocity" Id="{4162c3a6-8f05-4586-adcf-ada9b9a3278a}">
+    <Declaration><![CDATA[INTERFACE I_Navitrol_StreamVelocity EXTENDS I_Base, I_Enablable, I_TaskResult
+]]></Declaration>
+    <Method Name="SetTargetVelocity" Id="{c2ab01a1-a632-43a4-b9c5-d59ed81e2c02}">
+      <Declaration><![CDATA[METHOD SetTargetVelocity
+VAR_INPUT
+	TargetVelocity : LREAL; // Desired velocity setpoint (signed)
+END_VAR]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

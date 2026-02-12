@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1026_Supervisor_status_bits" Id="{af7e29f5-4c06-4d26-8ff1-aecb8ea5294a}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1026_Supervisor_status_bits :
+	STRUCT
+		Error		   : BIT;  //	When active ERROR_MOTOR_CONTROL_FAULT will be set.See error. in Glossary
+		Emergency_stop : BIT;  //	When active Navitrol will perform emergency stop and following two warnings will be triggered: WARNING_AGV_EM_STOP and WARNING_ESTOP_ACTIVE
+		Soft_slow	   : BIT;  //	When active Navitrol will perform soft slow.
+		Soft_stop	   : BIT;  //	When active Navitrol will perform soft stop.
+		Reserved_4	   : BIT;  //Not in use
+		Reserved_5	   : BIT;  //Not in use
+		Reserved_6	   : BIT;  //Not in use
+		Brake_released : BIT;  //	Informs Navitrol of the status of brakes.When not active hard stop will be enabled.
+		Reserved_8_15  : BYTE; // Not in use
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

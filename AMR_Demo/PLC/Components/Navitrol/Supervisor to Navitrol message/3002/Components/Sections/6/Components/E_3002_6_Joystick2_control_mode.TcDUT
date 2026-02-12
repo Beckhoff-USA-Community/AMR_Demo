@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="E_3002_6_Joystick2_control_mode" Id="{34c36544-41bd-4679-9076-a396bc479ade}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE E_3002_6_Joystick2_control_mode : (
+		No_control			:= 0,
+		Enable_lift_control := 1
+	) UINT;
+END_TYPE
+
+(*
+Selects the joystick 2 control mode:
+	0 - No control
+Joystick 1 x and y values are ignored.
+	1 - Enable lift control
+	Navitrol activates manual mode.
+*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

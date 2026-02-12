@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="E_3002_6_Steer_type_selection" Id="{4c7dc163-9433-49cf-a994-967f6fd0fbbb}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE E_3002_6_Steer_type_selection : (
+		Invalid					:= 0,
+		Front_wheel_steer		:= 1,
+		Mid_wheel_steer			:= 2,
+		Rear_wheel_steer		:= 3,
+		Pivot_steer				:= 5,
+		Parallel_steer_forward	:= 6,
+		Parallel_steer_backward := 7
+	);
+END_TYPE
+
+(*
+1 - Front wheel steer
+Only for omni drives. Moves the navigation point to between the front wheels. With this steer type almost all turning control will be done by the rear wheels.
+2 - Mid wheel steer
+	Normal driving. The normal navigation point is used.
+3 - Rear wheel steer
+	Only for omni drives. Moves the navigation point to between the rear wheels. With this steer type almost all turning control will be done by the front wheels.
+5 - Pivot steer
+	Pivot curvature is always given, and supervisor can control only the speed up to maximum of pivot_speed-parameter. This mode should only be activated, if the AGV can pivot.
+6 - Parallel steer forward
+	Only for omni drives.
+	The curvature in this mode is always zero. Instead of curvature supervisor controls the frame heading instead and speed. Wheels will rotate forward with positive speed reference.
+7 - Parallel steer backward
+	Only for omni drives.
+	The curvature in this mode is always zero. Instead of curvature supervisor controls the frame heading instead and speed. Wheels will rotate backwards with positive speed reference.
+
+*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

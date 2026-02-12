@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Encoder_HMI" Id="{100963c4-5297-415e-863f-6364b27504df}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Encoder_HMI EXTENDS HmiFunction
+VAR
+	EncoderSpeed	: I_AnalogInput;
+	EncoderPosition : I_AnalogInput;
+END_VAR
+
+VAR PERSISTENT
+	{ attribute 'TcHmiSymbol.AddSymbol' }
+	{ attribute 'TcHmiSymbol.AddSymbol.UserGroups' := '__SystemAdministrators, Admin' }
+	Encoder_HMI : ST_Encoder_HMI;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="Config" Id="{eb2f622f-09ba-4181-a4d9-c3dc652ba8d5}">
+      <Declaration><![CDATA[PROPERTY Config : REFERENCE TO ST_EncoderConfig_HMI]]></Declaration>
+      <Get Name="Get" Id="{2322fe3c-7fa4-41c0-8617-3a704f1ec739}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Config REF= Encoder_HMI.Config;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="ControlObject" Id="{29858388-f3b2-4d38-a7ff-3eb1583ed452}">
+      <Declaration><![CDATA[PROPERTY ControlObject : I_Base]]></Declaration>
+      <Set Name="Set" Id="{c668f00c-1f77-4db9-be55-ca5980a4fcb1}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[__QUERYINTERFACE(ControlObject, EncoderSpeed);]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="CyclicLogic" Id="{8ac4d84b-3469-4183-ae28-14e308c5dadd}">
+      <Declaration><![CDATA[METHOD CyclicLogic]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Encoder_HMI.Name	   := Name;
+Encoder_HMI.HmiEnabled := Enabled;
+IF EncoderSpeed = 0 OR EncoderPosition = 0 THEN
+	RETURN;
+END_IF
+
+Encoder_HMI.ActualPosition	 := EncoderPosition.Value;
+Encoder_HMI.ActualSpeed		 := EncoderSpeed.Value;
+Encoder_HMI.RawValuePosition := TO_UINT(EncoderPosition.RawValue);
+Encoder_HMI.RawValueSpeed	 := EncoderSpeed.RawValue;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{c5636cb5-a95c-41bf-9ac2-87a2e817709a}">
+      <Declaration><![CDATA[(*FB_Init is always available implicitly and it is used primarily for initialization.
+The return value is not evaluated. For a specific influence, you can also declare the
+methods explicitly and provide additional code there with the standard initialization
+code. You can evaluate the return value.*)
+METHOD FB_Init : BOOL
+VAR_INPUT
+	(* TRUE: the retain variables are initialized (reset warm / reset cold)*)
+	bInitRetains : BOOL;
+
+	(* TRUE: the instance will be copied to the copy code afterward (online change)   *)
+	bInCopyCode		: BOOL;
+	Name			: Core.T_MaxString;
+	EncoderSpeed	: I_AnalogInput;
+	EncoderPosition : I_AnalogInput;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ControlType			  := 'Encoder';
+LinkObject			  := 'Encoder_HMI';
+THIS^.EncoderSpeed	  := EncoderSpeed;
+THIS^.EncoderPosition := EncoderPosition;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

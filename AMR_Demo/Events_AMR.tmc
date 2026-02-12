@@ -2,15 +2,32 @@
 <TcModuleClass>
 	<DataTypes>
 		<DataType>
-			<Name GUID="{A3201C03-8C76-4312-91F0-0CB86A9C2AB3}">AmrModule</Name>
+			<Name GUID="{398A6688-18A8-49BB-B5CF-FB4049B13FEF}">AmrModule</Name>
 			<DisplayName TxtId=""><![CDATA[AmrModule]]></DisplayName>
 			<EventId>
-				<Name Id="1">Estop</Name>
-				<DisplayName TxtId=""><![CDATA[E-Stop pressed!]]></DisplayName>
+				<Name Id="1">NavitrolComError</Name>
+				<DisplayName TxtId=""><![CDATA[Navitrol Communication Error!]]></DisplayName>
 				<Severity>Error</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="2">ScannerFrontBlocked</Name>
+				<DisplayName TxtId=""><![CDATA[Front Safety Scaanner blocked!]]></DisplayName>
+				<Severity>Warning</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="3">ScannerRearBlocked</Name>
+				<DisplayName TxtId=""><![CDATA[Rear Safety Scaanner blocked!]]></DisplayName>
+				<Severity>Warning</Severity>
 			</EventId>
 			<Hides>
 				<Hide GUID="{564FD58B-FB2D-46CA-991F-40708CCB8505}"/>
+				<Hide GUID="{A3201C03-8C76-4312-91F0-0CB86A9C2AB3}"/>
+				<Hide GUID="{A2BBF5C4-9D11-4A72-B1F1-B0E7216A7CFB}"/>
+				<Hide GUID="{870E2182-936C-475A-807A-6B97C3E3DFF2}"/>
+				<Hide GUID="{063DA9DA-B585-4AC4-958E-E4583649145F}"/>
+				<Hide GUID="{70B8A6B6-B4C8-4496-BF83-7F2B18D33BF4}"/>
+				<Hide GUID="{F2F6C90C-6CAB-460F-8030-6231970CBE90}"/>
+				<Hide GUID="{65764BA1-2A74-410E-A397-71AAE82ECEBE}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>

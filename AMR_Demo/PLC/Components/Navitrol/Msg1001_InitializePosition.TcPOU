@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Msg1001_InitializePosition" Id="{f421c997-d223-4abf-8d97-9ecdf5e09bee}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Msg1001_InitializePosition EXTENDS TcpIpCommandResultFilter IMPLEMENTS I_Navitrol_InitializePosition
+VAR
+	Command							: ST_TcpIpPayload;
+	ReceiveBuffer					: U_Recived_bytes_from_Navitrol;
+	Position_initialization_started : ST_1100_Position_initialization_started;
+	Position_initialized			: ST_1101_Position_initialized;
+	Initialize_position				: ST_1001_Initialize_position := (X := 100.0, Y := 150.0);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="InitializePosition" Id="{90414d69-74e8-472e-88bf-5d51f0b1903c}">
+      <Declaration><![CDATA[METHOD InitializePosition : BOOL
+VAR_INPUT
+	X	  : REAL;	   //		X - map coordinate OF the AGV in meters
+	Y	  : REAL;	   //		Y - map coordinate of the AGV in meters
+	H	  : REAL := 0; //		Heading of the AGV on the map in radians
+	Level : DINT := 0; //	The level ID on which the AGV is located
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF TcpIpConnection.ConnectionState = eSOCKET_CONNECTED THEN
+	F_SetHeaderInfo(Initialize_position);
+	MEMSET(ADR(Command), 0, SIZEOF(Command));
+	Initialize_position.X	  := X;
+	Initialize_position.Y	  := Y;
+	Initialize_position.H	  := H;
+	Initialize_position.Level := Level;
+
+	//
+	Command.Size := SIZEOF(Initialize_position);
+	MEMCPY(ADR(Command.Data), ADR(Initialize_position), Command.Size);
+	TcpIpConnection.SendCommand(ADR(Command));
+	CommandActive	   := TRUE;
+	InitializePosition := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="UpdateCommandResult" Id="{5ddb63b2-846e-4267-8c60-5a30823a681c}">
+      <Declaration><![CDATA[METHOD UpdateCommandResult
+VAR_INPUT
+	Response : POINTER TO ST_TcpIpPayload;
+END_VAR
+
+VAR_INST
+	ReceiveCounter : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MEMCPY(ADR(ReceiveBuffer), ADR(Response^.Data), SIZEOF(ReceiveBuffer));
+IF ReceiveBuffer.Header.Message_ID = 1100 THEN
+	ReceiveCounter := ReceiveCounter + 1;
+	MEMCPY(destAddr := ADR(Position_initialization_started), srcAddr := ADR(ReceiveBuffer), n := SIZEOF(Position_initialization_started));
+	CommandActive := FALSE;
+END_IF
+
+IF ReceiveBuffer.Header.Message_ID = 1101 THEN
+	ReceiveCounter := ReceiveCounter + 1;
+	MEMCPY(destAddr := ADR(Position_initialized), srcAddr := ADR(ReceiveBuffer), n := SIZEOF(Position_initialized));
+	CommandActive := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

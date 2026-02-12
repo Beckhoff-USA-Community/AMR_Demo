@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="F_SetSectionHeaderInfo" Id="{5ed5e985-b428-44f3-ab34-9a8345ef55a0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_SetSectionHeaderInfo : HRESULT
+VAR_INPUT
+	Section : ANY;
+END_VAR
+
+VAR
+	SectionHeader		  : ST_SectionHeader;
+	JsonDataType		  : FB_JsonReadWriteDataType;
+	DataTypeName		  : STRING;
+	Message_ID			  : UINT;
+	GetDataTypeNameResult : HRESULT;
+	i					  : INT;
+	StartPos			  : INT;
+	EndPos				  : INT;
+	IDString			  : STRING;
+	ParseSuccess		  : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Section.diSize < 0 THEN
+	F_SetSectionHeaderInfo := S_FALSE;
+	RETURN;
+END_IF
+
+DataTypeName := JsonDataType.GetDataTypeNameByAddress(nData := TO_UDINT(Section.diSize), pData := Section.pValue, hrErrorCode => GetDataTypeNameResult);
+
+// Parse Message_ID from DataTypeName (e.g., 'ST_3002_2_Manual_section' -> 2)
+ParseSuccess := FALSE;
+StartPos	 := FIND(DataTypeName, 'ST_3002_');
+IF StartPos > 0 THEN
+	StartPos := StartPos + 8; // Move past 'ST_3002_'
+
+	// Find the next underscore after the ID
+	EndPos := 0;
+	FOR i := StartPos TO LEN(DataTypeName) DO
+		IF MID(DataTypeName, 1, i) = '_' THEN
+			EndPos := i;
+			EXIT;
+		END_IF
+	END_FOR
+
+	IF EndPos > StartPos THEN
+		// Extract the ID substring
+		IDString	 := MID(DataTypeName, EndPos - StartPos, StartPos);
+		Message_ID	 := STRING_TO_UINT(IDString);
+		ParseSuccess := TRUE;
+	END_IF
+END_IF
+
+// Fallback if parsing fails
+IF NOT ParseSuccess THEN
+	Message_ID			   := 0;
+	F_SetSectionHeaderInfo := S_FALSE;
+	RETURN;
+END_IF
+
+// All 3002 messages sections start with ST_SectionHeader
+SectionHeader.Section_ID	 := Message_ID;
+SectionHeader.Section_length := TO_UDINT(Section.diSize);
+
+// Copy populated header into Section
+MEMCPY(destAddr := Section.pValue, srcAddr := ADR(SectionHeader), n := SIZEOF(SectionHeader));
+F_SetSectionHeaderInfo := S_OK;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

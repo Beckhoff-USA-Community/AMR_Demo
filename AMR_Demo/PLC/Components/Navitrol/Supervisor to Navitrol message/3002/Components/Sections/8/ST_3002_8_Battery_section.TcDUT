@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3002_8_Battery_section" Id="{d5c2b198-95cf-42d2-ae0f-08968d14b4c3}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_3002_8_Battery_section EXTENDS ST_SectionHeader :
+	STRUCT
+		// Battery state of charge percentage. Valid values [0...100] 65535 - Not available
+
+		// This will be used for determining the battery level if battery_percentage_from_mot_ctrl-parameter is set to 1.
+		State_of_charge : UINT := 100;
+		// Battery voltage in 0.1 Volts. For example, 4.2V would be 42 65535 - Not available
+
+		// This will be used for determining the battery level if battery_percentage_from_mot_ctrl-parameter is set to 0.
+		Voltage : UINT := 42;
+		// Charge current / current draw in 0.1 Amperes. Negative values when battery is discharging
+
+		// and positive values when battery is being charged. 32767 - Not available
+
+		// Only for statistics - visible in Navitrol Monitor.
+		Charge_current_draw : INT := 10;
+		// Energy draw in 0.1 Ampere hours Negative values when battery is discharging
+
+		// and positive values when battery is being charged. 32767 - Not available
+
+		// Only for statistics - visible in Navitrol Monitor.
+		Energy_draw : INT := 100;
+		// Estimated time left in minutes until the battery is empty. 65535 - Not available
+
+		// Only for statistics - visible in Navitrol Monitor.
+		Time_remaining : UINT := 45;
+		// Battery state of health percentage. Describes the overall state of the battery. Valid values [0...100] 65535 - Not available
+
+		// Only for statistics - visible in Navitrol Monitor.
+		State_of_health : UINT := 100;
+		// Battery temperature in Celsius degrees. 32767 - Not available
+
+		// Used to trigger WARNING_BATTERY_HIGH_TEMPERATURE if given temperature is larger than
+
+		// battery_high_temperature_warning_limit_C and ERROR_BATTERY_HIGH_TEMPERATURE if larger
+
+		// than battery_high_temperature_error_limit_C
+		Temperature : INT := 32;
+		// Total number of load cycles performed for the battery. 65535 - Not available
+
+		// Only for statistics - visible in Navitrol Monitor.
+		Load_cycle_count : UINT := 20;
+		// Total number of operating hours of the battery. 65535 - Not available
+
+		// Only for statistics - visible in Navitrol Monitor.
+		Operating_hours : UINT := 155;
+		// Voltage of the charger in 0.1 Volts. 65535 - Not available
+
+		// Only for statistics - visible in Navitrol Monitor.
+		Charger_voltage : UINT := 420;
+		// Error status information. If any of the errors marked with * are active Navitrol Monitor will view its description
+
+		// and Navitrol set WARNING_BATTERY_ERROR_OR_WARNING_ACTIVE 0 - No error
+		Error_status : ST_3002_8_Error_status;
+		// Battery related binary data and requests 0 - Inactive
+		Binary_data : ST_3002_8_Binary_data;
+		// 0 - Not in use
+		Reserved : BYTE;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

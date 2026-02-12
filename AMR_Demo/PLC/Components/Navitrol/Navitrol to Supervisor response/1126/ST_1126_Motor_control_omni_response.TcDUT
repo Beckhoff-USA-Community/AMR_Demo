@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1126_Motor_control_omni_response" Id="{7e310381-7339-42dc-a6ec-ae428a1d5a39}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1126_Motor_control_omni_response EXTENDS ST_SupervisorHeader :
+	STRUCT
+		Message_number		   : UDINT;
+		Supervisor_status_out  : ST_1126_Supervisor_status_out;
+		Driving_vector_Angle   : REAL; //Reference driving vector angle relative to the vehicle frame. (+/-PI in radians)0-forwards along vehicle center line. Positive direction is CCW from vehicle center lin
+		Steering_Radius		   : REAL; //Radius to center of rotation from navigation point (m).0-pivoting around vehicle navigation point. Positive value sets the center of rotation to a direction of 90 deg CCW from the driving vector angle. For example with 0 deg driving vector angle vehicle turns to left with positive radius and to right with negative radius.
+		Navigation_point_speed : REAL; //Reference speed of the vehicle navigation point along driving vector (m/s) Positive along driving vector, negative against driving vector (i.e. driving vector ± PI).
+		Number_of_Wheels	   : UINT; //Number of omni wheels, maximum 6, minimum 2. Determined by parameter omni_steer_nbr
+		Omni_wheels_ref_struct : ARRAY[0..1] OF
+			ST_1126_Omni_wheels_ref_struct; //The references for each individual omni wheel
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

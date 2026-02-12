@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3002_8_Binary_data" Id="{45618b66-9b95-4a91-a2c9-7fe9056a62b6}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_3002_8_Binary_data :
+	STRUCT
+		Request_charge	 : BIT; // This charge request info is show in motor control messages and in Navitrol battery status section if charging_cmd_source-parameter is set to 3. No drive orders or other actions are made based on this.
+		Charging_active	 : BIT; // Informs Navitrol that charging is active. Navitrol will set soft stop (parameter charging_prevents_driving).
+		Balancing_active : BIT; // Informs Navitrol that battery balancing is active at charger. Navitrol will set soft stop (parameter charging_prevents_driving).
+		Reserved_3		 : BIT; // 0 - Not in use
+		Reserved_4		 : BIT; // 0 - Not in use
+		Reserved_5		 : BIT; // 0 - Not in use
+		Reserved_6		 : BIT; // 0 - Not in use
+		Reserved_7		 : BIT; // 0 - Not in use
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Navitrol_HMI" Id="{79b741bf-59b1-4592-8b36-398a98dbea87}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Navitrol_HMI EXTENDS HmiFunction
+VAR
+	NavitrolStatus : I_Navitrol_Status;
+	NavitrolComs   : I_TcpIpConnection;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
+	{ attribute 'TcHmiSymbol.AddSymbol.UserGroups' := '__SystemAdministrators, Admin' }
+	Navitrol_HMI : ST_Navitrol_HMI;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="ControlObject" Id="{76ed1164-3b47-42bb-beac-42f6f604f115}">
+      <Declaration><![CDATA[PROPERTY ControlObject : I_Base]]></Declaration>
+      <Set Name="Set" Id="{03ade329-a094-4612-bcba-ff732bea5da7}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[__QUERYINTERFACE(ControlObject, NavitrolComs);]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="CyclicLogic" Id="{c2b0d8fc-f594-4ad4-82ef-95f574b09fc4}">
+      <Declaration><![CDATA[METHOD CyclicLogic]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Navitrol_HMI.HmiEnabled			 := THIS^.Enabled;
+Navitrol_HMI.CommunicationActive := NavitrolComs.ConnectionState = E_SocketConnectionState.eSOCKET_CONNECTED;
+Navitrol_HMI.Status				 := NavitrolStatus.NavitrolStatus.State;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{b4aa55e6-4a08-43bd-9c51-daead1a8375c}">
+      <Declaration><![CDATA[(*FB_Init is always available implicitly and it is used primarily for initialization.
+The return value is not evaluated. For a specific influence, you can also declare the
+methods explicitly and provide additional code there with the standard initialization
+code. You can evaluate the return value.*)
+METHOD FB_Init : BOOL
+VAR_INPUT
+	(* TRUE: the retain variables are initialized (reset warm / reset cold)*)
+	bInitRetains : BOOL;
+
+	(* TRUE: the instance will be copied to the copy code afterward (online change)   *)
+	bInCopyCode	   : BOOL;
+	Name		   : Core.T_MaxString;
+	NavitrolStatus : I_Navitrol_Status;
+	NavitrolComs   : I_TcpIpConnection;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Navitrol_HMI.Name	 := Name;
+THIS^.LinkObject	 := 'Navitrol_HMI';
+THIS^.ControlType	 := 'Navitrol';
+THIS^.NavitrolStatus := NavitrolStatus;
+THIS^.NavitrolComs	 := NavitrolComs;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="NavitrolHasControl" Id="{da023112-59d0-4144-a198-0435e3a9541f}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY NavitrolHasControl : BOOL]]></Declaration>
+      <Get Name="Get" Id="{4bbe4065-0e23-4e9f-902d-1f8dd02050b6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[NavitrolHasControl := Navitrol_HMI.ControlFromNavitrol;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>

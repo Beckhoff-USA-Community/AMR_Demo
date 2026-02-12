@@ -1,0 +1,45 @@
+{
+  "function": {
+    "name": "GetModeName",
+    "namespace": "TcHmi.Functions.HmiProj",
+    "displayName": "GetModeName",
+    "description": "",
+    "waitMode": "Synchronous",
+    "category": "",
+    "returnValue": {
+      "type": "tchmi:general#/definitions/String"
+    },
+    "visible": true,
+    "injectContextObject": false,
+    "arguments": [
+      {
+        "name": "Mode",
+        "displayName": "Mode",
+        "type": "tchmi:general#/definitions/Number",
+        "description": "Current Mode",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      }
+    ]
+  },
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.154/runtimes/native1.12-tchmi/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "0.0.0.0",
+    "major": 0,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "GetModeName.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ]
+}

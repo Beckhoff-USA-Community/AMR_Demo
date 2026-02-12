@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3002_Supervisor_Status" Id="{7b244444-4475-46b5-8f8f-90546fc15de9}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_3002_Supervisor_Status EXTENDS ST_SupervisorHeader :
+	STRUCT
+		Status			   : E_3002_Status			  := E_3002_Status.Ok;
+		Set_Estop		   : E_3002_Set_ESTOP		  := E_3002_Set_ESTOP.Release_ESTOP;
+		Number_of_sections : UINT					  := 1;	  //Number of sections requested in response message 3102. Change the size of Section_IDs's bellow to match.
+		Section_IDs		   : ARRAY[1..1] OF UINT	  := [1]; //List of sections requested to send in the response message 3102. Make sure to add the expected recived message sections to the end of ST_3102_Navitrol_status
+		Manual_section	   : ST_3002_2_Manual_section := (Enable_manual_control := E_3002_2_Enable_manual_control.Disable_control);
+		Battery_section	   : ST_3002_8_Battery_section;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

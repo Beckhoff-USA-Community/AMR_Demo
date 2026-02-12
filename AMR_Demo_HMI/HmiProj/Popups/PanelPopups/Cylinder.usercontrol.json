@@ -1,0 +1,24 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setData",
+      "propertyGetterName": "getData",
+      "refTo": "",
+      "name": "data-tchmi-data",
+      "displayName": "data",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.CoreComponents.ST_Cylinder_HMI",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "data"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.178/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

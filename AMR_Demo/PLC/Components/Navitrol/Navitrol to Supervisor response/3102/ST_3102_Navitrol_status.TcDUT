@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3102_Navitrol_status" Id="{04ee78e3-fa50-47f0-88e0-7d43cb54b5be}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_3102_Navitrol_status EXTENDS ST_SupervisorHeader :
+	STRUCT
+		DefaultSectionLength	   : UDINT;
+		State					   : E_3102_State;
+		X_coordinate			   : REAL; //In meters
+		Y_coordinate			   : REAL; //In meters
+		Heading					   : REAL; //Radians
+		Level					   : DINT; //Level ID
+		Speed					   : REAL; //m/s
+		Position_initialize_status : E_3102_Position_initialize_status;
+		Position_confidence		   : UINT; //Position confidence in percentage (1 - 100%)
+		Error_status			   : E_3102_Error_status;
+		//Additional sections can be added bellow - based on what is requested in the array of ST_3002_Supervisor_Status.Section_IDs 
+		General_section : ST_3102_1_General_section;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>
