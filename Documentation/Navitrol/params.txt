@@ -115,7 +115,7 @@ F,rtr_control_point_dist,                                          5  # Defines 
 F,rtr_control_point_end_smooth_dist,                               0.8 # Defines the smooth distance before the end of a custom return to route path
 F,rtr_control_point_start_smooth_dist,                             0.8 # Defines the smooth distance at the start of a custom return to route path
 F,rtr_max_dist,                                                    2.0 # The defined route points must be inside this distance (m) from the navigation point to be checked as potential return close points
-F,rtr_max_head_diff,                                              90.0 # Final route angle and current pose ang diff should be less than this param
+F,rtr_max_head_diff,                                              270.0 # Final route angle and current pose ang diff should be less than this param
 F,rtr_max_head_err_deg,                                            5.0 # The maximum heading error when checking if the AGV is already on the route and return to route is not needed
 F,rtr_safe_steer_angle_margin_deg,                                 4.0 # For very limited steering cases the margin to the steering angle limits determines route acceptance, if the margin exceeds this limit the shortest route is selected; min 0.010000, max 10.000000
 F,rtr_speed,                                                       0.3 # The maximum speed  (m/s) during the return to route drive
