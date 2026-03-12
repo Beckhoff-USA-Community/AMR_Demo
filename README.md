@@ -1,5 +1,7 @@
 # AMR Demo BAUS
 
+> **[Full Documentation](Documentation/AMR_Demo_Documentation.html)** — HTML reference with class diagram
+
 Autonomous Mobile Robot (AMR) demonstration project built with Beckhoff TwinCAT 3 automation platform.
 
 ## Introduction
