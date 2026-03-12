@@ -211,7 +211,75 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<Name GUID="{2438F91B-E188-4ED7-8594-54354F9ED6A4}" Namespace="Safety" TcBaseType="true">FSOE_6</Name>
+			<BitSize>48</BitSize>
+			<SubItem>
+				<Name>FSoE CMD</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000032}">BITARR8</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE ConnID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{0994ABA9-6F32-EEB9-4362-7774F7A1F4F4}" AutoDeleteType="true">FSOE_11</Name>
+			<BitSize>88</BitSize>
+			<SubItem>
+				<Name>FSoE CMD</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE ConnID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
 			<BitSize>1</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -236,6 +304,22 @@
 			</SubItem>
 		</DataType>
 		<DataType>
+			<Name GUID="{91BA7A38-806B-5E06-59E6-F04F15D6B8FF}" AutoDeleteType="true">INFODATA_FB_5</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>State</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Diag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{1553EE7F-0490-4879-4F41-423085C83887}" AutoDeleteType="true">INFODATA_GRP_3</Name>
 			<BitSize>16</BitSize>
 			<SubItem>
@@ -252,7 +336,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
 			<BitSize>7</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -288,8 +372,8 @@
 		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x0b5f3052" RevisionNo="#x00100000" InfoDataAddr="true" RepeatSupport="true" TimeoutStateChange1="5000" TimeoutMailbox2="10000" TComSupport="true" PortPhys="51" DebugMemory="8" SafetyLogicSupported="true" MaxSlotCount="4" Type="EL2911, Potential supply terminal (10 A) with 4 Ch. Safety Inputs, TwinSAFE" Desc="EL2911">
 			<SyncMan>001000012600010001000000000100010001001026010000</SyncMan>
 			<SyncMan>001100012200010002000000000100010001001122010000</SyncMan>
-			<SyncMan>001248002400010003000000000000000700001224010000</SyncMan>
-			<SyncMan>001d57002000010004000000000000000900001d20010000</SyncMan>
+			<SyncMan>001253002400010003000000000000000700001224010000</SyncMan>
+			<SyncMan>001d5f002000010004000000000000000900001d20010000</SyncMan>
 			<SyncMan>002e00002400000003000000000000000000002e24000000</SyncMan>
 			<SyncMan>002f00002000000004000000000000000000002f20000000</SyncMan>
 			<SyncMan>fa2f01002400010003000000000000000200fa2f24010000</SyncMan>
@@ -322,6 +406,9 @@
 				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" Index="#x7000" Sub="#x03">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
+				<Entry Name="LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO" Index="#x7000" Sub="#x04">
+					<Type GUID="{2438F91B-E188-4ED7-8594-54354F9ED6A4}" Namespace="Safety">FSOE_6</Type>
+				</Entry>
 			</Pdo>
 			<Pdo Name="ConnectionOutputs" Index="#x1600" InOut="1" Flags="#x2011" SyncMan="2">
 				<Entry Name="Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 RxPDO" Index="#x6000" Sub="#x01">
@@ -335,6 +422,9 @@
 				</Entry>
 				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" Index="#x6000" Sub="#x03">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
+				</Entry>
+				<Entry Name="LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO" Index="#x6000" Sub="#x04">
+					<Type GUID="{0994ABA9-6F32-EEB9-4362-7774F7A1F4F4}">FSOE_11</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="StandardOutputs" Index="#x17f0" InOut="1" Flags="#x2011" SyncMan="2">
@@ -373,12 +463,15 @@
 				<Entry Name="Inputs.AreaScanner.ScannerHokuyo Info Data" Index="#x7000" Sub="#x03">
 					<Type GUID="{2B008623-51EE-EF6A-ACDE-0017707F5BB8}">INFODATA_FB_3</Type>
 				</Entry>
+				<Entry Name="LiftSpeed.Network1.EncoderSpeedLimit Info Data" Index="#x7000" Sub="#x04" Flags="#x00008000">
+					<Type GUID="{91BA7A38-806B-5E06-59E6-F04F15D6B8FF}">INFODATA_FB_5</Type>
+				</Entry>
 			</Pdo>
 			<Pdo Name="TwinSAFE Group Info Data" Index="#x1bfa" Flags="#x2011" SyncMan="3">
-				<Entry Name="Inputs Info Data" Index="#x7000" Sub="#x01" Flags="#x00008000">
+				<Entry Name="Inputs Info Data" Index="#x7000" Sub="#x01">
 					<Type GUID="{1553EE7F-0490-4879-4F41-423085C83887}">INFODATA_GRP_3</Type>
 				</Entry>
-				<Entry Name="Motion Info Data" Index="#x7000" Sub="#x02" Flags="#x00008000">
+				<Entry Name="Motion Info Data" Index="#x7000" Sub="#x02">
 					<Type GUID="{1553EE7F-0490-4879-4F41-423085C83887}">INFODATA_GRP_3</Type>
 				</Entry>
 				<Entry Name="LiftSpeed Info Data" Index="#x7000" Sub="#x03">
@@ -429,7 +522,7 @@
 				<ModuleIdent>200</ModuleIdent>
 				<Module Id="#x03090004" Type="FSOUT" Class="FSOUT">
 					<Name>Module 2 (FSOUT)</Name>
-					<ImageId>551</ImageId>
+					<ImageId>549</ImageId>
 					<ModuleData>02000000c8000000000004000000000000000000000000000000000000000000</ModuleData>
 					<PdoIndex>6142</PdoIndex>
 				</Module>
@@ -439,7 +532,7 @@
 				<ModuleIdent>1950</ModuleIdent>
 				<Module Id="#x03090005" Type="DEVICEIO" Class="DEVICEIO">
 					<Name>Module 3 (DEVICEIO)</Name>
-					<ImageId>551</ImageId>
+					<ImageId>549</ImageId>
 					<ModuleData>020000009e070000000004000000000000000000000000000000000000000000</ModuleData>
 					<PdoIndex>7166</PdoIndex>
 				</Module>
@@ -449,7 +542,7 @@
 				<ModuleIdent>691</ModuleIdent>
 				<Module Id="#x03090006" Type="FSLOGIC" Class="FSLOGIC">
 					<Name>Module 4 (FSLOGIC)</Name>
-					<ImageId>551</ImageId>
+					<ImageId>549</ImageId>
 					<ModuleData>02000000b3020000000004000000000000000000000000000000000000000000</ModuleData>
 					<PdoIndex>7167</PdoIndex>
 					<PdoIndex>6143</PdoIndex>

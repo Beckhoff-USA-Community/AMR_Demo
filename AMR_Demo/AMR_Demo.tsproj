@@ -34,14 +34,15 @@
 		<MappingInfo Identifier="{00000000-2002-0850-0020-500820000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-2002-0850-0020-500870000403}" Id="#x02030070"/>
 		<MappingInfo Identifier="{00000000-0020-0304-2000-040340000403}" Id="#x02030020"/>
-		<MappingInfo Identifier="{00000000-0030-0304-1000-040332000403}" Id="#x02030040"/>
-		<MappingInfo Identifier="{00000000-0060-0304-1000-040361000403}" Id="#x02030050"/>
+		<MappingInfo Identifier="{00000000-0030-0304-1000-040332000403}" Id="#x02030050"/>
+		<MappingInfo Identifier="{00000000-0060-0304-1000-040361000403}" Id="#x02030040"/>
 		<MappingInfo Identifier="{08502002-0010-0500-0020-500810000403}" Id="#x02030060" Watchdog="08000000040000000400000004000000"/>
+		<MappingInfo Identifier="{05000010-0070-0304-1000-040370000403}" Id="#x02030080" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{03040020-0020-0304-2000-040320000403}" Id="#x02030010" Watchdog="04000000040000000400000004000000"/>
-		<OwnerA Name="TIID^X104 (EtherCAT)">
-			<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Safety PLC (EL2911)">
-				<Link VarA="Hokuyo (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionInputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 TxPDO"/>
-				<Link VarA="Hokuyo (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionOutputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 RxPDO"/>
+		<OwnerA Name="TIID^X103 (EtherCAT)">
+			<OwnerB Name="TIID^X104 (EtherCAT)^Hokuyo (UAM-05LECA)">
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 TxPDO" VarB="Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE"/>
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 RxPDO" VarB="Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

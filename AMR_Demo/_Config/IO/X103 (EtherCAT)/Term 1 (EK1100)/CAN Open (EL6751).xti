@@ -66,7 +66,7 @@
 			<SuTask>#x02010030</SuTask>
 			<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DcMode>
 			<DcMode>444353594e430000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000090d00300000000070100000000000000000000000000000000000000000000000000000000000000</DcMode>
-			<Pdo Name="Box 8 (CANopen Slave)_IN" Index="#x1a00" Flags="#x0011" SyncMan="3">
+			<Pdo Name="PD4-CB59M024035-E-08 (CANopen Slave)_IN" Index="#x1a00" Flags="#x0011" SyncMan="3">
 				<Entry Name="TxPDO_1" Index="#x6000" Sub="#x01" Flags="#x00000100">
 					<Type GUID="{18071995-0000-0000-0000-002000000018}">ARRAY [0..2] OF BYTE</Type>
 				</Entry>
@@ -80,7 +80,7 @@
 					<Type GUID="{18071995-0000-0000-0000-002000000020}">ARRAY [0..3] OF BYTE</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="Box 8 (CANopen Slave)_OUT" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="2">
+			<Pdo Name="PD4-CB59M024035-E-08 (CANopen Slave)_OUT" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="2">
 				<Entry Name="RxPDO_1" Index="#x7000" Sub="#x01" Flags="#x00000100">
 					<Type GUID="{18071995-0000-0000-0000-002000000018}">ARRAY [0..2] OF BYTE</Type>
 				</Entry>
@@ -95,7 +95,7 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="CANOpen (EL6751)" Index="#x1a80" Flags="#x0011" SyncMan="3">
-				<Entry Name="Box 8 (CANopen Slave)_NodeState" Index="#xa000" Sub="#x01" Flags="#x00000100">
+				<Entry Name="PD4-CB59M024035-E-08 (CANopen Slave)_NodeState" Index="#xa000" Sub="#x01" Flags="#x00000100">
 					<DefaultDataMask>1f1f</DefaultDataMask>
 					<Type>USINT</Type>
 				</Entry>
@@ -114,7 +114,7 @@
 				<Entry Name="CANOpen (EL6751)_DiagFlag" Index="#xf100" Sub="#x02" Flags="#x00000100">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Box 8 (CANopen Slave)_DiagFlag" Index="#xa000" Sub="#x02" Flags="#x00000100">
+				<Entry Name="PD4-CB59M024035-E-08 (CANopen Slave)_DiagFlag" Index="#xa000" Sub="#x02" Flags="#x00000100">
 					<Type>BIT</Type>
 				</Entry>
 				<Entry>

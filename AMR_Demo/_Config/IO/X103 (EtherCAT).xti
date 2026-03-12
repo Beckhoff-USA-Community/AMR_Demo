@@ -23,12 +23,16 @@
 	<Mappings>
 		<OwnerA>
 			<OwnerB Name="TIID^X103 (EtherCAT)">
+				<Link VarA="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Inputs^TSC" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO"/>
+				<Link VarA="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Outputs^TSC" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO"/>
 				<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO"/>
 				<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
 				<Link VarA="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
 				<Link VarA="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO"/>
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO" VarB="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Outputs^TSC"/>
 				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO" VarB="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE"/>
 				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" VarB="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE"/>
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO" VarB="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Inputs^TSC"/>
 				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO" VarB="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE"/>
 				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" VarB="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE"/>
 			</OwnerB>

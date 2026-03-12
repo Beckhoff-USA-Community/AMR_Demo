@@ -1490,7 +1490,7 @@ External Setpoint Generation:
 			</Vars>
 		</Encoder>
 		<Drive Name="Drive" DrvType="16">
-			<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00000100">
+			<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00020100">
 				<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>

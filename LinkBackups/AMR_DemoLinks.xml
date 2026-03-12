@@ -2,16 +2,16 @@
 <VarLinks>
 	<OwnerA Name="TIID^X103 (EtherCAT)">
 		<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Safety PLC (EL2911)">
+			<Link VarA="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Inputs^TSC" VarB="ConnectionOutputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO"/>
+			<Link VarA="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Outputs^TSC" VarB="ConnectionInputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO"/>
 			<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO"/>
 			<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
 			<Link VarA="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
 			<Link VarA="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO"/>
 		</OwnerB>
-	</OwnerA>
-	<OwnerA Name="TIID^X104 (EtherCAT)">
-		<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Safety PLC (EL2911)">
-			<Link VarA="Hokuyo (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionInputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 TxPDO"/>
-			<Link VarA="Hokuyo (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionOutputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 RxPDO"/>
+		<OwnerB Name="TIID^X104 (EtherCAT)^Hokuyo (UAM-05LECA)">
+			<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 TxPDO" VarB="Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE"/>
+			<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 RxPDO" VarB="Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE"/>
 		</OwnerB>
 	</OwnerA>
 	<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Lift">

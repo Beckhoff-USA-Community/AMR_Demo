@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SafetyDeviceDesc Crc="518810840" FileFormatVersion="1.9">
+  <AliasDeviceType>
+    <Type>4</Type>
+    <SubType>6224</SubType>
+    <VendorId>2</VendorId>
+  </AliasDeviceType>
+  <SDSID>22</SDSID>
+  <SafetyAliasDevice>
+    <ObjectId>50921475</ObjectId>
+    <LinkingMode>Automatic</LinkingMode>
+    <ConnectionId>22</ConnectionId>
+    <ConnectionMode>master</ConnectionMode>
+    <ConnectionType>TwinSafeScCrc1</ConnectionType>
+    <MapDiag>false</MapDiag>
+    <MapInputs>false</MapInputs>
+    <MapOutputs>false</MapOutputs>
+    <MapState>false</MapState>
+    <ModuleFaultIsComErr>false</ModuleFaultIsComErr>
+    <SafeAddress>4</SafeAddress>
+    <Watchdog>100</Watchdog>
+    <ComErrAck Type="AliasDevice">
+      <Value1>16</Value1>
+      <Value2>In</Value2>
+      <Value3>0</Value3>
+      <Value4>1131179973</Value4>
+    </ComErrAck>
+    <Params>
+      <Param Index="5776" SubIndex="0">04</Param>
+      <Param Index="5776" SubIndex="1">08010F70</Param>
+      <Param Index="5776" SubIndex="2">08000000</Param>
+      <Param Index="5776" SubIndex="3">10030F70</Param>
+      <Param Index="5776" SubIndex="4">10020F70</Param>
+      <Param Index="6800" SubIndex="0">06</Param>
+      <Param Index="6800" SubIndex="1">08010F60</Param>
+      <Param Index="6800" SubIndex="2">10010460</Param>
+      <Param Index="6800" SubIndex="3">10030F60</Param>
+      <Param Index="6800" SubIndex="4">10030460</Param>
+      <Param Index="6800" SubIndex="5">10040F60</Param>
+      <Param Index="6800" SubIndex="6">10020F60</Param>
+      <Param Index="6800" SubIndex="7">00000000</Param>
+      <Param Index="6800" SubIndex="8">00000000</Param>
+      <Param Index="6800" SubIndex="9">00000000</Param>
+      <Param Index="6800" SubIndex="10">00000000</Param>
+      <Param Index="6800" SubIndex="11">00000000</Param>
+      <Param Index="6800" SubIndex="12">00000000</Param>
+      <Param Index="6800" SubIndex="13">00000000</Param>
+      <Param Index="6800" SubIndex="14">00000000</Param>
+      <Param Index="6800" SubIndex="15">00000000</Param>
+      <Param Index="6800" SubIndex="16">00000000</Param>
+      <Param Index="6800" SubIndex="17">00000000</Param>
+      <Param Index="6800" SubIndex="18">00000000</Param>
+      <Param Index="32783" SubIndex="1">0400</Param>
+      <Param Index="32783" SubIndex="2">00000000</Param>
+      <Messages>
+        <IO>
+          <Name>Master Cmd</Name>
+          <Index>28687</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>USINT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>8</BitSize>
+          <BitOffsMessage>0</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name />
+          <Index>0</Index>
+          <SubIndex>0</SubIndex>
+          <DataType />
+          <Direction>Out</Direction>
+          <SafetyType>SafetySil2</SafetyType>
+          <BitSize>8</BitSize>
+          <BitOffsMessage>8</BitOffsMessage>
+          <BitOffsData>0</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Master CRC_0</Name>
+          <Index>28687</Index>
+          <SubIndex>3</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>16</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Master ConnID</Name>
+          <Index>28687</Index>
+          <SubIndex>2</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>32</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Slave Cmd</Name>
+          <Index>24591</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>USINT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>8</BitSize>
+          <BitOffsMessage>0</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Speed</Name>
+          <Index>24580</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>INT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil2</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>8</BitOffsMessage>
+          <BitOffsData>0</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Slave CRC_0</Name>
+          <Index>24591</Index>
+          <SubIndex>3</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>24</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Position</Name>
+          <Index>24580</Index>
+          <SubIndex>3</SubIndex>
+          <DataType>INT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil2</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>40</BitOffsMessage>
+          <BitOffsData>16</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Slave CRC_1</Name>
+          <Index>24591</Index>
+          <SubIndex>4</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>56</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>Slave ConnID</Name>
+          <Index>24591</Index>
+          <SubIndex>2</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>72</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+      </Messages>
+    </Params>
+  </SafetyAliasDevice>
+</SafetyDeviceDesc>

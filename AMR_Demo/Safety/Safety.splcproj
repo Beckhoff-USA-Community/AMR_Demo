@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Crc="1402391745" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project Crc="2396407803" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
@@ -16,7 +16,7 @@
     <IntProjName>Safety</IntProjName>
     <IsNewCreated>false</IsNewCreated>
     <SPlcProjVersion>1.8.0.0</SPlcProjVersion>
-    <NextSdsId>21</NextSdsId>
+    <NextSdsId>23</NextSdsId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -36,6 +36,7 @@
       <Visible>false</Visible>
     </None>
     <None Include="LiftSpeed\Alias Devices\ErrorAcknowledgement.sds" />
+    <None Include="LiftSpeed\Alias Devices\IO Link %28EL6224-0090%29 - Module 7 %28EL6224-0090%29.sds" />
     <None Include="LiftSpeed\Alias Devices\Run.sds" />
     <None Include="LiftSpeed\LiftSpeed.sal" />
     <None Include="LiftSpeed\LiftSpeed.sal.diagram">
