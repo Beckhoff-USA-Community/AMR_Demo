@@ -300,13 +300,13 @@
 			<Fmmu>0000000000000000000000010000000002000000060000000500010000000000</Fmmu>
 			<Fmmu>0000000000000000fa2f00020100000001000000060000000600020000000000</Fmmu>
 			<BootStrapData>0010f400f410f400</BootStrapData>
+			<SuName>SafetyMaster</SuName>
+			<SuName>SafetyMaster</SuName>
+			<SuName>SafetyMaster</SuName>
 			<SuName></SuName>
-			<SuName></SuName>
-			<SuName></SuName>
-			<SuName></SuName>
+			<SuTask>#x02010030</SuTask>
 			<SuTask>#x00000000</SuTask>
-			<SuTask>#x00000000</SuTask>
-			<SuTask>#x00000000</SuTask>
+			<SuTask>#x02010030</SuTask>
 			<SuTask>#x00000000</SuTask>
 			<MBoxUserCmdData>004003000a00000000000000000000000000000000000000000000000000000020f3100502000000010000</MBoxUserCmdData>
 			<Pdo Name="ConnectionInputs" Index="#x1a00" Flags="#x2011" SyncMan="3">
@@ -375,10 +375,10 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="TwinSAFE Group Info Data" Index="#x1bfa" Flags="#x2011" SyncMan="3">
-				<Entry Name="Inputs Info Data" Index="#x7000" Sub="#x01">
+				<Entry Name="Inputs Info Data" Index="#x7000" Sub="#x01" Flags="#x00008000">
 					<Type GUID="{1553EE7F-0490-4879-4F41-423085C83887}">INFODATA_GRP_3</Type>
 				</Entry>
-				<Entry Name="Motion Info Data" Index="#x7000" Sub="#x02">
+				<Entry Name="Motion Info Data" Index="#x7000" Sub="#x02" Flags="#x00008000">
 					<Type GUID="{1553EE7F-0490-4879-4F41-423085C83887}">INFODATA_GRP_3</Type>
 				</Entry>
 				<Entry Name="LiftSpeed Info Data" Index="#x7000" Sub="#x03">

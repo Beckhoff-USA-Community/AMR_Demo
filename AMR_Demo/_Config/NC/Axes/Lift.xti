@@ -1431,7 +1431,10 @@ External Setpoint Generation:
 			<TargetPosControl Enable="false"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
-		<Encoder Name="Enc" EncType="1">
+		<Encoder Name="Enc" EncType="21">
+			<EncPara ScaleFactorNumerator="0.18" MaxCount="#xffffffff">
+				<Inc RefMode="2"/>
+			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
 				<Var>
@@ -1488,8 +1491,8 @@ External Setpoint Generation:
 				</Var>
 			</Vars>
 		</Encoder>
-		<Drive Name="Drive" DrvType="5">
-			<DrvPara>
+		<Drive Name="Drive" DrvType="16">
+			<DrvPara MaxCount="#xffffffff">
 				<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
@@ -1529,22 +1532,6 @@ External Setpoint Generation:
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataOut2</Name>
 					</SubVar>
-					<SubVar>
-						<Name>nCtrl2</Name>
-						<Comment><![CDATA[Digital Outputs Setpoint Generator:
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]></Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCtrl3</Name>
-						<Comment><![CDATA[Digital Outputs (Setpoint Generator + Position Controller):
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]></Comment>
-					</SubVar>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataOut3</Name>
 					</SubVar>
@@ -1581,4 +1568,16 @@ External Setpoint Generation:
 			</Var>
 		</Vars>
 	</Axis>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIID^CANOpen (EL6751)^PD4-CB59M024035-E-08 (CANopen Slave)">
+				<Link VarA="Drive^Inputs^In^nState1" VarB="TxPDO 1^Inputs^Statusword" Size="8"/>
+				<Link VarA="Drive^Inputs^In^nState2" VarB="TxPDO 1^Inputs^Statusword" Size="8" OffsB="8"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="RxPDO 1^Outputs^Controlword" Size="8"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="RxPDO 1^Outputs^Controlword" Size="8" OffsB="8"/>
+				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="TxPDO 2^Inputs^Position actual value"/>
+				<Link VarA="Enc^Outputs^Out^nDataOut1" VarB="RxPDO 2^Outputs^Target Position"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>

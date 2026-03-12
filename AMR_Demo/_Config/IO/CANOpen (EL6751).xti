@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.20" ClassName="CDevEL6751Def" SubType="87">
-	<Device Id="3" DevType="87" AmsPort="28675" AmsNetId="192.168.1.84.4.1" RemoteName="CANOpen (EL6751)">
+	<Device Id="3" DevType="87" AmsPort="28675" AmsNetId="0.0.0.0.4.1" RemoteName="CANOpen (EL6751)">
 		<Name>__FILENAME__</Name>
 		<AddressInfo>
 			<Ecat>
@@ -14,8 +14,8 @@
 		<Box File="PD4-CB59M024035-E-08 (CANopen Slave).xti" Id="8"/>
 		<CanOpen>
 			<Fcxxxx>
-				<DevSettings BusyIntEnabled="true" DisableSlots="true" NetId="c0a801540401" FifoSize="5" CycleDivider="1"/>
-				<DevParameter InputShift="60"/>
+				<DevSettings BusyIntEnabled="true" DisableSlots="true" NetId="000000000401" EquiCycleTime="20000" FifoSize="5" CycleDivider="1"/>
+				<DevParameter CycleTime="20000" InputShift="60"/>
 				<EquiParameter RelationShiftCycle="0"/>
 			</Fcxxxx>
 			<BusParameter NodeId="127" Baudrate="2" CobIdSync="128" TxPdoWindowSize="30" CycleDivider="1" MaxLoPrioQueue="100" Bt1="28" TimerTick="3" BusActiveDivider="119" TxBusyTime="1000" TimeIntegral="2000" WdTimeoutInCycleTime="50000"/>

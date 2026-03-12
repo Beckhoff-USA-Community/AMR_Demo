@@ -14,6 +14,16 @@
 			<Link VarA="Hokuyo (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionOutputs^Inputs.Hokuyo (UAM-05LECA) - Module 1 (Area Input Mode)_17 RxPDO"/>
 		</OwnerB>
 	</OwnerA>
+	<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Lift">
+		<OwnerB Name="TIID^CANOpen (EL6751)^PD4-CB59M024035-E-08 (CANopen Slave)">
+			<Link VarA="Drive^Inputs^In^nState1" VarB="TxPDO 1^Inputs^Statusword"/>
+			<Link VarA="Drive^Inputs^In^nState2" VarB="TxPDO 1^Inputs^Statusword" Size="8" OffsB="8"/>
+			<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="RxPDO 1^Outputs^Controlword"/>
+			<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="RxPDO 1^Outputs^Controlword" Size="8" OffsB="8"/>
+			<Link VarA="Enc^Inputs^In^nDataIn1" VarB="TxPDO 2^Inputs^Position actual value"/>
+			<Link VarA="Enc^Outputs^Out^nDataOut1" VarB="RxPDO 2^Outputs^Target Position"/>
+		</OwnerB>
+	</OwnerA>
 	<OwnerA Name="TINC^NC-Task 1 SAF^Axes^WheelLeft">
 		<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Motion 1 (ELM7231-9018)">
 			<Link VarA="Drive^Inputs^In^nDataIn1" VarB="DRV Following error actual value^Following error actual value"/>
@@ -49,6 +59,13 @@
 		</OwnerB>
 	</OwnerA>
 	<OwnerA Name="TIPC^PLC^PLC Instance">
+		<OwnerB Name="TIID^CANOpen (EL6751)^PD4-CB59M024035-E-08 (CANopen Slave)">
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.Lift_CanOpMode" VarB="RxPDO 1^Outputs^Modes of operation"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^IO Link (EL6224-0090)">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Position"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Speed"/>
+		</OwnerB>
 		<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Safety PLC (EL2911)">
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^Diag" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^Diag"/>
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^State" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^State"/>
