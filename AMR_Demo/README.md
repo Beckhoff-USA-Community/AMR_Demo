@@ -85,9 +85,10 @@ The `MAIN` program (`PLC/MAIN.TcPOU`):
   - Encoder integration for odometry feedback
 
 - **Safety Components**:
-  - E-Stop monitoring with automatic reset
-  - Front/rear laser scanners for collision avoidance
-  - Safety group management with fault handling
+  - `SafetyEstop` — E-Stop monitoring with automatic reset
+  - `SafetyScannerLeuze` — Leuze RSL400 safety scanner for obstruction detection
+  - `SafetyScannerHokuyo` — Hokuyo UAM-05LP scanner for obstruction detection
+  - Three safety groups: Input, Motion, Lift Speed
 
 ### Navitrol Communication
 
@@ -122,4 +123,3 @@ Set `Simulated := TRUE` in MAIN to enable:
 
 - [AMR_Demo_HMI](../AMR_Demo_HMI/README.md) - Web-based HMI interface
 - [Documentation](../Documentation/README.md) - Device and protocol documentation
-- [CLAUDE.md](../CLAUDE.md) - Detailed architecture and development guide

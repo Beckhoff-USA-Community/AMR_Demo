@@ -174,26 +174,7 @@ Configured in `Server/TcHmiScope/`:
 - Y-T (time) charts
 - Configurable axes and triggers
 
-## Development Notes
-
-### Adding New Pages
-1. Create `.content` file in `Pages/`
-2. Reference in `HmiProj.hmiproj`
-3. Add navigation link in Desktop.view
-
-### Adding User Controls
-1. Create `.usercontrol` file in `UserControls/`
-2. Create `.usercontrol.json` configuration
-3. Register control in project
-
-### Custom Functions
-JavaScript functions in `Functions/` folder:
-- Use for dynamic UI generation
-- Data transformation
-- Client-side calculations
-
 ## See Also
 
 - [AMR_Demo](../AMR_Demo/README.md) - TwinCAT automation project
 - [Documentation](../Documentation/README.md) - Device and protocol documentation
-- [CLAUDE.md](../CLAUDE.md) - Detailed architecture and development guide

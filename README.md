@@ -142,9 +142,9 @@ The robot operates under a standard ISA-88 PackML state machine with two modes: 
 | **Aborting** | Emergency transition: immediately disables velocity streaming, stops wheels, stops lift, disables all axes. |
 | **Aborted** | Fault state; robot is idle and all axes are disabled. Operator must issue Reset command. |
 | **Clearing** | Fault reset sequence: pulse safety reset → wait 200 ms for signal propagation → `ResetComponents()` on all subsystems → release E-Stop in Navitrol Msg3002. |
-| **Suspending** | Safety obstruction detected: set E-Stop flag in Navitrol, stop lift. |
-| **Suspended** | Waiting for scanner clearance; automatically transitions to `Unsuspending` when both front and rear scanners report OK. |
-| **Unsuspending** | Scanner cleared: reset scanner faults, release E-Stop in Navitrol, move lift to down position, then re-send GoToDestination command to resume route. |
+| **Suspending** | Safety obstruction detected: set E-Stop flag in Navitrol, stop lift, disable all axes. |
+| **Suspended** | Waiting for scanner clearance; automatically transitions to `Unsuspending` when both `SafetyScannerLeuze` and `SafetyScannerHokuyo` report OK. |
+| **Unsuspending** | Scanner cleared: reset Leuze and Hokuyo scanner faults, re-enable axes, release E-Stop in Navitrol, move lift to down position, then re-send GoToDestination command to resume route. |
 
 ## Navitrol Communication
 
@@ -171,7 +171,8 @@ Velocity conversion from Navitrol (m/s) to NC (°/s):
 Safety signals are grouped in `SafetyGroup_TcEvents` groups with `AutoResetFaults := TRUE`:
 
 - **`SafetyEstop`** — E-Stop; sets the E-Stop flag in the Msg3002 Navitrol status message
-- **`SafetyScannerFront` / `SafetyScannerRear`** — Laser scanners; trigger `Suspend` from within `Execute`
+- **`SafetyScannerLeuze`** — Leuze RSL400 safety laser scanner; triggers `Suspend` from within `Execute`
+- **`SafetyScannerHokuyo`** — Hokuyo UAM-05LP laser scanner; triggers `Suspend` from within `Execute`
 
 Safety reset sequence (in `Clearing`): `SafetyResetPulse` → 200 ms delay → `ResetComponents()` → release E-Stop in Msg3002.
 
