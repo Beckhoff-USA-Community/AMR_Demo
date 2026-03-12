@@ -151,9 +151,6 @@
     <Compile Include="Components\Navitrol\Navitrol to Supervisor response\U_Recived_bytes_from_Navitrol.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\Navitrol\Msg1026_OmniDriveMotorControl.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Components\Navitrol\Msg3002_NavitrolStatus.TcPOU">
       <SubType>Code</SubType>
     </Compile>

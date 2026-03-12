@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="693066649" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="cc11df35-f117-4c6a-b70f-f432e5fdf85f" name="" mapState="true" mapDiag="true" groupOrderId="2" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="3118188838" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="cc11df35-f117-4c6a-b70f-f432e5fdf85f" name="" mapState="true" mapDiag="true" groupOrderId="2" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="fb54f818-84f3-4f68-932d-4339447c1c1d">
       <Network Id="a1b48865-9527-4ea1-a17b-63224d0ea672" name="Network1" networkName="Network1" intId="1" networkOrderId="0">
@@ -8,7 +8,7 @@
             <fBLimit Id="326143ab-2ed0-4cac-b75b-00772a83fd5f" name="FBLimit1" instanceName="EncoderSpeedLimit" orderOfExecution="1" mapState="true" mapDiag="true" functionName="safeLimit">
               <inPorts>
                 <functioBlockHasInPorts Id="271e7a80-8faf-4d38-ae43-6b9520af67cb">
-                  <inPort Id="3ae00718-04de-420e-8798-b18b8afc435e" name="AnalogIn" portName="AnalogIn" portNum="2" objectIndex="16" varId="1" filter="1974016" portDataType="2" channelInterface="Activated" deactivate1="Break Contact (NC)" maxDeviation="0" resetTime="0" />
+                  <inPort Id="3ae00718-04de-420e-8798-b18b8afc435e" name="AnalogIn" portName="AnalogIn" portNum="2" objectIndex="16" varId="1" filter="1974016" portDataType="258" channelInterface="Activated" deactivate1="Break Contact (NC)" maxDeviation="0" resetTime="0" />
                 </functioBlockHasInPorts>
                 <functioBlockHasInPorts Id="187821ff-d7e8-4c82-b982-6ea8417495e9">
                   <inPort Id="4075d2ec-5639-4d8b-a6dd-523d79ea97c3" name="MinValue" portName="MinValue" portNum="3" objectIndex="17" varId="2" filter="1974016" portDataType="2" channelInterface="Deactivated" maxDeviation="0" resetTime="0" />
@@ -22,13 +22,7 @@
                   <outPort Id="35a9e54f-726f-4a04-99a0-6ffa3ec68ee0" name="Error" portName="Error" portNum="2" objectIndex="0" varId="4" filter="73472" portDataType="1" replacementValue="0" />
                 </functionBlockHasOutPorts>
                 <functionBlockHasOutPorts Id="aa6b6737-e6d2-411e-ae36-356d1e24c3ae">
-                  <outPort Id="96e9259b-2905-47b4-9ad6-4c00eae03f1e" name="InLimit" portName="InLimit" portNum="3" objectIndex="1" varId="5" filter="73472" portDataType="1" replacementValue="0">
-                    <fbPortGlobalVariableReferences>
-                      <functionBlockPortHasFbPortGlobalVariableReferences Id="78733333-e1bc-4683-b1f3-02072afe5471">
-                        <fbPortGlobalVariableReference Id="701eb906-7942-49d6-98ad-d7420b445cce" variableId="72702c30-46ac-4dce-8d06-a198ab9bdc4c" lastKnownPath="GVL1.Speed_OK" />
-                      </functionBlockPortHasFbPortGlobalVariableReferences>
-                    </fbPortGlobalVariableReferences>
-                  </outPort>
+                  <outPort Id="96e9259b-2905-47b4-9ad6-4c00eae03f1e" name="InLimit" portName="InLimit" portNum="3" objectIndex="1" varId="5" filter="73472" portDataType="1" replacementValue="0" />
                 </functionBlockHasOutPorts>
                 <functionBlockHasOutPorts Id="618d1270-ce9f-4f81-afff-3b01bae33e5b">
                   <outPort Id="9892590b-5f6d-41ff-9c2f-1eab89339230" name="BelowMin" portName="BelowMin" portNum="4" objectIndex="2" varId="6" filter="73472" portDataType="1" replacementValue="0" />
@@ -176,6 +170,38 @@
                       </fbPortUsageReferencesFunctionBlockPort>
                     </functionBlockPort>
                   </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+    <safetyApplicationHasVariables Id="af7c1f1a-8343-4c15-8bcd-393ab5c66478">
+      <variable Id="0bdc56e1-a4f1-4b0f-a8b3-c45c129feb52" name="SpeedOK" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="e0d0cd7d-62e3-4843-aa6d-98258e9f51da">
+            <variableUsages Id="dea21526-cde0-444e-9fe9-ea27204b6955">
+              <usages>
+                <variableUsagesHasUsages Id="a03afe25-a06b-4347-bc9e-c4a45456c5b6">
+                  <fbPortUsage Id="d7a8f517-0f92-4d7e-a70b-0f1412d67469">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="f6d128b8-d2d4-4ac6-90b8-58be9c4f9a36">
+                        <outPortMoniker name="//Network1/FBLimit1/InLimit" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="7596a46b-d044-4858-9e4d-c9150ae0aad9">
+            <variableUsages Id="784a950f-260f-4554-874a-a9a296844925">
+              <usages>
+                <variableUsagesHasUsages Id="f792c636-2865-4690-86c6-6708c8bd38ea">
+                  <aliasDeviceIoUsage Id="3f6cff35-8c28-48b2-a630-daa50d3e57ed" sdsId="24" channelId="1" functionId="1131179972" />
                 </variableUsagesHasUsages>
               </usages>
             </variableUsages>

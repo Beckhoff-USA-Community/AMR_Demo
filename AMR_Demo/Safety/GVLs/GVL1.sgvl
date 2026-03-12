@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<GlobalVariables Crc="1833054616" Id="033e816e-303e-4a12-b889-449796eba7dd" FileFormatVersion="1.0">
+<GlobalVariables Crc="913460191" Id="033e816e-303e-4a12-b889-449796eba7dd" FileFormatVersion="1.0">
   <Variable Id="190d331e-dafd-49f8-b767-b340f3e7fc58">
     <Name>EStop_OK</Name>
     <SourceUsages>
@@ -23,22 +23,6 @@
     <TargetUsages>
       <FbPortUsage Id="606eac8c-ad86-47a8-b8ae-5a9ce82acc51">
         <ModelElementId>827e5ff7-edda-41b4-8069-ad4dbf487e72</ModelElementId>
-      </FbPortUsage>
-    </TargetUsages>
-  </Variable>
-  <Variable Id="72702c30-46ac-4dce-8d06-a198ab9bdc4c">
-    <Name>Speed_OK</Name>
-    <SourceUsages>
-      <FbPortUsage Id="81c11d26-f4d9-4298-8803-5ff49def0ab3">
-        <ModelElementId>1cc2eebc-7aee-4de9-9176-acbe21271210</ModelElementId>
-      </FbPortUsage>
-      <FbPortUsage Id="7ce04941-3003-4f3f-8b00-50de8eddcdfc">
-        <ModelElementId>96e9259b-2905-47b4-9ad6-4c00eae03f1e</ModelElementId>
-      </FbPortUsage>
-    </SourceUsages>
-    <TargetUsages>
-      <FbPortUsage Id="8a423430-0a20-43f6-9a33-0c918a038037">
-        <ModelElementId>8b75ed10-404c-41bb-805e-f9c02c352ba3</ModelElementId>
       </FbPortUsage>
     </TargetUsages>
   </Variable>

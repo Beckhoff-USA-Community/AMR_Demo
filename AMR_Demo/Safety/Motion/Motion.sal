@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="2969145597" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="8fe8a63f-0d28-45ee-9754-00faca34d14e" name="" mapState="true" mapDiag="true" groupOrderId="1" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="3240037548" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="8fe8a63f-0d28-45ee-9754-00faca34d14e" name="" mapState="true" mapDiag="true" groupOrderId="1" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="e9b0885a-e9e3-45a1-8281-1a1c46802f56">
       <Network Id="0910bd23-aaf8-4ad7-b60b-55d0edc46819" name="Network1" networkName="SS1_TO_STO" intId="1" networkOrderId="0">
@@ -29,13 +29,7 @@
                   </inPort>
                 </functioBlockHasInPorts>
                 <functioBlockHasInPorts Id="e1231cf6-e436-4684-b874-9f488657498c">
-                  <inPort Id="8b75ed10-404c-41bb-805e-f9c02c352ba3" name="MonIn3" portName="MonIn3" portNum="6" objectIndex="10" varId="6" filter="2" portDataType="1" channelInterface="Single-Channel 1 Activated" deactivate1="Break Contact (NC)" maxDeviation="0" resetTime="0">
-                    <fbPortGlobalVariableReferences>
-                      <functionBlockPortHasFbPortGlobalVariableReferences Id="3ea20bb3-5518-46d6-a7c2-80a3d54ecd0e">
-                        <fbPortGlobalVariableReference Id="d5b8bca0-f875-4954-9e16-a7fbd048cdcb" variableId="72702c30-46ac-4dce-8d06-a198ab9bdc4c" lastKnownPath="GVL1.Speed_OK" />
-                      </functionBlockPortHasFbPortGlobalVariableReferences>
-                    </fbPortGlobalVariableReferences>
-                  </inPort>
+                  <inPort Id="8b75ed10-404c-41bb-805e-f9c02c352ba3" name="MonIn3" portName="MonIn3" portNum="6" objectIndex="10" varId="6" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
                 </functioBlockHasInPorts>
                 <functioBlockHasInPorts Id="ad49ba4a-dfb3-4182-8d57-54a02a883e4b">
                   <inPort Id="afb7bc02-a845-4c4d-8dd6-40fe9087b9d9" name="MonIn4" portName="MonIn4" portNum="7" objectIndex="11" varId="7" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
