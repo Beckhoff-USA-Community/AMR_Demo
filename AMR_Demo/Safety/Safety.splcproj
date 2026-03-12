@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Crc="2693222657" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project Crc="1402391745" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
@@ -16,7 +16,7 @@
     <IntProjName>Safety</IntProjName>
     <IsNewCreated>false</IsNewCreated>
     <SPlcProjVersion>1.8.0.0</SPlcProjVersion>
-    <NextSdsId>12</NextSdsId>
+    <NextSdsId>21</NextSdsId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -26,19 +26,30 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="GVLs\GVL1.sgvl" />
+    <None Include="Inputs\Alias Devices\EL2911, 4 Safety PLC.sds" />
+    <None Include="Inputs\Alias Devices\Hokuyo %28UAM-05LECA%29 - Module 1 %28Area Input Mode%29.sds" />
     <None Include="Inputs\Alias Devices\Reset.sds" />
-    <None Include="Inputs\Alias Devices\Term 6 %28EL1904%29 - Module 1 %28FSOES%29.sds" />
+    <None Include="Inputs\Alias Devices\Run.sds" />
     <None Include="Inputs\Inputs.sal" />
     <None Include="Inputs\Inputs.sal.diagram">
       <DependentUpon>Inputs\Inputs.sal</DependentUpon>
       <Visible>false</Visible>
     </None>
-    <None Include="Outputs\Alias Devices\ErrorAcknowledgement.sds" />
-    <None Include="Outputs\Alias Devices\Term 7 %28EL2904%29 - Module 1 %28FSOES%29.sds" />
-    <None Include="Outputs\Outputs.sal" />
-    <None Include="Outputs\Outputs.sal.diagram">
+    <None Include="LiftSpeed\Alias Devices\ErrorAcknowledgement.sds" />
+    <None Include="LiftSpeed\Alias Devices\Run.sds" />
+    <None Include="LiftSpeed\LiftSpeed.sal" />
+    <None Include="LiftSpeed\LiftSpeed.sal.diagram">
       <Visible>false</Visible>
-      <DependentUpon>Outputs\Outputs.sal</DependentUpon>
+      <DependentUpon>LiftSpeed\LiftSpeed.sal</DependentUpon>
+    </None>
+    <None Include="Motion\Alias Devices\ErrorAcknowledgement.sds" />
+    <None Include="Motion\Alias Devices\Motion 1 %28ELM7231-9018%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="Motion\Alias Devices\Motion 2 %28ELM7231-9018%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="Motion\Alias Devices\Run.sds" />
+    <None Include="Motion\Motion.sal" />
+    <None Include="Motion\Motion.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>Motion\Motion.sal</DependentUpon>
     </None>
     <None Include="TargetSystemConfig.xml">
       <Visible>false</Visible>
@@ -48,8 +59,10 @@
     <Folder Include="GVLs" />
     <Folder Include="Inputs" />
     <Folder Include="Inputs\Alias Devices" />
-    <Folder Include="Outputs" />
-    <Folder Include="Outputs\Alias Devices" />
+    <Folder Include="LiftSpeed" />
+    <Folder Include="LiftSpeed\Alias Devices" />
+    <Folder Include="Motion" />
+    <Folder Include="Motion\Alias Devices" />
     <Folder Include="User FBs" />
     <None Include="Inputs\Alias Devices\ErrorAcknowledgement.sds" />
   </ItemGroup>

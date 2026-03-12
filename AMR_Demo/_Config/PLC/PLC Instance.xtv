@@ -1005,7 +1005,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{2E0B40D5-26AC-8164-B482-2996C12A1A6F}">
+	<Instance TmcHash="{D1BEF554-CE57-8230-AD31-80272FC7B2D5}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1033,7 +1033,11 @@ External Setpoint Generation:
 				<Type GUID="{C73AE285-B064-EB1F-4C43-B915DD9A2753}" Namespace="CoreComponents">ST_SafetyStateDiag</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.SafetyOutputGroup.InfoData</Name>
+				<Name>MAIN.AmrModule.SafetyMotionGroup.InfoData</Name>
+				<Type GUID="{C73AE285-B064-EB1F-4C43-B915DD9A2753}" Namespace="CoreComponents">ST_SafetyStateDiag</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.SafetyLiftSpeedGroup.InfoData</Name>
 				<Type GUID="{C73AE285-B064-EB1F-4C43-B915DD9A2753}" Namespace="CoreComponents">ST_SafetyStateDiag</Type>
 			</Var>
 			<Var>
@@ -1077,7 +1081,11 @@ External Setpoint Generation:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.SafetyOutputGroup.Run</Name>
+				<Name>MAIN.AmrModule.SafetyMotionGroup.Run</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.SafetyLiftSpeedGroup.Run</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>

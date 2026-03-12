@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.20" ClassName="CDevEtherCATDef" SubType="111">
+	<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.135.212.84.2.1" RemoteName="X103 (EtherCAT)" InfoImageId="3">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Pnp>
+				<DeviceDesc>eno1 (TwinCAT Intel Ethernet Adapter)</DeviceDesc>
+				<DeviceName>eno1</DeviceName>
+				<DeviceData>000105826776</DeviceData>
+			</Pnp>
+		</AddressInfo>
+		<Image Id="2" ImageFlags="#x00000330" AddrType="9" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+		<Image Id="6" AddrType="10" ImageType="3">
+			<Name>Image-2</Name>
+		</Image>
+		<Box File="Term 1 (EK1100).xti" Id="1">
+			<EtherCAT PortABoxInfo="#x00ffffff"/>
+		</Box>
+		<EtherCAT DcSyncMode="3"/>
+	</Device>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIID^X103 (EtherCAT)">
+				<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO"/>
+				<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
+				<Link VarA="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
+				<Link VarA="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO"/>
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO" VarB="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE"/>
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" VarB="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE"/>
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO" VarB="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE"/>
+				<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" VarB="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

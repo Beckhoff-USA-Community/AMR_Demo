@@ -45,15 +45,14 @@ VAR
 	Encoder_HMI				 : Encoder_HMI('Mouser DHK Encoder', EncoderSpeed, EncoderPosition);
 
 	// Safety
-	SafetyGroupReset : SafetyResetPulse('Safety Reset');
-	SafetyInputGroup : SafetyGroup_TcEvents('Safety Input Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
-
-	// SafetyLiftSpeedGroup : SafetyGroup_TcEvents('Safety Lift Speed Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
-	SafetyOutputGroup  : SafetyGroup_TcEvents('Safety Output Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
-	SafetyReset		   : SafetyResetPulse('Safety Reset');
-	SafetyEstop		   : SafetyEstopFB_TcEvents('E-Stop')	   := (ResetFunction := SafetyReset, SafetyGroup := SafetyInputGroup);
-	SafetyScannerFront : SafetyMonFB_TcEvents('Front Scanner') := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
-	SafetyScannerRear  : SafetyMonFB_TcEvents('Rear Scanner')  := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
+	SafetyGroupReset	 : SafetyResetPulse('Safety Reset');
+	SafetyInputGroup	 : SafetyGroup_TcEvents('Safety Input Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
+	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
+	SafetyLiftSpeedGroup : SafetyGroup_TcEvents('Safety Lift Speed Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
+	SafetyReset			 : SafetyResetPulse('Safety Reset');
+	SafetyEstop			 : SafetyEstopFB_TcEvents('E-Stop')		 := (ResetFunction := SafetyReset, SafetyGroup := SafetyInputGroup);
+	SafetyScannerFront	 : SafetyMonFB_TcEvents('Front Scanner') := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
+	SafetyScannerRear	 : SafetyMonFB_TcEvents('Rear Scanner')	 := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
 END_VAR
 
 VAR
@@ -64,7 +63,10 @@ VAR
         Stopped     = Idle, no error, manual operation of devices
         Stopping    = Stop transition to Stopped
         Starting    = Start System in Automatic
-        Execute     = Running & Stream Velocity            
+        Execute     = Running & Stream Velocity
+        Suspending  = Stop AMR due to Safety Scanner
+        Suspended   = Wait for Safety Scanner OK
+        Unsuspending= Resume movement            
     *)
 END_VAR
 
@@ -164,7 +166,7 @@ END_VAR]]></Declaration>
 		END_IF
 
 	20:
-		ResetComponents();
+		ResetComponents(); // Call Reset on every component implementing I_Resettable
 		NextStep(SequenceState);
 
 	30:
@@ -330,9 +332,8 @@ _WheelRight_StreamVelocity.RegisterWithParent(THIS^);
 
 //
 SafetyInputGroup.RegisterWithParent(THIS^);
-
-// SafetyLiftSpeedGroup.RegisterWithParent(THIS^);
-SafetyOutputGroup.RegisterWithParent(THIS^);
+SafetyLiftSpeedGroup.RegisterWithParent(THIS^);
+SafetyMotionGroup.RegisterWithParent(THIS^);
 SafetyEstop.RegisterWithParent(THIS^);
 SafetyScannerFront.RegisterWithParent(THIS^);
 SafetyScannerRear.RegisterWithParent(THIS^);
@@ -623,11 +624,21 @@ END_IF]]></ST>
 		NextMinorStep(SequenceState);
 
 	1:
-		IF NOT _Lift.Busy THEN
-			NextStep(SequenceState);
+		IF NOT _Lift.Busy AND NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
+			IF _Lift.Stopped AND _WheelLeft.Stopped AND _WheelRight.Stopped THEN
+				NextStep(SequenceState);
+			END_IF
 		END_IF
 
 	10:
+		_WheelLeft.Disable();
+		_WheelRight.Disable();
+		_Lift.Disable();
+		IF NOT _WheelLeft.Enabled AND NOT _WheelRight.Enabled AND NOT _Lift.Enabled THEN
+			NextStep(SequenceState);
+		END_IF
+
+	20:
 		Suspending := TRUE;
 END_CASE]]></ST>
       </Implementation>
@@ -640,16 +651,27 @@ END_CASE]]></ST>
 	0:
 		SafetyScannerFront.Reset();
 		SafetyScannerRear.Reset();
-		Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Release_ESTOP;
-		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
 		NextMinorStep(SequenceState);
 
 	1:
-		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
+		_WheelLeft.Enable();
+		_WheelRight.Enable();
+		_Lift.Enable();
+		IF _WheelLeft.Enabled AND _WheelRight.Enabled AND _Lift.Enabled THEN
 			NextStep(SequenceState);
 		END_IF
 
 	10:
+		Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Release_ESTOP;
+		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
+		NextStep(SequenceState);
+
+	20:
+		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
+			NextStep(SequenceState);
+		END_IF
+
+	30:
 		IF Navitrol_GoToDestination.Execute(Destination) THEN
 			Unsuspending := TRUE;
 		END_IF

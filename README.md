@@ -15,42 +15,12 @@ The system implements PackML (ISA-88) state machine patterns for standardized in
 
 ## Project Structure
 
-This repository contains three main components:
-
-### 1. [AMR_Demo](AMR_Demo/README.md) - TwinCAT Automation Project
-The core automation project including:
-- PLC control logic with PackML state machine
-- TwinCAT Safety implementation
-- Motion control (NC) configuration
-- I/O and fieldbus configuration
-- Navitrol navigation integration
-
-**[→ Read AMR_Demo Documentation](AMR_Demo/README.md)**
-
-### 2. [AMR_Demo_HMI](AMR_Demo_HMI/README.md) - Web-Based HMI
-Browser-based visualization and control interface featuring:
-- Real-time robot status monitoring
-- PackML control interface
-- Manual control and diagnostics
-- Recipe management
-- Event logging and alarms
-
-**[→ Read AMR_Demo_HMI Documentation](AMR_Demo_HMI/README.md)**
-
-### 3. [Documentation](Documentation/README.md) - Technical Documentation
-Device specifications and configuration files:
-- Navitrol navigation system parameters
-- Leuze safety scanner configuration
-- EtherCAT device descriptions
-- CANopen motor controller setup
-- IO-Link encoder specifications
-
-**[→ Read Documentation Overview](Documentation/README.md)**
-
-### Additional Resources
-
-- **[CLAUDE.md](CLAUDE.md)** - Detailed architecture and development guide for AI assistants
-- **WheelScope/** - TwinCAT Scope project for real-time data visualization
+| Component | Description |
+|-----------|-------------|
+| `AMR_Demo/` | TwinCAT System Project — PLC, Safety, Motion NC, I/O |
+| `AMR_Demo_HMI/` | Web-based HMI (TwinCAT HMI framework, TypeScript) |
+| `Documentation/` | Device specs, Navitrol parameters, EtherCAT/CANopen/IO-Link files |
+| `WheelScope/` | TwinCAT Scope project for real-time data visualization |
 
 ## Getting Started
 
@@ -59,32 +29,21 @@ Device specifications and configuration files:
 - **TwinCAT 3.1** Build 4026.20 or later
 - **Visual Studio 2015** or later with TwinCAT XAE Shell
 - **TwinCAT HMI Server** (TE2000) for HMI functionality
-- Windows 7/10/11 or TwinCAT/BSD target system
 
-### Installation
+### Building and Running
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd AMR_Demo_BAUS
-   ```
+**PLC / Safety**:
+1. Open `AMR_Demo/AMR_Demo.sln` in Visual Studio
+2. Right-click PLC or Safety project → **Build**
+3. Deploy: **TwinCAT → Activate Configuration**
 
-2. **Open TwinCAT Project**:
-   - Open `AMR_Demo/AMR_Demo.sln` in Visual Studio
-   - Build PLC and Safety projects
-   - Activate TwinCAT configuration
+**HMI**:
+1. Open `AMR_Demo_HMI/AMR_Demo_HMI.sln` in Visual Studio
+2. **Build → Build Solution** (F6); output goes to `HmiProj/bin/`
+3. Start TwinCAT HMI Server, then access via browser: `http://localhost:1010`
 
-3. **Open HMI Project**:
-   - Open `AMR_Demo_HMI/AMR_Demo_HMI.sln` in Visual Studio
-   - Build HMI solution
-   - Start TwinCAT HMI Server
-   - Access HMI via browser: `http://localhost:1010`
-
-### Quick Start
-
-1. **PLC**: Set `Simulated := TRUE` in MAIN program for testing without hardware
-2. **HMI**: Open web browser to HMI address after starting server
-3. **Control**: Use PackML interface to Start → Execute for automatic operation
+**Simulation (no hardware)**:
+- Set `Simulated := TRUE` in `AMR_Demo/PLC/MAIN.TcPOU` to bypass physical safety hardware
 
 ## System Architecture
 
@@ -92,7 +51,7 @@ Device specifications and configuration files:
 ┌─────────────────────────────────────────────────────────────┐
 │                     AMR Demo System                          │
 ├─────────────────────────────────────────────────────────────┤
-│                                                               │
+│                                                              │
 │  ┌─────────────────┐         ┌──────────────────┐          │
 │  │  TwinCAT HMI    │◄───ADS──┤   TwinCAT PLC    │          │
 │  │  (Web Browser)  │         │   (PackML)       │          │
@@ -102,7 +61,7 @@ Device specifications and configuration files:
 │                              │         │         │          │
 │                    ┌─────────▼───┐ ┌──▼─────┐ ┌▼────────┐ │
 │                    │ TwinCAT NC  │ │ Safety │ │   I/O   │ │
-│                    │   (Motion)  │ │  (FSoE)│ │ (EtherCAT)│
+│                    │   (Motion)  │ │  (FSoE)│ │(EtherCAT)│ │
 │                    └──────┬──────┘ └───┬────┘ └─┬────────┘ │
 │                           │            │        │          │
 └───────────────────────────┼────────────┼────────┼──────────┘
@@ -126,77 +85,136 @@ Device specifications and configuration files:
           └──────────────────────────────────┘
 ```
 
-## Key Features
+### PLC Execution
 
-### PackML State Machine
-- Standardized state-based control (ISA-88 compliant)
-- States: Stopped, Starting, Execute, Stopping, Aborting, Aborted, Clearing
-- Mode selection and transition management
+`MAIN.TcPOU` is the sole entry point. On the first cycle it calls `AmrModule.Initialize()` and builds the HMI symbol tree, then every subsequent cycle calls `AmrModule.CyclicLogic()`.
 
-### Differential Drive Control
-- Independent left/right wheel control
-- Real-time velocity streaming from Navitrol
-- Odometry feedback via encoders
+- **Task**: PlcTask, Priority 20, 20 ms cycle (50 Hz), AMS Port 350
+- **Target NetId**: 5.135.212.84.1.1
 
-### Navigation Integration
-- TCP/IP communication with Navitrol supervisor
-- Route following and waypoint navigation
-- Collision avoidance with safety scanners
+`AmrModule` extends `PackMLModule` and owns all subsystems (axes, Navitrol messages, safety groups, encoder) as member variables registered via `RegisterWithParent()`.
 
-### Safety System
-- TwinCAT Safety (TÜV certified)
-- E-Stop monitoring with automatic reset
-- Laser scanner integration (front/rear)
-- Safety group management
+## PackML State Machine
 
-### Recipe Management
-- Persistent storage of axis parameters
-- Load/save configurations via HMI
-- User permission management
+The robot operates under a standard ISA-88 PackML state machine with two modes: **Production** and **Manual**. Mode changes are allowed from `Stopped` and `Aborted`.
+
+```
+              ┌──────────┐
+         ┌───►│ Aborted  │◄──────────────┐
+         │    └────┬─────┘               │
+         │         │ [Reset]          Aborting
+         │         ▼                      │
+         │    ┌──────────┐         ┌──────┴─────┐
+     Abort    │ Clearing │         │  Any State │
+         │    └────┬─────┘         └────────────┘
+         │         │
+         │         ▼
+         │    ┌──────────┐
+         │    │ Stopped  │◄──── Stopping ◄──────┐
+         │    └────┬─────┘                      │
+         │         │ [Start]               [Stop]│
+         │         ▼                             │
+         │    ┌──────────┐              ┌────────┴───┐
+         └────┤ Starting │              │  Execute   │
+              └────┬─────┘              └──────┬─────┘
+                   │                           │ [scanner]
+                   └──────────────────►  ┌─────▼──────┐
+                                          │ Suspending │
+                                          └─────┬──────┘
+                                                │
+                                          ┌─────▼──────┐
+                                          │ Suspended  │
+                                          └─────┬──────┘
+                                                │ [scanner OK]
+                                          ┌─────▼──────┐
+                                          │Unsuspending│
+                                          └────────────┘
+```
+
+### State Descriptions
+
+| State | Description |
+|-------|-------------|
+| **Stopped** | Idle; no active motion. Manual axis control is allowed via HMI. |
+| **Starting** | Transition to automatic operation: initialize Navitrol position (x=21.23, y=36.92, θ=90°), enable all axes, enable velocity streaming, move lift to down position. |
+| **Execute** | Active operation: cycles through destinations 1–4, streams Navitrol velocity setpoints to wheel axes, raises/lowers lift at each stop. Immediately triggers `Suspend` if either safety scanner is obstructed. |
+| **Stopping** | Controlled stop: waits for Navitrol setpoint to reach zero and wheels to stop, then disables velocity streaming, stops lift, and disables all axes. |
+| **Aborting** | Emergency transition: immediately disables velocity streaming, stops wheels, stops lift, disables all axes. |
+| **Aborted** | Fault state; robot is idle and all axes are disabled. Operator must issue Reset command. |
+| **Clearing** | Fault reset sequence: pulse safety reset → wait 200 ms for signal propagation → `ResetComponents()` on all subsystems → release E-Stop in Navitrol Msg3002. |
+| **Suspending** | Safety obstruction detected: set E-Stop flag in Navitrol, stop lift. |
+| **Suspended** | Waiting for scanner clearance; automatically transitions to `Unsuspending` when both front and rear scanners report OK. |
+| **Unsuspending** | Scanner cleared: reset scanner faults, release E-Stop in Navitrol, move lift to down position, then re-send GoToDestination command to resume route. |
+
+## Navitrol Communication
+
+The robot communicates with Navitrol via TCP/IP (default `127.0.0.1:2000`). All message function blocks extend `TcpIpCommandResultFilter` and share a single `TcpIpConnection` instance.
+
+| Function Block | Sends | Receives | Interval | Purpose |
+|----------------|-------|----------|----------|---------|
+| `Msg3002_NavitrolStatus` | 3002 | 3102 | 100 ms | Bidirectional status; carries E-Stop flag |
+| `Msg1001_InitializePosition` | 1001 | 1100/1101 | On demand | Set initial robot pose |
+| `Msg1016_MeasurmentUpdateDifferentialDrive` | 1016 | 1116 | 30 ms | Odometry upload + receive wheel velocity setpoints |
+| `Msg3005_GoToDestination` | 3005 | 3105 | On demand | Command navigation to a waypoint |
+| `Msg3024_ReturnToRoute` | 3024 | 3124 | On demand | Resume an interrupted route |
+| `Msg3001_HoldRelease` | 3001 | 3101 | On demand | Hold / release motion |
+
+Msg1016 interval (30 ms) must match the Navitrol parameter `control_interval_us`.
+
+Velocity conversion from Navitrol (m/s) to NC (°/s):
+```
+ω = (360 × v) / (π × WHEEL_DIAMETER)    [WHEEL_DIAMETER = 0.160 m]
+```
+
+## Safety System
+
+Safety signals are grouped in `SafetyGroup_TcEvents` groups with `AutoResetFaults := TRUE`:
+
+- **`SafetyEstop`** — E-Stop; sets the E-Stop flag in the Msg3002 Navitrol status message
+- **`SafetyScannerFront` / `SafetyScannerRear`** — Laser scanners; trigger `Suspend` from within `Execute`
+
+Safety reset sequence (in `Clearing`): `SafetyResetPulse` → 200 ms delay → `ResetComponents()` → release E-Stop in Msg3002.
+
+## Axes
+
+| Axis | Mode | Notes |
+|------|------|-------|
+| Wheel Left / Right | NC velocity streaming | `Navitrol_StreamVelocity` with PT1 smoothing (τ = 100 ms); toggles two `MC_MoveVelocity` instances with `MC_Aborting` buffer for seamless setpoint changes |
+| Lift | NC point-to-point (`AxisPTP`) | CANopen CSP mode (`Lift_CanOpMode := 8`); target positions from persistent `Recipe_HMI` |
+
+## HMI
+
+TypeScript ES2022 (global scope, no modules). Pages are `.content` files; reusable components are `.usercontrol` files; helpers are `.js` files in `HmiProj/Functions/`.
+
+ADS symbol bindings:
+- `MAIN.AmrModule` — main control module
+- `MAIN.AmrModule.AmrModule_HMI` — HMI interface structure
+- `MAIN.AmrModule.Recipe_HMI` — persistent recipe data (Admin only)
+- `MAIN.AmrModule.Navitrol_HMI` — Navitrol interface
+
+Two ADS profiles: `ADS.Config.default.json` (local) and `ADS.Config.remote.json` (remote target).
 
 ## Development
 
 ### Git Workflow
 
-- **Main Branch**: `Development` (not `main`)
-- Commit changes to Development branch
-- Current status: Clean working directory
+- **Working branch**: `Development`
+- **Merge target**: `Release`
 
-### Project Files
+### TwinCAT File Types
 
-- **`.tsproj`** - TwinCAT System Project
-- **`.plcproj`** - TwinCAT PLC Project
-- **`.splcproj`** - TwinCAT Safety PLC Project
-- **`.hmiproj`** - TwinCAT HMI Project
-- **`.TcPOU`** - PLC Program Organization Unit
-- **`.TcDUT`** - PLC Data Type
-- **`.TcGVL`** - PLC Global Variable List
+| Extension | Description |
+|-----------|-------------|
+| `.TcPOU` | Program Organization Unit (XML wrapping Structured Text) |
+| `.TcDUT` | Data Unit Type (struct / enum / union) |
+| `.TcGVL` | Global Variable List |
+| `.TcIO` | Interface definition |
+| `.tsproj` | TwinCAT System Project |
+| `.plcproj` | PLC project |
+| `.splcproj` | Safety PLC project |
+| `.hmiproj` | HMI project |
 
-### Building Components
+### Support
 
-**PLC/Safety**:
-- Build through Visual Studio with TwinCAT XAE
-- Right-click project → Build
-- Activate configuration to deploy
-
-**HMI**:
-- Build through Visual Studio: Build → Build Solution (F6)
-- TypeScript compiles automatically on save
-- Output in `HmiProj/bin/`
-
-## Documentation Links
-
-- **[PLC Project Documentation](AMR_Demo/README.md)** - Detailed PLC architecture
-- **[HMI Project Documentation](AMR_Demo_HMI/README.md)** - HMI structure and development
-- **[Device Documentation](Documentation/README.md)** - Hardware specifications
-- **[CLAUDE.md](CLAUDE.md)** - Comprehensive development guide
-
-## Support
-
-For TwinCAT-specific issues:
 - [Beckhoff Information System](https://infosys.beckhoff.com)
 - [TwinCAT Documentation](https://www.beckhoff.com/twincat3)
-
-For project-specific questions:
-- Review documentation in this repository
-- Check component-specific README files

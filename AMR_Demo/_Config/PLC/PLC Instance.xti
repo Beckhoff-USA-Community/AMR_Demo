@@ -22,28 +22,24 @@
 				<ManualConfig>
 					<OTCID>#x02010030</OTCID>
 				</ManualConfig>
-				<Priority>20</Priority>
+				<Priority>4</Priority>
 				<CycleTime>2000000</CycleTime>
 			</Context>
 		</Contexts>
 		<TaskPouOids>
-			<TaskPouOid Prio="20" OTCID="#x08502001"/>
+			<TaskPouOid Prio="4" OTCID="#x08502002"/>
 		</TaskPouOids>
 	</Instance>
 	<Mappings>
 		<OwnerA>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1100)^Term 5 (EL6910)">
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^Diag" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^State" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^State"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyInputGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Inputs Info Data^Diag" Size="8"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyInputGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Inputs Info Data^State"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyOutputGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Outputs Info Data^Diag" Size="8"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyOutputGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Outputs Info Data^State"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerRear.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerRear Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerRear.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerRear Info Data^State"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Standard In Var 1" Size="1"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Standard In Var 4" Size="1"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Standard In Var 11" Size="1"/>
+			<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Safety PLC (EL2911)">
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Inputs.ErrorAcknowledgement_1" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^LiftSpeed.ErrorAcknowledgement_16" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Motion.ErrorAcknowledgement_13" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyInputGroup.Run" VarB="StandardOutputs^Inputs.Run_18" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyLiftSpeedGroup.Run" VarB="StandardOutputs^LiftSpeed.Run_19" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyMotionGroup.Run" VarB="StandardOutputs^Motion.Run_20" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Lift">
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.LiftRef.NcToPlc" VarB="Outputs^ToPlc"/>
