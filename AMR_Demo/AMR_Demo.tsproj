@@ -27,6 +27,7 @@
 		<Io>
 			<Device File="X103 (EtherCAT).xti" Id="1"/>
 			<Device File="X104 (EtherCAT).xti" Id="2"/>
+			<Device File="CANOpen (EL6751).xti" Id="3"/>
 		</Io>
 	</Project>
 	<Mappings>

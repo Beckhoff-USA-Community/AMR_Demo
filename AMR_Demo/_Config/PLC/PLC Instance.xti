@@ -32,6 +32,13 @@
 	</Instance>
 	<Mappings>
 		<OwnerA>
+			<OwnerB Name="TIID^CANOpen (EL6751)^PD4-CB59M024035-E-08 (CANopen Slave)">
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.Lift_CanOpMode" VarB="RxPDO 1^Outputs^Modes of operation"/>
+			</OwnerB>
+			<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^IO Link (EL6224-0090)">
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Position"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Speed"/>
+			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Safety PLC (EL2911)">
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^Diag" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^Diag"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^State" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^State"/>
