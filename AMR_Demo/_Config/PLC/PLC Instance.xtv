@@ -1005,7 +1005,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{D1BEF554-CE57-8230-AD31-80272FC7B2D5}">
+	<Instance TmcHash="{FBCC472B-8A71-9685-45A8-63005855DD32}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1045,11 +1045,11 @@ External Setpoint Generation:
 				<Type GUID="{C73AE285-B064-EB1F-4C43-B915DD9A2753}" Namespace="CoreComponents">ST_SafetyStateDiag</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.SafetyScannerFront.InfoData</Name>
+				<Name>MAIN.AmrModule.SafetyScannerLeuze.InfoData</Name>
 				<Type GUID="{C73AE285-B064-EB1F-4C43-B915DD9A2753}" Namespace="CoreComponents">ST_SafetyStateDiag</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.SafetyScannerRear.InfoData</Name>
+				<Name>MAIN.AmrModule.SafetyScannerHokuyo.InfoData</Name>
 				<Type GUID="{C73AE285-B064-EB1F-4C43-B915DD9A2753}" Namespace="CoreComponents">ST_SafetyStateDiag</Type>
 			</Var>
 		</Vars>

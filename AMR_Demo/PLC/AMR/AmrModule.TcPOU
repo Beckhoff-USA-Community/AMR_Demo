@@ -50,9 +50,9 @@ VAR
 	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyLiftSpeedGroup : SafetyGroup_TcEvents('Safety Lift Speed Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyReset			 : SafetyResetPulse('Safety Reset');
-	SafetyEstop			 : SafetyEstopFB_TcEvents('E-Stop')		 := (ResetFunction := SafetyReset, SafetyGroup := SafetyInputGroup);
-	SafetyScannerFront	 : SafetyMonFB_TcEvents('Front Scanner') := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
-	SafetyScannerRear	 : SafetyMonFB_TcEvents('Rear Scanner')	 := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
+	SafetyEstop			 : SafetyEstopFB_TcEvents('E-Stop')		  := (ResetFunction := SafetyReset, SafetyGroup := SafetyInputGroup);
+	SafetyScannerLeuze	 : SafetyMonFB_TcEvents('Leuze Scanner')  := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
+	SafetyScannerHokuyo	 : SafetyMonFB_TcEvents('Hokuyo Scanner') := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
 END_VAR
 
 VAR
@@ -181,7 +181,7 @@ VAR_INST
 	WaitTime : TON;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT SafetyScannerFront.OK OR NOT SafetyScannerRear.OK THEN
+        <ST><![CDATA[IF NOT SafetyScannerLeuze.OK OR NOT SafetyScannerHokuyo.OK THEN
 	Statemachine.ChangeState(E_PmlCommand.Suspend);
 	RETURN;
 END_IF
@@ -335,20 +335,19 @@ SafetyInputGroup.RegisterWithParent(THIS^);
 SafetyLiftSpeedGroup.RegisterWithParent(THIS^);
 SafetyMotionGroup.RegisterWithParent(THIS^);
 SafetyEstop.RegisterWithParent(THIS^);
-SafetyScannerFront.RegisterWithParent(THIS^);
-SafetyScannerRear.RegisterWithParent(THIS^);
-SafetyScannerFront.SetEventReactions(0,
+SafetyScannerLeuze.RegisterWithParent(THIS^);
+SafetyScannerHokuyo.RegisterWithParent(THIS^);
+SafetyScannerLeuze.SetEventReactions(0,
 									 0,
 									 0,
 									 0,
 									 0);
 
-SafetyScannerFront.SimulateSafetyState(1);
-SafetyScannerRear.SetEventReactions(0,
-									0,
-									0,
-									0,
-									0);
+SafetyScannerHokuyo.SetEventReactions(0,
+									  0,
+									  0,
+									  0,
+									  0);
 
 //
 EncoderSpeed.RegisterWithParent(THIS^);
@@ -501,8 +500,8 @@ PROPERTY Override : LREAL]]></Declaration>
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[SafetyEstop.Reset();
-SafetyScannerFront.Reset();
-SafetyScannerRear.Reset();]]></ST>
+SafetyScannerLeuze.Reset();
+SafetyScannerHokuyo.Reset();]]></ST>
       </Implementation>
     </Method>
     <Method Name="Starting" Id="{9c45b7a4-6e33-4ec5-9d89-2d3bd77ea4c2}" FolderPath="States\">
@@ -607,7 +606,7 @@ END_CASE]]></ST>
       <Declaration><![CDATA[METHOD Suspended : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF SafetyScannerFront.OK AND SafetyScannerRear.OK THEN
+        <ST><![CDATA[IF SafetyScannerLeuze.OK AND SafetyScannerHokuyo.OK THEN
 	Statemachine.ChangeState(E_PmlCommand.Unsuspend);
 	RETURN;
 END_IF]]></ST>
@@ -649,8 +648,8 @@ END_CASE]]></ST>
       <Implementation>
         <ST><![CDATA[CASE SequenceState OF
 	0:
-		SafetyScannerFront.Reset();
-		SafetyScannerRear.Reset();
+		SafetyScannerLeuze.Reset();
+		SafetyScannerHokuyo.Reset();
 		NextMinorStep(SequenceState);
 
 	1:
