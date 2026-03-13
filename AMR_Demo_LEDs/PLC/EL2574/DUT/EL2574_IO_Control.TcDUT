@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="EL2574_IO_Control" Id="{1ca7ef6a-8874-4f87-94a2-173b31e768ef}">
+    <Declaration><![CDATA[TYPE EL2574_IO_Control :
+	STRUCT
+		Execute : BIT;
+		Send	: BIT;
+		Update	: BIT;
+		{attribute 'hide'}
+		_reserved1 : BIT;
+		{attribute 'hide'}
+		_reserved2 : BIT;
+		{attribute 'hide'}
+		_reserved3 : BIT;
+		{attribute 'hide'}
+		_reserved4 : BIT;
+		{attribute 'hide'}
+		_reserved5 : BIT;
+		Command	   : USINT;
+		Index	   : UINT;
+		Length	   : UINT;
+		Parameter  : UINT;
+		Color	   : EL2574_IO_Control_Color;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

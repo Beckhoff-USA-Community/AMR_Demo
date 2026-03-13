@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CTComPlcObjDef">
+	<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" XtvPath="PLC\PLC Instance.xtv" TmcPath="PLC\PLC.tmc">
+		<Name>__FILENAME__</Name>
+		<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+		<Contexts>
+			<Context>
+				<Id>0</Id>
+				<Name>PlcTask</Name>
+				<ManualConfig>
+					<OTCID>#x02010030</OTCID>
+				</ManualConfig>
+				<Priority>20</Priority>
+				<CycleTime>10000000</CycleTime>
+			</Context>
+		</Contexts>
+		<TaskPouOids>
+			<TaskPouOid Prio="20" OTCID="#x08502001"/>
+		</TaskPouOids>
+	</Instance>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIID^CX (EtherCAT)^Term 1 (EK1200)^LED 1-4 (EL2574)">
+				<Link VarA="PlcTask Inputs^MAIN.LED1.pdo.Status" VarB="SlotGroup 1 (Slot 1, 2) (2xASYNC)^Status Channel 1^Status"/>
+				<Link VarA="PlcTask Inputs^MAIN.LED2.pdo.Status" VarB="SlotGroup 1 (Slot 1, 2) (2xASYNC)^Status Channel 2^Status"/>
+				<Link VarA="PlcTask Inputs^MAIN.LED3.pdo.Status" VarB="SlotGroup 2 (Slot 3, 4) (2xASYNC)^Status Channel 1^Status"/>
+				<Link VarA="PlcTask Inputs^MAIN.LED4.pdo.Status" VarB="SlotGroup 2 (Slot 3, 4) (2xASYNC)^Status Channel 2^Status"/>
+				<Link VarA="PlcTask Outputs^MAIN.LED1.pdo.Control" VarB="SlotGroup 1 (Slot 1, 2) (2xASYNC)^Control Channel 1^Control"/>
+				<Link VarA="PlcTask Outputs^MAIN.LED2.pdo.Control" VarB="SlotGroup 1 (Slot 1, 2) (2xASYNC)^Control Channel 2^Control"/>
+				<Link VarA="PlcTask Outputs^MAIN.LED3.pdo.Control" VarB="SlotGroup 2 (Slot 3, 4) (2xASYNC)^Control Channel 1^Control"/>
+				<Link VarA="PlcTask Outputs^MAIN.LED4.pdo.Control" VarB="SlotGroup 2 (Slot 3, 4) (2xASYNC)^Control Channel 2^Control"/>
+			</OwnerB>
+			<OwnerB Name="TIID^CX (EtherCAT)^Term 1 (EK1200)^LED 5-8 (EL2574)">
+				<Link VarA="PlcTask Inputs^MAIN.LED5.pdo.Status" VarB="SlotGroup 1 (Slot 1, 2) (2xASYNC)^Status Channel 1^Status"/>
+				<Link VarA="PlcTask Outputs^MAIN.LED5.pdo.Control" VarB="SlotGroup 1 (Slot 1, 2) (2xASYNC)^Control Channel 1^Control"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

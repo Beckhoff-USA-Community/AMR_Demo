@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="EL2574_IO_Control_Color" Id="{2ab37f33-7c5d-4fff-b681-da78fc2247a0}">
+    <Declaration><![CDATA[TYPE EL2574_IO_Control_Color :
+	STRUCT
+		Red	  : USINT;
+		Green : USINT;
+		Blue  : USINT;
+		White : USINT;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

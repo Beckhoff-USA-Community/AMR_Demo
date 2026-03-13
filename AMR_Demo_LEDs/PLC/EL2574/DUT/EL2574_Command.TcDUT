@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="EL2574_Command" Id="{376a7fc3-b842-468d-8106-57fcd3c1cf88}">
+    <Declaration><![CDATA[TYPE EL2574_Command :
+	STRUCT
+		Send	   : BOOL;
+		Update	   : BOOL;
+		Command	   : USINT;
+		Index	   : UINT;
+		Length	   : UINT;
+		Parameter  : UINT;
+		ColorRed   : USINT;
+		ColorGreen : USINT;
+		ColorBlue  : USINT;
+		ColorWhite : USINT;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>
