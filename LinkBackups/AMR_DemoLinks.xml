@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <VarLinks>
 	<OwnerA Name="TIID^X103 (EtherCAT)">
+		<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^IO Link (EL6224-0090)">
+			<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionInputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO" VarB="Module 7 (EL6224-0090)^TSC Outputs^TSC"/>
+			<Link VarA="Term 1 (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO" VarB="Module 7 (EL6224-0090)^TSC Inputs^TSC"/>
+		</OwnerB>
 		<OwnerB Name="TIID^X103 (EtherCAT)^Term 1 (EK1100)^Safety PLC (EL2911)">
-			<Link VarA="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Inputs^TSC" VarB="ConnectionOutputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO"/>
-			<Link VarA="Term 1 (EK1100)^IO Link (EL6224-0090)^Module 7 (EL6224-0090)^TSC Outputs^TSC" VarB="ConnectionInputs^LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO"/>
 			<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO"/>
 			<Link VarA="Term 1 (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
 			<Link VarA="Term 1 (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
@@ -86,6 +88,7 @@
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyLiftSpeedGroup.Run" VarB="StandardOutputs^LiftSpeed.Run_19"/>
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyMotionGroup.Run" VarB="StandardOutputs^Motion.Run_20"/>
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule._BypassScanners" VarB="StandardOutputs^Inputs.BypassScanners_25"/>
 		</OwnerB>
 		<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Lift">
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.LiftRef.NcToPlc" VarB="Outputs^ToPlc"/>
