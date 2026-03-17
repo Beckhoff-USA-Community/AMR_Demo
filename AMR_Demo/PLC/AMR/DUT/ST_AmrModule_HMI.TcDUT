@@ -3,7 +3,8 @@
   <DUT Name="ST_AmrModule_HMI" Id="{6373cca3-230c-4786-9bdb-9be1cdb0f308}">
     <Declaration><![CDATA[TYPE ST_AmrModule_HMI :
 	STRUCT
-		Override : LREAL := 100.0;
+		Override	   : LREAL := 100.0;
+		BypassScanners : BOOL  := TRUE;
 	END_STRUCT
 END_TYPE]]></Declaration>
   </DUT>

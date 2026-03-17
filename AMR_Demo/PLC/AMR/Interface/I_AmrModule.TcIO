@@ -2,6 +2,12 @@
 <TcPlcObject Version="1.1.0.1">
   <Itf Name="I_AmrModule" Id="{9169f098-efd6-41e1-afc0-6d9ff7eb0ed9}">
     <Declaration><![CDATA[INTERFACE I_AmrModule EXTENDS I_Module, I_Override, I_ContainStatemachine]]></Declaration>
+    <Property Name="BypassScanners" Id="{d566d36b-114b-40f2-8f6b-e4a3ca2303e3}">
+      <Declaration><![CDATA[PROPERTY BypassScanners : BOOL]]></Declaration>
+      <Set Name="Set" Id="{55b94751-aca6-4434-9d1f-0206cf8e4ea4}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
     <Property Name="Lift" Id="{270e6659-b12d-4f79-9298-601355dd78e8}">
       <Declaration><![CDATA[PROPERTY Lift : I_Axis_PTP]]></Declaration>
       <Get Name="Get" Id="{904335e2-75c1-4137-bfbf-6ce633d9cd9e}">

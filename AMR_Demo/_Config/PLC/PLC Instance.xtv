@@ -1005,7 +1005,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{C77152E8-E740-D603-0759-6C8F01D7B17D}">
+	<Instance TmcHash="{EF825A19-21C3-4600-6D96-DFCFA04D274E}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1090,6 +1090,10 @@ External Setpoint Generation:
 			</Var>
 			<Var>
 				<Name>MAIN.AmrModule.SafetyReset.Reset</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule._BypassScanners</Name>
 				<Type>BOOL</Type>
 			</Var>
 		</Vars>

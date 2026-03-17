@@ -24,7 +24,8 @@ END_VAR]]></Declaration>
 END_IF
 
 SUPER^.CyclicLogic();
-AmrModule.Override := AmrModule_HMI.Override;
+AmrModule.Override		 := AmrModule_HMI.Override;
+AmrModule.BypassScanners := AmrModule_HMI.BypassScanners;
 
 // User buttons
 Statemachine_HMI.StartPermissive := Statemachine_HMI.CurrentState = E_PMLState.Stopped;

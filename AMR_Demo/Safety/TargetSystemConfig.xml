@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TargetSystemConfig Crc="513877985" Version="1.5">
+<TargetSystemConfig Crc="540142919" Version="1.5">
   <TargetSystemType>HSafetyPLC</TargetSystemType>
   <TargetSystemSubType>EL2911</TargetSystemSubType>
   <IsExternalDevice>false</IsExternalDevice>
@@ -13,7 +13,7 @@
   <VersionNumber>1</VersionNumber>
   <FSOEAddress>1</FSOEAddress>
   <DipSwitch />
-  <AmsNetID>5.135.212.84.2.1</AmsNetID>
+  <AmsNetID>0.0.0.0.2.1</AmsNetID>
   <AmsPort>1004</AmsPort>
   <ConnectionInfoDataConfigOld>false</ConnectionInfoDataConfigOld>
   <TakeOverSafetyAliasDeviceNamesInProcessImage>true</TakeOverSafetyAliasDeviceNamesInProcessImage>

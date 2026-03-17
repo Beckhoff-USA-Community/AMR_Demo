@@ -71,8 +71,9 @@ VAR
 END_VAR
 
 VAR
-	AmrModule_HMI : AmrModule_HMI('AMR Module', _Statemachine, THIS^);
-	Navitrol_HMI  : Navitrol_HMI('Navitrol', Navitrol_Status, Navitrol_TcpIpConnection);
+	AmrModule_HMI		   : AmrModule_HMI('AMR Module', _Statemachine, THIS^);
+	_BypassScanners AT %Q* : BOOL;
+	Navitrol_HMI		   : Navitrol_HMI('Navitrol', Navitrol_Status, Navitrol_TcpIpConnection);
 END_VAR
 
 VAR PERSISTENT
@@ -146,6 +147,17 @@ IF Navitrol_TcpIpConnection.ConnectionState <> E_SocketConnectionState.eSOCKET_C
 END_IF]]></ST>
       </Implementation>
     </Method>
+    <Property Name="BypassScanners" Id="{0e35f052-4ed1-4eae-a587-5e74f332ef1f}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY BypassScanners : BOOL]]></Declaration>
+      <Set Name="Set" Id="{d01f4abc-5232-4e1c-ac15-d9e3d4d0e43a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_BypassScanners := BypassScanners;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
     <Method Name="Clearing" Id="{38c82f24-323d-4651-9766-fc6b20da26f6}" FolderPath="States\">
       <Declaration><![CDATA[METHOD Clearing : BOOL;
 VAR_INST
@@ -180,7 +192,7 @@ VAR_INST
 	WaitTime : TON;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT SafetyScannerLeuze.OK OR NOT SafetyScannerHokuyo.OK THEN
+        <ST><![CDATA[IF (NOT SafetyScannerLeuze.OK OR NOT SafetyScannerHokuyo.OK) AND NOT _BypassScanners THEN
 	Statemachine.ChangeState(E_PmlCommand.Suspend);
 	RETURN;
 END_IF
