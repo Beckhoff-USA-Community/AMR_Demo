@@ -612,7 +612,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerFront.OK%/s%",
+    "event": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -624,7 +624,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
-                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerFront.OK%/s%"
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -638,7 +638,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
-                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerRear.OK%/s%"
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -684,7 +684,7 @@
     ]
   },
   {
-    "event": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerRear.OK%/s%",
+    "event": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -696,7 +696,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
-                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerFront.OK%/s%"
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -710,7 +710,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
-                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerRear.OK%/s%"
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",

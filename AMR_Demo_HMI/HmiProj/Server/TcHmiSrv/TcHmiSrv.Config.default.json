@@ -823,7 +823,7 @@
                     "_Permissive": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:server#/definitions/ADS-PLC1.Core.Permissive"
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.Core.PermissiveInterlock"
                             },
                             {
                                 "propertyOrder": 3
@@ -1146,6 +1146,56 @@
                 "type": "object"
             },
             "ADS-PLC1.Core.Permissive": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$implements": [
+                        "tchmi:server#/definitions/ADS-PLC1.Core.I_Permissive"
+                    ],
+                    "TcImplements": "Core.I_Permissive"
+                },
+                "properties": {
+                    "OK": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL"
+                    },
+                    "Permissive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..9_OF-BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "PermissiveReason": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..9_OF-STRING-80"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "_OK": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "_OK",
+                    "Permissive",
+                    "PermissiveReason"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.Core.PermissiveInterlock": {
                 "additionalProperties": false,
                 "attributes": {
                     "$implements": [
@@ -6357,6 +6407,16 @@
             "ADS-PLC1.ST_AmrModule_HMI": {
                 "additionalProperties": false,
                 "properties": {
+                    "BypassScanners": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
                     "Override": {
                         "allOf": [
                             {
@@ -6369,7 +6429,8 @@
                     }
                 },
                 "required": [
-                    "Override"
+                    "Override",
+                    "BypassScanners"
                 ],
                 "type": "object"
             },
@@ -31402,7 +31463,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 10,
+                        "propertyOrder": 11,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31426,7 +31487,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 6,
+                        "propertyOrder": 7,
                         "userGroups": [
                             "Admin",
                             "__SystemAdministrators"
@@ -31450,7 +31511,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 6,
+                        "propertyOrder": 7,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31474,7 +31535,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 5,
+                        "propertyOrder": 6,
                         "userGroups": [
                             "Admin",
                             "__SystemAdministrators"
@@ -31498,7 +31559,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 6,
+                        "propertyOrder": 7,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31539,7 +31600,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 52,
+                        "propertyOrder": 54,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31549,21 +31610,21 @@
             },
             "USEMAPPING": true
         },
-        "ADS.PLC1.MAIN.AmrModule.SafetyScannerFront.OK": {
+        "ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC1::MAIN::AmrModule::SafetyScannerFront::OK",
+            "MAPPING": "PLC1::MAIN::AmrModule::SafetyScannerHokuyo::OK",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL"
             },
             "USEMAPPING": true
         },
-        "ADS.PLC1.MAIN.AmrModule.SafetyScannerRear.OK": {
+        "ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC1::MAIN::AmrModule::SafetyScannerRear::OK",
+            "MAPPING": "PLC1::MAIN::AmrModule::SafetyScannerLeuze::OK",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL"
             },
@@ -31583,7 +31644,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 5,
+                        "propertyOrder": 6,
                         "userGroups": [
                             "Admin",
                             "__SystemAdministrators"
@@ -31607,7 +31668,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 5,
+                        "propertyOrder": 6,
                         "userGroups": [
                             "Admin",
                             "__SystemAdministrators"
@@ -40772,8 +40833,8 @@
                 "ADS.CheckLicense": 3,
                 "ADS.Diagnostics": 3,
                 "ADS.PLC1.MAIN.AmrModule.Navitrol_Status.Navitrol_status": 3,
-                "ADS.PLC1.MAIN.AmrModule.SafetyScannerFront.OK": 3,
-                "ADS.PLC1.MAIN.AmrModule.SafetyScannerRear.OK": 3,
+                "ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK": 3,
+                "ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK": 3,
                 "ADS.PLC1.MAIN.ControlSource_HMI": 3,
                 "ADS.PLC1.MAIN.ControlSource_HMI.MainPMLControl_Standard.CurrentState": 3,
                 "ADS.PLC1.MAIN.ControlSource_HMI.MainPMLControl_Standard.ModeCommand": 3,
