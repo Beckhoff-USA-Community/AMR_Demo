@@ -15987,6 +15987,32 @@
       },
       "additionalProperties": false
     },
+    "TcHmi.Controls.Beckhoff.TcHmiPdfViewer": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "TcHmiPdfViewer",
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
+    },
+    "TcHmiPdfViewer": {
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiPdfViewer"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiPdfViewer.PageMode": {
+      "type": "string",
+      "enum": [
+        "none",
+        "thumbs",
+        "bookmarks",
+        "attachments"
+      ]
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiPdfViewer.CursorTool": {
+      "type": "string",
+      "enum": [
+        "Select",
+        "Hand"
+      ]
+    },
     "TcHmi.Controls.Beckhoff.TcHmiScopeControl.TcHmiScopeControl": {
       "$schema": "http://json-schema.org/draft-04/schema",
       "type": "object",

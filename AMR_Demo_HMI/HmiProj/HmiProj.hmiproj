@@ -255,6 +255,9 @@
     <Content Include="KeyboardLayouts\Numpad (plusminus) - indirect.keyboard.json">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Pages\Products.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Pages\resources\definitions_Beckhoff_ver1.xml">
       <SubType>Content</SubType>
     </Content>

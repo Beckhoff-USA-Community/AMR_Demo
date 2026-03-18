@@ -54,6 +54,12 @@
     "name": "Events"
   },
   {
+    "content": "Pages/Products.content",
+    "icon": "Images/Icons/camera.svg",
+    "id": "Products",
+    "name": "Products"
+  },
+  {
     "icon": "Images/Icons/diagnostics.svg",
     "iconHeight": 48.0,
     "iconHeightUnit": "px",
@@ -610,6 +616,4 @@
 </div>
 
 
-<div id="ScannerBypass-ToggleSwitch" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-height="44" data-tchmi-height-unit="px" data-tchmi-text="Scanner Bypassed" data-tchmi-width="188" data-tchmi-width-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-state-symbol="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.AmrModule_HMI::BypassScanners%/s%">
-</div>
 </div>

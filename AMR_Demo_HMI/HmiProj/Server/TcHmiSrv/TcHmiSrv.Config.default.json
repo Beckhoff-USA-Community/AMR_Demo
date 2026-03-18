@@ -41041,8 +41041,10 @@
         "/Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EcDiagnosticsControl.14.3.340\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Framework": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Framework.14.3.360\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Functions": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Functions.14.3.340\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.PDFViewer": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.PDFViewer.14.3.344\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Scope": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Scope.14.2.7198",
         "/Beckhoff.TwinCAT.HMI.ScopeControl": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.ScopeControl.14.3.277\\runtimes\\native1.12-tchmi",
+        "/Presentation": "C:\\Presentation\\",
         "/TcHmiExtendedControls": "..\\..\\Packages\\TcHmiExtendedControls.1.1.6\\runtimes\\native1.12-tchmi",
         "/TcHmiToastNotification": "..\\..\\Packages\\TcHmiToastNotification.1.0.2\\runtimes\\native1.12-tchmi",
         "/bin": "..\\..\\HmiProj\\bin\\"
