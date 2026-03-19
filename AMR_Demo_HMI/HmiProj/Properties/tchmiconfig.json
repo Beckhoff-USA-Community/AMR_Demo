@@ -237,6 +237,36 @@
         "type": "tchmi:general#/definitions/Boolean",
         "persist": true,
         "readonly": false
+      },
+      "StartPage_Navitrol": {
+        "value": 1,
+        "type": "tchmi:general#/definitions/DINT",
+        "persist": true,
+        "readonly": false
+      },
+      "StartPage_CompactMotion": {
+        "value": 5,
+        "type": "tchmi:general#/definitions/DINT",
+        "persist": true,
+        "readonly": false
+      },
+      "StartPage_DCDC": {
+        "value": 10,
+        "type": "tchmi:general#/definitions/DINT",
+        "persist": true,
+        "readonly": false
+      },
+      "StartPage_Accelerometer": {
+        "value": 12,
+        "type": "tchmi:general#/definitions/DINT",
+        "persist": true,
+        "readonly": false
+      },
+      "StartPage_Safety": {
+        "value": 14,
+        "type": "tchmi:general#/definitions/DINT",
+        "persist": true,
+        "readonly": false
       }
     },
     "themedResources": {
@@ -333,6 +363,17 @@
           },
           "Base": {
             "color": "rgba(246, 247, 248, 1)"
+          }
+        }
+      },
+      "DefaultYellow": {
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "values": {
+          "Base-Dark": {
+            "color": "rgba(246, 247, 24, 1)"
+          },
+          "Base": {
+            "color": "rgba(246, 247, 24, 1)"
           }
         }
       }
