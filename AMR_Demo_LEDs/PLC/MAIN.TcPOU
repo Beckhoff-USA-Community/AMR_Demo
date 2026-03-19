@@ -3,6 +3,7 @@
   <POU Name="MAIN" Id="{a70d75b9-d4f5-4238-a7f8-34cf979da90d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	ActivePage	   : UDINT;
 	DisplaySection : Section;
 	LED1		   : EL2574_CommandMode(10);
 	LED2		   : EL2574_CommandMode(10);

@@ -31702,6 +31702,16 @@
             },
             "USEMAPPING": true
         },
+        "ADS.PLC_LED.MAIN.ActivePage": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC_LED::MAIN::ActivePage",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/UDINT"
+            },
+            "USEMAPPING": true
+        },
         "ADS.RuntimePorts": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -40848,6 +40858,7 @@
                 "ADS.PLC1.MAIN.VFFS._Recipe": 3,
                 "ADS.PLC1.MAIN.test": 3,
                 "ADS.PLC1.MAIN_Core.MachineHmiTree.SystemHmiTree": 3,
+                "ADS.PLC_LED.MAIN.ActivePage": 3,
                 "ChangeUserSettings": 3,
                 "ConfirmAlarm": 3,
                 "CreateEvent": 3,

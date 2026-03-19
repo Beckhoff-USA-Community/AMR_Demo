@@ -10,10 +10,15 @@
     "heightUnit": "factor"
   },
   {
-    "height": 100.0,
+    "height": 70.0,
     "heightMode": "Value",
     "heightUnit": "px",
     "overflow": false
+  },
+  {
+    "height": 30.0,
+    "heightMode": "Value",
+    "heightUnit": "px"
   }
 ]
 </script>
@@ -74,11 +79,9 @@
                 "active": true,
                 "symbolExpression": "%ctrl%products-pdf::BorderColor%/ctrl%",
                 "value": {
-                  "objectType": "StaticValue",
+                  "objectType": "Symbol",
                   "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(246, 247, 248, 1)"
-                  }
+                  "symbolExpression": "%tr%DefaultWhite%/tr%"
                 },
                 "asyncWait": true
               }
@@ -106,5 +109,7 @@
   }
 ]
 </script>
+<div id="products-grid-selection" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
+</div>
 </div>
 </div>

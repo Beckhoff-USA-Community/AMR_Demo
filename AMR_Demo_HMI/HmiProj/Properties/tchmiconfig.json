@@ -323,6 +323,18 @@
             "color": "rgba(185, 185, 185, 1)"
           }
         }
+      },
+      "DefaultWhite": {
+        "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
+        "values": {
+          "Base-Dark": {
+            "color": "rgba(246, 247, 248, 1)"
+          },
+          "Base": {
+            "color": "rgba(246, 247, 248, 1)"
+          }
+        }
       }
     },
     "timer": {},
