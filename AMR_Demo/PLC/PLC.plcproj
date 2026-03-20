@@ -7,7 +7,7 @@
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <ProgramVersion>3.1.4026.20</ProgramVersion>
+    <ProgramVersion>3.1.4026.21</ProgramVersion>
     <WriteBookmarksToFile>true</WriteBookmarksToFile>
     <DeviceLogFilter>LOG_INFO, LOG_ERROR</DeviceLogFilter>
     <Released>false</Released>
