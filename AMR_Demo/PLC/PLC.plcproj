@@ -346,76 +346,79 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="Core">
-      <Resolution>Core, * (Beckhoff Automation LLC)</Resolution>
+      <Resolution>Core, 1.3.0 (Beckhoff Automation LLC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="CoreComponents">
-      <Resolution>CoreComponents, * (Beckhoff Automation LLC)</Resolution>
+      <Resolution>CoreComponents, 1.3.1 (Beckhoff Automation LLC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="CoreMotionNc2">
-      <Resolution>CoreMotionNc2, * (Beckhoff Automation LLC)</Resolution>
+      <Resolution>CoreMotionNc2, 1.3.0 (Beckhoff Automation LLC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ControllerToolbox">
-      <Resolution>Tc2_ControllerToolbox, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_ControllerToolbox, 3.6.5.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_DataExchange">
-      <Resolution>Tc2_DataExchange, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_DataExchange, 3.4.2.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Drive">
-      <Resolution>Tc2_Drive, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_Drive, 3.3.14.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_EtherCAT">
-      <Resolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_EtherCAT, 3.7.1.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_IoFunctions">
-      <Resolution>Tc2_IoFunctions, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_IoFunctions, 3.4.5.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Math">
-      <Resolution>Tc2_Math, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_Math, 3.5.1.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_MC2">
-      <Resolution>Tc2_MC2, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_MC2, 3.3.72.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_MC2_Drive">
-      <Resolution>Tc2_MC2_Drive, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_MC2_Drive, 3.3.53.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_NC">
-      <Resolution>Tc2_NC, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_NC, 3.3.11.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_NCI">
-      <Resolution>Tc2_NCI, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_NCI, 3.3.19.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_NcKinematicTransformation">
-      <Resolution>Tc2_NcKinematicTransformation, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_NcKinematicTransformation, 3.2.11.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_PlcInterpolation">
-      <Resolution>Tc2_PlcInterpolation, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_PlcInterpolation, 3.3.23.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_SerialCom">
+      <Resolution>Tc2_SerialCom, 3.4.6.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
-      <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_Standard, 3.4.5.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_System">
-      <Resolution>Tc2_System, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_System, 3.10.1.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_TcpIp">
-      <Resolution>Tc2_TcpIp, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_TcpIp, 3.4.4.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Utilities">
-      <Resolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_Utilities, 3.10.1.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_DynamicMemory">
-      <Resolution>Tc3_DynamicMemory, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_DynamicMemory, 1.1.4.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_EventLogger">
-      <Resolution>Tc3_EventLogger, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_EventLogger, 3.3.13.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_JsonXml">
-      <Resolution>Tc3_JsonXml, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_JsonXml, 3.4.7.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Module">
-      <Resolution>Tc3_Module, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_Module, 3.4.5.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_PackML_V3">
-      <Resolution>Tc3_PackML_V3, * (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_PackML_V3, 1.0.6.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>
