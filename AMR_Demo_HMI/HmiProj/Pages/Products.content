@@ -79,6 +79,17 @@
                   "symbolExpression": "%tr%DefaultWhite%/tr%"
                 },
                 "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+                  "value": 4
+                },
+                "asyncWait": true
               }
             ]
           },
@@ -108,6 +119,17 @@
                   "objectType": "Symbol",
                   "valueType": "tchmi:framework#/definitions/Color",
                   "symbolExpression": "%tr%DefaultRed%/tr%"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+                  "value": 2
                 },
                 "asyncWait": true
               }
@@ -141,6 +163,17 @@
                   "symbolExpression": "%tr%DefaultBlue%/tr%"
                 },
                 "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+                  "value": 3
+                },
+                "asyncWait": true
               }
             ]
           },
@@ -172,6 +205,17 @@
                   "symbolExpression": "%tr%DefaultGreen%/tr%"
                 },
                 "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+                  "value": 1
+                },
+                "asyncWait": true
               }
             ]
           },
@@ -187,21 +231,21 @@
                   "symbolExpression": "%tr%DefaultYellow%/tr%"
                 },
                 "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+                  "value": 5
+                },
+                "asyncWait": true
               }
             ]
           }
         ],
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%s%ADS.PLC_LED.MAIN.ActivePage%/s%",
-        "value": {
-          "objectType": "Symbol",
-          "valueType": "tchmi:general#/definitions/UDINT",
-          "symbolExpression": "%ctrl%products-pdf::Page%/ctrl%"
-        },
         "asyncWait": true
       }
     ]

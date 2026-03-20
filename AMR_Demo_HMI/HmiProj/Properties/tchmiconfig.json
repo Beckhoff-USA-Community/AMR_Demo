@@ -368,6 +368,7 @@
       },
       "DefaultYellow": {
         "type": "tchmi:framework#/definitions/SolidColor",
+        "description": "",
         "values": {
           "Base-Dark": {
             "color": "rgba(246, 247, 24, 1)"

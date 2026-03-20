@@ -30610,6 +30610,59 @@
                     "HMI"
                 ],
                 "type": "object"
+            },
+            "ADS-PLC_LED.STRING-9": {
+                "allOf": [
+                    {
+                        "maxLength": 9
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "ADS-PLC_LED.Section": {
+                "attributes": {
+                    "generate_implicit_init_function": "",
+                    "qualified_only": "",
+                    "strict": "",
+                    "to_string": ""
+                },
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Accelerometer",
+                        "value": 1
+                    },
+                    {
+                        "label": "Drives",
+                        "value": 2
+                    },
+                    {
+                        "label": "Converter",
+                        "value": 3
+                    },
+                    {
+                        "label": "Linux",
+                        "value": 4
+                    },
+                    {
+                        "label": "Safety",
+                        "value": 5
+                    }
+                ],
+                "type": "integer"
             }
         }
     },
@@ -31702,13 +31755,23 @@
             },
             "USEMAPPING": true
         },
-        "ADS.PLC_LED.MAIN.ActivePage": {
+        "ADS.PLC_LED.MAIN.BackgroundColor": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC_LED::MAIN::ActivePage",
+            "MAPPING": "PLC_LED::MAIN::BackgroundColor",
             "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/UDINT"
+                "$ref": "tchmi:server#/definitions/ADS-PLC_LED.STRING-9"
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC_LED.MAIN.DisplaySection": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC_LED::MAIN::DisplaySection",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/ADS-PLC_LED.Section"
             },
             "USEMAPPING": true
         },
@@ -40858,7 +40921,8 @@
                 "ADS.PLC1.MAIN.VFFS._Recipe": 3,
                 "ADS.PLC1.MAIN.test": 3,
                 "ADS.PLC1.MAIN_Core.MachineHmiTree.SystemHmiTree": 3,
-                "ADS.PLC_LED.MAIN.ActivePage": 3,
+                "ADS.PLC_LED.MAIN.BackgroundColor": 3,
+                "ADS.PLC_LED.MAIN.DisplaySection": 3,
                 "ChangeUserSettings": 3,
                 "ConfirmAlarm": 3,
                 "CreateEvent": 3,

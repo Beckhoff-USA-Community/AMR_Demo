@@ -181,6 +181,17 @@ Safety" data-tchmi-label-to-input-ratio="1:1" data-tchmi-value-horizontal-alignm
 <div id="settings_ts_lockmachinecontrol" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Lock Machine Control Flyout" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-right="20" data-tchmi-bottom="35" data-tchmi-text-position="Left" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%i%machineControlLocked%/i%">
 
 </div>
+<div id="backgroundColor" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.LabeledInput" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-label-word-wrap="True" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-unit-word-wrap="True" data-tchmi-vertical-scroll="Auto" data-tchmi-label-to-input-ratio="1:1" data-tchmi-label="LED Base Color" data-tchmi-right="10" data-tchmi-text-horizontal-alignment="Center" data-tchmi-label-horizontal-alignment="Center" data-tchmi-text="%s%ADS.PLC_LED.MAIN.BackgroundColor%/s%">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
 </div>
 <div id="settings-grid-system" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="2" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10">
 
