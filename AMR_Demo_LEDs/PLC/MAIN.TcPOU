@@ -3,20 +3,22 @@
   <POU Name="MAIN" Id="{a70d75b9-d4f5-4238-a7f8-34cf979da90d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	ActivePage	   : UDINT;
-	DisplaySection : Section;
-	LED1		   : EL2574_CommandMode(10);
-	LED2		   : EL2574_CommandMode(10);
-	LED3		   : EL2574_CommandMode(10);
-	LED4		   : EL2574_CommandMode(10);
-	LED5		   : EL2574_CommandMode(10);
+	BackgroundColor	   : STRING(9) := '#fffafa';
+	BackgroundColorRGB : ARRAY[0..3] OF USINT;
+	DisplaySection	   : Section;
+	LED1			   : EL2574_CommandMode(10);
+	LED2			   : EL2574_CommandMode(10);
+	LED3			   : EL2574_CommandMode(10);
+	LED4			   : EL2574_CommandMode(10);
+	LED5			   : EL2574_CommandMode(10);
 END_VAR
 
 VAR CONSTANT
 	RED : ARRAY[0..2] OF USINT := [239, 0, 0];
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[CASE DisplaySection OF
+      <ST><![CDATA[BackgroundColorRGB := HtmlColorCodeToRGBA(BackgroundColor);
+CASE DisplaySection OF
 	Section.None:
 		LED1.ClearAll();
 		LED2.ClearAll();
