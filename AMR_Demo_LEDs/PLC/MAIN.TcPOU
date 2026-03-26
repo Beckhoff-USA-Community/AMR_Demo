@@ -11,85 +11,175 @@ VAR
 	LED3			   : EL2574_CommandMode(10);
 	LED4			   : EL2574_CommandMode(10);
 	LED5			   : EL2574_CommandMode(10);
+	
+	onChange : r_Trig;
+	previousDisplaySection : Section;
+	Send : BOOL := TRUE;
+	Update: BOOL;
+	clear: BOOL;
+	start: UINT;
+	end: UINT;
 END_VAR
 
 VAR CONSTANT
-	RED : ARRAY[0..2] OF USINT := [239, 0, 0];
-END_VAR]]></Declaration>
+	WHITE : ARRAY[0..2] OF USINT := [255, 255, 255];
+	RED : ARRAY[0..2] OF USINT := [255, 0, 0];
+	BLUE : ARRAY[0..2] OF USINT := [0, 0, 255];
+	GREEN : ARRAY[0..2] OF USINT := [0, 255, 0];
+	YELLOW : ARRAY[0..2] OF USINT := [255, 255, 0];
+END_VAR
+]]></Declaration>
     <Implementation>
       <ST><![CDATA[BackgroundColorRGB := HtmlColorCodeToRGBA(BackgroundColor);
-CASE DisplaySection OF
-	Section.None:
-		LED1.ClearAll();
-		LED2.ClearAll();
-		LED3.ClearAll();
-		LED4.ClearAll();
-		LED5.ClearAll();
 
-	Section.Accelerometer:
-		LED1.FillColor(0,
-					   10,
-					   RED[0],
-					   RED[1],
-					   RED[2],
-					   0);
+onChange(CLK := previousDisplaySection <> DisplaySection);
 
-		LED2.ClearAll();
-		LED3.ClearAll();
-		LED4.ClearAll();
-		LED5.ClearAll();
+IF OnChange.Q THEN	
+	IF send THEN
+		CASE DisplaySection OF
+			
+			Section.None:
+				LED1.ClearAll();
+				LED2.ClearAll();
+				LED3.ClearAll();
+				//LED4.ClearAll();
+				//LED5.ClearAll();
+		
+			Section.Accelerometer:
+				LED1.ClearAll();
+				LED2.FillColor(0,
+							   2,
+							   0,
+							   0,
+							   0,
+							   0);
+				LED2.FillColor(3,
+							   3,
+							   GREEN[0],
+							   GREEN[1],
+							   GREEN[2],
+							   0);
+				LED2.FillColor(4,
+							   5,
+							   0,
+							   0,
+							   0,
+							   0);
+				LED3.ClearAll();
+				//LED4.ClearAll();
+				//LED5.ClearAll();
+		
+			Section.Drives:
+				LED1.FillColor(0,
+							   100,
+							   RED[0],
+							   RED[1],
+							   RED[2],
+							   0);
+			   LED2.FillColor(0,
+							   2,
+							   RED[0],
+							   RED[1],
+							   RED[2],
+							   0);
+				LED2.FillColor(3,
+							   5,
+							   0,
+							   0,
+							   0,
+							   0);			   
+				LED3.ClearAll();
+				//LED4.ClearAll();
+				//LED5.ClearAll();
+	
+		
+			Section.Linux:
+				LED1.ClearAll();
+				LED2.FillColor(0,
+							   3,
+							   0,
+							   0,
+							   0,
+							   0);
+				LED2.FillColor(4,
+							   5,
+							   WHITE[0],
+							   WHITE[1],
+							   WHITE[2],
+							   0);
+				LED3.ClearAll();
+				//LED4.ClearAll();
+				//LED5.ClearAll();
+				
+			Section.Safety:
+				
+				LED1.FillColor(0,
+							   100,
+							   YELLOW[0],
+							   YELLOW[1],
+							   YELLOW[2],
+							   0);
+				LED2.FillColor(0,
+							   2,
+							   YELLOW[0],
+							   YELLOW[1],
+							   YELLOW[2],
+							   0);
+				LED2.FillColor(3,
+							   5,
+							   0,
+							   0,
+							   0,
+							   0);
+				LED3.FillColor(0,
+							   100,
+							   YELLOW[0],
+							   YELLOW[1],
+							   YELLOW[2],
+							   0);
+				//LED4.ClearAll();
+				//LED5.ClearAll();
+			Section.Converter:
+				LED1.ClearAll();
+				LED2.FillColor(0,
+							   2,
+							   0,
+							   0,
+							   0,
+							   0);
+				LED2.FillColor(3,
+							   3,
+							   BLUE[0],
+							   BLUE[1],
+							   BLUE[2],
+							   0);
+				LED2.FillColor(4,
+							   5,
+							   0,
+							   0,
+							   0,
+							   0);
+				LED3.ClearAll();
+				//LED4.ClearAll();
+				//LED5.ClearAll();
+		END_CASE
+		
+		update := TRUE;
+		send := FALSE;
+	END_IF
+	
+	PreviousDisplaySection := DisplaySection;
+END_IF
 
-	Section.Converter:
-		LED1.ClearAll();
-		LED2.FillColor(0,
-					   10,
-					   RED[0],
-					   RED[1],
-					   RED[2],
-					   0);
-
-		LED3.ClearAll();
-		LED4.ClearAll();
-		LED5.ClearAll();
-
-	Section.Drives:
-		LED1.ClearAll();
-		LED2.ClearAll();
-		LED3.FillColor(0,
-					   10,
-					   RED[0],
-					   RED[1],
-					   RED[2],
-					   0);
-
-		LED4.ClearAll();
-		LED5.ClearAll();
-
-	Section.Linux:
-		LED1.ClearAll();
-		LED2.ClearAll();
-		LED3.ClearAll();
-		LED4.FillColor(0,
-					   10,
-					   RED[0],
-					   RED[1],
-					   RED[2],
-					   0);
-
-		LED5.ClearAll();
-
-	Section.Safety:
-		LED1.ClearAll();
-		LED2.ClearAll();
-		LED3.ClearAll();
-		LED4.ClearAll();
-		LED5.FillColor(0,
-					   10,
-					   RED[0],
-					   RED[1],
-					   RED[2],
-					   0);
-END_CASE
+IF update THEN
+	send := TRUE;
+	update := FALSE;
+	LED1.Update();
+	LED2.Update();
+	LED3.Update();
+	LED4.Update();
+	LED5.Update();
+END_IF
 
 LED1.CyclicCall();
 LED2.CyclicCall();

@@ -2,7 +2,7 @@
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
 			<BitSize>4</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -11,7 +11,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000002}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000002}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BIT</Name>
 			<BitSize>2</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -20,7 +20,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
 			<BitSize>5</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -102,13 +102,19 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{37E57953-D7DF-04DF-8751-B25618B20B95}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_I_37E57953</Name>
-			<BitSize>16</BitSize>
+			<Name GUID="{9A2659AB-B4F1-D552-597B-DE277A9981FF}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_I_9A2659AB</Name>
+			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Status_Channel_1</Name>
 				<Type GUID="{C9F93E1F-331C-FC92-A8C2-B5E2E547FF61}">MDP5001_260_C_I_C9F93E1F</Type>
 				<BitSize>16</BitSize>
 				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Status_Channel_2</Name>
+				<Type GUID="{C9F93E1F-331C-FC92-A8C2-B5E2E547FF61}">MDP5001_260_C_I_C9F93E1F</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
 			</SubItem>
 			<Properties>
 				<Property>
@@ -216,60 +222,6 @@
 				<BitSize>96</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{D77FBAD8-2ED4-70C3-B8B4-4DD96DF8E351}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_O_D77FBAD8</Name>
-			<BitSize>96</BitSize>
-			<SubItem>
-				<Name>Control_Channel_1</Name>
-				<Type GUID="{CB9B8BE2-E7C9-C3EA-050B-CFCD3D2236FB}">MDP5001_260_C_O_CB9B8BE2</Type>
-				<BitSize>96</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<Properties>
-				<Property>
-					<Name>TcDataArea</Name>
-					<Value>Output</Value>
-				</Property>
-			</Properties>
-		</DataType>
-		<DataType>
-			<Name GUID="{DE2CC7B0-FD3A-284E-806D-441915C07FB7}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_DE2CC7B0</Name>
-			<BitSize>112</BitSize>
-			<SubItem>
-				<Name>In</Name>
-				<Type GUID="{37E57953-D7DF-04DF-8751-B25618B20B95}">MDP5001_260_I_37E57953</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>Out</Name>
-				<Type GUID="{D77FBAD8-2ED4-70C3-B8B4-4DD96DF8E351}">MDP5001_260_O_D77FBAD8</Type>
-				<BitSize>96</BitSize>
-				<BitOffs>16</BitOffs>
-			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{9A2659AB-B4F1-D552-597B-DE277A9981FF}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_I_9A2659AB</Name>
-			<BitSize>32</BitSize>
-			<SubItem>
-				<Name>Status_Channel_1</Name>
-				<Type GUID="{C9F93E1F-331C-FC92-A8C2-B5E2E547FF61}">MDP5001_260_C_I_C9F93E1F</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>Status_Channel_2</Name>
-				<Type GUID="{C9F93E1F-331C-FC92-A8C2-B5E2E547FF61}">MDP5001_260_C_I_C9F93E1F</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>16</BitOffs>
-			</SubItem>
-			<Properties>
-				<Property>
-					<Name>TcDataArea</Name>
-					<Value>Input</Value>
-				</Property>
-			</Properties>
 		</DataType>
 		<DataType>
 			<Name GUID="{03A57D4B-DB3B-8D35-58AC-B8F09745EBE7}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_O_03A57D4B</Name>
@@ -447,6 +399,9 @@
 			<BootStrapData>0010f400f410f400</BootStrapData>
 			<MBoxUserCmdData>004003000c0000000000000003000000000000000000000000000000000000002081f001040000000000100000</MBoxUserCmdData>
 			<MBoxUserCmdData>004003000a0000001f000000030010000000000000000000000000000000000020f31005020000000100456e61626c6520446961674d65737361676520617320656d657267656e637900</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000900000009000000030000000500090300000000000000000000000020008012010000001b43686970205479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000900000009000000030000000700090300000000000000000000000020208012010000001b43686970205479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000900000009000000030000000800090300000000000000000000000020308012010000001b43686970205479706500</MBoxUserCmdData>
 			<Pdo Name="Status Channel 1" Index="#x1a00" Flags="#x0291" SyncMan="3">
 				<Entry Name="Status__Busy" Index="#x6000" Sub="#x01" Flags="#x00001000">
 					<Type>BIT</Type>
@@ -916,7 +871,7 @@
 				</Entry>
 			</Pdo>
 			<PlcDataTypes>
-				<PlcDataType GUID="{DE2CC7B0-FD3A-284E-806D-441915C07FB7}">MDP5001_260_DE2CC7B0</PlcDataType>
+				<PlcDataType GUID="{0CA4F1A9-F239-0F56-CA43-E7762E612A7A}">MDP5001_260_0CA4F1A9</PlcDataType>
 				<PlcDataType GUID="{0CA4F1A9-F239-0F56-CA43-E7762E612A7A}">MDP5001_260_0CA4F1A9</PlcDataType>
 				<PlcDataType GUID="{57047D7F-1583-6F36-91DF-5176304003B4}">EL2574_57047D7F</PlcDataType>
 			</PlcDataTypes>
