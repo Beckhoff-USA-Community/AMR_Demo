@@ -123,7 +123,7 @@ IF OnChange.Q THEN
 							   WHITE[2],
 							   0);
 				LED3.ClearAll();
-				LED4.ClearAll();
+				//LED4.ClearAll();
 				//LED5.ClearAll();
 				
 			Section.Safety:
