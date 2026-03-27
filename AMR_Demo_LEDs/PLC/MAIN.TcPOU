@@ -34,8 +34,23 @@ END_VAR
 
 onChange(CLK := previousDisplaySection <> DisplaySection);
 
+
+
 IF OnChange.Q THEN	
 	IF send THEN
+		LED4.FillColor(	0, 
+				100, 
+				BackgroundColorRGB[0],
+				BackgroundColorRGB[1],
+				BackgroundColorRGB[2],
+				0,);
+		LED5.FillColor(	0, 
+				100, 
+				BackgroundColorRGB[0],
+				BackgroundColorRGB[1],
+				BackgroundColorRGB[2],
+				0,);
+				
 		CASE DisplaySection OF
 			
 			Section.None:
@@ -108,7 +123,7 @@ IF OnChange.Q THEN
 							   WHITE[2],
 							   0);
 				LED3.ClearAll();
-				//LED4.ClearAll();
+				LED4.ClearAll();
 				//LED5.ClearAll();
 				
 			Section.Safety:
