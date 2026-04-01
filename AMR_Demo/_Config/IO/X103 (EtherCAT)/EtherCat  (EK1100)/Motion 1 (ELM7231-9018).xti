@@ -167,9 +167,9 @@
 			<Fmmu>0000000000000000001e00020100000001000000060000000600020000000000</Fmmu>
 			<Fmmu>0000000000000000001f00010100000002000000060000000700020000000000</Fmmu>
 			<BootStrapData>0010f400f410f400</BootStrapData>
-			<SuName></SuName>
-			<SuName></SuName>
-			<SuName></SuName>
+			<SuName>Motion</SuName>
+			<SuName>Motion</SuName>
+			<SuName>Motion</SuName>
 			<SuTask>#x05000010</SuTask>
 			<SuTask>#x00000000</SuTask>
 			<SuTask>#x02010030</SuTask>

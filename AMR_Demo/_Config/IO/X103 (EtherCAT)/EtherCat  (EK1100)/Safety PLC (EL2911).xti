@@ -320,7 +320,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
 			<BitSize>6</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -359,9 +359,9 @@
 			<Fmmu>0000000000000000000000010000000002000000060000000500010000000000</Fmmu>
 			<Fmmu>0000000000000000fa2f00020100000001000000060000000600020000000000</Fmmu>
 			<BootStrapData>0010f400f410f400</BootStrapData>
+			<SuName>SafetyMaster</SuName>
 			<SuName></SuName>
-			<SuName></SuName>
-			<SuName></SuName>
+			<SuName>SafetyMaster</SuName>
 			<SuName></SuName>
 			<SuTask>#x02010030</SuTask>
 			<SuTask>#x00000000</SuTask>
