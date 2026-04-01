@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CSafetyPlcProjDef">
+	<Project GUID="{5DFBC338-C5E1-4819-B990-CAC683530E1A}" Name="ELM-Initial-ChA-Safe Motion" PrjFilePath="..\..\ELM-Initial-ChA-Safe Motion\ELM-Initial-ChA-Safe Motion.splcproj" TmcFilePath="..\..\ELM-Initial-ChA-Safe Motion\ELM-Initial-ChA-Safe Motion.tmc" GeneralArchiveSettings="#x000f" TargetArchiveSettings="#x0007" FileArchiveSettings="#x000e">
+		<Instance File="ELM-Initial-ChA-Safe Motion Instance.xti"/>
+	</Project>
+</TcSmItem>

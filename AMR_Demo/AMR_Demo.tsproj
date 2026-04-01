@@ -28,6 +28,7 @@
 		</Plc>
 		<Safety>
 			<Project File="Safety.xti"/>
+			<Project File="ELM-Initial-ChA-Safe Motion.xti"/>
 		</Safety>
 		<Io>
 			<Device File="X103 (EtherCAT).xti" Id="1"/>
@@ -42,6 +43,5 @@
 		<MappingInfo Identifier="{08502002-0010-0500-0020-500810000403}" Id="#x02030080" Watchdog="08000000040000000400000004000000"/>
 		<MappingInfo Identifier="{05000010-0070-0304-1000-040370000403}" Id="#x02030070" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{03040020-0020-0304-2000-040320000403}" Id="#x02030010" Watchdog="04000000040000000400000004000000"/>
-		<MappingInfo Identifier="{03040020-0040-0304-2000-040340000403}" Id="#x02030020" Watchdog="08000000040000000400000004000000"/>
 	</Mappings>
 </TcSmProject>

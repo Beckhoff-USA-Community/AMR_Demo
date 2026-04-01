@@ -243,6 +243,12 @@
     <PlaceholderReference Include="Core">
       <DefaultResolution>Core, * (Beckhoff Automation LLC)</DefaultResolution>
       <Namespace>Core</Namespace>
+      <Parameters>
+        <Parameter ListName="COREPARAMETER" xmlns="">
+          <Key>TRACELEVEL</Key>
+          <Value>TcEventSeverityExt.Warning</Value>
+        </Parameter>
+      </Parameters>
     </PlaceholderReference>
     <PlaceholderReference Include="CoreComponents">
       <DefaultResolution>CoreComponents, * (Beckhoff Automation LLC)</DefaultResolution>

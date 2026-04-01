@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TargetSystemConfig Crc="2026594334" Version="1.5">
+  <TargetSystemType>HSafetyPLC</TargetSystemType>
+  <TargetSystemSubType>ELM891x</TargetSystemSubType>
+  <IsExternalDevice>false</IsExternalDevice>
+  <TargetSystemObjectId>50462723</TargetSystemObjectId>
+  <TargetSystemObjectName>Motion 2 (ELM7231-9018)</TargetSystemObjectName>
+  <SoftwareVersion>01 (V01.03)</SoftwareVersion>
+  <SerialNumber>4731576</SerialNumber>
+  <ProjectCRC>39105</ProjectCRC>
+  <MapProjectCRC>false</MapProjectCRC>
+  <MapSerialNumber>false</MapSerialNumber>
+  <VersionNumber>1</VersionNumber>
+  <FSOEAddress>3</FSOEAddress>
+  <DipSwitch>3</DipSwitch>
+  <AmsNetID>0.0.0.0.2.1</AmsNetID>
+  <AmsPort>1003</AmsPort>
+  <ConnectionInfoDataConfigOld>false</ConnectionInfoDataConfigOld>
+  <TakeOverSafetyAliasDeviceNamesInProcessImage>false</TakeOverSafetyAliasDeviceNamesInProcessImage>
+  <TakeOverStandardAliasDeviceNamesInProcessImage>false</TakeOverStandardAliasDeviceNamesInProcessImage>
+  <BackupRestore Needed="0" Activated="false" RestoreUserAdministration="false" />
+</TargetSystemConfig>
