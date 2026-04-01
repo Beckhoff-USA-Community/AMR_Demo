@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" TcVersionFixed="true">
-	<Project ProjectGUID="{364CEB01-7E7C-467F-8875-E710C50811BD}" TargetNetId="5.135.212.84.1.1" Target64Bit="true" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{364CEB01-7E7C-467F-8875-E710C50811BD}" TargetNetId="5.164.159.234.1.1" Target64Bit="true" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x6">
 		<System>
-			<Settings MaxCpus="4" NonWinCpus="1">
-				<Cpu CpuId="3"/>
+			<Settings MaxCpus="2" NonWinCpus="1">
+				<Cpu CpuId="1"/>
 				<IoIdleTask Priority="10"/>
 			</Settings>
 			<Licenses>
@@ -36,12 +36,12 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2002-0850-0020-500820000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0020-500870000403}" Id="#x02030060"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0020-500820000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0020-500870000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-0030-0304-1000-040332000403}" Id="#x02030050"/>
 		<MappingInfo Identifier="{00000000-0040-0304-1000-040341000403}" Id="#x02030040"/>
-		<MappingInfo Identifier="{08502002-0010-0500-0020-500810000403}" Id="#x02030080" Watchdog="08000000040000000400000004000000"/>
-		<MappingInfo Identifier="{05000010-0070-0304-1000-040370000403}" Id="#x02030070" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{08502002-0010-0500-0020-500810000403}" Id="#x02030070" Watchdog="08000000040000000400000004000000"/>
+		<MappingInfo Identifier="{05000010-0070-0304-1000-040370000403}" Id="#x02030060" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{03040020-0020-0304-2000-040320000403}" Id="#x02030010" Watchdog="04000000040000000400000004000000"/>
 	</Mappings>
 </TcSmProject>

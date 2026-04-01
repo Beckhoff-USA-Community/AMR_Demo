@@ -92,7 +92,7 @@
 		<Name>__FILENAME__</Name>
 		<AddressInfo>
 			<Pnp>
-				<DeviceDesc>enp1s0</DeviceDesc>
+				<DeviceDesc>enp2s0</DeviceDesc>
 				<DeviceName></DeviceName>
 				<DeviceData>000000000000</DeviceData>
 			</Pnp>

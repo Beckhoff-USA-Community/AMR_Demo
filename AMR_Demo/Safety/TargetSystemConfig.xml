@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TargetSystemConfig Crc="540142919" Version="1.5">
+<TargetSystemConfig Crc="2156540359" Version="1.5">
   <TargetSystemType>HSafetyPLC</TargetSystemType>
   <TargetSystemSubType>EL2911</TargetSystemSubType>
   <IsExternalDevice>false</IsExternalDevice>
   <TargetSystemObjectId>50462724</TargetSystemObjectId>
   <TargetSystemObjectName>Safety PLC (EL2911)</TargetSystemObjectName>
-  <SoftwareVersion />
-  <SerialNumber />
-  <ProjectCRC>56193</ProjectCRC>
+  <SoftwareVersion>01 (V01.01)     </SoftwareVersion>
+  <SerialNumber>4761197</SerialNumber>
+  <ProjectCRC>17331</ProjectCRC>
   <MapProjectCRC>false</MapProjectCRC>
   <MapSerialNumber>false</MapSerialNumber>
   <VersionNumber>1</VersionNumber>
   <FSOEAddress>1</FSOEAddress>
-  <DipSwitch />
+  <DipSwitch>1</DipSwitch>
   <AmsNetID>0.0.0.0.2.1</AmsNetID>
   <AmsPort>1004</AmsPort>
   <ConnectionInfoDataConfigOld>false</ConnectionInfoDataConfigOld>
