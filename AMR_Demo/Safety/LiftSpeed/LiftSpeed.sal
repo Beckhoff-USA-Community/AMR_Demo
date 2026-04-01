@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="3118188838" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="cc11df35-f117-4c6a-b70f-f432e5fdf85f" name="" mapState="true" mapDiag="true" groupOrderId="2" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="3481803355" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="cc11df35-f117-4c6a-b70f-f432e5fdf85f" name="" mapState="true" mapDiag="true" groupOrderId="2" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="fb54f818-84f3-4f68-932d-4339447c1c1d">
       <Network Id="a1b48865-9527-4ea1-a17b-63224d0ea672" name="Network1" networkName="Network1" intId="1" networkOrderId="0">
         <functionBlocks>
           <networkHasFunctionBlocks Id="ec46e76e-1a61-407c-9ed0-39143d60b730">
-            <fBLimit Id="326143ab-2ed0-4cac-b75b-00772a83fd5f" name="FBLimit1" instanceName="EncoderSpeedLimit" orderOfExecution="1" mapState="true" mapDiag="true" functionName="safeLimit">
+            <fBLimit Id="326143ab-2ed0-4cac-b75b-00772a83fd5f" name="FBLimit1" instanceName="EncoderSpeedLimit" orderOfExecution="1" mapState="false" mapDiag="false" functionName="safeLimit">
               <inPorts>
                 <functioBlockHasInPorts Id="271e7a80-8faf-4d38-ae43-6b9520af67cb">
                   <inPort Id="3ae00718-04de-420e-8798-b18b8afc435e" name="AnalogIn" portName="AnalogIn" portNum="2" objectIndex="16" varId="1" filter="1974016" portDataType="258" channelInterface="Activated" deactivate1="Break Contact (NC)" maxDeviation="0" resetTime="0" />

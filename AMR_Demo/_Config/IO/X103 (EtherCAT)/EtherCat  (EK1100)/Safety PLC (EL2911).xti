@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.20" ClassName="CFlbTermDef" SubType="9099">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{A901BF92-993C-DA16-A17F-FAECB9095BEC}" AutoDeleteType="true">FSOE_55</Name>
@@ -304,22 +304,6 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{91BA7A38-806B-5E06-59E6-F04F15D6B8FF}" AutoDeleteType="true">INFODATA_FB_5</Name>
-			<BitSize>16</BitSize>
-			<SubItem>
-				<Name>State</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>Diag</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>8</BitOffs>
-			</SubItem>
-		</DataType>
-		<DataType>
 			<Name GUID="{1553EE7F-0490-4879-4F41-423085C83887}" AutoDeleteType="true">INFODATA_GRP_3</Name>
 			<BitSize>16</BitSize>
 			<SubItem>
@@ -336,7 +320,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
 			<BitSize>6</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -364,7 +348,7 @@
 			<SyncMan>001000012600010001000000000100010001001026010000</SyncMan>
 			<SyncMan>001100012200010002000000000100010001001122010000</SyncMan>
 			<SyncMan>001253002400010003000000000000000700001224010000</SyncMan>
-			<SyncMan>001d60002000010004000000000000000900001d20010000</SyncMan>
+			<SyncMan>001d5e002000010004000000000000000900001d20010000</SyncMan>
 			<SyncMan>002e00002400000003000000000000000000002e24000000</SyncMan>
 			<SyncMan>002f00002000000004000000000000000000002f20000000</SyncMan>
 			<SyncMan>fa2f01002400010003000000000000000200fa2f24010000</SyncMan>
@@ -375,9 +359,9 @@
 			<Fmmu>0000000000000000000000010000000002000000060000000500010000000000</Fmmu>
 			<Fmmu>0000000000000000fa2f00020100000001000000060000000600020000000000</Fmmu>
 			<BootStrapData>0010f400f410f400</BootStrapData>
-			<SuName>SafetyMaster</SuName>
-			<SuName>SafetyMaster</SuName>
-			<SuName>SafetyMaster</SuName>
+			<SuName></SuName>
+			<SuName></SuName>
+			<SuName></SuName>
 			<SuName></SuName>
 			<SuTask>#x02010030</SuTask>
 			<SuTask>#x00000000</SuTask>
@@ -461,9 +445,6 @@
 				</Entry>
 				<Entry Name="Inputs.AreaScanner.ScannerHokuyo Info Data" Index="#x7000" Sub="#x03">
 					<Type GUID="{2B008623-51EE-EF6A-ACDE-0017707F5BB8}">INFODATA_FB_3</Type>
-				</Entry>
-				<Entry Name="LiftSpeed.Network1.EncoderSpeedLimit Info Data" Index="#x7000" Sub="#x04">
-					<Type GUID="{91BA7A38-806B-5E06-59E6-F04F15D6B8FF}">INFODATA_FB_5</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TwinSAFE Group Info Data" Index="#x1bfa" Flags="#x2011" SyncMan="3">
