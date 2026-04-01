@@ -17,7 +17,7 @@
   }
 ]
 </script>
-<div id="products-pdf" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiPdfViewer" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-file="/Presentation/AMR.pdf">
+<div id="products-pdf" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiPdfViewer" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-file="/Presentation/AMR.pdf" data-tchmi-page-mode="none" data-tchmi-visibility="Collapsed">
 
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
@@ -322,6 +322,17 @@
         ],
         "asyncWait": true,
         "waitMode": "Synchronous"
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+          "value": 4
+        },
+        "asyncWait": true
       }
     ]
   }
@@ -366,6 +377,17 @@
         ],
         "asyncWait": true,
         "waitMode": "Synchronous"
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+          "value": 2
+        },
+        "asyncWait": true
       }
     ]
   }
@@ -409,6 +431,17 @@
         ],
         "asyncWait": true,
         "waitMode": "Synchronous"
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+          "value": 3
+        },
+        "asyncWait": true
       }
     ]
   }
@@ -473,6 +506,17 @@
         ],
         "asyncWait": true,
         "waitMode": "Synchronous"
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+          "value": 1
+        },
+        "asyncWait": true
       }
     ]
   }
@@ -516,6 +560,17 @@
         ],
         "asyncWait": true,
         "waitMode": "Synchronous"
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%ADS.PLC_LED.MAIN.DisplaySection%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/ADS-PLC_LED.Section",
+          "value": 5
+        },
+        "asyncWait": true
       }
     ]
   }

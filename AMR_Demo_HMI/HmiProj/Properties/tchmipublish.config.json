@@ -129,9 +129,10 @@
     "temporaryPublishWithoutServerConfiguration": false,
     "abortOnErrors": true,
     "createPublishLog": false,
-    "encryptedTcHmiServerPassword": null,
-    "tcHmiServerHost": "",
-    "tcHmiServerPort": "",
+    "salt": "3a785bb0c07c410eb332cdebf9e52685",
+    "encryptedTcHmiServerPassword": "9lLZi3M9ML9ekhDmvAIzcw==",
+    "tcHmiServerHost": "BTN-000th712",
+    "tcHmiServerPort": "1020",
     "uploadTimeout": "60",
     "connectionTimeout": "5",
     "requestTimeout": "60",
@@ -142,7 +143,7 @@
     "launchBrowserAfterPublish": true,
     "createVirtualDirectoriesOnTargetSystem": false,
     "tcHmiServerUserName": "__SystemAdministrator",
-    "tcHmiDestinationUrl": "https://:",
+    "tcHmiDestinationUrl": "https://btn-000th712:1020/",
     "publishConfiguration": "remote",
     "tcHmiIgnoreCertificateErrors": true
   }

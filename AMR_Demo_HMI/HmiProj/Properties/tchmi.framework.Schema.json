@@ -778,6 +778,9 @@
                     },
                     {
                       "type": "object"
+                    },
+                    {
+                      "type": "null"
                     }
                   ]
                 },
@@ -6058,7 +6061,8 @@
                   "RadioButton",
                   "DateTimeInput",
                   "TimespanInput",
-                  "CustomMessage"
+                  "CustomMessage",
+                  "DirectImage"
                 ]
               },
               "width": {
@@ -6362,7 +6366,8 @@
                 "ToggleSwitch",
                 "RadioButton",
                 "DateTimeInput",
-                "TimespanInput"
+                "TimespanInput",
+                "DirectImage"
               ]
             },
             "width": {
@@ -6603,7 +6608,7 @@
               "category": "General",
               "displayPriority": 10,
               "description": "The minimal value of the numeric input. No restrictions if it's unset.",
-              "defaultValue": 0,
+              "defaultValue": null,
               "defaultValueInternal": null
             },
             {
@@ -6612,7 +6617,7 @@
               "category": "General",
               "displayPriority": 10,
               "description": "The maximal value of the numeric input. No restrictions if it's unset.",
-              "defaultValue": 100,
+              "defaultValue": null,
               "defaultValueInternal": null
             },
             {
@@ -6621,7 +6626,7 @@
               "category": "General",
               "displayPriority": 10,
               "description": "Number of displayed decimal digits. No restrictions if it's unset.",
-              "defaultValue": 0,
+              "defaultValue": null,
               "defaultValueInternal": null
             },
             {
@@ -6698,7 +6703,7 @@
               "category": "General",
               "displayPriority": 10,
               "description": "The minimal value of the numeric input. No restrictions if it's unset.",
-              "defaultValue": 0,
+              "defaultValue": null,
               "defaultValueInternal": null
             },
             {
@@ -6707,7 +6712,7 @@
               "category": "General",
               "displayPriority": 10,
               "description": "The maximal value of the numeric input. No restrictions if it's unset.",
-              "defaultValue": 100,
+              "defaultValue": null,
               "defaultValueInternal": null
             },
             {
@@ -6716,7 +6721,7 @@
               "category": "General",
               "displayPriority": 10,
               "description": "Number of displayed decimal digits. No restrictions if it's unset.",
-              "defaultValue": 0,
+              "defaultValue": null,
               "defaultValueInternal": null
             },
             {
@@ -9388,10 +9393,7 @@
       "description": "State List Item",
       "type": "object",
       "engineeringColumns": [
-        "state",
-        "stateBackgroundColor",
-        "stateIcon",
-        "stateText"
+        "state"
       ],
       "propertiesMeta": [
         {
@@ -9429,6 +9431,15 @@
           "description": "Text for this entry.",
           "defaultValue": null,
           "defaultValueInternal": null
+        },
+        {
+          "name": "stateTextColor",
+          "displayName": "State Text Color",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Text Color for this entry.",
+          "defaultValue": null,
+          "defaultValueInternal": null
         }
       ],
       "properties": {
@@ -9443,6 +9454,9 @@
         },
         "stateText": {
           "$ref": "tchmi:general#/definitions/String"
+        },
+        "stateTextColor": {
+          "$ref": "tchmi:framework#/definitions/SolidColor"
         }
       },
       "additionalProperties": false,
@@ -9879,6 +9893,16 @@
     },
     "TcHmiPolyline": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiPolyline"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiPolyline.Linecap": {
+      "title": "Linecap",
+      "type": "string",
+      "enum": [
+        "butt",
+        "round",
+        "square"
+      ],
+      "default": "butt"
     },
     "TcHmi.Controls.Beckhoff.TcHmiProgressBar": {
       "$schema": "http://json-schema.org/draft-04/schema",
@@ -10914,24 +10938,6 @@
     "TcHmiToggleButton": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiToggleButton"
     },
-    "TcHmi.Controls.Beckhoff.TcHmiToggleButton.StateChangedEventObject": {
-      "type": "object",
-      "properties": {
-        "control": {
-          "$ref": "tchmi:framework#/definitions/Control"
-        },
-        "state": {
-          "type": "boolean"
-        },
-        "stateOld": {
-          "type": "boolean"
-        }
-      },
-      "additionalProperties": false
-    },
-    "TcHmiToggleButtonStateChangedEventObject": {
-      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiToggleButton.StateChangedEventObject"
-    },
     "TcHmi.Controls.Beckhoff.TcHmiToggleSwitch": {
       "$schema": "http://json-schema.org/draft-04/schema",
       "type": "object",
@@ -11708,10 +11714,52 @@
       "frameworkControlType": "TcHmiTrendLineChart",
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
+    "TcHmi.Controls.Beckhoff.TcHmiTrendLineChart.TooltipConfiguration": {
+      "type": "object",
+      "title": "TooltipConfiguration",
+      "description": "Defines tooltip data.",
+      "propertiesMeta": [
+        {
+          "name": "showSymbol",
+          "category": "General",
+          "displayName": "Show Symbol",
+          "displayPriority": 10,
+          "description": "Describes whether the symbol should be displayed.",
+          "defaultValue": true,
+          "defaultValueInternal": true
+        },
+        {
+          "name": "showLegend",
+          "category": "General",
+          "displayName": "Show Legend",
+          "displayPriority": 10,
+          "description": "Describes whether the legend should be displayed.",
+          "defaultValue": false,
+          "defaultValueInternal": false
+        }
+      ],
+      "properties": {
+        "showSymbol": {
+          "type": "boolean"
+        },
+        "showLegend": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
     "TcHmi.Controls.Beckhoff.TcHmiTrendLineChart.StatisticalDataConfiguration": {
       "type": "object",
       "title": "StatisticalDataConfiguration",
       "properties": {
+        "showSymbol": {
+          "type": "boolean",
+          "default": true
+        },
+        "showLegend": {
+          "type": "boolean",
+          "default": false
+        },
         "minimum": {
           "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTrendLineChart.StatisticalDataField"
         },

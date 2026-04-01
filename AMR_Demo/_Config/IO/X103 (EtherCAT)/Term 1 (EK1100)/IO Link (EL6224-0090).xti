@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.20" ClassName="CFlbTermDef" SubType="9099">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000008}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BYTE</Name>
@@ -1654,7 +1654,7 @@
 		<EtherCAT SlaveType="3" AdsServerAddress="000000000206ed03" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x18503052" RevisionNo="#x0010005a" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" InitializeOwnNetId="true" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="7" Type="EL6224-0090 (IO Link Master, TwinSAFE SC)" Desc="EL6224-0090">
 			<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
 			<SyncMan>001100012200010002000000400000010001001122010000</SyncMan>
-			<SyncMan>001206002400010003000000000000000000001224010000</SyncMan>
+			<SyncMan>001206002400010003000000000000000000001224000000</SyncMan>
 			<SyncMan>001315002000010004000000000000000600001320010000</SyncMan>
 			<Fmmu>0000000000000000001200020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001300010100000002000000000000000000000000000000</Fmmu>

@@ -1,7 +1,7 @@
 {
     "TARGET_SYSTEMS": {
         "Local": {
-            "ADDRESS": "127.0.0.1.1.1",
+            "ADDRESS": "5.132.149.215.1.1",
             "ENABLED": true
         }
     }

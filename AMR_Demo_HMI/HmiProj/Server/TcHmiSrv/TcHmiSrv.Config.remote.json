@@ -5,9 +5,7 @@
     "REQUIREAUTH": 2,
     "VIRTUALDIRECTORIES": {
         "/": "www",
-        "/Presentation": "C:\\Presentation\\",
-        "/Recipe": "C:\\Data\\",
-        "/TcHmiExtendedControls": "..\\..\\Packages\\TcHmiExtendedControls.1.1.6\\runtimes\\native1.12-tchmi",
-        "/TcHmiToastNotification": "..\\..\\Packages\\TcHmiToastNotification.1.0.2\\runtimes\\native1.12-tchmi"
+        "/Presentation": "C:\\Presentation",
+        "/Recipe": "C:\\Data\\"
     }
 }
