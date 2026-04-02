@@ -45,6 +45,7 @@ VAR
 	Encoder_HMI				 : Encoder_HMI('Mouser DHK Encoder', EncoderSpeed, EncoderPosition);
 
 	// Safety
+	SafetyResetELM		 : SafetyResetPulse('Safety Reset');
 	SafetyGroupReset	 : SafetyResetPulse('Safety Reset');
 	SafetyInputGroup	 : SafetyGroup_TcEvents('Safety Input Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
@@ -359,6 +360,8 @@ SafetyScannerHokuyo.SetEventReactions(0,
 									  0,
 									  0,
 									  0);
+
+SafetyResetELM.RegisterWithParent(THIS^);
 
 //
 EncoderSpeed.RegisterWithParent(THIS^);
