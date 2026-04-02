@@ -1428,11 +1428,12 @@ External Setpoint Generation:
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<General UnitName="°"/>
-			<Dynamic Acceleration="1010" Deceleration="1010" Jerk="51005"/>
+			<Dynamic Acceleration="15000" Deceleration="15000" Jerk="129997.305"/>
+			<Velo RefSearch="288.8829" RefSync="288.8829" SlowManual="1444.4145" FastManual="8666.487" Fast="28888.29" Maximum="28888.29"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="19">
-			<EncPara ScaleFactorNumerator="1e-06" MaxCount="#xffffffff"/>
+			<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="1048576" MaxCount="#xffffffff"/>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
 				<Var>
@@ -1491,7 +1492,7 @@ External Setpoint Generation:
 		</Encoder>
 		<Drive Name="Drive" DrvType="16">
 			<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00020100">
-				<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+				<Analog VeloReferenz="31777.119" VeloScale="32" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1569,6 +1570,7 @@ External Setpoint Generation:
 		<OwnerA>
 			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 2 (ELM7231-9018)">
 				<Link VarA="Drive^Inputs^In^nDataIn1" VarB="DRV Following error actual value^Following error actual value"/>
+				<Link VarA="Drive^Inputs^In^nDataIn3[0]" VarB="DRV Torque actual value^Torque actual value"/>
 				<Link VarA="Drive^Inputs^In^nDcOutputTime" VarB="InfoData^DcOutputShift"/>
 				<Link VarA="Drive^Inputs^In^nState1" VarB="DRV Statusword^Statusword" Size="8"/>
 				<Link VarA="Drive^Inputs^In^nState2" VarB="DRV Statusword^Statusword" Size="8" OffsB="8"/>
