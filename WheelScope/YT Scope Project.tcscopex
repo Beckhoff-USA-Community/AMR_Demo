@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScopeProject AssemblyName="TwinCAT.Measurement.Scope.API.Model">
-  <ActiveWorkfolderPath>C:\Prj\AMR_Demo_BAUS\WheelScope\YT Scope Project 264539661</ActiveWorkfolderPath>
+  <ActiveWorkfolderPath>C:\Prj\AMR_Demo\WheelScope\YT Scope Project 264539661</ActiveWorkfolderPath>
   <AutoDeleteCapacity>0</AutoDeleteCapacity>
   <AutoDeleteMode>Disabled</AutoDeleteMode>
   <AutoDeleteOlderThan>0</AutoDeleteOlderThan>
-  <AutoRestartRecord>false</AutoRestartRecord>
+  <AutoRestartRecord>true</AutoRestartRecord>
   <AutoSaveExportConfigurationString>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;ExportConfiguration&gt;
   &lt;Silent&gt;False&lt;/Silent&gt;
@@ -42,12 +42,12 @@
 &lt;/Layout&gt;</Layout>
   <MainServer>127.0.0.1.1.1</MainServer>
   <Name>Scope Project</Name>
-  <RecordTime>6000000000</RecordTime>
+  <RecordTime>36000000000</RecordTime>
   <ServerVersions>
     <Version>4.49.123.0</Version>
   </ServerVersions>
   <SortPriority>100</SortPriority>
-  <StopMode>AutoStop</StopMode>
+  <StopMode>ClientStop</StopMode>
   <SubMember>
     <DataPool AssemblyName="TwinCAT.Measurement.Scope.API.Model">
       <Comment />
