@@ -29,7 +29,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
 			<BitSize>9</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -47,7 +47,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
 			<BitSize>5</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -101,7 +101,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
 			<BitSize>12</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -110,7 +110,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
 			<BitSize>14</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -125,6 +125,15 @@
 			<ArrayInfo>
 				<LBound>0</LBound>
 				<Elements>10</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00200000000F}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..14] OF BIT</Name>
+			<BitSize>15</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>15</Elements>
 			</ArrayInfo>
 		</DataType>
 		<DataType>
@@ -157,7 +166,7 @@
 				<SortId>0</SortId>
 				<DriveModuleType>14</DriveModuleType>
 				<TcLink ProtocalType="11">
-					<TcPrjPath>..\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
+					<TcPrjPath>C:\Users\AlexanderMe\source\repos\Beckhoff-USA-Community\AMR_Demo\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
 					<IoItemPathName>TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)</IoItemPathName>
 					<ItemId>2</ItemId>
 					<ObjectId>#x03020002</ObjectId>
@@ -174,6 +183,32 @@
 				<HasSafetyInfo>true</HasSafetyInfo>
 				<SafetyDeviceName>ELM8911(0011-9018)</SafetyDeviceName>
 				<SafetySoftwareVersion>01 (V01.03)</SafetySoftwareVersion>
+				<WatchLog UpdateIntervalInMs="500">
+					<WatchLogItem>
+						<WatchLogParaCoE Index="4120" SubIndex="2"/>
+						<Alias>Type</Alias>
+					</WatchLogItem>
+					<WatchLogItem>
+						<WatchLogParaCoE Index="4120" SubIndex="4"/>
+						<Alias>Serial Nr</Alias>
+					</WatchLogItem>
+					<WatchLogItem>
+						<WatchLogParaCoE Index="4322" SubIndex="1"/>
+						<Alias>BIC</Alias>
+					</WatchLogItem>
+					<WatchLogItem>
+						<WatchLogParaCoE Index="4106" SubIndex="0"/>
+						<Alias>Firmware version</Alias>
+					</WatchLogItem>
+					<WatchLogItem>
+						<WatchLogParaCoE Index="63744" SubIndex="18"/>
+						<Alias>DC link voltage</Alias>
+					</WatchLogItem>
+					<WatchLogItem>
+						<WatchLogParaCoE Index="63744" SubIndex="17"/>
+						<Alias>Amplifier temperature</Alias>
+					</WatchLogItem>
+				</WatchLog>
 				<Inverter>
 					<Device>
 						<Name>DMInverterTypeDevice</Name>
@@ -193,11 +228,35 @@
 					</Device>
 					<Channel ChnId="0">
 						<TcLink>
-							<TcPrjPath>..\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
+							<TcPrjPath>C:\Users\AlexanderMe\source\repos\Beckhoff-USA-Community\AMR_Demo\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
 							<IoItemPathName>TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)</IoItemPathName>
 							<NcItemPathName AxisType="1">TINC^NC-Task 1 SAF^Axes^WheelLeft</NcItemPathName>
 						</TcLink>
 						<SelectedModifyOptPDOsMode>0</SelectedModifyOptPDOsMode>
+						<Modulo>
+							<Name>ControllerModuloType</Name>
+							<ProjectGUID>00000000-0000-0000-0000-000000000000</ProjectGUID>
+							<Parameter>
+								<PropertyName>Modulo_IsOn</PropertyName>
+								<Value>0</Value>
+							</Parameter>
+							<Parameter>
+								<PropertyName>Modulo_DataStorage</PropertyName>
+								<Value>0</Value>
+							</Parameter>
+							<Parameter>
+								<PropertyName>Modulo_Value</PropertyName>
+								<Value>4294967296</Value>
+							</Parameter>
+							<Parameter>
+								<PropertyName>Modulo_MinPositionRange</PropertyName>
+								<Value>0</Value>
+							</Parameter>
+							<Parameter>
+								<PropertyName>Modulo_MaxPositionRange</PropertyName>
+								<Value>4294967295</Value>
+							</Parameter>
+						</Modulo>
 						<Block Id="0">
 							<Motor IsManualInput="false" IsManualMFiInput="false" DataSource="2" SerialNo="aa408c1e">
 								<DatabaseType>
@@ -680,7 +739,7 @@
 								</Parameter>
 								<Parameter>
 									<PropertyName>GearRatioMotorSide</PropertyName>
-									<Value>1</Value>
+									<Value>16</Value>
 								</Parameter>
 								<Parameter>
 									<PropertyName>GearRatioLoadSide</PropertyName>
@@ -704,15 +763,130 @@
 								</Parameter>
 								<Parameter>
 									<PropertyName>MaxApplicationTorqueForce</PropertyName>
-									<Value>2.63956</Value>
+									<Value>2.5794582</Value>
 								</Parameter>
 								<Parameter>
 									<PropertyName>MaxApplicationSpeed</PropertyName>
-									<Value>1047.1975511966</Value>
+									<Value>1047.19755</Value>
 								</Parameter>
 							</Load>
-							<Controller/>
+							<Controller>
+								<Filter Id="0">
+									<Name>ControllerFilter</Name>
+									<ProjectGUID>00000000-0000-0000-0000-000000000000</ProjectGUID>
+									<Parameter>
+										<PropertyName>Filter_Type</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+								</Filter>
+								<Filter Id="1">
+									<Name>ControllerFilter</Name>
+									<ProjectGUID>00000000-0000-0000-0000-000000000000</ProjectGUID>
+									<Parameter>
+										<PropertyName>Filter_Type</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+								</Filter>
+								<Filter Id="2">
+									<Name>ControllerFilter</Name>
+									<ProjectGUID>00000000-0000-0000-0000-000000000000</ProjectGUID>
+									<Parameter>
+										<PropertyName>Filter_Type</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+								</Filter>
+								<Filter Id="3">
+									<Name>ControllerFilter</Name>
+									<ProjectGUID>00000000-0000-0000-0000-000000000000</ProjectGUID>
+									<Parameter>
+										<PropertyName>Filter_Type</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_LowPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassFrequency</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+									<Parameter>
+										<PropertyName>Filter_HighPassDamping</PropertyName>
+										<Value>0</Value>
+									</Parameter>
+								</Filter>
+							</Controller>
 						</Block>
+						<WatchLog ChnId="0" UpdateIntervalInMs="500">
+							<WatchLogItem>
+								<WatchLogParaCoE Index="24592" SubIndex="1"/>
+								<Alias>Status word</Alias>
+							</WatchLogItem>
+							<WatchLogItem>
+								<WatchLogParaCoE Index="28688" SubIndex="3"/>
+								<Alias>Actual operation mode</Alias>
+							</WatchLogItem>
+							<WatchLogItem>
+								<WatchLogParaCoE Index="24592" SubIndex="7"/>
+								<Alias>Actual velocity</Alias>
+							</WatchLogItem>
+							<WatchLogItem>
+								<WatchLogParaCoE Index="24592" SubIndex="8"/>
+								<Alias>Actual torque</Alias>
+							</WatchLogItem>
+						</WatchLog>
 					</Channel>
 				</Inverter>
 			</TcDMDrive>
@@ -769,6 +943,7 @@
 			<MBoxUserCmdData>020003000a0000003800000000000000000000000000000000000000000000002010801202000000190044525620416d706c69666965722053657474696e67732043682e31202f2043757272656e74206c6f6f7020696e74656772616c2074696d6500</MBoxUserCmdData>
 			<MBoxUserCmdData>020003000c0000003d000000000000000000000000000000000000000000000020108015040000002a02000044525620416d706c69666965722053657474696e67732043682e31202f2056656c6f63697479206c6f6f702070726f706f7274696f6e616c206761696e00</MBoxUserCmdData>
 			<MBoxUserCmdData>020003000c00000039000000000000000000000000000000000000000000000020108014040000009600000044525620416d706c69666965722053657474696e67732043682e31202f2056656c6f63697479206c6f6f7020696e74656772616c2074696d6500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000c0000004000000000000000000000000000000000000000000000002001f8180400000060ea0000445256204272616b652043686f707065722053657474696e6773202f204272616b652063686f70706572207468726573686f6c64206f766572766f6c7461676500</MBoxUserCmdData>
 			<Pdo Name="FB Position" Index="#x1a00" Flags="#x0010" SyncMan="3">
 				<Entry Name="Position" BitLen="32" Index="#x6000" Sub="#x11">
 					<Type>UDINT</Type>
@@ -1428,25 +1603,19 @@ Bit 8 - 15 : reserved]]></Comment>
 				</Entry>
 			</Pdo>
 			<Pdo Name="SAFETY FSoE Connection 1 Send Message" Index="#x1aa0" Flags="#x0080" SyncMan="7" SyncUnit="2">
-				<Entry Name="FSOE__FSoE Send Cmd" BitLen="8" Index="#x6200" Sub="#x01">
+				<Entry Name="Message_2__FSoE Cmd" BitLen="8" Index="#x6200" Sub="#x01">
 					<Type>USINT</Type>
 				</Entry>
-				<Entry Name="FSOE__STO_active_ChA" BitLen="1" Index="#xf601" Sub="#x01">
+				<Entry Name="Message_2__STO_State_ChA" BitLen="1" Index="#xf601" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="FSOE__" BitLen="7">
-					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+				<Entry BitLen="15">
+					<Type GUID="{18071995-0000-0000-0000-00200000000F}">ARRAY [0..14] OF BIT</Type>
 				</Entry>
-				<Entry Name="FSOE__STO_active_ChB" BitLen="1" Index="#xf601" Sub="#x02">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__" BitLen="7">
-					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__FSoE Send CRC_0" BitLen="16" Index="#x6200" Sub="#x03">
+				<Entry Name="Message_2__FSoE CRC_0" BitLen="16" Index="#x6200" Sub="#x03">
 					<Type>UINT</Type>
 				</Entry>
-				<Entry Name="FSOE__FSoE Send ConnID" BitLen="16" Index="#x6200" Sub="#x02">
+				<Entry Name="Message_2__FSoE ConnID" BitLen="16" Index="#x6200" Sub="#x02">
 					<Type>UINT</Type>
 				</Entry>
 			</Pdo>
@@ -1458,29 +1627,11 @@ Bit 8 - 15 : reserved]]></Comment>
 			<Pdo Name="SAFETY FSoE Connection 7 Send Message" Index="#x1aa6" Flags="#x0080" SyncUnit="2"/>
 			<Pdo Name="SAFETY FSoE Connection 8 Send Message" Index="#x1aa7" Flags="#x0080" SyncUnit="2"/>
 			<Pdo Name="SAFETY Standard Inputdata" Index="#x1ab0" Flags="#x0080" SyncMan="7" SyncUnit="2">
-				<Entry Name="FSOE__Std Input_0" BitLen="1" Index="#xf606" Sub="#x01">
+				<Entry Name="Standard Out Var 7" BitLen="1" Index="#xf606" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="FSOE__Std Input_1" BitLen="1" Index="#xf606" Sub="#x02">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Input_2" BitLen="1" Index="#xf606" Sub="#x03">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Input_3" BitLen="1" Index="#xf606" Sub="#x04">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Input_4" BitLen="1" Index="#xf606" Sub="#x05">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Input_5" BitLen="1" Index="#xf606" Sub="#x06">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Input_6" BitLen="1" Index="#xf606" Sub="#x07">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Input_7" BitLen="1" Index="#xf606" Sub="#x08">
-					<Type>BIT</Type>
+				<Entry BitLen="7">
+					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="SAFETY Function Block Info Data" Index="#x1ab1" Flags="#x0080" SyncUnit="2"/>
@@ -1496,25 +1647,19 @@ Bit 8 - 15 : reserved]]></Comment>
 				</Entry>
 			</Pdo>
 			<Pdo Name="SAFETY FSoE Connection 1 Receive Message" Index="#x16a0" InOut="1" Flags="#x0080" SyncMan="6" SyncUnit="2">
-				<Entry Name="FSOE__FSoE Receive Cmd" BitLen="8" Index="#x7200" Sub="#x01">
+				<Entry Name="Message_2__FSoE Cmd" BitLen="8" Index="#x7200" Sub="#x01">
 					<Type>USINT</Type>
 				</Entry>
-				<Entry Name="FSOE__STO_ChA" BitLen="1" Index="#xf701" Sub="#x01">
+				<Entry Name="Message_2__STO_ChA" BitLen="1" Index="#xf701" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="FSOE__" BitLen="7">
-					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+				<Entry BitLen="15">
+					<Type GUID="{18071995-0000-0000-0000-00200000000F}">ARRAY [0..14] OF BIT</Type>
 				</Entry>
-				<Entry Name="FSOE__STO_ChB" BitLen="1" Index="#xf701" Sub="#x02">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__" BitLen="7">
-					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__FSoE Receive CRC_0" BitLen="16" Index="#x7200" Sub="#x03">
+				<Entry Name="Message_2__FSoE CRC_0" BitLen="16" Index="#x7200" Sub="#x03">
 					<Type>UINT</Type>
 				</Entry>
-				<Entry Name="FSOE__FSoE Receive ConnID" BitLen="16" Index="#x7200" Sub="#x02">
+				<Entry Name="Message_2__FSoE ConnID" BitLen="16" Index="#x7200" Sub="#x02">
 					<Type>UINT</Type>
 				</Entry>
 			</Pdo>
@@ -1526,29 +1671,11 @@ Bit 8 - 15 : reserved]]></Comment>
 			<Pdo Name="SAFETY FSoE Connection 7 Receive Message" Index="#x16a6" InOut="1" Flags="#x0080" SyncUnit="2"/>
 			<Pdo Name="SAFETY FSoE Connection 8 Receive Message" Index="#x16a7" InOut="1" Flags="#x0080" SyncUnit="2"/>
 			<Pdo Name="SAFETY Standard Outputdata" Index="#x16b0" InOut="1" Flags="#x0080" SyncMan="6" SyncUnit="2">
-				<Entry Name="FSOE__Connection ErrAck" BitLen="1" Index="#xf706" Sub="#x01">
+				<Entry Name="Standard In Var 1" BitLen="1" Index="#xf706" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="FSOE__Std Output_1" BitLen="1" Index="#xf706" Sub="#x02">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Output_2" BitLen="1" Index="#xf706" Sub="#x03">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Output_3" BitLen="1" Index="#xf706" Sub="#x04">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Output_4" BitLen="1" Index="#xf706" Sub="#x05">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Output_5" BitLen="1" Index="#xf706" Sub="#x06">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Output_6" BitLen="1" Index="#xf706" Sub="#x07">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="FSOE__Std Output_7" BitLen="1" Index="#xf706" Sub="#x08">
-					<Type>BIT</Type>
+				<Entry BitLen="7">
+					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="FSLOGIC Outputs" Index="#x16bf" InOut="1" Flags="#x0091" SyncMan="6" SyncUnit="2">
