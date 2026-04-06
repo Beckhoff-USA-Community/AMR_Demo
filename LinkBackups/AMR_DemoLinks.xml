@@ -10,8 +10,10 @@
 			<Link VarA="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_2" VarB="ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
 			<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
 			<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO"/>
-			<Link VarA="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionInputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 TxPDO"/>
-			<Link VarA="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionOutputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 RxPDO"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^Hokuyo Scanner (UAM-05LECA)">
+			<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 TxPDO" VarB="Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE"/>
+			<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 RxPDO" VarB="Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE"/>
 		</OwnerB>
 	</OwnerA>
 	<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Lift">
@@ -95,6 +97,14 @@
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyMotionGroup.Run" VarB="StandardOutputs^Motion.Run_20"/>
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11"/>
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule._BypassScanners" VarB="StandardOutputs^Inputs.BypassScanners_25"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^Gyroscope (EP3751-0260)">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_X" VarB="AI Acc X Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_Y" VarB="AI Acc Y Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_Z" VarB="AI Acc Z Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_X" VarB="AI Gyro X Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Y" VarB="AI Gyro Y Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Z" VarB="AI Gyro Z Samples 1 (Real32)^Samples[0]"/>
 		</OwnerB>
 		<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Lift">
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.LiftRef.NcToPlc" VarB="Outputs^ToPlc"/>
