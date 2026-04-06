@@ -174,6 +174,12 @@ END_VAR]]></Declaration>
 	10: // Wait for Safety signal propagation to drives
 		SafetyResetTon(IN := TRUE, PT := T#200MS);
 		IF SafetyResetTon.Q THEN
+			SafetyResetELM.Execute();
+			NextMinorStep(SequenceState);
+		END_IF
+
+	11:
+		IF NOT SafetyResetELM.Busy THEN
 			NextStep(SequenceState);
 		END_IF
 
@@ -671,10 +677,16 @@ END_VAR]]></Declaration>
 	1: // Wait for Safety signal propagation to drives
 		SafetyResetTon(IN := TRUE, PT := T#200MS);
 		IF SafetyResetTon.Q THEN
+			SafetyResetELM.Execute();
 			NextMinorStep(SequenceState);
 		END_IF
 
 	2:
+		IF NOT SafetyResetELM.Busy THEN
+			NextMinorStep(SequenceState);
+		END_IF
+
+	3:
 		_WheelLeft.Enable();
 		_WheelRight.Enable();
 		_Lift.Enable();
