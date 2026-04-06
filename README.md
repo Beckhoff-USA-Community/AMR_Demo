@@ -1,6 +1,6 @@
 # AMR Demo BAUS
 
-> **[Full Documentation](Documentation/AMR_Demo_Documentation.html)** — HTML reference with class diagram
+> **[Full Documentation](Documentation/AMR_Demo_Documentation.html)** — HTML reference with class diagram &nbsp;·&nbsp; **[PLC Documentation](Documentation/AMR/PLC_Documentation.html)** — High-level PLC architecture &amp; code guide
 
 Autonomous Mobile Robot (AMR) demonstration project built with Beckhoff TwinCAT 3 automation platform.
 

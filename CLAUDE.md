@@ -4,11 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AMR Demo BAUS — an Autonomous Mobile Robot demonstration built on the **Beckhoff TwinCAT 3** automation platform. Three main components:
+AMR Demo BAUS — an Autonomous Mobile Robot demonstration built on the **Beckhoff TwinCAT 3** automation platform. Main components:
 
 - `AMR_Demo/` — TwinCAT System Project (PLC + Safety + Motion NC + I/O)
 - `AMR_Demo_HMI/` — TwinCAT HMI web interface (TypeScript + TwinCAT HMI framework)
-- `Documentation/` — Device specs, Navitrol parameters, EtherCAT/CANopen/IO-Link descriptions
+- `WheelScope/` — TwinCAT Scope project for real-time wheel data visualization
+- `Documentation/` — Device specs, Navitrol parameters, EtherCAT/CANopen/IO-Link descriptions; `AMR_Demo_Documentation.html` is the generated HTML API reference with class diagrams
 
 ## Building
 
@@ -39,24 +40,26 @@ AMR Demo BAUS — an Autonomous Mobile Robot demonstration built on the **Beckho
 
 `AMR_Demo/PLC/AMR/AmrModule.TcPOU`
 
-`AmrModule EXTENDS PackMLModule` is the central control block. It owns all subsystems as member variables and implements the PackML state machine via override methods:
+`AmrModule EXTENDS PackMLModule` is the central control block. It owns all subsystems as member variables (each registered via `RegisterWithParent()`) and implements the PackML state machine via override methods. Two modes: **Production** and **Manual**; mode changes are only allowed from `Stopped` or `Aborted`.
 
 | State | Purpose |
 |-------|---------|
 | `Stopped` | Idle; manual axis control allowed |
-| `Starting` | Transition to automatic; enables axes, connects Navitrol |
+| `Starting` | Transition to automatic; initializes Navitrol pose (x=21.23, y=36.92, θ=90°), enables axes, starts velocity streaming, moves lift to down |
 | `Execute` | Active operation: cycles destinations, streams velocity, operates lift |
 | `Stopping` | Controlled stop; disables velocity streaming then axes |
 | `Aborting` | Emergency stop; disables streaming, halts and disables all axes |
 | `Aborted` | Fault state; awaits operator reset |
 | `Clearing` | Fault reset: pulse safety reset → wait 200 ms → `ResetComponents()` → release E-Stop |
-| `Suspending/Suspended/Unsuspending` | Safety scanner obstruction handling |
+| `Suspending` | Scanner obstruction: set E-Stop in Navitrol, stop lift, disable axes |
+| `Suspended` | Waiting for scanner clearance; auto-transitions when both scanners report OK |
+| `Unsuspending` | Reset scanner faults, re-enable axes, release E-Stop, re-send GoToDestination |
 
 State transition code uses numbered `CASE SequenceState` steps (`NextStep` / `NextMinorStep` advance the counter).
 
 ### Navitrol TCP/IP Communication
 
-All Navitrol message function blocks live in `PLC/Components/Navitrol/`. Each extends `TcpIpCommandResultFilter` and sends/receives over a shared `TcpIpConnection` object.
+All Navitrol message function blocks live in `PLC/Components/Navitrol/`. Each extends `TcpIpCommandResultFilter` and sends/receives over a shared `TcpIpConnection` object. Default TCP address: `127.0.0.1:2000`.
 
 | FB | Msg sent | Msg received | Purpose |
 |----|----------|--------------|---------|
@@ -75,12 +78,13 @@ All Navitrol message function blocks live in `PLC/Components/Navitrol/`. Each ex
 - Toggles between two `MC_MoveVelocity` FB instances with `MC_Aborting` buffer mode to allow smooth setpoint changes every cycle.
 - Optional PT1 first-order filter (`FilterTimeConstant := T#100MS`, toggled via `EnableSmoothing`).
 - Stops via `MC_Halt` when |velocity| < `VelocityTolerance`.
+- Navitrol sends velocity in m/s; conversion to NC °/s: `ω = (360 × v) / (π × WHEEL_DIAMETER)`.
 
 ### Safety
 
 Safety signals flow through `SafetyGroup_TcEvents` groups with `AutoResetFaults := TRUE`:
 - `SafetyEstop` — triggers E-Stop flag in Msg3002
-- `SafetyScannerFront` / `SafetyScannerRear` — trigger `Suspend` PackML command from within `Execute`
+- `SafetyScannerLeuze` (Leuze RSL400) / `SafetyScannerHokuyo` (Hokuyo UAM-05LP) — trigger `Suspend` PackML command from within `Execute`
 
 Reset sequence in `Clearing`: pulse `SafetyResetPulse` → 200 ms delay → `ResetComponents()` → release E-Stop in Msg3002.
 

@@ -43,6 +43,9 @@
     <Compile Include="AMR\AmrModule_HMI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Components\Accelerometer %28EP3751%29\EP3751_Accelerometer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Components\DEGREE_TO_RADIAN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -338,6 +341,7 @@
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3001" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3005" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3024" />
+    <Folder Include="Components\Accelerometer %28EP3751%29" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PLC.tmc">
