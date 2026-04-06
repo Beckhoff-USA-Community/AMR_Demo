@@ -29,7 +29,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
 			<BitSize>9</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -47,7 +47,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
 			<BitSize>5</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -101,7 +101,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
 			<BitSize>12</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -110,7 +110,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
 			<BitSize>14</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -166,7 +166,7 @@
 				<SortId>0</SortId>
 				<DriveModuleType>14</DriveModuleType>
 				<TcLink ProtocalType="11">
-					<TcPrjPath>C:\Users\AlexanderMe\source\repos\Beckhoff-USA-Community\AMR_Demo\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
+					<TcPrjPath>..\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
 					<IoItemPathName>TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)</IoItemPathName>
 					<ItemId>2</ItemId>
 					<ObjectId>#x03020002</ObjectId>
@@ -228,7 +228,7 @@
 					</Device>
 					<Channel ChnId="0">
 						<TcLink>
-							<TcPrjPath>C:\Users\AlexanderMe\source\repos\Beckhoff-USA-Community\AMR_Demo\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
+							<TcPrjPath>..\AMR_Demo\AMR_Demo.tsproj</TcPrjPath>
 							<IoItemPathName>TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)</IoItemPathName>
 							<NcItemPathName AxisType="1">TINC^NC-Task 1 SAF^Axes^WheelLeft</NcItemPathName>
 						</TcLink>
@@ -869,24 +869,6 @@
 								</Filter>
 							</Controller>
 						</Block>
-						<WatchLog ChnId="0" UpdateIntervalInMs="500">
-							<WatchLogItem>
-								<WatchLogParaCoE Index="24592" SubIndex="1"/>
-								<Alias>Status word</Alias>
-							</WatchLogItem>
-							<WatchLogItem>
-								<WatchLogParaCoE Index="28688" SubIndex="3"/>
-								<Alias>Actual operation mode</Alias>
-							</WatchLogItem>
-							<WatchLogItem>
-								<WatchLogParaCoE Index="24592" SubIndex="7"/>
-								<Alias>Actual velocity</Alias>
-							</WatchLogItem>
-							<WatchLogItem>
-								<WatchLogParaCoE Index="24592" SubIndex="8"/>
-								<Alias>Actual torque</Alias>
-							</WatchLogItem>
-						</WatchLog>
 					</Channel>
 				</Inverter>
 			</TcDMDrive>

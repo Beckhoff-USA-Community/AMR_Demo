@@ -10,6 +10,8 @@
 			<Link VarA="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_2" VarB="ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
 			<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
 			<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO"/>
+			<Link VarA="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionInputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 TxPDO"/>
+			<Link VarA="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE" VarB="ConnectionOutputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 RxPDO"/>
 		</OwnerB>
 	</OwnerA>
 	<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Lift">
@@ -81,6 +83,8 @@
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyLiftSpeedGroup.InfoData^State" VarB="TwinSAFE Group Info Data^LiftSpeed Info Data^State"/>
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Motion Info Data^Diag"/>
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Motion Info Data^State"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^Diag"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^State"/>
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^Diag"/>
 			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^State"/>
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Inputs.ErrorAcknowledgement_1"/>

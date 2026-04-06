@@ -54,6 +54,8 @@
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyLiftSpeedGroup.InfoData^State" VarB="TwinSAFE Group Info Data^LiftSpeed Info Data^State"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Motion Info Data^Diag" Size="8"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Motion Info Data^State"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^State"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^Diag"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^State"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Inputs.ErrorAcknowledgement_1" Size="1"/>

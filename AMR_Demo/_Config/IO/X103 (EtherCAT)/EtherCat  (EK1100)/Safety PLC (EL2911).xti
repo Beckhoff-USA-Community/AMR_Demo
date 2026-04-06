@@ -2,6 +2,187 @@
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
+			<Name GUID="{A901BF92-993C-DA16-A17F-FAECB9095BEC}" AutoDeleteType="true">FSOE_55</Name>
+			<BitSize>440</BitSize>
+			<SubItem>
+				<Name>FSoE CMD</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>104</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>120</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>136</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>168</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>184</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>200</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>216</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>232</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>248</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>264</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>280</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>296</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>312</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>328</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>344</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>360</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>376</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data 12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000033}">BITARR16</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>392</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>408</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE ConnID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>424</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-0020000000C8}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..24] OF BYTE</Name>
+			<BitSize>200</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>25</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}" AutoDeleteType="true">FSOE_7</Name>
 			<BitSize>56</BitSize>
 			<SubItem>
@@ -166,8 +347,8 @@
 		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x0b5f3052" RevisionNo="#x00100000" InfoDataAddr="true" RepeatSupport="true" TimeoutStateChange1="5000" TimeoutMailbox2="10000" TComSupport="true" PortPhys="51" DebugMemory="8" SafetyLogicSupported="true" MaxSlotCount="4" Type="EL2911, Potential supply terminal (10 A) with 4 Ch. Safety Inputs, TwinSAFE" Desc="EL2911">
 			<SyncMan>001000012600010001000000000100010001001026010000</SyncMan>
 			<SyncMan>001100012200010002000000000100010001001122010000</SyncMan>
-			<SyncMan>00121c002400010003000000000000000700001224010000</SyncMan>
-			<SyncMan>001d24002000010004000000000000000900001d20010000</SyncMan>
+			<SyncMan>001253002400010003000000000000000700001224010000</SyncMan>
+			<SyncMan>001d5e002000010004000000000000000900001d20010000</SyncMan>
 			<SyncMan>002e00002400000003000000000000000000002e24000000</SyncMan>
 			<SyncMan>002f00002000000004000000000000000000002f20000000</SyncMan>
 			<SyncMan>fa2f01002400010003000000000000000200fa2f24010000</SyncMan>
@@ -188,24 +369,36 @@
 			<SuTask>#x00000000</SuTask>
 			<MBoxUserCmdData>004003000a00000000000000000000000000000000000000000000000000000020f3100502000000010000</MBoxUserCmdData>
 			<Pdo Name="ConnectionInputs" Index="#x1a00" Flags="#x2011" SyncMan="3">
-				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO" Index="#x7000" Sub="#x01">
+				<Entry Name="Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 TxPDO" Index="#x7000" Sub="#x01">
+					<Type GUID="{A901BF92-993C-DA16-A17F-FAECB9095BEC}">FSOE_55</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-0020000000C8}">ARRAY [0..24] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO" Index="#x7000" Sub="#x02">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
-				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" Index="#x7000" Sub="#x02">
+				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" Index="#x7000" Sub="#x03">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
-				<Entry Name="LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO" Index="#x7000" Sub="#x03">
+				<Entry Name="LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 TxPDO" Index="#x7000" Sub="#x04">
 					<Type GUID="{2438F91B-E188-4ED7-8594-54354F9ED6A4}" Namespace="Safety">FSOE_6</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="ConnectionOutputs" Index="#x1600" InOut="1" Flags="#x2011" SyncMan="2">
-				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO" Index="#x6000" Sub="#x01">
+				<Entry Name="Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_26 RxPDO" Index="#x6000" Sub="#x01">
+					<Type GUID="{A901BF92-993C-DA16-A17F-FAECB9095BEC}">FSOE_55</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-0020000000C8}">ARRAY [0..24] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO" Index="#x6000" Sub="#x02">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
-				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" Index="#x6000" Sub="#x02">
+				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" Index="#x6000" Sub="#x03">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
-				<Entry Name="LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO" Index="#x6000" Sub="#x03">
+				<Entry Name="LiftSpeed.IO Link (EL6224-0090) - Module 7 (EL6224-0090)_22 RxPDO" Index="#x6000" Sub="#x04">
 					<Type GUID="{0994ABA9-6F32-EEB9-4362-7774F7A1F4F4}">FSOE_11</Type>
 				</Entry>
 			</Pdo>
@@ -247,7 +440,10 @@
 				<Entry Name="Inputs.EStop.EStop1 Info Data" Index="#x7000" Sub="#x01">
 					<Type GUID="{2B008623-51EE-EF6A-ACDE-0017707F5BB8}">INFODATA_FB_3</Type>
 				</Entry>
-				<Entry Name="Inputs.AreaScanner.ScannerLeuze Info Data" Index="#x7000" Sub="#x02">
+				<Entry Name="Inputs.AreaScanner.ScannerHokuyo Info Data" Index="#x7000" Sub="#x02">
+					<Type GUID="{2B008623-51EE-EF6A-ACDE-0017707F5BB8}">INFODATA_FB_3</Type>
+				</Entry>
+				<Entry Name="Inputs.AreaScanner.ScannerLeuze Info Data" Index="#x7000" Sub="#x03">
 					<Type GUID="{2B008623-51EE-EF6A-ACDE-0017707F5BB8}">INFODATA_FB_3</Type>
 				</Entry>
 			</Pdo>
