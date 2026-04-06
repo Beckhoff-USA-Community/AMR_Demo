@@ -39,6 +39,12 @@
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Position"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Speed"/>
 			</OwnerB>
+			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)">
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 1" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 2 (ELM7231-9018)">
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck" Size="1"/>
+			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Safety PLC (EL2911)">
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^Diag" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^Diag"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^State" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^State"/>

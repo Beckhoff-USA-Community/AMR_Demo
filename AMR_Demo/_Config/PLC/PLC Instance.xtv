@@ -1005,7 +1005,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{A50F94D8-6A2D-A15D-D709-8810B210C257}">
+	<Instance TmcHash="{5DA04E35-C7B5-F825-1008-B58AC503B6CA}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1071,6 +1071,10 @@ External Setpoint Generation:
 			<Var>
 				<Name>MAIN.AmrModule.LiftRef.PlcToNc</Name>
 				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.SafetyResetELM.Reset</Name>
+				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>MAIN.AmrModule.SafetyGroupReset.Reset</Name>
