@@ -43,7 +43,13 @@
     <Compile Include="AMR\AmrModule_HMI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\Accelerometer %28EP3751%29\EP3751_Accelerometer.TcPOU">
+    <Compile Include="Components\Accelerometer %28EP3751%29\DUT\ST_EP3751.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Accelerometer %28EP3751%29\DUT\ST_EP3751_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Accelerometer %28EP3751%29\EP3751_Accelerometer_HMI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\DEGREE_TO_RADIAN.TcPOU">
@@ -304,6 +310,7 @@
     <Folder Include="AMR\DUT" />
     <Folder Include="AMR\Interface" />
     <Folder Include="Components" />
+    <Folder Include="Components\Accelerometer %28EP3751%29\DUT" />
     <Folder Include="Components\Encoder\DUT" />
     <Folder Include="Components\Navitrol" />
     <Folder Include="Components\Navitrol\Common types" />
@@ -428,8 +435,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -505,14 +512,14 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Boolean">System.Boolean</Type>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Boolean">System.Boolean</Type>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

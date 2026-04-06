@@ -54,6 +54,10 @@ VAR
 	SafetyEstop			 : SafetyEstopFB_TcEvents('E-Stop')		  := (ResetFunction := SafetyReset, SafetyGroup := SafetyInputGroup);
 	SafetyScannerLeuze	 : SafetyMonFB_TcEvents('Leuze Scanner')  := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
 	SafetyScannerHokuyo	 : SafetyMonFB_TcEvents('Hokuyo Scanner') := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
+
+	// EP
+	EP3751_IO AT %I*		 : ST_EP3751;
+	EP3751_Accelerometer_HMI : EP3751_Accelerometer_HMI('EP3751 - Gyro', EP3751_IO);
 END_VAR
 
 VAR
@@ -372,7 +376,10 @@ SafetyResetELM.RegisterWithParent(THIS^);
 //
 EncoderSpeed.RegisterWithParent(THIS^);
 EncoderPosition.RegisterWithParent(THIS^);
-Encoder_HMI.RegisterWithParent(THIS^);]]></ST>
+Encoder_HMI.RegisterWithParent(THIS^);
+
+//
+EP3751_Accelerometer_HMI.RegisterWithParent(THIS^);]]></ST>
       </Implementation>
     </Method>
     <Method Name="Initializing" Id="{c8083393-3d77-421f-ac74-5801e126b038}" FolderPath="Initialize\">

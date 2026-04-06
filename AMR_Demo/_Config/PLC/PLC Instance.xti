@@ -67,6 +67,14 @@
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule._BypassScanners" VarB="StandardOutputs^Inputs.BypassScanners_25" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TIID^X103 (EtherCAT)^Gyroscope (EP3751-0260)">
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_X" VarB="AI Acc X Samples 1 (Real32)^Samples[0]"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_Y" VarB="AI Acc Y Samples 1 (Real32)^Samples[0]"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_Z" VarB="AI Acc Z Samples 1 (Real32)^Samples[0]"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_X" VarB="AI Gyro X Samples 1 (Real32)^Samples[0]"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Y" VarB="AI Gyro Y Samples 1 (Real32)^Samples[0]"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Z" VarB="AI Gyro Z Samples 1 (Real32)^Samples[0]"/>
+			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Lift">
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.LiftRef.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.LiftRef.PlcToNc" VarB="Inputs^FromPlc"/>

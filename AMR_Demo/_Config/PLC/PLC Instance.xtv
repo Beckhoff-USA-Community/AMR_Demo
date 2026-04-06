@@ -818,6 +818,48 @@ External Setpoint Generation:
 			</Properties>
 		</DataType>
 		<DataType>
+			<Name GUID="{0EEF712F-51FC-BB35-61EF-E2A4EF0B0D48}" AutoDeleteType="true">ST_EP3751</Name>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>ACC_X</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[ Unit in 1G]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ACC_Y</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ACC_Z</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Gyro_X</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[ °/s]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Gyro_Y</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Gyro_Z</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
@@ -1005,7 +1047,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{5DA04E35-C7B5-F825-1008-B58AC503B6CA}">
+	<Instance TmcHash="{341DCF3D-3F3C-F957-AEA3-A4DA6783FA9E}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1051,6 +1093,11 @@ External Setpoint Generation:
 			<Var>
 				<Name>MAIN.AmrModule.SafetyScannerHokuyo.InfoData</Name>
 				<Type GUID="{C73AE285-B064-EB1F-4C43-B915DD9A2753}" Namespace="CoreComponents">ST_SafetyStateDiag</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.EP3751_IO</Name>
+				<Comment><![CDATA[ EP]]></Comment>
+				<Type GUID="{0EEF712F-51FC-BB35-61EF-E2A4EF0B0D48}">ST_EP3751</Type>
 			</Var>
 		</Vars>
 		<Vars VarGrpType="2" AreaNo="1">
