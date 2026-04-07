@@ -9843,6 +9843,133 @@
                 ],
                 "type": "object"
             },
+            "ADS-PLC1.ST_EP3751_HMI": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.Core.ST_HmiFunction"
+                    ],
+                    "TcExtends": "Core.ST_HmiFunction"
+                },
+                "properties": {
+                    "ACC_X": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Unit in 1G",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "ACC_Y": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "ACC_Z": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "Gyro_X": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "°/s",
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "Gyro_Y": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "Gyro_Z": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "HmiEnabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "Name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "Pitch": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 10
+                            }
+                        ]
+                    },
+                    "Roll": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Angles",
+                                "propertyOrder": 9
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Name",
+                    "HmiEnabled",
+                    "ACC_X",
+                    "ACC_Y",
+                    "ACC_Z",
+                    "Gyro_X",
+                    "Gyro_Y",
+                    "Gyro_Z",
+                    "Roll",
+                    "Pitch"
+                ],
+                "type": "object"
+            },
             "ADS-PLC1.ST_EStop_HMI": {
                 "additionalProperties": false,
                 "attributes": {
@@ -31523,7 +31650,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 11,
+                        "propertyOrder": 10,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31547,9 +31674,32 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 7,
+                        "propertyOrder": 6,
                         "userGroups": [
                             "Admin",
+                            "__SystemAdministrators"
+                        ]
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::MAIN::AmrModule::EP3751_Accelerometer_HMI::EP3751_HMI",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_EP3751_HMI"
+                    },
+                    {
+                        "addSymbol": true,
+                        "propertyOrder": 5,
+                        "userGroups": [
+                            " Admin",
                             "__SystemAdministrators"
                         ]
                     }
@@ -31571,7 +31721,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 7,
+                        "propertyOrder": 6,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31595,7 +31745,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 6,
+                        "propertyOrder": 5,
                         "userGroups": [
                             "Admin",
                             "__SystemAdministrators"
@@ -31619,7 +31769,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 7,
+                        "propertyOrder": 6,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31660,7 +31810,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 54,
+                        "propertyOrder": 57,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -31704,7 +31854,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 6,
+                        "propertyOrder": 5,
                         "userGroups": [
                             "Admin",
                             "__SystemAdministrators"
@@ -31728,7 +31878,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 6,
+                        "propertyOrder": 5,
                         "userGroups": [
                             "Admin",
                             "__SystemAdministrators"
@@ -40778,6 +40928,7 @@
             "SYMBOLS": {
                 "ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.AmrModule_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.Statemachine_HMI": 3,
+                "ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Encoder_HMI.Encoder_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Lift_HMI.AxisPTP_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI": 3,

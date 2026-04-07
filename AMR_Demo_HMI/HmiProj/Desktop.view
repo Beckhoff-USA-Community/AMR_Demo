@@ -182,114 +182,114 @@
 
 </div>
 <div id="desktop-header" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiHeader" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="-1" data-tchmi-top-unit="px" data-tchmi-right="80">
-<script data-tchmi-target-attribute="data-tchmi-header-items" type="application/json">
-[
-  {
-    "accessRights": [],
-    "altText": "Image",
-    "classList": [],
-    "image": "Images/Beckhoff_Logo.svg",
-    "itemAlign": "Left",
-    "itemType": "Image",
-    "minWidth": 128.0,
-    "minWidthUnit": "px",
-    "prefHeight": 95.0,
-    "prefHeightUnit": "px",
-    "prefWidth": 288.0,
-    "prefWidthUnit": "px",
-    "priority": "3"
-  },
-  {
-    "accessRights": [],
-    "classList": [],
-    "filter": [
-      {
-        "path": "domain",
-        "comparator": "==",
-        "value": "TcHmiEventLogger"
-      },
-      {
-        "logic": "AND"
-      },
-      {
-        "path": "alarmState",
-        "comparator": "==",
-        "value": 0
-      },
-      {
-        "logic": "AND"
-      },
-      {
-        "path": "severity",
-        "comparator": ">=",
-        "value": 0
-      }
-    ],
-    "itemAlign": "Left",
-    "itemType": "EventLine",
-    "messageFormat": [
-      {
-        "name": "timeRaised"
-      },
-      {
-        "text": " | "
-      },
-      {
-        "name": "params::sourceName"
-      },
-      {
-        "text": " | "
-      },
-      {
-        "name": "text"
-      }
-    ],
-    "minWidth": 288.0,
-    "minWidthUnit": "px",
-    "prefHeight": 48.0,
-    "prefHeightUnit": "px",
-    "prefWidth": 800.0,
-    "prefWidthUnit": "px",
-    "priority": "5",
-    "sorting": [
-      {
-        "name": "timeRaised",
-        "order": "Descending"
-      }
-    ],
-    "textOverflow": "Ellipsis"
-  },
-  {
-    "accessRights": [],
-    "allowLogout": true,
-    "allowSwitchUser": true,
-    "classList": [],
-    "itemAlign": "Right",
-    "itemType": "UserManagement",
-    "minWidth": 176.0,
-    "minWidthUnit": "px",
-    "prefHeight": 48.0,
-    "prefHeightUnit": "px",
-    "prefWidth": 288.0,
-    "prefWidthUnit": "px",
-    "priority": "3"
-  },
-  {
-    "accessRights": [],
-    "classList": [],
-    "itemAlign": "Right",
-    "itemType": "Time",
-    "minWidth": 96.0,
-    "minWidthUnit": "px",
-    "prefHeight": 48.0,
-    "prefHeightUnit": "px",
-    "prefWidth": 128.0,
-    "prefWidthUnit": "px",
-    "priority": "4",
-    "timeDisplayLayout": "TimeDateMultiLine"
-  }
-]
-</script>
+    <script data-tchmi-target-attribute="data-tchmi-header-items" type="application/json">
+        [
+          {
+            "accessRights": [],
+            "altText": "Image",
+            "classList": [],
+            "image": "Images/Beckhoff_Logo.svg",
+            "itemAlign": "Left",
+            "itemType": "Image",
+            "minWidth": 128.0,
+            "minWidthUnit": "px",
+            "prefHeight": 95.0,
+            "prefHeightUnit": "px",
+            "prefWidth": 288.0,
+            "prefWidthUnit": "px",
+            "priority": "3"
+          },
+          {
+          "accessRights": [],
+          "altText": "Image",
+          "classList": [],
+          "image": "Imports/Images/navitec-logo-color-light-bg.svg",
+          "itemAlign": "Left",
+          "itemType": "Image",
+          "minWidth": 128.0,
+          "minWidthUnit": "px",
+          "prefHeight": 95.0,
+          "prefHeightUnit": "px",
+          "prefWidth": 288.0,
+          "prefWidthUnit": "px",
+          "priority": "3"
+        },
+          {
+            "accessRights": [],
+            "classList": [],
+            "filter": [
+              {
+                "path": "domain",
+                "comparator": "==",
+                "value": "TcHmiEventLogger"
+              },
+              {
+                "logic": "AND"
+              },
+              {
+                "path": "alarmState",
+                "comparator": "==",
+                "value": 0
+              },
+              {
+                "logic": "AND"
+              },
+              {
+                "path": "severity",
+                "comparator": ">=",
+                "value": 0
+              }
+            ],
+            "itemAlign": "Left",
+            "itemType": "EventLine",
+            "messageFormat": [
+              {
+                "name": "timeRaised"
+              },
+              {
+                "text": " | "
+              },
+              {
+                "name": "params::sourceName"
+              },
+              {
+                "text": " | "
+              },
+              {
+                "name": "text"
+              }
+            ],
+            "minWidth": 288.0,
+            "minWidthUnit": "px",
+            "prefHeight": 48.0,
+            "prefHeightUnit": "px",
+            "prefWidth": 800.0,
+            "prefWidthUnit": "px",
+            "priority": "5",
+            "sorting": [
+              {
+                "name": "timeRaised",
+                "order": "Descending"
+              }
+            ],
+            "textOverflow": "Ellipsis"
+          },
+          {
+            "accessRights": [],
+            "classList": [],
+            "itemAlign": "Right",
+            "itemType": "Time",
+            "minWidth": 96.0,
+            "minWidthUnit": "px",
+            "prefHeight": 48.0,
+            "prefHeightUnit": "px",
+            "prefWidth": 128.0,
+            "prefWidthUnit": "px",
+            "priority": "4",
+            "timeDisplayLayout": "TimeDateMultiLine"
+          }
+        ]
+    </script>
 
 
 

@@ -252,6 +252,9 @@
     <Content Include="Images\Icons\upload.svg">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Imports\Images\navitec-logo-color-light-bg.svg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="KeyboardLayouts\Numpad (plusminus) - indirect.keyboard.json">
       <SubType>Content</SubType>
     </Content>
