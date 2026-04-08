@@ -277,6 +277,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Popups\PackMLSelection.usercontrol</DependentUpon>
     </Content>
+    <Content Include="Popups\PanelPopups\EP3751.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Popups\PanelPopups\EP3751.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Popups\PanelPopups\EP3751.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Popups\PanelPopups\Cylinder.usercontrol">
       <SubType>Content</SubType>
     </Content>
@@ -301,6 +308,7 @@
     <Content Include="Server\ADS\ADS.Config.default.json">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Server\ADS\ADS.Config.default.json" />
     <Content Include="Server\ADS\ADS.Config.default.json" />
     <Content Include="Server\ADS\ADS.Config.default.json" />
     <Content Include="Server\ADS\ADS.Config.default.json" />
@@ -371,12 +379,12 @@
       <SubType>Content</SubType>
       <DependentUpon>UserControls\Panels\NavitrolPanel.usercontrol</DependentUpon>
     </Content>
-    <Content Include="UserControls\Panels\CustomPanel.usercontrol">
+    <Content Include="UserControls\Panels\EP3751Panel.usercontrol">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UserControls\Panels\CustomPanel.usercontrol.json">
+    <Content Include="UserControls\Panels\EP3751Panel.usercontrol.json">
       <SubType>Content</SubType>
-      <DependentUpon>UserControls\Panels\CustomPanel.usercontrol</DependentUpon>
+      <DependentUpon>UserControls\Panels\EP3751Panel.usercontrol</DependentUpon>
     </Content>
     <Content Include="UserControls\Panels\CylinderPanel.usercontrol">
       <SubType>Content</SubType>

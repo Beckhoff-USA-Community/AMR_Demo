@@ -92,6 +92,9 @@
       "url": "Popups/PanelPopups/Cylinder.usercontrol"
     },
     {
+      "url": "Popups/PanelPopups/EP3751.usercontrol"
+    },
+    {
       "url": "Popups/PanelPopups/File.usercontrol"
     },
     {
@@ -107,13 +110,13 @@
       "url": "UserControls/Panels/AxisPTPPanel.usercontrol"
     },
     {
-      "url": "UserControls/Panels/CustomPanel.usercontrol"
-    },
-    {
       "url": "UserControls/Panels/CylinderPanel.usercontrol"
     },
     {
       "url": "UserControls/Panels/EncoderPanel.usercontrol"
+    },
+    {
+      "url": "UserControls/Panels/EP3751Panel.usercontrol"
     },
     {
       "url": "UserControls/Panels/FilePanel.usercontrol"
