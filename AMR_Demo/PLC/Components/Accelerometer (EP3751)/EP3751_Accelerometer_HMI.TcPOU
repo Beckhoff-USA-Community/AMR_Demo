@@ -33,7 +33,8 @@ END_VAR
 	RETURN;
 END_IF
 
-EP3751_HMI.Name := Name;
+EP3751_HMI.HmiEnabled := Enabled;
+EP3751_HMI.Name		  := Name;
 IF NOT ((EP3751_HMI.Gyro_X = 0) AND (EP3751_HMI.Gyro_Z = 0)) THEN
 	EP3751_HMI.Roll := TO_REAL(ATAN(EP3751_HMI.Gyro_Y / (SQRT(EP3751_HMI.Gyro_X * EP3751_HMI.Gyro_X + EP3751_HMI.Gyro_Z * EP3751_HMI.Gyro_Z))) * 360.0 / (2 * PI));
 END_IF
