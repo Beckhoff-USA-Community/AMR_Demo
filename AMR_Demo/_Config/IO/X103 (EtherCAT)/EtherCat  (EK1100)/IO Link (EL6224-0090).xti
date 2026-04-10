@@ -1651,7 +1651,7 @@
 			<Port/>
 			<Port/>
 		</Xml>
-		<EtherCAT SlaveType="3" AdsServerAddress="000000000206ed03" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x18503052" RevisionNo="#x0010005a" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" InitializeOwnNetId="true" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="7" Type="EL6224-0090 (IO Link Master, TwinSAFE SC)" Desc="EL6224-0090">
+		<EtherCAT SlaveType="3" AdsServerAddress="000000000206ec03" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x18503052" RevisionNo="#x0010005a" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" InitializeOwnNetId="true" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="7" Type="EL6224-0090 (IO Link Master, TwinSAFE SC)" Desc="EL6224-0090">
 			<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
 			<SyncMan>001100012200010002000000400000010001001122010000</SyncMan>
 			<SyncMan>001206002400010003000000000000000000001224010000</SyncMan>
@@ -1894,7 +1894,7 @@
 				<ModuleIdent>2308353</ModuleIdent>
 				<ModuleIdent>2308354</ModuleIdent>
 				<ModuleIdent>2308355</ModuleIdent>
-				<Module Id="#x03090016" Type="empty" Class="">
+				<Module Id="#x0309000e" Type="empty" Class="">
 					<Name>Module 4 (empty)</Name>
 					<ImageId>1001</ImageId>
 					<ModuleData>02000000feffffff000000000000000000000000000000000000000000000000</ModuleData>
@@ -1928,7 +1928,7 @@
 				<ModuleIdent>2308353</ModuleIdent>
 				<ModuleIdent>2308354</ModuleIdent>
 				<ModuleIdent>2308355</ModuleIdent>
-				<Module Id="#x03090017" Type="empty" Class="">
+				<Module Id="#x0309000f" Type="empty" Class="">
 					<Name>Module 5 (empty)</Name>
 					<ImageId>1001</ImageId>
 					<ModuleData>02000000feffffff000000000000000000000000000000000000000000000000</ModuleData>
@@ -1962,7 +1962,7 @@
 				<ModuleIdent>2308353</ModuleIdent>
 				<ModuleIdent>2308354</ModuleIdent>
 				<ModuleIdent>2308355</ModuleIdent>
-				<Module Id="#x03090018" Type="empty" Class="">
+				<Module Id="#x03090010" Type="empty" Class="">
 					<Name>Module 6 (empty)</Name>
 					<ImageId>1001</ImageId>
 					<ModuleData>02000000feffffff000000000000000000000000000000000000000000000000</ModuleData>

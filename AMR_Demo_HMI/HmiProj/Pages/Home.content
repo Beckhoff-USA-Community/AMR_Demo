@@ -822,7 +822,7 @@
 ]
 </script>
 </div>
-<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="ScannerBypass-ToggleSwitch" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-height="45" data-tchmi-height-unit="px" data-tchmi-text="Scanner Bypassed" data-tchmi-width="180" data-tchmi-width-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-state-symbol="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.AmrModule_HMI::BypassScanners%/s%">
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="ScannerBypass-ToggleSwitch" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-text="Scanner Bypassed" data-tchmi-width="160" data-tchmi-width-unit="px" data-tchmi-right="20" data-tchmi-bottom="20" data-tchmi-state-symbol="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.AmrModule_HMI::BypassScanners%/s%">
 </div>
 </div>
 </div>

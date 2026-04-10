@@ -1,7 +1,7 @@
 {
     "targetSystems": {
         "Local": {
-            "address": "5.158.155.180.1.1",
+            "address": "5.132.149.215.1.1",
             "enabled": true,
             "readOnly": false
         }

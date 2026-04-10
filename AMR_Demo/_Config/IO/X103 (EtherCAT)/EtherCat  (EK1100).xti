@@ -14,14 +14,14 @@
 		<Box File="Motion 2 (ELM7231-9018).xti" Id="3">
 			<EtherCAT PortABoxInfo="#x01000002"/>
 		</Box>
-		<Box File="Safety PLC (EL2911).xti" Id="4">
+		<Box File="IO Link (EL6224-0090).xti" Id="5">
 			<EtherCAT PortABoxInfo="#x01000003"/>
 		</Box>
-		<Box File="IO Link (EL6224-0090).xti" Id="5">
-			<EtherCAT PortABoxInfo="#x01000004"/>
+		<Box File="Safety PLC (EL2911).xti" Id="4">
+			<EtherCAT PortABoxInfo="#x01000005"/>
 		</Box>
 		<Box File="CAN Open (EL6751).xti" Id="6">
-			<EtherCAT PortABoxInfo="#x01000005"/>
+			<EtherCAT PortABoxInfo="#x01000004"/>
 		</Box>
 		<Box Id="17" BoxType="9099">
 			<Name>End (EL9011)</Name>

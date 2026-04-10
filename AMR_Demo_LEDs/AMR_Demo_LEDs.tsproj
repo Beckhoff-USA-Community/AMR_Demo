@@ -6,9 +6,10 @@
 				<Cpu CpuId="1"/>
 			</Settings>
 			<Licenses>
-				<Target>
+				<Target BkhfOrder="01794412 " CustomOrder="01794412 ">
+					<CustomComment><![CDATA[Beckhoff CX]]></CustomComment>
 					<ManualSelect>{3DDCAB25-BF0E-412C-A721-DC77C1B8099C}</ManualSelect>
-					<ManualSelect>{C1126695-F4A2-4F2D-AA1A-311783D98273}</ManualSelect>
+					<ManualSelect>{AC534BD2-49E1-4025-9C78-0BC8AE4A36A9}</ManualSelect>
 					<ManualSelect>{27326EE5-AB30-4084-B15B-8CCA96CCBF0B}</ManualSelect>
 				</Target>
 			</Licenses>

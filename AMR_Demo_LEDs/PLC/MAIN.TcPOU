@@ -5,7 +5,7 @@
 VAR
 	BackgroundColor		   : STRING(9) := '#fffafa';
 	BackgroundColorRGB	   : ARRAY[0..3] OF USINT;
-	DisplaySection		   : Section;
+	DisplaySection		   : Section := Section.Linux;
 	LED1				   : EL2574_CommandMode(10);
 	LED2				   : EL2574_CommandMode(10);
 	LED3				   : EL2574_CommandMode(10);
@@ -31,7 +31,7 @@ END_VAR]]></Declaration>
       <ST><![CDATA[BackgroundColorRGB := HtmlColorCodeToRGBA(BackgroundColor);
 onChange(CLK := previousDisplaySection <> DisplaySection);
 IF OnChange.Q THEN
-	IF send THEN
+	IF Send THEN
 		LED4.FillColor(0,
 					   100,
 					   BackgroundColorRGB[0],
@@ -181,8 +181,8 @@ IF OnChange.Q THEN
 	PreviousDisplaySection := DisplaySection;
 END_IF
 
-IF update THEN
-	send   := TRUE;
+IF Update THEN
+	Send   := TRUE;
 	update := FALSE;
 	LED1.Update();
 	LED2.Update();
