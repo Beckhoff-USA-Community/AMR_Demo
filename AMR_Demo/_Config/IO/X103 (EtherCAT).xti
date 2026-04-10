@@ -24,7 +24,7 @@
 		<Box File="Hokuyo Scanner (UAM-05LECA).xti" Id="25">
 			<EtherCAT PortABoxInfo="#x01000018"/>
 		</Box>
-		<EtherCAT DcSyncMode="3" EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120"/>
+		<EtherCAT DcSyncMode="3" EnableVirtualSwitch="true" MaxSwitchPorts="3" MaxSwitchFrames="140" MaxSwitchMACs="100"/>
 	</Device>
 	<Mappings>
 		<OwnerA>

@@ -63,7 +63,7 @@
 	<Box Id="25" BoxType="9099" BoxFlags="#x00000020">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
-		<EtherCAT SlaveType="2" PdiType="#x0080" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" EoeType="3" FoeType="1" VendorId="#x00000832" ProductCode="#x00000002" RevisionNo="#x00000100" InfoDataAddr="true" TimeoutStateChange1="5000" TimeoutStateChange4="1000" TimeoutMailbox1="1000" TimeoutMailbox2="3000" PortPhys="17" MaxSlotCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="UAM-05LECA" Desc="UAM-05LECA">
+		<EtherCAT SlaveType="2" PdiType="#x0080" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" EoeType="3" FoeType="1" VendorId="#x00000832" ProductCode="#x00000002" RevisionNo="#x00000100" InfoDataAddr="true" TimeoutStateChange1="5000" TimeoutStateChange4="1000" TimeoutMailbox1="1000" TimeoutMailbox2="3000" PortPhys="17" DisableEoe="true" MaxSlotCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="UAM-05LECA" Desc="UAM-05LECA">
 			<SyncMan>001000042600010001000000800000040004001026010000</SyncMan>
 			<SyncMan>001400042200010002000000800000040004001422010000</SyncMan>
 			<SyncMan>001837006400010003000000000000003700001864010000</SyncMan>

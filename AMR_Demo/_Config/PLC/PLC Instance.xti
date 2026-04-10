@@ -32,6 +32,10 @@
 	</Instance>
 	<Mappings>
 		<OwnerA>
+			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^IO Link (EL6224-0090)">
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Port1 (Device(0x00000004))^IO-Link Port1^Position"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Port1 (Device(0x00000004))^IO-Link Port1^Speed"/>
+			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)">
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck" Size="1"/>
 			</OwnerB>

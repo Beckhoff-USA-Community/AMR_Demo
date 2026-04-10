@@ -13,7 +13,7 @@
 		<Box File="Motion 2 (ELM7231-9018).xti" Id="20">
 			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
-		<Box File="Term 21 (EL6224-0090).xti" Id="21">
+		<Box File="IO Link (EL6224-0090).xti" Id="21">
 			<EtherCAT PortABoxInfo="#x01000014"/>
 		</Box>
 		<Box File="Safety PLC (EL2911).xti" Id="22">

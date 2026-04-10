@@ -11,9 +11,10 @@
 		<Image Id="8" AddrType="4" ImageType="3">
 			<Name>Image</Name>
 		</Image>
+		<Box File="Box 1 (CANopen Slave).xti" Id="1"/>
 		<CanOpen>
 			<Fcxxxx>
-				<DevSettings BusyIntEnabled="true" DisableSlots="true" NetId="000000000601" CycleDivider="1"/>
+				<DevSettings BusyIntEnabled="true" DisableSlots="true" NetId="000000000601" FifoSize="5" CycleDivider="1"/>
 				<DevParameter CycleTime="20000" InputShift="60"/>
 				<EquiParameter RelationShiftCycle="0"/>
 			</Fcxxxx>
