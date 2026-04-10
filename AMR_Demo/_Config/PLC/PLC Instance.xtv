@@ -1047,7 +1047,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{73E9FC0B-C9CB-2C0B-6FB0-0E61F92B544B}">
+	<Instance TmcHash="{369433F7-333E-3B9B-9721-7C1F93B0BABF}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1125,10 +1125,6 @@ External Setpoint Generation:
 			</Var>
 			<Var>
 				<Name>MAIN.AmrModule.SafetyGroupReset.Reset</Name>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>MAIN.AmrModule.SafetyResetHokuyo.Reset</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>

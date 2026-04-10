@@ -47,7 +47,6 @@ VAR
 	// Safety
 	SafetyResetELM		 : SafetyResetPulse('Safety Reset');
 	SafetyGroupReset	 : SafetyResetPulse('Safety Reset');
-	SafetyResetHokuyo	 : SafetyResetPulse('Safety Reset');
 	SafetyInputGroup	 : SafetyGroup_TcEvents('Safety Input Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyLiftSpeedGroup : SafetyGroup_TcEvents('Safety Lift Speed Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
@@ -373,7 +372,6 @@ SafetyScannerHokuyo.SetEventReactions(0,
 									  0);
 
 SafetyResetELM.RegisterWithParent(THIS^);
-SafetyResetHokuyo.RegisterWithParent(THIS^);
 
 //
 EncoderSpeed.RegisterWithParent(THIS^);
@@ -470,6 +468,7 @@ VAR_INST
 	HmiEnableDisable : HmiEnableDisableAllVisitor;
 	SetOverride		 : SetAllOverrideVisitor;
 	ProductionRT	 : R_TRIG;
+	AutoResetTon	 : TON;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[ProductionRT(CLK := _Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Production);
@@ -491,9 +490,12 @@ ELSE
 	END_IF
 END_IF
 
-// Autoreset Scanner
-IF NOT SafetyResetHokuyo.Busy THEN
-	SafetyResetHokuyo.Execute();
+IF (_Statemachine.CurrentState = E_PMLState.Aborted) OR (_Statemachine.CurrentState = E_PMLState.Stopped) THEN
+	AutoResetTon(IN := NOT AutoResetTon.Q, PT := T#1S);
+	IF AutoResetTon.Q THEN
+		SafetyScannerLeuze.Reset();
+		SafetyScannerHokuyo.Reset();
+	END_IF;
 END_IF
 
 //

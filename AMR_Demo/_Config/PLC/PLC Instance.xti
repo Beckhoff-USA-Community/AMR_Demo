@@ -45,6 +45,8 @@
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyInputGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Inputs Info Data^State"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Motion Info Data^Diag" Size="8"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Motion Info Data^State"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^State"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^Diag"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^State"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Inputs.ErrorAcknowledgement_1" Size="1"/>
@@ -52,7 +54,6 @@
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyInputGroup.Run" VarB="StandardOutputs^Inputs.Run_18" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyMotionGroup.Run" VarB="StandardOutputs^Motion.Run_20" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11" Size="1"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetHokuyo.Reset" VarB="StandardOutputs^Inputs.AutoReset_28" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule._BypassScanners" VarB="StandardOutputs^Inputs.BypassScanners_25" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^Gyroscope (EP3751-0260)">

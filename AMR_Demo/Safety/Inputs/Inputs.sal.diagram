@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplicationLanguageDiagram Crc="88925536" dslVersion="1.5.0.0" Id="a9ea5e3e-ee30-4f58-9bef-2d4c0b485155" absoluteBounds="0, 0, 21.625, 17.125" name="TwinSAFE">
+<safetyApplicationLanguageDiagram Crc="1164850624" dslVersion="1.5.0.0" Id="a9ea5e3e-ee30-4f58-9bef-2d4c0b485155" absoluteBounds="0, 0, 21.625, 17.125" name="TwinSAFE">
   <safetyApplicationMoniker name="/" />
   <nestedChildShapes>
     <networkSwimLane Id="562c006c-d7ff-4314-9417-0f4f6f69e0f6" absoluteBounds="0, 0, 21.625, 5.325">
@@ -271,19 +271,6 @@
             <inPortShapeMoniker Id="3e09efdd-b55c-43ac-88a3-bb45006af8b0" />
           </nodes>
         </wiredLinkConnector>
-        <userFunctionBlockShape Id="d305a446-cede-4108-884f-79fb67455ca1" absoluteBounds="4.625, 15.825, 2.15, 1.08">
-          <userFunctionBlockMoniker name="//Network2/UserFunctionBlock2" />
-          <relativeChildShapes>
-            <inPortShape Id="c5ed99e8-9966-4ec0-b0ac-c51a23ceac9d" absoluteBounds="4.545, 16.3, 0.15, 0.15">
-              <metaInPortMoniker name="//Network2/UserFunctionBlock2/In" />
-              <relativeChildShapes />
-            </inPortShape>
-            <outPortShape Id="696dc5c8-7e45-4788-a34d-85fc590a32f6" absoluteBounds="6.675, 16.3, 0.15, 0.15">
-              <metaOutPortMoniker name="//Network2/UserFunctionBlock2/Out" />
-              <relativeChildShapes />
-            </outPortShape>
-          </relativeChildShapes>
-        </userFunctionBlockShape>
       </nestedChildShapes>
     </networkSwimLane>
   </nestedChildShapes>

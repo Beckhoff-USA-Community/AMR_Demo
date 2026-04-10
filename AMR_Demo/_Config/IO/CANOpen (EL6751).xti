@@ -5,7 +5,7 @@
 		<AddressInfo>
 			<Ecat>
 				<EtherCATDeviceId>23</EtherCATDeviceId>
-				<EtherCATDeviceName>TIID^X103 (EtherCAT)^Term 18 (EK1100)^Term 14 (EL6751)</EtherCATDeviceName>
+				<EtherCATDeviceName>TIID^X103 (EtherCAT)^EtherCat  (EK1100)^CAN Open (EL6751)</EtherCATDeviceName>
 			</Ecat>
 		</AddressInfo>
 		<Image Id="8" AddrType="4" ImageType="3">

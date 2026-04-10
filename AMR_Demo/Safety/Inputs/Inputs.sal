@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="3061543983" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="93143f31-ca26-4ab1-a91a-d28a3b511498" name="" mapState="true" mapDiag="true" groupOrderId="0" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="2791252957" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="93143f31-ca26-4ab1-a91a-d28a3b511498" name="" mapState="true" mapDiag="true" groupOrderId="0" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="21418bb1-6f43-4bfa-8ef2-6401d7fd1fda">
       <Network Id="ae3cbe85-66d0-4cde-90fb-4e5fd8d96c17" name="Network1" networkName="EStop" intId="1" networkOrderId="0">
@@ -245,20 +245,6 @@
               </parameterPorts>
             </fBMon>
           </networkHasFunctionBlocks>
-          <networkHasUserFunctionBlocks Id="0e19c3c5-4891-45d7-93ee-837e9cf3a16f">
-            <userFunctionBlock Id="07455c9d-8385-448e-b8f4-42a8623833bc" name="UserFunctionBlock2" instanceName="UserFB1" orderOfExecutionSize="2" orderOfExecution="7" schematicGuid="83cfa91c-c6c4-4755-94c6-f46e01bec43b" libraryGuid="00000000-0000-0000-0000-000000000000" ufbDefCrc="415604716">
-              <inPorts>
-                <userFunctionBlockHasInPorts Id="05511b4b-2dde-4397-90f1-d10a3db0cf4a">
-                  <metaInPort Id="326403ef-c54d-4b56-938c-32c53b574d38" name="In" portName="In" portNum="1" objectIndex="0" varId="2" filter="3" portDataType="1" maxDeviation="0" resetTime="0" schematicVarId="444d677a-caa9-411d-a682-ff05e9ecaef5" />
-                </userFunctionBlockHasInPorts>
-              </inPorts>
-              <outPorts>
-                <userFunctionBlockHasOutPorts Id="372f6123-106a-4339-a19e-991e118ec778">
-                  <metaOutPort Id="47b9cd7b-9488-4f55-a6e0-76782d24b185" name="Out" portName="Out" portNum="1" objectIndex="8" varId="17" filter="7" portDataType="1" replacementValue="0" schematicVarId="67f768e4-c868-4a08-a6ac-c693b4d2ec27" />
-                </userFunctionBlockHasOutPorts>
-              </outPorts>
-            </userFunctionBlock>
-          </networkHasUserFunctionBlocks>
         </functionBlocks>
       </Network>
     </safetyApplicationHasNetworks>
@@ -545,70 +531,6 @@
                     <functionBlockPort>
                       <fbPortUsageReferencesFunctionBlockPort Id="31a2de38-bffd-47ff-976a-cbf05dd655b7">
                         <inPortMoniker name="//Network2/FBMon2/MonIn1" />
-                      </fbPortUsageReferencesFunctionBlockPort>
-                    </functionBlockPort>
-                  </fbPortUsage>
-                </variableUsagesHasUsages>
-              </usages>
-            </variableUsages>
-          </variableHasTargetUsages>
-        </targetUsages>
-      </variable>
-    </safetyApplicationHasVariables>
-    <safetyApplicationHasVariables Id="f2aa6e88-7396-4fec-ae20-fbac426a1458">
-      <variable Id="038b8a2b-e1de-480a-8977-a066d03f7845" name="ResetHokuyo" isLocal="false">
-        <sourceUsages>
-          <variableHasSourceUsages Id="39437d06-2fed-4e7f-a099-f28b7c253cd6">
-            <variableUsages Id="87b6f3a2-621b-416e-8981-c48cda3df8a0">
-              <usages>
-                <variableUsagesHasUsages Id="2a9e0cb0-4d0f-4050-963d-2961fd41031c">
-                  <fbPortUsage Id="1982fea4-855d-4f07-9c8f-aceba4a718d5">
-                    <functionBlockPort>
-                      <fbPortUsageReferencesFunctionBlockPort Id="50d4dbd4-1341-4987-9166-a6b34e5a1737">
-                        <metaOutPortMoniker name="//Network2/UserFunctionBlock2/Out" />
-                      </fbPortUsageReferencesFunctionBlockPort>
-                    </functionBlockPort>
-                  </fbPortUsage>
-                </variableUsagesHasUsages>
-              </usages>
-            </variableUsages>
-          </variableHasSourceUsages>
-        </sourceUsages>
-        <targetUsages>
-          <variableHasTargetUsages Id="92a216c3-4b02-4f09-8c39-67a4d292dd6b">
-            <variableUsages Id="8bfd3aaf-5b2c-4598-8ad7-bcbcf96f8841">
-              <usages>
-                <variableUsagesHasUsages Id="126376ed-aab9-4134-9a81-3e869fccf682">
-                  <aliasDeviceIoUsage Id="43d2c190-e702-4293-ab81-ec5f2fd4b8b9" sdsId="27" channelId="9" functionId="1879116033" />
-                </variableUsagesHasUsages>
-              </usages>
-            </variableUsages>
-          </variableHasTargetUsages>
-        </targetUsages>
-      </variable>
-    </safetyApplicationHasVariables>
-    <safetyApplicationHasVariables Id="97633244-ee7b-4aa8-ab5a-5179d3d1e791">
-      <variable Id="949b728a-e363-4ab1-9f42-4f24c9ed9238" name="AutoReset" isLocal="false">
-        <sourceUsages>
-          <variableHasSourceUsages Id="81c5c818-c73e-467e-bcc6-0fe393ce14f6">
-            <variableUsages Id="f28e2a00-53aa-49da-950e-b87b79a98c12">
-              <usages>
-                <variableUsagesHasUsages Id="712d8fb9-976b-42b4-9848-d5173d122218">
-                  <aliasDeviceIoUsage Id="4ea90879-6699-4931-921f-665f2a1dee98" sdsId="28" channelId="1" functionId="1131179973" />
-                </variableUsagesHasUsages>
-              </usages>
-            </variableUsages>
-          </variableHasSourceUsages>
-        </sourceUsages>
-        <targetUsages>
-          <variableHasTargetUsages Id="278296a1-372a-418a-b4ae-70d2641a7a19">
-            <variableUsages Id="744d62ab-6bc4-41cb-9554-afd0f6051d23">
-              <usages>
-                <variableUsagesHasUsages Id="34e70ff2-a048-42f5-b699-9d61778e64dc">
-                  <fbPortUsage Id="0b4e9fc0-921a-4c9c-8de8-4ca1a3344462">
-                    <functionBlockPort>
-                      <fbPortUsageReferencesFunctionBlockPort Id="2037a79b-2e8d-449e-899f-70b77435331c">
-                        <metaInPortMoniker name="//Network2/UserFunctionBlock2/In" />
                       </fbPortUsageReferencesFunctionBlockPort>
                     </functionBlockPort>
                   </fbPortUsage>
