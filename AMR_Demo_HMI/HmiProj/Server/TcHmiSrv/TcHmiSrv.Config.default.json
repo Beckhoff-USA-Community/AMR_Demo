@@ -31662,7 +31662,6 @@
         },
         "ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.Statemachine_HMI": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "HIDDEN": false,
@@ -31709,7 +31708,6 @@
         },
         "ADS.PLC1.MAIN.AmrModule.Encoder_HMI.Encoder_HMI": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "HIDDEN": false,
@@ -31733,7 +31731,6 @@
         },
         "ADS.PLC1.MAIN.AmrModule.Lift_HMI.AxisPTP_HMI": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "HIDDEN": false,
@@ -31757,7 +31754,6 @@
         },
         "ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "HIDDEN": false,
@@ -31842,7 +31838,6 @@
         },
         "ADS.PLC1.MAIN.AmrModule.WheelLeft_HMI.AxisPTP_HMI": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "HIDDEN": false,
@@ -31866,7 +31861,6 @@
         },
         "ADS.PLC1.MAIN.AmrModule.WheelRight_HMI.AxisPTP_HMI": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "HIDDEN": false,
@@ -31890,7 +31884,6 @@
         },
         "ADS.PLC1.MAIN.MachineHmiTree.SystemHmiTree": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "HIDDEN": false,

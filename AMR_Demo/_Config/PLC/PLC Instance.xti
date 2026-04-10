@@ -32,15 +32,8 @@
 	</Instance>
 	<Mappings>
 		<OwnerA>
-			<OwnerB Name="TIID^CANOpen (EL6751)^PD4-CB59M024035-E-08 (CANopen Slave)">
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.Lift_CanOpMode" VarB="RxPDO 1^Outputs^Modes of operation"/>
-			</OwnerB>
-			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^IO Link (EL6224-0090)">
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Position"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Module 3 (IO-Link Slave)^IO-Link Port1^Speed"/>
-			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)">
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 1" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 2 (ELM7231-9018)">
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck" Size="1"/>
@@ -50,17 +43,13 @@
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^State" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^State"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyInputGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Inputs Info Data^Diag" Size="8"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyInputGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Inputs Info Data^State"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyLiftSpeedGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^LiftSpeed Info Data^Diag" Size="8"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyLiftSpeedGroup.InfoData^State" VarB="TwinSAFE Group Info Data^LiftSpeed Info Data^State"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Motion Info Data^Diag" Size="8"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Motion Info Data^State"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^Diag"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^State"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Inputs.ErrorAcknowledgement_1" Size="1"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^LiftSpeed.ErrorAcknowledgement_16" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Motion.ErrorAcknowledgement_13" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyInputGroup.Run" VarB="StandardOutputs^Inputs.Run_18" Size="1"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyLiftSpeedGroup.Run" VarB="StandardOutputs^LiftSpeed.Run_19" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyMotionGroup.Run" VarB="StandardOutputs^Motion.Run_20" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule._BypassScanners" VarB="StandardOutputs^Inputs.BypassScanners_25" Size="1"/>

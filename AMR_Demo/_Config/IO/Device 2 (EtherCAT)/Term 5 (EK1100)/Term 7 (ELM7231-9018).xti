@@ -29,7 +29,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
 			<BitSize>9</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -47,7 +47,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
 			<BitSize>5</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -101,7 +101,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
 			<BitSize>12</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -110,7 +110,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
 			<BitSize>14</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -149,7 +149,7 @@
 	<ImageDatas>
 		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffa4a0a0a4a0a0a4a0a0a4a0a0a4a0a0a4a0a0a4a0a0000000000000000000000000000000000000000000ff00ffff00ffa4a0a0a4a0a0a4a0a0a4a0a0a4a0a0a4a0a00000000000000000000000000000000000000000000000000909ff0909ffa4a0a0a4a0a0000000000000000000a4a0a000ff00000000000000000000000000000000000000000000ff00ffff00ffa4a0a0a4a0a0000000000000000000a4a0a0000000ff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffa4a0a0a4a0a0a4a0a0a4a0a0a4a0a0a4a0a0000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a0000000000000000000a4a0a000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a0000000000000000000a4a0a0000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a0a4a0a0a4a0a0a4a0a0a4a0a0000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a000f2ff00f2ff00f2ffa4a0a000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a000f2ff00f2ff00f2ffa4a0a0000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a000f2ff00f2ff00f2ffa4a0a0000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a000f2ff00f2ff00f2ffa4a0a000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a000f2ff00f2ff00f2ffa4a0a0000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffa4a0a0a4a0a0a4a0a0a4a0a0a4a0a0a4a0a0a4a0a0</ImageData>
 	</ImageDatas>
-	<Box Id="19" BoxType="9099" BoxFlags="#x00000020">
+	<Box Id="7" BoxType="9099" BoxFlags="#x00000020">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="2" PdiType="#x0408" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x502275f9" RevisionNo="#x0014233a" BIC="1P235802SBTN0008r17r1KELM7231-9018                  Q1    2P332507020020" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange3="8000" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" SdoUploadWithMaxLength="true" MaxSlotCount="1" Type="ELM7231-9018 1Ch. Servo Terminal (48 V, 16 A RMS, OCT, STO, Safe Motion, TwinSAFE Logic)" Desc="ELM7231-9018">
@@ -984,7 +984,7 @@ Bit 8 - 15 : reserved]]></Comment>
 			<Slot Name="SAFETY-Slot">
 				<SlotData>0000000001000400000000000000000000000000000000000000000000000000</SlotData>
 				<ModuleIdent>1581785</ModuleIdent>
-				<Module Id="#x0309000e" Type="SAFETY" Class="8921">
+				<Module Id="#x03090003" Type="SAFETY" Class="8921">
 					<Name>Module 1 (SAFETY)</Name>
 					<ImageId>548</ImageId>
 					<ModuleData>02000000d922180000003c000000000000000000000000000000000000000000</ModuleData>

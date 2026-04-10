@@ -1,0 +1,4432 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00200000000A}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..9] OF BIT</Name>
+			<BitSize>10</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>10</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000002}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BIT</Name>
+			<BitSize>2</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>2</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000010}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BYTE</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>2</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00200000000D}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..12] OF BIT</Name>
+			<BitSize>13</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>13</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080808000000080808000000080808000000080808000000000000000000000000000000000ff0000ff0000000000000000ff0000000000ff0000000000ff0000000000ff0000000000000000000000000000000000ff0000ff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080808000000080808000000080808000000080808000000000000000000000000000000000ff0000ff0000000000000000ff0000000000ff0000000000ff0000000000ff0000000000000000000000000000000000ff0000ff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ff0000ff0000ff0000ff0000ff0000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Box Id="24" BoxType="9099" BoxFlags="#x00000020">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x0605" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x0ea74052" RevisionNo="#x00100104" BIC="1P277675SBTN999r5a0i1KEP3751-0260                   Q1    2P482501040016" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="17" SdoUploadWithMaxLength="true" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP3751-0260 Acceleration Sensor and Gyroscope" Desc="EP3751-0260">
+			<SyncMan>001000012600010001000000800000010001001026010000</SyncMan>
+			<SyncMan>001100012200010002000000800000010001001122010000</SyncMan>
+			<SyncMan>001202002400010003000000000000000200001224010000</SyncMan>
+			<SyncMan>001930002000010004000000000000003000001920010000</SyncMan>
+			<Fmmu>0000000000000000001200020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001900010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<BootStrapData>0010f400f410f400</BootStrapData>
+			<DcMode>53796e6368726f6e00000000000000004672656552756e2f534d2d53796e6368726f6e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DcMode>
+			<DcMode>4443000000000000000000000000000044432d53796e6368726f6e00000000000000000000000000000000000000000090d003000000000000000000ffff00070000000000000000000000000000000000000000000000000000000000000000</DcMode>
+			<Pdo Name="AI Acc X Status" Index="#x1a00" Flags="#x0010" SyncMan="3">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6000" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6000" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6000" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6000" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Input Cycle Counter" Index="#x1a01" Flags="#x0010">
+				<Entry Name="Input Cycle Counter" Index="#x6000" Sub="#x14">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Input Legacy Real" Index="#x1a02" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6000" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6000" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6000" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6000" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value (Real32)" Index="#x6000" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Input Legacy Int" Index="#x1a03" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6000" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6000" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6000" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6000" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value" Index="#x6000" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 1 (Real32)" Index="#x1a04" Flags="#x0010" SyncMan="3">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 1" Index="#x1a05" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 2 (Real32)" Index="#x1a06" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6003" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 2" Index="#x1a07" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6001" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 4 (Real32)" Index="#x1a08" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6003" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6003" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6003" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 4" Index="#x1a09" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6001" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6001" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6001" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 8 (Real32)" Index="#x1a0a" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6003" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6003" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6003" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6003" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6003" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6003" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6003" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 8" Index="#x1a0b" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6001" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6001" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6001" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6001" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6001" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6001" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6001" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 10 (Real32)" Index="#x1a0c" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6003" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6003" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6003" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6003" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6003" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6003" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6003" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6003" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6003" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 10" Index="#x1a0d" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6001" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6001" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6001" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6001" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6001" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6001" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6001" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6001" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6001" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 16 (Real32)" Index="#x1a0e" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6003" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6003" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6003" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6003" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6003" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6003" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6003" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6003" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6003" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6003" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6003" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6003" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6003" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6003" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6003" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 16" Index="#x1a0f" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6001" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6001" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6001" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6001" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6001" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6001" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6001" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6001" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6001" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6001" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6001" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6001" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6001" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6001" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6001" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 20 (Real32)" Index="#x1a10" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6003" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6003" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6003" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6003" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6003" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6003" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6003" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6003" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6003" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6003" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6003" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6003" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6003" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6003" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6003" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6003" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6003" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6003" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6003" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 20" Index="#x1a11" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6001" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6001" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6001" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6001" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6001" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6001" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6001" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6001" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6001" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6001" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6001" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6001" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6001" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6001" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6001" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6001" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6001" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6001" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6001" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 40 (Real32)" Index="#x1a12" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6003" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6003" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6003" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6003" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6003" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6003" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6003" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6003" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6003" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6003" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6003" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6003" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6003" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6003" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6003" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6003" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6003" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6003" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6003" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6003" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6003" Sub="#x15">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6003" Sub="#x16">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6003" Sub="#x17">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6003" Sub="#x18">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6003" Sub="#x19">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6003" Sub="#x1a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6003" Sub="#x1b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6003" Sub="#x1c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6003" Sub="#x1d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6003" Sub="#x1e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6003" Sub="#x1f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6003" Sub="#x20">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6003" Sub="#x21">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6003" Sub="#x22">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6003" Sub="#x23">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6003" Sub="#x24">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6003" Sub="#x25">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6003" Sub="#x26">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6003" Sub="#x27">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6003" Sub="#x28">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc X Samples 40" Index="#x1a13" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6001" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6001" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6001" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6001" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6001" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6001" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6001" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6001" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6001" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6001" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6001" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6001" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6001" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6001" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6001" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6001" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6001" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6001" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6001" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6001" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6001" Sub="#x15">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6001" Sub="#x16">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6001" Sub="#x17">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6001" Sub="#x18">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6001" Sub="#x19">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6001" Sub="#x1a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6001" Sub="#x1b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6001" Sub="#x1c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6001" Sub="#x1d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6001" Sub="#x1e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6001" Sub="#x1f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6001" Sub="#x20">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6001" Sub="#x21">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6001" Sub="#x22">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6001" Sub="#x23">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6001" Sub="#x24">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6001" Sub="#x25">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6001" Sub="#x26">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6001" Sub="#x27">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6001" Sub="#x28">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Status" Index="#x1a20" Flags="#x0010" SyncMan="3">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6010" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6010" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6010" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6010" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Input Cycle Counter" Index="#x1a21" Flags="#x0010">
+				<Entry Name="Input Cycle Counter" Index="#x6010" Sub="#x14">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Input Legacy Real" Index="#x1a22" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6010" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6010" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6010" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6010" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value (Real32)" Index="#x6010" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Input Legacy Int" Index="#x1a23" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6010" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6010" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6010" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6010" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value" Index="#x6010" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 1 (Real32)" Index="#x1a24" Flags="#x0010" SyncMan="3">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 1" Index="#x1a25" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 2 (Real32)" Index="#x1a26" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6013" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 2" Index="#x1a27" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6011" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 4 (Real32)" Index="#x1a28" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6013" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6013" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6013" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 4" Index="#x1a29" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6011" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6011" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6011" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 8 (Real32)" Index="#x1a2a" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6013" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6013" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6013" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6013" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6013" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6013" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6013" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 8" Index="#x1a2b" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6011" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6011" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6011" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6011" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6011" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6011" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6011" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 10 (Real32)" Index="#x1a2c" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6013" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6013" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6013" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6013" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6013" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6013" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6013" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6013" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6013" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 10" Index="#x1a2d" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6011" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6011" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6011" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6011" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6011" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6011" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6011" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6011" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6011" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 16 (Real32)" Index="#x1a2e" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6013" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6013" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6013" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6013" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6013" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6013" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6013" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6013" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6013" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6013" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6013" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6013" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6013" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6013" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6013" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 16" Index="#x1a2f" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6011" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6011" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6011" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6011" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6011" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6011" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6011" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6011" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6011" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6011" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6011" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6011" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6011" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6011" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6011" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 20 (Real32)" Index="#x1a30" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6013" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6013" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6013" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6013" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6013" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6013" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6013" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6013" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6013" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6013" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6013" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6013" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6013" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6013" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6013" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6013" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6013" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6013" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6013" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 20" Index="#x1a31" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6011" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6011" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6011" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6011" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6011" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6011" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6011" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6011" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6011" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6011" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6011" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6011" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6011" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6011" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6011" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6011" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6011" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6011" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6011" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 40 (Real32)" Index="#x1a32" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6013" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6013" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6013" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6013" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6013" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6013" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6013" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6013" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6013" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6013" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6013" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6013" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6013" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6013" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6013" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6013" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6013" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6013" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6013" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6013" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6013" Sub="#x15">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6013" Sub="#x16">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6013" Sub="#x17">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6013" Sub="#x18">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6013" Sub="#x19">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6013" Sub="#x1a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6013" Sub="#x1b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6013" Sub="#x1c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6013" Sub="#x1d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6013" Sub="#x1e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6013" Sub="#x1f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6013" Sub="#x20">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6013" Sub="#x21">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6013" Sub="#x22">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6013" Sub="#x23">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6013" Sub="#x24">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6013" Sub="#x25">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6013" Sub="#x26">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6013" Sub="#x27">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6013" Sub="#x28">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Y Samples 40" Index="#x1a33" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6011" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6011" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6011" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6011" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6011" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6011" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6011" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6011" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6011" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6011" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6011" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6011" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6011" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6011" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6011" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6011" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6011" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6011" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6011" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6011" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6011" Sub="#x15">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6011" Sub="#x16">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6011" Sub="#x17">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6011" Sub="#x18">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6011" Sub="#x19">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6011" Sub="#x1a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6011" Sub="#x1b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6011" Sub="#x1c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6011" Sub="#x1d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6011" Sub="#x1e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6011" Sub="#x1f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6011" Sub="#x20">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6011" Sub="#x21">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6011" Sub="#x22">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6011" Sub="#x23">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6011" Sub="#x24">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6011" Sub="#x25">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6011" Sub="#x26">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6011" Sub="#x27">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6011" Sub="#x28">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Status" Index="#x1a40" Flags="#x0010" SyncMan="3">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6020" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6020" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6020" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6020" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Input Cycle Counter" Index="#x1a41" Flags="#x0010">
+				<Entry Name="Input Cycle Counter" Index="#x6020" Sub="#x14">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Input Legacy Real" Index="#x1a42" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6020" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6020" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6020" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6020" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value (Real32)" Index="#x6020" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Input Legacy Int" Index="#x1a43" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6020" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6020" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6020" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6020" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value" Index="#x6020" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 1 (Real32)" Index="#x1a44" Flags="#x0010" SyncMan="3">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 1" Index="#x1a45" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 2 (Real32)" Index="#x1a46" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6023" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 2" Index="#x1a47" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6021" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 4 (Real32)" Index="#x1a48" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6023" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6023" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6023" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 4" Index="#x1a49" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6021" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6021" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6021" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 8 (Real32)" Index="#x1a4a" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6023" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6023" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6023" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6023" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6023" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6023" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6023" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 8" Index="#x1a4b" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6021" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6021" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6021" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6021" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6021" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6021" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6021" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 10 (Real32)" Index="#x1a4c" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6023" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6023" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6023" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6023" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6023" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6023" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6023" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6023" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6023" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 10" Index="#x1a4d" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6021" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6021" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6021" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6021" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6021" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6021" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6021" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6021" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6021" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 16 (Real32)" Index="#x1a4e" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6023" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6023" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6023" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6023" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6023" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6023" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6023" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6023" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6023" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6023" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6023" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6023" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6023" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6023" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6023" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 16" Index="#x1a4f" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6021" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6021" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6021" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6021" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6021" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6021" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6021" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6021" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6021" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6021" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6021" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6021" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6021" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6021" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6021" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 20 (Real32)" Index="#x1a50" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6023" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6023" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6023" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6023" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6023" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6023" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6023" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6023" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6023" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6023" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6023" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6023" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6023" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6023" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6023" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6023" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6023" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6023" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6023" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 20" Index="#x1a51" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6021" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6021" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6021" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6021" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6021" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6021" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6021" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6021" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6021" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6021" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6021" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6021" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6021" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6021" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6021" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6021" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6021" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6021" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6021" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 40 (Real32)" Index="#x1a52" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6023" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6023" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6023" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6023" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6023" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6023" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6023" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6023" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6023" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6023" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6023" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6023" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6023" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6023" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6023" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6023" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6023" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6023" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6023" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6023" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6023" Sub="#x15">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6023" Sub="#x16">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6023" Sub="#x17">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6023" Sub="#x18">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6023" Sub="#x19">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6023" Sub="#x1a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6023" Sub="#x1b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6023" Sub="#x1c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6023" Sub="#x1d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6023" Sub="#x1e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6023" Sub="#x1f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6023" Sub="#x20">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6023" Sub="#x21">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6023" Sub="#x22">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6023" Sub="#x23">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6023" Sub="#x24">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6023" Sub="#x25">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6023" Sub="#x26">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6023" Sub="#x27">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6023" Sub="#x28">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Acc Z Samples 40" Index="#x1a53" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6021" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6021" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6021" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6021" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6021" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6021" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6021" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6021" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6021" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6021" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6021" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6021" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6021" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6021" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6021" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6021" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6021" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6021" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6021" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6021" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6021" Sub="#x15">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6021" Sub="#x16">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6021" Sub="#x17">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6021" Sub="#x18">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6021" Sub="#x19">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6021" Sub="#x1a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6021" Sub="#x1b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6021" Sub="#x1c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6021" Sub="#x1d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6021" Sub="#x1e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6021" Sub="#x1f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6021" Sub="#x20">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6021" Sub="#x21">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6021" Sub="#x22">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6021" Sub="#x23">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6021" Sub="#x24">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6021" Sub="#x25">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6021" Sub="#x26">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6021" Sub="#x27">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6021" Sub="#x28">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Status" Index="#x1a60" Flags="#x0010" SyncMan="3">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6030" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6030" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6030" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6030" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Input Cycle Counter" Index="#x1a61" Flags="#x0010">
+				<Entry Name="Input Cycle Counter" Index="#x6030" Sub="#x14">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Inputs Legacy Real" Index="#x1a62" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6030" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6030" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6030" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6030" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value (Real32)" Index="#x6030" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Inputs Legacy Int" Index="#x1a63" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6030" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6030" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6030" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6030" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value" Index="#x6030" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 1 (Real32)" Index="#x1a64" Flags="#x0010" SyncMan="3">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 1" Index="#x1a65" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 2 (Real32)" Index="#x1a66" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6033" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 2" Index="#x1a67" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6031" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 4 (Real32)" Index="#x1a68" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6033" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6033" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6033" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 4" Index="#x1a69" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6031" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6031" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6031" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 8 (Real32)" Index="#x1a6a" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6033" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6033" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6033" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6033" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6033" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6033" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6033" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 8" Index="#x1a6b" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6031" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6031" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6031" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6031" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6031" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6031" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6031" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 10 (Real32)" Index="#x1a6c" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6033" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6033" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6033" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6033" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6033" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6033" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6033" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6033" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6033" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 10" Index="#x1a6d" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6031" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6031" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6031" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6031" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6031" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6031" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6031" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6031" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6031" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 16 (Real32)" Index="#x1a6e" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6033" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6033" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6033" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6033" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6033" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6033" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6033" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6033" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6033" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6033" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6033" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6033" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6033" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6033" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6033" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 16" Index="#x1a6f" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6031" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6031" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6031" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6031" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6031" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6031" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6031" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6031" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6031" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6031" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6031" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6031" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6031" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6031" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6031" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 20 (Real32)" Index="#x1a70" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6033" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6033" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6033" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6033" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6033" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6033" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6033" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6033" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6033" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6033" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6033" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6033" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6033" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6033" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6033" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6033" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6033" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6033" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6033" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 20" Index="#x1a71" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6031" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6031" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6031" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6031" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6031" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6031" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6031" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6031" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6031" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6031" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6031" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6031" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6031" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6031" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6031" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6031" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6031" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6031" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6031" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 40 (Real32)" Index="#x1a72" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6033" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6033" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6033" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6033" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6033" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6033" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6033" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6033" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6033" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6033" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6033" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6033" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6033" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6033" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6033" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6033" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6033" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6033" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6033" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6033" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6033" Sub="#x15">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6033" Sub="#x16">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6033" Sub="#x17">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6033" Sub="#x18">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6033" Sub="#x19">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6033" Sub="#x1a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6033" Sub="#x1b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6033" Sub="#x1c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6033" Sub="#x1d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6033" Sub="#x1e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6033" Sub="#x1f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6033" Sub="#x20">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6033" Sub="#x21">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6033" Sub="#x22">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6033" Sub="#x23">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6033" Sub="#x24">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6033" Sub="#x25">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6033" Sub="#x26">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6033" Sub="#x27">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6033" Sub="#x28">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro X Samples 40" Index="#x1a73" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6031" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6031" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6031" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6031" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6031" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6031" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6031" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6031" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6031" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6031" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6031" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6031" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6031" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6031" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6031" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6031" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6031" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6031" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6031" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6031" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6031" Sub="#x15">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6031" Sub="#x16">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6031" Sub="#x17">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6031" Sub="#x18">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6031" Sub="#x19">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6031" Sub="#x1a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6031" Sub="#x1b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6031" Sub="#x1c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6031" Sub="#x1d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6031" Sub="#x1e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6031" Sub="#x1f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6031" Sub="#x20">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6031" Sub="#x21">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6031" Sub="#x22">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6031" Sub="#x23">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6031" Sub="#x24">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6031" Sub="#x25">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6031" Sub="#x26">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6031" Sub="#x27">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6031" Sub="#x28">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Status" Index="#x1a80" Flags="#x0010" SyncMan="3">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6040" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6040" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6040" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6040" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Input Cycle Counter" Index="#x1a81" Flags="#x0010">
+				<Entry Name="Input Cycle Counter" Index="#x6040" Sub="#x14">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Inputs Legacy Real" Index="#x1a82" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6040" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6040" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6040" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6040" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value (Real32)" Index="#x6040" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Inputs Legacy Int" Index="#x1a83" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6040" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6040" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6040" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6040" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value" Index="#x6040" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 1 (Real32)" Index="#x1a84" Flags="#x0010" SyncMan="3">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 1" Index="#x1a85" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 2 (Real32)" Index="#x1a86" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6043" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 2" Index="#x1a87" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6041" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 4 (Real32)" Index="#x1a88" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6043" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6043" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6043" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 4" Index="#x1a89" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6041" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6041" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6041" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 8 (Real32)" Index="#x1a8a" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6043" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6043" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6043" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6043" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6043" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6043" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6043" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 8" Index="#x1a8b" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6041" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6041" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6041" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6041" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6041" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6041" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6041" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 10 (Real32)" Index="#x1a8c" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6043" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6043" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6043" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6043" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6043" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6043" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6043" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6043" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6043" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 10" Index="#x1a8d" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6041" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6041" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6041" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6041" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6041" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6041" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6041" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6041" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6041" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 16 (Real32)" Index="#x1a8e" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6043" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6043" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6043" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6043" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6043" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6043" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6043" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6043" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6043" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6043" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6043" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6043" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6043" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6043" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6043" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 16" Index="#x1a8f" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6041" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6041" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6041" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6041" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6041" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6041" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6041" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6041" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6041" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6041" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6041" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6041" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6041" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6041" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6041" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 20 (Real32)" Index="#x1a90" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6043" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6043" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6043" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6043" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6043" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6043" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6043" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6043" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6043" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6043" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6043" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6043" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6043" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6043" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6043" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6043" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6043" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6043" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6043" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 20" Index="#x1a91" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6041" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6041" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6041" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6041" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6041" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6041" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6041" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6041" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6041" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6041" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6041" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6041" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6041" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6041" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6041" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6041" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6041" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6041" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6041" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 40 (Real32)" Index="#x1a92" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6043" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6043" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6043" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6043" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6043" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6043" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6043" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6043" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6043" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6043" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6043" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6043" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6043" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6043" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6043" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6043" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6043" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6043" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6043" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6043" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6043" Sub="#x15">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6043" Sub="#x16">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6043" Sub="#x17">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6043" Sub="#x18">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6043" Sub="#x19">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6043" Sub="#x1a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6043" Sub="#x1b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6043" Sub="#x1c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6043" Sub="#x1d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6043" Sub="#x1e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6043" Sub="#x1f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6043" Sub="#x20">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6043" Sub="#x21">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6043" Sub="#x22">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6043" Sub="#x23">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6043" Sub="#x24">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6043" Sub="#x25">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6043" Sub="#x26">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6043" Sub="#x27">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6043" Sub="#x28">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Y Samples 40" Index="#x1a93" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6041" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6041" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6041" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6041" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6041" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6041" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6041" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6041" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6041" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6041" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6041" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6041" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6041" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6041" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6041" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6041" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6041" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6041" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6041" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6041" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6041" Sub="#x15">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6041" Sub="#x16">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6041" Sub="#x17">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6041" Sub="#x18">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6041" Sub="#x19">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6041" Sub="#x1a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6041" Sub="#x1b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6041" Sub="#x1c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6041" Sub="#x1d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6041" Sub="#x1e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6041" Sub="#x1f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6041" Sub="#x20">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6041" Sub="#x21">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6041" Sub="#x22">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6041" Sub="#x23">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6041" Sub="#x24">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6041" Sub="#x25">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6041" Sub="#x26">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6041" Sub="#x27">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6041" Sub="#x28">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Status" Index="#x1aa0" Flags="#x0010" SyncMan="3">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6050" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6050" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6050" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6050" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Input Cycle Counter" Index="#x1aa1" Flags="#x0010">
+				<Entry Name="Input Cycle Counter" Index="#x6050" Sub="#x14">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Inputs Legacy Real" Index="#x1aa2" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6050" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6050" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6050" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6050" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value (Real32)" Index="#x6050" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Inputs Legacy Int" Index="#x1aa3" Flags="#x0010">
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000A}">ARRAY [0..9] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Slope detected" Index="#x6050" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6050" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6050" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6050" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value" Index="#x6050" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 1 (Real32)" Index="#x1aa4" Flags="#x0010" SyncMan="3">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 1" Index="#x1aa5" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 2 (Real32)" Index="#x1aa6" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6053" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 2" Index="#x1aa7" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6051" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 4 (Real32)" Index="#x1aa8" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6053" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6053" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6053" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 4" Index="#x1aa9" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6051" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6051" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6051" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 8 (Real32)" Index="#x1aaa" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6053" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6053" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6053" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6053" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6053" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6053" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6053" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 8" Index="#x1aab" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6051" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6051" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6051" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6051" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6051" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6051" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6051" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 10 (Real32)" Index="#x1aac" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6053" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6053" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6053" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6053" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6053" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6053" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6053" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6053" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6053" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 10" Index="#x1aad" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6051" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6051" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6051" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6051" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6051" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6051" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6051" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6051" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6051" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 16 (Real32)" Index="#x1aae" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6053" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6053" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6053" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6053" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6053" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6053" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6053" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6053" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6053" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6053" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6053" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6053" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6053" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6053" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6053" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 16" Index="#x1aaf" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6051" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6051" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6051" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6051" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6051" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6051" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6051" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6051" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6051" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6051" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6051" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6051" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6051" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6051" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6051" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 20 (Real32)" Index="#x1ab0" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6053" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6053" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6053" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6053" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6053" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6053" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6053" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6053" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6053" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6053" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6053" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6053" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6053" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6053" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6053" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6053" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6053" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6053" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6053" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 20" Index="#x1ab1" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6051" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6051" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6051" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6051" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6051" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6051" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6051" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6051" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6051" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6051" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6051" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6051" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6051" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6051" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6051" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6051" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6051" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6051" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6051" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 40 (Real32)" Index="#x1ab2" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6053" Sub="#x01">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6053" Sub="#x02">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6053" Sub="#x03">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6053" Sub="#x04">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6053" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6053" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6053" Sub="#x07">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6053" Sub="#x08">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6053" Sub="#x09">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6053" Sub="#x0a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6053" Sub="#x0b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6053" Sub="#x0c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6053" Sub="#x0d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6053" Sub="#x0e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6053" Sub="#x0f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6053" Sub="#x10">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6053" Sub="#x11">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6053" Sub="#x12">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6053" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6053" Sub="#x14">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6053" Sub="#x15">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6053" Sub="#x16">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6053" Sub="#x17">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6053" Sub="#x18">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6053" Sub="#x19">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6053" Sub="#x1a">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6053" Sub="#x1b">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6053" Sub="#x1c">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6053" Sub="#x1d">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6053" Sub="#x1e">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6053" Sub="#x1f">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6053" Sub="#x20">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6053" Sub="#x21">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6053" Sub="#x22">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6053" Sub="#x23">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6053" Sub="#x24">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6053" Sub="#x25">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6053" Sub="#x26">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6053" Sub="#x27">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6053" Sub="#x28">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Gyro Z Samples 40" Index="#x1ab3" Flags="#x0010">
+				<Entry Name="Samples__ARRAY [0]" Index="#x6051" Sub="#x01">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [1]" Index="#x6051" Sub="#x02">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [2]" Index="#x6051" Sub="#x03">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [3]" Index="#x6051" Sub="#x04">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [4]" Index="#x6051" Sub="#x05">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [5]" Index="#x6051" Sub="#x06">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [6]" Index="#x6051" Sub="#x07">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [7]" Index="#x6051" Sub="#x08">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [8]" Index="#x6051" Sub="#x09">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [9]" Index="#x6051" Sub="#x0a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [10]" Index="#x6051" Sub="#x0b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [11]" Index="#x6051" Sub="#x0c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [12]" Index="#x6051" Sub="#x0d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [13]" Index="#x6051" Sub="#x0e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [14]" Index="#x6051" Sub="#x0f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [15]" Index="#x6051" Sub="#x10">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [16]" Index="#x6051" Sub="#x11">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [17]" Index="#x6051" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [18]" Index="#x6051" Sub="#x13">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [19]" Index="#x6051" Sub="#x14">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [20]" Index="#x6051" Sub="#x15">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [21]" Index="#x6051" Sub="#x16">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [22]" Index="#x6051" Sub="#x17">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [23]" Index="#x6051" Sub="#x18">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [24]" Index="#x6051" Sub="#x19">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [25]" Index="#x6051" Sub="#x1a">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [26]" Index="#x6051" Sub="#x1b">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [27]" Index="#x6051" Sub="#x1c">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [28]" Index="#x6051" Sub="#x1d">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [29]" Index="#x6051" Sub="#x1e">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [30]" Index="#x6051" Sub="#x1f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [31]" Index="#x6051" Sub="#x20">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [32]" Index="#x6051" Sub="#x21">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [33]" Index="#x6051" Sub="#x22">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [34]" Index="#x6051" Sub="#x23">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [35]" Index="#x6051" Sub="#x24">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [36]" Index="#x6051" Sub="#x25">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [37]" Index="#x6051" Sub="#x26">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [38]" Index="#x6051" Sub="#x27">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Samples__ARRAY [39]" Index="#x6051" Sub="#x28">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Sensor Temperature (Real)" Index="#x1ac0" Flags="#x0010">
+				<ExcludePdo>#x1ac1</ExcludePdo>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000D}">ARRAY [0..12] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6060" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6060" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6060" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value (Real32)" Index="#x6060" Sub="#x13">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="AI Sensor Temperature Int" Index="#x1ac1" Flags="#x0010">
+				<ExcludePdo>#x1ac0</ExcludePdo>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-00200000000D}">ARRAY [0..12] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Sync error" Index="#x6060" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO State" Index="#x6060" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__TxPDO Toggle" Index="#x6060" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="Value" Index="#x6060" Sub="#x12">
+					<Type>DINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DIG Outputs" Index="#x1660" InOut="1" Flags="#x0010" SyncMan="2">
+				<Entry Name="LED 1" Index="#x7070" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="LED 2" Index="#x7070" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="LED 3" Index="#x7070" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-00200000000D}">ARRAY [0..12] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<CoeProfile ProfileNo="19665801"/>
+			<CoeProfile ProfileNo="19665801"/>
+			<CoeProfile ProfileNo="19665801"/>
+			<CoeProfile ProfileNo="19665801"/>
+			<CoeProfile ProfileNo="19665801"/>
+			<CoeProfile ProfileNo="19665801"/>
+			<CoeProfile ProfileNo="19665801"/>
+			<CoeProfile ProfileNo="18355081"/>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

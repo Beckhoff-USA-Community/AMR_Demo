@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Crc="4057995948" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project Crc="3905261773" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
@@ -35,15 +35,6 @@
       <DependentUpon>Inputs\Inputs.sal</DependentUpon>
       <Visible>false</Visible>
     </None>
-    <None Include="LiftSpeed\Alias Devices\ErrorAcknowledgement.sds" />
-    <None Include="LiftSpeed\Alias Devices\IO Link %28EL6224-0090%29 - Module 7 %28EL6224-0090%29.sds" />
-    <None Include="LiftSpeed\Alias Devices\Run.sds" />
-    <None Include="LiftSpeed\Alias Devices\SpeedOK.sds" />
-    <None Include="LiftSpeed\LiftSpeed.sal" />
-    <None Include="LiftSpeed\LiftSpeed.sal.diagram">
-      <Visible>false</Visible>
-      <DependentUpon>LiftSpeed\LiftSpeed.sal</DependentUpon>
-    </None>
     <None Include="Motion\Alias Devices\ErrorAcknowledgement.sds" />
     <None Include="Motion\Alias Devices\Motion 1 %28ELM7231-9018%29 - Module 1 %28SAFETY%29.sds" />
     <None Include="Motion\Alias Devices\Motion 2 %28ELM7231-9018%29 - Module 1 %28SAFETY%29.sds" />
@@ -66,8 +57,6 @@
     <Folder Include="GVLs" />
     <Folder Include="Inputs" />
     <Folder Include="Inputs\Alias Devices" />
-    <Folder Include="LiftSpeed" />
-    <Folder Include="LiftSpeed\Alias Devices" />
     <Folder Include="Motion" />
     <Folder Include="Motion\Alias Devices" />
     <Folder Include="User FBs" />

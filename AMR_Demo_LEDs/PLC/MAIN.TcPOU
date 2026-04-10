@@ -37,14 +37,14 @@ IF OnChange.Q THEN
 					   BackgroundColorRGB[0],
 					   BackgroundColorRGB[1],
 					   BackgroundColorRGB[2],
-					   0,);
+					   0);
 
 		LED5.FillColor(0,
 					   100,
 					   BackgroundColorRGB[0],
 					   BackgroundColorRGB[1],
 					   BackgroundColorRGB[2],
-					   0,);
+					   0);
 
 		CASE DisplaySection OF
 			Section.None:

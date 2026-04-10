@@ -1568,16 +1568,4 @@ External Setpoint Generation:
 			</Var>
 		</Vars>
 	</Axis>
-	<Mappings>
-		<OwnerA>
-			<OwnerB Name="TIID^CANOpen (EL6751)^PD4-CB59M024035-E-08 (CANopen Slave)">
-				<Link VarA="Drive^Inputs^In^nState1" VarB="TxPDO 1^Inputs^Statusword" Size="8"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="TxPDO 1^Inputs^Statusword" Size="8" OffsB="8"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="RxPDO 1^Outputs^Controlword" Size="8"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="RxPDO 1^Outputs^Controlword" Size="8" OffsB="8"/>
-				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="TxPDO 2^Inputs^Position actual value"/>
-				<Link VarA="Enc^Outputs^Out^nDataOut1" VarB="RxPDO 2^Outputs^Target Position"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmItem>

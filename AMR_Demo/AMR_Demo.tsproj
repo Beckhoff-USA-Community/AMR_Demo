@@ -30,17 +30,15 @@
 			<Project File="Safety.xti"/>
 		</Safety>
 		<Io>
-			<Device File="X103 (EtherCAT).xti" Id="1"/>
-			<Device File="CANOpen (EL6751).xti" Id="3"/>
+			<Device File="X103 (EtherCAT).xti" Id="2"/>
+			<Device File="CANOpen (EL6751).xti" Id="4"/>
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2002-0850-0020-500820000403}" Id="#x02030020"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0020-500870000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{00000000-0030-0304-1000-040332000403}" Id="#x02030050"/>
-		<MappingInfo Identifier="{00000000-0040-0304-1000-040341000403}" Id="#x02030040"/>
-		<MappingInfo Identifier="{08502002-0010-0500-0020-500810000403}" Id="#x02030070" Watchdog="08000000040000000400000004000000"/>
-		<MappingInfo Identifier="{05000010-0070-0304-1000-040370000403}" Id="#x02030060" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{03040020-0020-0304-2000-040320000403}" Id="#x02030010" Watchdog="04000000040000000400000004000000"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0020-500850000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-0040-0304-1000-040341000403}" Id="#x02030030"/>
+		<MappingInfo Identifier="{00000000-0060-0304-1000-040362000403}" Id="#x02030040"/>
+		<MappingInfo Identifier="{08502002-0010-0500-0020-500810000403}" Id="#x02030020" Watchdog="08000000040000000400000004000000"/>
+		<MappingInfo Identifier="{03040050-0050-0304-5000-040350000403}" Id="#x02030050" Watchdog="04000000040000000400000004000000"/>
 	</Mappings>
 </TcSmProject>
