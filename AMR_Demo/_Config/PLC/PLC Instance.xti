@@ -52,6 +52,7 @@
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyInputGroup.Run" VarB="StandardOutputs^Inputs.Run_18" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyMotionGroup.Run" VarB="StandardOutputs^Motion.Run_20" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11" Size="1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetHokuyo.Reset" VarB="StandardOutputs^Inputs.AutoReset_28" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule._BypassScanners" VarB="StandardOutputs^Inputs.BypassScanners_25" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^Gyroscope (EP3751-0260)">

@@ -47,6 +47,7 @@ VAR
 	// Safety
 	SafetyResetELM		 : SafetyResetPulse('Safety Reset');
 	SafetyGroupReset	 : SafetyResetPulse('Safety Reset');
+	SafetyResetHokuyo	 : SafetyResetPulse('Safety Reset');
 	SafetyInputGroup	 : SafetyGroup_TcEvents('Safety Input Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyLiftSpeedGroup : SafetyGroup_TcEvents('Safety Lift Speed Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
@@ -372,6 +373,7 @@ SafetyScannerHokuyo.SetEventReactions(0,
 									  0);
 
 SafetyResetELM.RegisterWithParent(THIS^);
+SafetyResetHokuyo.RegisterWithParent(THIS^);
 
 //
 EncoderSpeed.RegisterWithParent(THIS^);
@@ -487,6 +489,11 @@ ELSE
 		_WheelLeft_StreamVelocity.Disable();
 		_WheelRight_StreamVelocity.Disable();
 	END_IF
+END_IF
+
+// Autoreset Scanner
+IF NOT SafetyResetHokuyo.Busy THEN
+	SafetyResetHokuyo.Execute();
 END_IF
 
 //

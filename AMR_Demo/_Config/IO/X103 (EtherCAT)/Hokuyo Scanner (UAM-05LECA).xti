@@ -74,6 +74,7 @@
 			<SwitchPortData>0100000000000000000000000000000000000000426f785f32355f5f55414d5f30354c0000000000000000000000000000000000000000000000000000000000</SwitchPortData>
 			<BootStrapData>0010000400140004</BootStrapData>
 			<SuName>Hokuyo</SuName>
+			<SuTask>#x02010030</SuTask>
 			<Pdo Name="FSoE TxPDO-Map For Area Input Mode" Index="#x1a00" Flags="#x0091" SyncMan="3">
 				<Entry Name="FSOE__Command" Index="#x6000" Sub="#x02">
 					<Type>USINT</Type>
@@ -431,7 +432,7 @@
 				<SlotData>0000010001000000010000001000000000000000000000000000000000000000</SlotData>
 				<ModuleIdent>12841040</ModuleIdent>
 				<ModuleIdent>12841041</ModuleIdent>
-				<Module Id="#x0309001a" Type="Area Input Mode" Class="Safety">
+				<Module Id="#x03090001" Type="Area Input Mode" Class="Safety">
 					<Name>Module 1 (Area Input Mode)</Name>
 					<ImageId>1001</ImageId>
 					<ModuleData>3208000050f0c300000008000000000000000000000000000000000000000000</ModuleData>
