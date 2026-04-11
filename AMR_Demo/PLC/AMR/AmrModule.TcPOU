@@ -613,20 +613,19 @@ END_VAR]]></Declaration>
 			IF CompareLREAL(_WheelLeft.ActualVelocity, 0.0, 0.01) AND CompareLREAL(_WheelRight.ActualVelocity, 0.0, 0.01) THEN
 				_WheelLeft_StreamVelocity.Disable();
 				_WheelRight_StreamVelocity.Disable();
-				NextStep(SequenceState);
+				_WheelLeft.Stop();
+				_WheelRight.Stop();
+				_Lift.Stop();
+				NextMinorStep(SequenceState);
 			END_IF
 		END_IF
 
-	10:
-		_Lift.Stop();
-		NextMinorStep(SequenceState);
-
-	11:
-		IF NOT _Lift.Busy AND NOT _Lift.Error THEN
+	1:
+		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy AND NOT _Lift.Busy THEN
 			NextStep(SequenceState);
 		END_IF
 
-	20:
+	10:
 		_WheelLeft.Disable();
 		_WheelRight.Disable();
 		_Lift.Disable();
@@ -634,7 +633,7 @@ END_VAR]]></Declaration>
 			NextStep(SequenceState);
 		END_IF
 
-	30:
+	20:
 		Stopping := TRUE;
 END_CASE]]></ST>
       </Implementation>
