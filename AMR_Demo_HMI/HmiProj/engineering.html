@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en" class="tchmi-html-designer">
+<head>
+  <meta charset="utf-8">
+  <title>AMR Demo</title>
+  <meta name="tchmi-buildtime" content="2026-04-10T20:39:55">
+
+  <!-- target-densitydpi=device-dpi -->
+  <meta name="viewport" content="initial-scale=1.0"><script>
+	 TCHMI_CONSOLE_LOG_LEVEL  = 4;
+	 TCHMI_CONSOLE_LOG_TCHMISERVER_MESSAGES  = false;
+	 TCHMI_CONSOLE_LOG_ENGINEERING_COM_MESSAGES  = false;
+	 TCHMI_CURRENT_CONTROL_THEME  = "Base-Dark";
+</script><script>
+	TCHMI_TARGET_PARTIAL = new URL(window.location.href).searchParams.get('TargetPartial') ?? undefined;
+</script><script>TCHMI_NUGET_METADATA = {
+  "Beckhoff.TwinCAT.HMI.BaseTemplate": {
+    "version": "14.3.348",
+    "authors": "Beckhoff",
+    "title": "BaseTemplate",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides controls for TwinCAT HMI project templates."
+  },
+  "Beckhoff.TwinCAT.HMI.Controls": {
+    "version": "14.4.64",
+    "authors": "Beckhoff",
+    "title": "Controls",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the controls for the TwinCAT HMI client."
+  },
+  "Beckhoff.TwinCAT.HMI.EcDiagnostics": {
+    "version": "22.0.7765",
+    "authors": "Beckhoff",
+    "title": "EcDiagnostics",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the extension for the TwinCAT HMI Server to enable the fieldbus diagnostics of EtherCAT topologies in TwinCAT HMI applications."
+  },
+  "Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": {
+    "version": "14.3.345",
+    "authors": "Beckhoff",
+    "title": "EcDiagnosticsControl",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a control for fieldbus diagnostics of EtherCAT topologies in TwinCAT HMI applications."
+  },
+  "Beckhoff.TwinCAT.HMI.EventLogger": {
+    "version": "22.0.7765",
+    "authors": "Beckhoff",
+    "title": "EventLogger",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the extension for the TwinCAT HMI Server to support alarms and messages of the TwinCAT 3 EventLogger."
+  },
+  "Beckhoff.TwinCAT.HMI.Framework": {
+    "version": "14.3.500",
+    "authors": "Beckhoff",
+    "title": "Framework",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the client framework for the TwinCAT HMI."
+  },
+  "Beckhoff.TwinCAT.HMI.Functions": {
+    "version": "14.3.347",
+    "authors": "Beckhoff",
+    "title": "Functions",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides functions for use in the \"Actions and Conditions Editor\" and symbol expressions."
+  },
+  "Beckhoff.TwinCAT.HMI.Mdp": {
+    "version": "22.0.7447",
+    "authors": "Beckhoff",
+    "title": "MDP",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the extension for the TwinCAT HMI Server to enable Integration of the Beckhoff Device Manager in TwinCAT HMI applications."
+  },
+  "Beckhoff.TwinCAT.HMI.PDFViewer": {
+    "version": "14.3.347",
+    "authors": "Beckhoff",
+    "title": "PDFViewer",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a PDF.js based control to view PDF documents in TwinCAT HMI applications."
+  },
+  "Beckhoff.TwinCAT.HMI.RecipeManagement": {
+    "version": "22.0.7983",
+    "authors": "Beckhoff",
+    "title": "RecipeManagement",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a Recipe Management extension for the TwinCAT HMI Server."
+  },
+  "Beckhoff.TwinCAT.HMI.Scope": {
+    "version": "14.2.7758",
+    "authors": "Beckhoff",
+    "title": "Scope Extension",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the extension for the TwinCAT HMI Server to enable TwinCAT Scope support for analysis and charting in TwinCAT HMI applications."
+  },
+  "Beckhoff.TwinCAT.HMI.ScopeControl": {
+    "version": "14.3.349",
+    "authors": "Beckhoff",
+    "title": "ScopeControl",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a control for analysis and charting of TwinCAT Scope data in TwinCAT HMI applications."
+  },
+  "Beckhoff.TwinCAT.HMI.Server.Engineering": {
+    "version": "22.0.7983",
+    "authors": "Beckhoff",
+    "title": "TcHmiSrv",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the TwinCAT HMI Server for the engineering."
+  },
+  "Beckhoff.TwinCAT.HMI.SqliteHistorize": {
+    "version": "22.0.7983",
+    "authors": "Beckhoff",
+    "title": "SqliteHistorize",
+    "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides an extension for the TwinCAT HMI Server to historize data with SQLite."
+  },
+  "Microsoft.TypeScript.MSBuild": {
+    "version": "5.9.3",
+    "authors": "Microsoft",
+    "title": "Microsoft.TypeScript.MSBuild",
+    "description": "The TypeScript MSBuild task, and matching compiler version."
+  },
+  "TcHmiExtendedControls": {
+    "version": "1.1.6",
+    "authors": "SPT",
+    "title": "TcHmiExtendedControls",
+    "description": "Basic controls and functions which extend or complement existing TcHmi controls and functions."
+  },
+  "TcHmiToastNotification": {
+    "version": "1.0.2",
+    "authors": "SPT",
+    "title": "Toast Notification",
+    "description": "Functions for Toast style notifications in TwinCAT HMI."
+  }
+};
+</script>
+
+  <script>
+		TCHMI_ENGINEERING = true;
+		TCHMI_DESIGNER = true;
+		TCHMI_CONFIG_OVERRIDE = {
+			"basePath": "Beckhoff.TwinCAT.HMI.Framework",
+			"tcHmiServer": {
+				"websocketOverwrite": {
+					"host": "127.0.0.1",
+					"port": 3003
+				},
+				"websocketIntervalTime": 200
+			}
+		};
+
+   	    window.onload = function load() {
+			if ((!('TcHmi' in window) || !window.TcHmi.System) && document.body) {
+				document.body.style.background = '#C8C8C8';
+				document.body.innerHTML = 'TwinCAT HMI Framework could not be loaded.';
+			}
+			window.onload = null;
+		};
+  </script>
+  <script type="importmap">
+{
+  "imports": {
+    "Beckhoff.TwinCAT.HMI.BaseTemplate/": "./Beckhoff.TwinCAT.HMI.BaseTemplate/",
+    "Beckhoff.TwinCAT.HMI.BaseTemplate": "./Beckhoff.TwinCAT.HMI.BaseTemplate/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.Controls/": "./Beckhoff.TwinCAT.HMI.Controls/",
+    "Beckhoff.TwinCAT.HMI.Controls": "./Beckhoff.TwinCAT.HMI.Controls/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/": "./Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/",
+    "Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": "./Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.Framework/": "./Beckhoff.TwinCAT.HMI.Framework/",
+    "Beckhoff.TwinCAT.HMI.Framework": "./Beckhoff.TwinCAT.HMI.Framework/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.Functions/": "./Beckhoff.TwinCAT.HMI.Functions/",
+    "Beckhoff.TwinCAT.HMI.Functions": "./Beckhoff.TwinCAT.HMI.Functions/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.PDFViewer/": "./Beckhoff.TwinCAT.HMI.PDFViewer/",
+    "Beckhoff.TwinCAT.HMI.PDFViewer": "./Beckhoff.TwinCAT.HMI.PDFViewer/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.ScopeControl/": "./Beckhoff.TwinCAT.HMI.ScopeControl/",
+    "Beckhoff.TwinCAT.HMI.ScopeControl": "./Beckhoff.TwinCAT.HMI.ScopeControl/index.esm.js",
+    "TcHmiExtendedControls/": "./TcHmiExtendedControls/",
+    "TcHmiExtendedControls": "./TcHmiExtendedControls/index.esm.js",
+    "TcHmiToastNotification/": "./TcHmiToastNotification/",
+    "TcHmiToastNotification": "./TcHmiToastNotification/index.esm.js"
+  },
+  "scopes": {}
+}
+</script>
+
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/tslib.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/EsHelper.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/jquery.min.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/Lib/acorn.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Main.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiControl/TcHmiControl.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/index/TcHmi.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiContainerControl/TcHmiContainerControl.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiPartial/TcHmiPartial.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiPopup/TcHmiPopup.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiContainer/TcHmiContainer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiContent/TcHmiContent.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiGrid/TcHmiGrid.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiHtmlHost/TcHmiHtmlHost.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiUserControl/TcHmiUserControl.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiView/TcHmiView.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiRegion/TcHmiRegion.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Framework/dist/Controls/System/TcHmiUserControlHost/TcHmiUserControlHost.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEventGrid/EventClassesProvider/EventClassesProvider.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiAccordionRegion/TcHmiAccordionRegion.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiAdsState/TcHmiAdsState.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiAudio/TcHmiAudio.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiButton/TcHmiButton.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiBarChart/TcHmiBarChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiCalculator/TcHmiCalculator.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/TcHmiCalculator/Lib/math.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiCheckbox/TcHmiCheckbox.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiCombobox/TcHmiCombobox.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDatagrid/TcHmiDatagrid.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDateTimeDisplay/TcHmiDateTimeDisplay.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDateTimeInput/TcHmiDateTimeInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiDateTimePicker/TcHmiDateTimePicker.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEllipse/TcHmiEllipse.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEventGrid/TcHmiEventGrid.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiEventLine/TcHmiEventLine.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiFileExplorer/TcHmiFileExplorer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiHorizontalBarChart/TcHmiHorizontalBarChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiIFrame/TcHmiIFrame.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiImage/TcHmiImage.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiInput/TcHmiInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/UiProvider/loader.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiKeyboard/TcHmiKeyboard.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPieChart/TcHmiPieChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLine/TcHmiLine.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLinearGauge/TcHmiLinearGauge.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLineChart/TcHmiLineChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLoadingSpinner/TcHmiLoadingSpinner.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiLocalizationSelect/TcHmiLocalizationSelect.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiMultiState/TcHmiMultiState.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiNumericInput/TcHmiNumericInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiObjectBrowser/TcHmiObjectBrowser.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPasswordInput/TcHmiPasswordInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPermissionManagement/TcHmiPermissionManagement.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPolygon/TcHmiPolygon.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiPolyline/TcHmiPolyline.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiProgressBar/TcHmiProgressBar.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRadialGauge/TcHmiRadialGauge.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRadioButton/TcHmiRadioButton.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRecipeEdit/TcHmiRecipeEdit.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRecipeSelect/TcHmiRecipeSelect.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiRectangle/TcHmiRectangle.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiSparkline/TcHmiSparkline.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiSpinboxInput/TcHmiSpinboxInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiStateImage/TcHmiStateImage.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTabNavigation/TcHmiTabNavigation.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTachometer/TcHmiTachometer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTextblock/TcHmiTextblock.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTextbox/TcHmiTextbox.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiThemeSelect/TcHmiThemeSelect.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiThermometer/TcHmiThermometer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTimespanInput/TcHmiTimespanInput.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTimespanPicker/TcHmiTimespanPicker.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiToggleButton/TcHmiToggleButton.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiToggleSwitch/TcHmiToggleSwitch.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTreeView/TcHmiTreeView.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTrendLineChart/TcHmiTrendLineChart.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiTrendSparkline/TcHmiTrendSparkline.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiUserGuidance/TcHmiUserGuidance.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiUserManagement/TcHmiUserManagement.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiVideo/TcHmiVideo.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiAccordionNavigation/TcHmiAccordionNavigation.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiBreadcrumb/TcHmiBreadcrumb.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiBurgerMenu/TcHmiBurgerMenu.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiHeader/TcHmiHeader.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiNavigation/TcHmiNavigation.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiResponsiveBehaviour/TcHmiResponsiveBehaviour.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/dist/TcHmiEcDiagnostics/TcHmiEcDiagnostics.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ActivateRecipe.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/BigIntToNumber.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CheckAccess.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CheckBinding.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CheckBindingEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Concatenate.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ConvertBooleanToEnum.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ConvertBooleanToVisibility.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CreateAuditLogEntry.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/CreateBinding.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Decrement.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/DownloadRecipes.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/DownloadRecipeTypes.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/EnumToString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/EnumToMemberName.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ExportEvents.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ForceLogout.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ForceLogoutEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/FormatString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GaugeValueFormatter.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetAutoOpenSystemKeyboard.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetElementByIndex.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetLocale.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetLocalizedText.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetRegisteredLocales.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GetTheme.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/GoToLoginPage.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Increment.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/IsSafeInteger.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/LineChartTooltipFormatter.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Log.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Login.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/LoginEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Logout.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/LogoutEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/NumberToBigInt.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/NumberToSolidColor.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/RemoveBinding.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetAttributeToThemeValue.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetAutoOpenSystemKeyboard.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetElementByIndex.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetLocaleEx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetLocale.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SetTheme.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/StartInterval.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/StopInterval.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/SymbolExists.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TeachAsNewRecipe.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/Wait.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TeachRecipe.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToDateString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToDateTimeString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToLowerCase.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToTimeString.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/ToUpperCase.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/TrimToLength.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Functions/UploadRecipeFiles.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.PDFViewer/dist/TcHmiPdfViewer/TcHmiPdfViewer.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.ScopeControl/dist/TcHmiScopeControl/TcHmiScopeControl.esm.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.ScopeControl/dist/ScopeDisableCellClassesProvider/ScopeDisableCellClassesProvider.esm.js" type="module"></script>
+<script src="/TcHmiExtendedControls/Global/GlobalSrc.js" defer=""></script>
+<script src="/TcHmiExtendedControls/LabeledInput/LabeledInput.js" defer=""></script>
+<script src="/TcHmiExtendedControls/LinearGauge/LinearGauge.js" defer=""></script>
+<script src="/TcHmiExtendedControls/RangeSlider/RangeSlider.js" defer=""></script>
+<script src="/TcHmiExtendedControls/EnumToString/EnumToString.js" defer=""></script>
+<script src="/TcHmiExtendedControls/StatusIndicator/StatusIndicator.js" defer=""></script>
+<script src="/TcHmiExtendedControls/EnumRadioButton/EnumRadioButton.js" defer=""></script>
+<script src="/TcHmiExtendedControls/RadialGauge/RadialGauge.js" defer=""></script>
+<script src="/TcHmiExtendedControls/MultiselectCombobox/MultiselectCombobox.js" defer=""></script>
+<script src="/TcHmiExtendedControls/LabeledNumericInput/LabeledNumericInput.js" defer=""></script>
+<script src="/TcHmiExtendedControls/ConfirmationButton/ConfirmationButton.js" defer=""></script>
+<script src="/TcHmiExtendedControls/Blink/Blink.js" defer=""></script>
+<script src="/TcHmiExtendedControls/DataDisplayTile/DataDisplayTile.js" defer=""></script>
+<script src="/TcHmiExtendedControls/DetailedNumpad/DetailedNumpad.js" defer=""></script>
+<script src="/TcHmiExtendedControls/DatagridRowStyling/DatagridRowStyling.js" defer=""></script>
+<script src="/TcHmiExtendedControls/UseSystemTheme/UseSystemTheme.js" defer=""></script>
+<script src="/TcHmiToastNotification/ToastNotification/ToastNotification.js" defer=""></script>
+<script src="/TcHmiToastNotification/Lib/notyf.min.js" defer=""></script>
+<script src="/TcHmiToastNotification/ToastNotification/OpenToast.js" defer=""></script>
+<script src="/TcHmiToastNotification/ToastNotification/EventToast.js" defer=""></script>
+<script src="/Functions/GetModeName.js" defer=""></script>
+<script src="/Functions/BuildManualPage.js" defer=""></script>
+<script src="/Functions/DisplayPermissiveText.js" defer=""></script>
+<script src="/Functions/GetKinematicStatus.js" defer=""></script>
+</head>
+<body class="tchmi-body-designer">
+	<div id="Home_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-creator-viewport-height="1000" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1536" data-tchmi-creator-partial-key="/Pages/Home.content">
+<div id="home-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 7.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidth": 225.0,
+    "maxWidthUnit": "px",
+    "minWidth": 175.0,
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+<div id="TcHmiHtmlHost_AGVMap" data-tchmi-type="TcHmi.Controls.System.TcHmiHtmlHost" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
+<svg id="agvMap" width="100%" height="100%" viewBox="-3 -2 56 58" style="border: 1px solid #ccc; background: #b9b9b9;">
+    <defs>
+        <!-- AGV shape definition (triangle pointing up) -->
+        <g id="agvShape">
+            <path d="M -0.4,-0.6 L 0.4,-0.6 L 0.4,0.6 L -0.4,0.6 Z" fill="#424242" stroke="#212121" stroke-width="0.08"></path>
+        </g>
+    </defs>
+        <g id="gridLayer"></g>
+        <g id="environmentLayer"></g>
+        <g id="segmentsLayer"></g>
+        <g id="waypointsLayer"></g>
+        <g id="symbolicPointsLayer"></g>
+        <g id="agvLayer"></g>
+    </svg>
+
+    <div id="loadingStatus" style="position: absolute; top: 10px; left: 10px; background: rgba(73,73,73,0.9); padding: 10px; border-radius: 4px; font-family: Arial; font-size: 12px;">
+        Loading AGV map...
+    </div>
+
+    <div id="zoomControls" style="position: absolute; top: 10px; right: 10px; background: rgba(73,73,73,0.9); padding: 8px; border-radius: 4px; font-family: Arial;">
+        <button id="zoomIn" style="display: block; width: 30px; height: 30px; margin-bottom: 5px; font-size: 16px; cursor: pointer;">+</button>
+        <button id="zoomOut" style="display: block; width: 30px; height: 30px; margin-bottom: 5px; font-size: 16px; cursor: pointer;">−</button>
+        <button id="resetView" style="display: block; width: 30px; height: 30px; font-size: 12px; cursor: pointer;">⟲</button>
+    </div>
+
+    <div id="layerControls" style="position: absolute; bottom: 10px; right: 10px; background: rgba(73,73,73,0.95); padding: 10px; border-radius: 4px; font-family: Arial; font-size: 12px;">
+        <div style="font-weight: bold; margin-bottom: 8px;">Layers</div>
+        <label style="display: block; margin-bottom: 5px; cursor: pointer;">
+            <input type="checkbox" id="toggleSymbolicPoints" checked="" style="margin-right: 5px;">
+            Destinations
+        </label>
+        <label style="display: block; cursor: pointer;">
+            <input type="checkbox" id="toggleWaypoints" checked="" style="margin-right: 5px;">
+            Waypoints
+        </label>
+    </div>
+
+    <script>
+        // Global environment bounds (will be set dynamically from XML)
+        let envBounds = {
+            minX: 0,
+            maxX: 50,
+            minY: 0,
+            maxY: 50
+        };
+
+        // Parse XML files
+        async function loadAGVData() {
+            try {
+                updateStatus('Loading environment data...');
+                const envResponse = await fetch('Pages/resources/env_Beckhoff_Beckhoff_0_ForkDemo_ver1.nte.xml');
+                const envXml = await envResponse.text();
+
+                updateStatus('Loading segment data...');
+                const segResponse = await fetch('Pages/resources/seg_Beckhoff_Beckhoff_0_ForkDemo_ver1.xml');
+                const segXml = await segResponse.text();
+
+                updateStatus('Loading definitions...');
+                const defResponse = await fetch('Pages/resources/definitions_Beckhoff_ver1.xml');
+                const defXml = await defResponse.text();
+
+                return {
+                    env: new DOMParser().parseFromString(envXml, 'text/xml'),
+                    seg: new DOMParser().parseFromString(segXml, 'text/xml'),
+                    def: new DOMParser().parseFromString(defXml, 'text/xml')
+                };
+            } catch (error) {
+                updateStatus('Error loading files: ' + error.message);
+                throw error;
+            }
+        }
+
+        // Extract environment bounds from XML
+        function extractEnvironmentBounds(envXml) {
+            const minXElem = envXml.querySelector('Environment > MinX');
+            const maxXElem = envXml.querySelector('Environment > MaxX');
+            const minYElem = envXml.querySelector('Environment > MinY');
+            const maxYElem = envXml.querySelector('Environment > MaxY');
+
+            if (minXElem && maxXElem && minYElem && maxYElem) {
+                envBounds = {
+                    minX: parseFloat(minXElem.textContent),
+                    maxX: parseFloat(maxXElem.textContent),
+                    minY: parseFloat(minYElem.textContent),
+                    maxY: parseFloat(maxYElem.textContent)
+                };
+                console.log('Environment bounds:', envBounds);
+            } else {
+                console.warn('Could not find environment bounds in XML, using defaults');
+            }
+        }
+
+        // Calculate and update viewBox based on environment bounds
+        function updateViewBoxFromBounds() {
+            const padding = 3; // Padding around the environment for labels
+            const labelSpace = 4; // Extra space for axis labels
+
+            viewBox = {
+                x: envBounds.minX - padding,
+                y: envBounds.minY - padding,
+                width: (envBounds.maxX - envBounds.minX) + (padding * 2),
+                height: (envBounds.maxY - envBounds.minY) + (padding * 2) + labelSpace
+            };
+
+            // Store as original for reset functionality
+            originalViewBox = { ...viewBox };
+
+            // Apply to SVG
+            updateViewBox();
+
+            console.log('ViewBox updated:', viewBox);
+        }
+
+        // Update loading status
+        function updateStatus(message) {
+            const statusDiv = document.getElementById('loadingStatus');
+            if (statusDiv) {
+                statusDiv.textContent = message;
+            }
+        }
+
+        // Render environment points
+        function renderEnvironment(envXml) {
+            updateStatus('Rendering environment...');
+            const points = envXml.querySelectorAll('ExportedPoints > pt');
+            const envLayer = document.getElementById('environmentLayer');
+
+            let count = 0;
+            points.forEach((pt, index) => {
+
+                const x = parseFloat(pt.querySelector('X').textContent) - 1; // Apply -1 X offset correction
+                const y = parseFloat(pt.querySelector('Y').textContent) - 1; // Apply -1 Y offset correction
+
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', (envBounds.maxY + envBounds.minY) - y); // Flip Y axis dynamically
+                circle.setAttribute('r', '0.08');
+                circle.setAttribute('fill', '#888');
+                circle.setAttribute('opacity', '0.4');
+                envLayer.appendChild(circle);
+                count++;
+            });
+
+            console.log(`Rendered ${count} environment points`);
+        }
+
+        // Render path segments
+        function renderSegments(segXml) {
+            updateStatus('Rendering segments...');
+            const segments = segXml.querySelectorAll('segment');
+            const segLayer = document.getElementById('segmentsLayer');
+
+            let count = 0;
+            segments.forEach(seg => {
+                const points = seg.querySelectorAll('pts > sp');
+                let pathData = '';
+
+                points.forEach((pt, idx) => {
+                    const x = parseFloat(pt.querySelector('x').textContent);
+                    const y = parseFloat(pt.querySelector('y').textContent);
+                    pathData += `${idx === 0 ? 'M' : 'L'} ${x} ${(envBounds.maxY + envBounds.minY) - y} `;
+                });
+
+                if (pathData) {
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('d', pathData);
+                    path.setAttribute('stroke', '#2196F3');
+                    path.setAttribute('stroke-width', '0.15');
+                    path.setAttribute('fill', 'none');
+                    segLayer.appendChild(path);
+                    count++;
+                }
+            });
+
+            console.log(`Rendered ${count} segments`);
+        }
+
+        // Render waypoint nodes
+        function renderWaypoints(defXml) {
+            updateStatus('Rendering waypoints...');
+            const nodes = defXml.querySelectorAll('waypoints > node');
+            const wpLayer = document.getElementById('waypointsLayer');
+
+            let count = 0;
+            nodes.forEach(node => {
+                const xElem = node.querySelector('point > x');
+                const yElem = node.querySelector('point > y');
+
+                if (xElem && yElem) {
+                    const x = parseFloat(xElem.textContent);
+                    const y = parseFloat(yElem.textContent);
+                    const id = node.getAttribute('id');
+                    const svgY = (envBounds.maxY + envBounds.minY) - y;
+
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('cx', x);
+                    circle.setAttribute('cy', svgY);
+                    circle.setAttribute('r', '0.4');
+                    circle.setAttribute('fill', '#FF5722');
+                    circle.setAttribute('stroke', '#fff');
+                    circle.setAttribute('stroke-width', '0.1');
+
+                    // Add label
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', x);
+                    text.setAttribute('y', svgY + 0.15);
+                    text.setAttribute('font-size', '0.5');
+                    text.setAttribute('fill', '#fff');
+                    text.setAttribute('text-anchor', 'middle');
+                    text.textContent = id;
+
+                    wpLayer.appendChild(circle);
+                    wpLayer.appendChild(text);
+                    count++;
+                }
+            });
+
+            console.log(`Rendered ${count} waypoints`);
+        }
+
+        // Render symbolic points (destinations/loads)
+        function renderSymbolicPoints(segXml) {
+            updateStatus('Rendering symbolic points...');
+            const points = segXml.querySelectorAll('symbolic_points > symbolic_point');
+            const symLayer = document.getElementById('symbolicPointsLayer');
+
+            let count = 0;
+            points.forEach(point => {
+                const xElem = point.querySelector('x');
+                const yElem = point.querySelector('y');
+                const nameElem = point.querySelector('name');
+                const headingElem = point.querySelector('h');
+
+                if (xElem && yElem) {
+                    const x = parseFloat(xElem.textContent);
+                    const y = parseFloat(yElem.textContent);
+                    const name = nameElem ? nameElem.textContent : '';
+                    const heading = headingElem ? parseFloat(headingElem.textContent) : 0;
+                    const svgY = (envBounds.maxY + envBounds.minY) - y;
+
+                    // Draw as a square with direction indicator
+                    const square = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    square.setAttribute('x', x - 0.4);
+                    square.setAttribute('y', svgY - 0.4);
+                    square.setAttribute('width', '0.8');
+                    square.setAttribute('height', '0.8');
+                    square.setAttribute('fill', '#9C27B0');
+                    square.setAttribute('stroke', '#fff');
+                    square.setAttribute('stroke-width', '0.1');
+                    square.setAttribute('rx', '0.1');
+
+                    // Add directional arrow (triangle pointing in heading direction)
+                    const arrowSize = 0.35;
+                    const headingDeg = heading * 180 / Math.PI;
+                    const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    // Triangle: point at top, base at bottom
+                    arrow.setAttribute('d', `M 0,-${arrowSize} L ${arrowSize*0.4},${arrowSize*0.3} L -${arrowSize*0.4},${arrowSize*0.3} Z`);
+                    arrow.setAttribute('fill', '#FFF');
+                    arrow.setAttribute('stroke', '#9C27B0');
+                    arrow.setAttribute('stroke-width', '0.03');
+                    arrow.setAttribute('transform', `translate(${x}, ${svgY}) rotate(${headingDeg + 90})`);
+
+                    // Add label
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', x);
+                    text.setAttribute('y', svgY + 1);
+                    text.setAttribute('font-size', '0.5');
+                    text.setAttribute('fill', '#9C27B0');
+                    text.setAttribute('font-weight', 'bold');
+                    text.setAttribute('text-anchor', 'middle');
+                    text.textContent = name;
+
+                    symLayer.appendChild(square);
+                    symLayer.appendChild(arrow);
+                    symLayer.appendChild(text);
+                    count++;
+                }
+            });
+
+            console.log(`Rendered ${count} symbolic points`);
+        }
+
+        // Render coordinate grid
+        function renderGrid() {
+            updateStatus('Rendering grid...');
+            const gridLayer = document.getElementById('gridLayer');
+
+            // Round to nearest grid interval for cleaner display
+            const minX = Math.floor(envBounds.minX);
+            const maxX = Math.ceil(envBounds.maxX);
+            const minY = Math.floor(envBounds.minY);
+            const maxY = Math.ceil(envBounds.maxY);
+
+            // Draw vertical grid lines
+            for (let x = minX; x <= maxX; x++) {
+                const isMajor = x % 5 === 0;
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', x);
+                line.setAttribute('y1', (envBounds.maxY + envBounds.minY) - minY);
+                line.setAttribute('x2', x);
+                line.setAttribute('y2', (envBounds.maxY + envBounds.minY) - maxY);
+                line.setAttribute('stroke', isMajor ? '#999' : '#ddd');
+                line.setAttribute('stroke-width', isMajor ? '0.04' : '0.02');
+                line.setAttribute('opacity', isMajor ? '0.6' : '0.4');
+                gridLayer.appendChild(line);
+
+                // Add X-axis labels for major lines
+                if (isMajor) {
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', x);
+                    text.setAttribute('y', (envBounds.maxY + envBounds.minY) - minY + 1.5);
+                    text.setAttribute('font-size', '0.8');
+                    text.setAttribute('fill', '#333');
+                    text.setAttribute('font-weight', 'bold');
+                    text.setAttribute('text-anchor', 'middle');
+                    text.textContent = x;
+                    gridLayer.appendChild(text);
+                }
+            }
+
+            // Draw horizontal grid lines
+            for (let y = minY; y <= maxY; y++) {
+                const isMajor = y % 5 === 0;
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', minX);
+                line.setAttribute('y1', (envBounds.maxY + envBounds.minY) - y);
+                line.setAttribute('x2', maxX);
+                line.setAttribute('y2', (envBounds.maxY + envBounds.minY) - y);
+                line.setAttribute('stroke', isMajor ? '#999' : '#ddd');
+                line.setAttribute('stroke-width', isMajor ? '0.04' : '0.02');
+                line.setAttribute('opacity', isMajor ? '0.6' : '0.4');
+                gridLayer.appendChild(line);
+
+                // Add Y-axis labels for major lines
+                if (isMajor) {
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', minX - 1.2);
+                    text.setAttribute('y', (envBounds.maxY + envBounds.minY) - y + 0.3);
+                    text.setAttribute('font-size', '0.8');
+                    text.setAttribute('fill', '#333');
+                    text.setAttribute('font-weight', 'bold');
+                    text.setAttribute('text-anchor', 'end');
+                    text.textContent = y;
+                    gridLayer.appendChild(text);
+                }
+            }
+
+            // Add axis titles
+            const centerX = (minX + maxX) / 2;
+            const centerY = (minY + maxY) / 2;
+
+            const xAxisTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            xAxisTitle.setAttribute('x', centerX);
+            xAxisTitle.setAttribute('y', (envBounds.maxY + envBounds.minY) - minY + 3);
+            xAxisTitle.setAttribute('font-size', '1');
+            xAxisTitle.setAttribute('fill', '#000');
+            xAxisTitle.setAttribute('font-weight', 'bold');
+            xAxisTitle.setAttribute('text-anchor', 'middle');
+            xAxisTitle.textContent = 'X (meters)';
+            gridLayer.appendChild(xAxisTitle);
+
+            const yAxisTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            const yTitleX = minX - 2.5;
+            const yTitleY = (envBounds.maxY + envBounds.minY) - centerY;
+            yAxisTitle.setAttribute('x', yTitleX);
+            yAxisTitle.setAttribute('y', yTitleY);
+            yAxisTitle.setAttribute('font-size', '1');
+            yAxisTitle.setAttribute('fill', '#000');
+            yAxisTitle.setAttribute('font-weight', 'bold');
+            yAxisTitle.setAttribute('text-anchor', 'middle');
+            yAxisTitle.setAttribute('transform', `rotate(-90, ${yTitleX}, ${yTitleY})`);
+            yAxisTitle.textContent = 'Y (meters)';
+            gridLayer.appendChild(yAxisTitle);
+
+            console.log('Grid rendered with bounds:', envBounds);
+        }
+
+        // Pan and Zoom functionality
+        let viewBox = { x: -3, y: -2, width: 56, height: 58 }; // Will be updated from environment bounds
+        let originalViewBox = { x: -3, y: -2, width: 56, height: 58 }; // Will be updated from environment bounds
+        let isPanning = false;
+        let startPoint = { x: 0, y: 0 };
+
+        function updateViewBox() {
+            const svg = document.getElementById('agvMap');
+            svg.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+        }
+
+        function zoom(factor, centerX, centerY) {
+            const newWidth = viewBox.width * factor;
+            const newHeight = viewBox.height * factor;
+
+            // Calculate new position to zoom towards center point
+            if (centerX !== undefined && centerY !== undefined) {
+                viewBox.x = centerX - (centerX - viewBox.x) * factor;
+                viewBox.y = centerY - (centerY - viewBox.y) * factor;
+            } else {
+                // Zoom towards center of current view
+                viewBox.x += (viewBox.width - newWidth) / 2;
+                viewBox.y += (viewBox.height - newHeight) / 2;
+            }
+
+            viewBox.width = newWidth;
+            viewBox.height = newHeight;
+
+            updateViewBox();
+        }
+
+        function resetView() {
+            viewBox = { ...originalViewBox };
+            updateViewBox();
+        }
+
+        function getSVGPoint(evt) {
+            const svg = document.getElementById('agvMap');
+            const pt = svg.createSVGPoint();
+            pt.x = evt.clientX;
+            pt.y = evt.clientY;
+            return pt.matrixTransform(svg.getScreenCTM().inverse());
+        }
+
+        // Mouse wheel zoom
+        document.getElementById('agvMap').addEventListener('wheel', (evt) => {
+            evt.preventDefault();
+            const point = getSVGPoint(evt);
+            const factor = evt.deltaY > 0 ? 1.1 : 0.9;
+            zoom(factor, point.x, point.y);
+        });
+
+        // Mouse drag panning
+        document.getElementById('agvMap').addEventListener('mousedown', (evt) => {
+            if (evt.button === 0) { // Left mouse button
+                isPanning = true;
+                startPoint = getSVGPoint(evt);
+                document.getElementById('agvMap').style.cursor = 'grabbing';
+            }
+        });
+
+        document.getElementById('agvMap').addEventListener('mousemove', (evt) => {
+            if (isPanning) {
+                const endPoint = getSVGPoint(evt);
+                const dx = startPoint.x - endPoint.x;
+                const dy = startPoint.y - endPoint.y;
+
+                viewBox.x += dx;
+                viewBox.y += dy;
+
+                updateViewBox();
+                startPoint = getSVGPoint(evt);
+            }
+        });
+
+        document.getElementById('agvMap').addEventListener('mouseup', () => {
+            isPanning = false;
+            document.getElementById('agvMap').style.cursor = 'grab';
+        });
+
+        document.getElementById('agvMap').addEventListener('mouseleave', () => {
+            isPanning = false;
+            document.getElementById('agvMap').style.cursor = 'grab';
+        });
+
+        // Set initial cursor
+        document.getElementById('agvMap').style.cursor = 'grab';
+
+        // Zoom control buttons
+        document.getElementById('zoomIn').addEventListener('click', () => zoom(0.8));
+        document.getElementById('zoomOut').addEventListener('click', () => zoom(1.25));
+        document.getElementById('resetView').addEventListener('click', resetView);
+
+        // Layer toggle controls
+        document.getElementById('toggleSymbolicPoints').addEventListener('change', (e) => {
+            const layer = document.getElementById('symbolicPointsLayer');
+            layer.style.display = e.target.checked ? 'block' : 'none';
+        });
+
+        document.getElementById('toggleWaypoints').addEventListener('change', (e) => {
+            const layer = document.getElementById('waypointsLayer');
+            layer.style.display = e.target.checked ? 'block' : 'none';
+        });
+
+        // AGV rendering and tracking
+        let agvElement = null;
+
+        function initializeAGV() {
+            const agvLayer = document.getElementById('agvLayer');
+            agvElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+            agvElement.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#agvShape');
+            agvElement.setAttribute('id', 'agvInstance');
+            // Add smooth transition for fluid movement
+            agvElement.style.transition = 'transform 0.05s linear';
+            agvLayer.appendChild(agvElement);
+            console.log('AGV initialized');
+        }
+
+        function updateAGVPosition(x, y, headingRadians) {
+            if (!agvElement) return;
+
+            // Apply coordinate transformations
+            const svgY = (envBounds.maxY + envBounds.minY) - y; // Flip Y axis dynamically
+            const headingDegrees = (headingRadians * 180 / Math.PI); // Convert to degrees
+
+            // SVG heading adjustment with Y-axis flip:
+            // When Y is flipped, rotation must be mirrored (negated)
+            // Navitrol: 0 = North (up), positive = clockwise
+            // SVG: 0 = East (right), positive = clockwise
+            // With Y-flip, we need to negate and adjust by 90 degrees
+            const svgRotation = 90 - headingDegrees;
+
+            // Apply transformation: translate to position, then rotate around AGV center
+            agvElement.setAttribute('transform', `translate(${x}, ${svgY}) rotate(${svgRotation})`);
+        }
+
+        function subscribeToAGVPosition() {
+            if (typeof TcHmi === 'undefined' || !TcHmi.Server) {
+                console.warn('TcHmi.Server not available - AGV tracking disabled');
+                updateStatus('AGV map loaded (offline mode)');
+                return;
+            }
+
+            var commands = [{
+                'symbol': 'ADS.PLC1.MAIN.AmrModule.Navitrol_Status.Navitrol_status'
+            }];
+
+            TcHmi.Server.subscribe(commands, 50, function (data) {
+                if (data.error === TcHmi.Errors.NONE) {
+                    try {
+                        const navitrolStatus = data.response.commands[0].readValue;
+
+                        const x = navitrolStatus.X_coordinate;
+                        const y = navitrolStatus.Y_coordinate;
+                        const heading = navitrolStatus.Heading; // in radians
+
+                        // Update AGV position on map
+                        updateAGVPosition(x, y, heading);
+
+                    } catch (error) {
+                        console.error('Error processing AGV data:', error);
+                    }
+                } else {
+                    console.error('Error subscribing to AGV position:', data.error);
+                }
+            });
+
+            console.log('Subscribed to AGV position updates');
+        }
+
+        // Initialize
+        console.log('Starting AGV Viewer initialization...');
+        initializeAGV();
+        loadAGVData()
+            .then(data => {
+                // Extract environment bounds first
+                extractEnvironmentBounds(data.env);
+
+                // Update viewBox based on actual environment bounds
+                updateViewBoxFromBounds();
+
+                // Render all layers (grid must be rendered after bounds are set)
+                renderGrid();
+                renderEnvironment(data.env);
+                renderSegments(data.seg);
+                renderWaypoints(data.def);
+                renderSymbolicPoints(data.seg);
+
+                // Start AGV position tracking
+                subscribeToAGVPosition();
+
+                updateStatus('AGV map loaded - tracking active');
+                setTimeout(() => {
+                    const statusDiv = document.getElementById('loadingStatus');
+                    if (statusDiv) statusDiv.style.display = 'none';
+                }, 2000);
+            })
+            .catch(error => {
+                console.error('Failed to load AGV data:', error);
+                updateStatus('Failed to load: ' + error.message);
+            });
+    </script>
+
+
+
+</div>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="Info-ScannerActive" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-text="Scanner Active" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="22" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-color="%tr%DefaultRed%/tr%" data-tchmi-text-font-weight="Bold" data-tchmi-right="20">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK%/s%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              },
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": "OR"
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%Info-ScannerActive::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%Info-ScannerActive::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK%/s%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              },
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerLeuze.OK%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": "OR"
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%Info-ScannerActive::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%Info-ScannerActive::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="Info-StationHold" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-text="Station Hold" data-tchmi-top="49" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="22" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-color="%tr%DefaultRed%/tr%" data-tchmi-text-font-weight="Bold" data-tchmi-right="20">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%s%ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI::Status%/s%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.E_3102_State",
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI::Status%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/ADS-PLC1.E_3102_State",
+                  "value": 15
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%Info-StationHold::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%Info-StationHold::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="ScannerBypass-ToggleSwitch" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-text="Scanner Bypassed" data-tchmi-width="160" data-tchmi-width-unit="px" data-tchmi-right="20" data-tchmi-bottom="20" data-tchmi-state-symbol="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.AmrModule_HMI::BypassScanners%/s%">
+</div>
+</div>
+</div>
+</body>
+</html>
