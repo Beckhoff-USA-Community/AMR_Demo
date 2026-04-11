@@ -45,7 +45,7 @@ VAR
 	Encoder_HMI				 : Encoder_HMI('Mouser DHK Encoder', EncoderSpeed, EncoderPosition);
 
 	// Safety
-	SafetyResetELM		 : SafetyResetPulse('Safety Reset');
+	SafetyResetELM		 : SafetyResetPulse('Safety Reset') := (PulseDuration := T#250MS);
 	SafetyGroupReset	 : SafetyResetPulse('Safety Reset');
 	SafetyInputGroup	 : SafetyGroup_TcEvents('Safety Input Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
@@ -88,8 +88,9 @@ VAR PERSISTENT
 END_VAR
 
 VAR
-	_Override	: LREAL := 100.0;
-	Destination : UDINT;
+	_Override		: LREAL := 100.0;
+	Destination		: UDINT;
+	COEDriveControl : FB_COEDriveControl;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
@@ -114,26 +115,21 @@ END_VAR]]></Declaration>
 		_WheelRight_StreamVelocity.Disable();
 		_WheelLeft.Stop();
 		_WheelRight.Stop();
-		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
+		_Lift.Stop();
+		NextMinorStep(SequenceState);
+
+	1:
+		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy AND NOT _Lift.Busy THEN
 			NextStep(SequenceState);
 		END_IF
 
 	10:
-		_Lift.Stop();
-		NextMinorStep(SequenceState);
-
-	11:
-		IF NOT _Lift.Busy THEN
-			NextStep(SequenceState);
-		END_IF
-
-	20:
 		_WheelLeft.Disable();
 		_WheelRight.Disable();
 		_Lift.Disable();
 		NextStep(SequenceState);
 
-	30:
+	20:
 		Aborting := TRUE;
 END_CASE]]></ST>
       </Implementation>
@@ -512,6 +508,11 @@ EncoderSpeed.Scale.InputMinimum		:= Encoder_HMI.Config.Speed_InputMinimum;
 EncoderSpeed.Scale.OutputMaximum	:= Encoder_HMI.Config.Speed_OutputMaximum;
 EncoderSpeed.Scale.OutputMinimum	:= Encoder_HMI.Config.Speed_OutputMinimum;
 
+
+COEDriveControl();
+
+
+
 // (Diameter Wheel * 360deg)
 Navitrol_MeasurmentUpdateDifferentialDrive.EncoderCountWheelLeft  := TO_UDINT(_WheelLeft.ActualPosition * 1_000);
 Navitrol_MeasurmentUpdateDifferentialDrive.EncoderCountWheelRight := TO_UDINT(_WheelRight.ActualPosition * 1_000);
@@ -609,7 +610,7 @@ END_VAR]]></Declaration>
         <ST><![CDATA[CASE SequenceState OF
 	0: // Wait AMR not moving
 		IF Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedLeft = 0.0 AND Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedRight = 0.0 THEN
-			IF _WheelLeft.ActualVelocity = 0.0 AND _WheelRight.ActualVelocity = 0.0 THEN
+			IF CompareLREAL(_WheelLeft.ActualVelocity, 0.0, 0.01) AND CompareLREAL(_WheelRight.ActualVelocity, 0.0, 0.01) THEN
 				_WheelLeft_StreamVelocity.Disable();
 				_WheelRight_StreamVelocity.Disable();
 				NextStep(SequenceState);
@@ -655,12 +656,16 @@ END_IF]]></ST>
         <ST><![CDATA[CASE SequenceState OF
 	0:
 		Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Set_ESTOP;
+		_WheelLeft_StreamVelocity.Disable();
+		_WheelRight_StreamVelocity.Disable();
+        _WheelLeft.Stop();
+		_WheelRight.Stop();
 		_Lift.Stop();
 		NextMinorStep(SequenceState);
 
 	1:
 		IF NOT _Lift.Busy AND NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
-			IF _Lift.Stopped AND _WheelLeft.Stopped AND _WheelRight.Stopped THEN
+			IF CompareLREAL(_WheelLeft.ActualVelocity, 0.0, 0.01) AND CompareLREAL(_WheelRight.ActualVelocity, 0.0, 0.01) THEN
 				NextStep(SequenceState);
 			END_IF
 		END_IF
@@ -691,7 +696,7 @@ END_VAR]]></Declaration>
 		NextMinorStep(SequenceState);
 
 	1: // Wait for Safety signal propagation to drives
-		SafetyResetTon(IN := TRUE, PT := T#200MS);
+		SafetyResetTon(IN := TRUE, PT := T#250MS);
 		IF SafetyResetTon.Q THEN
 			SafetyResetELM.Execute();
 			NextMinorStep(SequenceState);
@@ -705,6 +710,8 @@ END_VAR]]></Declaration>
 	3:
 		_WheelLeft.Enable();
 		_WheelRight.Enable();
+        _WheelLeft_StreamVelocity.Enable();
+		_WheelRight_StreamVelocity.Enable();
 		_Lift.Enable();
 		IF _WheelLeft.Enabled AND _WheelRight.Enabled AND _Lift.Enabled THEN
 			NextStep(SequenceState);

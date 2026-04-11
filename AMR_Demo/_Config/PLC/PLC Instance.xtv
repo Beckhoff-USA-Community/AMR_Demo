@@ -1047,7 +1047,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{369433F7-333E-3B9B-9721-7C1F93B0BABF}">
+	<Instance TmcHash="{0F1810E0-9119-5D7E-D560-BD19E11B3FD2}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1099,6 +1099,18 @@ External Setpoint Generation:
 				<Comment><![CDATA[ EP]]></Comment>
 				<Type GUID="{0EEF712F-51FC-BB35-61EF-E2A4EF0B0D48}">ST_EP3751</Type>
 			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.wCOEStatus</Name>
+				<Type>WORD</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.siModeOfOperationStatus</Name>
+				<Type>SINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.iActVel</Name>
+				<Type>INT</Type>
+			</Var>
 		</Vars>
 		<Vars VarGrpType="2" AreaNo="1">
 			<Name>PlcTask Outputs</Name>
@@ -1146,6 +1158,18 @@ External Setpoint Generation:
 			<Var>
 				<Name>MAIN.AmrModule._BypassScanners</Name>
 				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.wCOEControl</Name>
+				<Type>WORD</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.siModeOfOperation</Name>
+				<Type>SINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.iSetVel</Name>
+				<Type>INT</Type>
 			</Var>
 		</Vars>
 	</Instance>
