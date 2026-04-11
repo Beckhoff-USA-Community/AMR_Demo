@@ -13,11 +13,13 @@ VAR
 	LED5				   : EL2574_CommandMode(10);
 	onChange			   : r_Trig;
 	previousDisplaySection : Section;
-	Send				   : BOOL := TRUE;
-	Update				   : BOOL;
-	clear				   : BOOL;
-	start				   : UINT;
-	end					   : UINT;
+	State				   : (Idle,
+		Clear,
+		SetColor,
+		SetColorUpdate);
+	UpdateTon : TON;
+	start	  : UINT;
+	end		  : UINT;
 END_VAR
 
 VAR CONSTANT
@@ -29,9 +31,30 @@ VAR CONSTANT
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[BackgroundColorRGB := HtmlColorCodeToRGBA(BackgroundColor);
-onChange(CLK := previousDisplaySection <> DisplaySection);
-IF OnChange.Q THEN
-	IF Send THEN
+CASE State OF
+	Idle:
+		onChange(CLK := previousDisplaySection <> DisplaySection);
+		IF OnChange.Q THEN
+			PreviousDisplaySection := DisplaySection;
+			LED1.ClearAll();
+			LED2.ClearAll();
+			LED3.ClearAll();
+			State := Clear;
+		END_IF
+
+	Clear:
+		UpdateTon(IN := TRUE, PT := T#100MS);
+		IF UpdateTon.Q THEN
+			UpdateTon(IN := FALSE);
+			LED1.Update();
+			LED2.Update();
+			LED3.Update();
+			LED4.Update();
+			LED5.Update();
+			State := SetColor;
+		END_IF
+
+	SetColor:
 		LED4.FillColor(0,
 					   100,
 					   BackgroundColorRGB[0],
@@ -40,7 +63,7 @@ IF OnChange.Q THEN
 					   0);
 
 		LED5.FillColor(0,
-					   100,
+					   256,
 					   BackgroundColorRGB[0],
 					   BackgroundColorRGB[1],
 					   BackgroundColorRGB[2],
@@ -48,34 +71,13 @@ IF OnChange.Q THEN
 
 		CASE DisplaySection OF
 			Section.None:
-				LED1.ClearAll();
-				LED2.ClearAll();
-				LED3.ClearAll();
-
 			Section.Accelerometer:
-				LED1.ClearAll();
-				LED2.FillColor(0,
-							   2,
-							   0,
-							   0,
-							   0,
-							   0);
-
 				LED2.FillColor(3,
 							   3,
 							   GREEN[0],
 							   GREEN[1],
 							   GREEN[2],
 							   0);
-
-				LED2.FillColor(4,
-							   5,
-							   0,
-							   0,
-							   0,
-							   0);
-
-				LED3.ClearAll();
 
 			Section.Drives:
 				LED1.FillColor(0,
@@ -92,24 +94,9 @@ IF OnChange.Q THEN
 							   RED[2],
 							   0);
 
-				LED2.FillColor(3,
-							   5,
-							   0,
-							   0,
-							   0,
-							   0);
-
 				LED3.ClearAll();
 
 			Section.Linux:
-				LED1.ClearAll();
-				LED2.FillColor(0,
-							   3,
-							   0,
-							   0,
-							   0,
-							   0);
-
 				LED2.FillColor(4,
 							   5,
 							   WHITE[0],
@@ -134,13 +121,6 @@ IF OnChange.Q THEN
 							   YELLOW[2],
 							   0);
 
-				LED2.FillColor(3,
-							   5,
-							   0,
-							   0,
-							   0,
-							   0);
-
 				LED3.FillColor(0,
 							   100,
 							   YELLOW[0],
@@ -149,7 +129,6 @@ IF OnChange.Q THEN
 							   0);
 
 			Section.Converter:
-				LED1.ClearAll();
 				LED2.FillColor(0,
 							   2,
 							   0,
@@ -170,26 +149,22 @@ IF OnChange.Q THEN
 							   0,
 							   0,
 							   0);
-
-				LED3.ClearAll();
 		END_CASE
 
-		update := TRUE;
-		send   := FALSE;
-	END_IF
+		State := SetColorUpdate;
 
-	PreviousDisplaySection := DisplaySection;
-END_IF
-
-IF Update THEN
-	Send   := TRUE;
-	update := FALSE;
-	LED1.Update();
-	LED2.Update();
-	LED3.Update();
-	LED4.Update();
-	LED5.Update();
-END_IF
+	SetColorUpdate:
+		UpdateTon(IN := TRUE, PT := T#100MS);
+		IF UpdateTon.Q THEN
+			UpdateTon(IN := FALSE);
+			LED1.Update();
+			LED2.Update();
+			LED3.Update();
+			LED4.Update();
+			LED5.Update();
+			State := IDLE;
+		END_IF
+END_CASE
 
 LED1.CyclicCall();
 LED2.CyclicCall();
