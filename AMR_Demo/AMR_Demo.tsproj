@@ -7,7 +7,7 @@
 				<IoIdleTask Priority="10"/>
 			</Settings>
 			<Licenses>
-				<Target>
+				<Target BkhfOrder="01794412" CustomOrder="01794412">
 					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
 				</Target>
 			</Licenses>
