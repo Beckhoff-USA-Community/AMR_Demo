@@ -47,9 +47,17 @@
 		</OwnerB>
 	</OwnerA>
 	<OwnerA Name="TIPC^PLC^PLC Instance">
+		<OwnerB Name="TIID^CANOpen (EL6751)^Box 2 (PD4-CB59M024035-E-08)">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.iActVel" VarB="TxPDO 3^Inputs^VarIn-0"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.siModeOfOperationStatus" VarB="TxPDO 1^Inputs^VarIn-1"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.wCOEStatus" VarB="TxPDO 1^Inputs^VarIn-0"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.iSetVel" VarB="RxPDO 3^Outputs^VarOut-0"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.siModeOfOperation" VarB="RxPDO 1^Outputs^VarOut-1"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.wCOEControl" VarB="RxPDO 1^Outputs^VarOut-0"/>
+		</OwnerB>
 		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^IO Link (EL6224-0090)">
-			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Port1 (Device(0x00000004))^IO-Link Port1^Position"/>
-			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Port1 (Device(0x00000004))^IO-Link Port1^Speed"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Port1 (AHK5_14//ZIOB//16//BFR//)^IO-Link Port1^Position"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Port1 (AHK5_14//ZIOB//16//BFR//)^IO-Link Port1^Speed"/>
 		</OwnerB>
 		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)">
 			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck"/>

@@ -40,6 +40,10 @@
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.siModeOfOperation" VarB="RxPDO 1^Outputs^VarOut-1"/>
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.wCOEControl" VarB="RxPDO 1^Outputs^VarOut-0"/>
 			</OwnerB>
+			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^IO Link (EL6224-0090)">
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Port1 (AHK5_14//ZIOB//16//BFR//)^IO-Link Port1^Position"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Port1 (AHK5_14//ZIOB//16//BFR//)^IO-Link Port1^Speed"/>
+			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)">
 				<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck" Size="1"/>
 			</OwnerB>
