@@ -39,6 +39,20 @@ CASE State OF
 			LED1.ClearAll();
 			LED2.ClearAll();
 			LED3.ClearAll();
+			LED4.FillColor(0,
+						   100,
+						   BackgroundColorRGB[0],
+						   BackgroundColorRGB[1],
+						   BackgroundColorRGB[2],
+						   0);
+
+			LED5.FillColor(0,
+						   256,
+						   BackgroundColorRGB[0],
+						   BackgroundColorRGB[1],
+						   BackgroundColorRGB[2],
+						   0);
+
 			State := Clear;
 		END_IF
 
@@ -55,20 +69,6 @@ CASE State OF
 		END_IF
 
 	SetColor:
-		LED4.FillColor(0,
-					   100,
-					   BackgroundColorRGB[0],
-					   BackgroundColorRGB[1],
-					   BackgroundColorRGB[2],
-					   0);
-
-		LED5.FillColor(0,
-					   256,
-					   BackgroundColorRGB[0],
-					   BackgroundColorRGB[1],
-					   BackgroundColorRGB[2],
-					   0);
-
 		CASE DisplaySection OF
 			Section.None:
 			Section.Accelerometer:
