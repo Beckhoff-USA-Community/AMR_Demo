@@ -9,7 +9,9 @@ AMR Demo BAUS — an Autonomous Mobile Robot demonstration built on the **Beckho
 - `AMR_Demo/` — TwinCAT System Project (PLC + Safety + Motion NC + I/O)
 - `AMR_Demo_HMI/` — TwinCAT HMI web interface (TypeScript + TwinCAT HMI framework)
 - `WheelScope/` — TwinCAT Scope project for real-time wheel data visualization
-- `Documentation/` — Device specs, Navitrol parameters, EtherCAT/CANopen/IO-Link descriptions; `AMR_Demo_Documentation.html` is the generated HTML API reference with class diagrams
+- `GyroScope/` — TwinCAT Scope project for gyroscope data visualization
+- `AMR_Demo_LEDs/` — Separate TwinCAT system project for LED control
+- `Documentation/` — Device specs, Navitrol parameters, EtherCAT/CANopen/IO-Link descriptions; `AMR_Demo_Documentation.html` is the generated HTML API reference with class diagrams; `AMR/PLC_Documentation.html` is a high-level PLC architecture guide
 
 ## Building
 
@@ -111,6 +113,10 @@ HMI binds to `MAIN.AmrModule`, `MAIN.AmrModule.AmrModule_HMI`, `MAIN.AmrModule.R
 ## HMI Architecture
 
 TypeScript target ES2022, no module system (global scope). Pages are `.content` files, reusable components are `.usercontrol` files. JavaScript helper functions in `HmiProj/Functions/`. Two ADS profiles: `ADS.Config.default.json` (local) and `ADS.Config.remote.json` (remote target `5.135.212.84.1.1`).
+
+**Pages**: `Home`, `Manual`, `Recipes`, `Events`, `Diagnostics/`
+
+**Linting**: ESLint is configured at `AMR_Demo_HMI/HmiProj/.eslintrc.json`. Run via `cd AMR_Demo_HMI/HmiProj && npx eslint .`
 
 ## File Types
 

@@ -30,13 +30,6 @@ VAR
 	WheelRight_TcEvents		   : Axis_TcEvents('Wheel Right', _WheelRight);
 	_WheelRight_StreamVelocity : Navitrol_StreamVelocity('Velocity Stream Wheel Right', WheelRightRef);
 
-	// Lift Motor
-	Lift_CanOpMode AT %Q* : BYTE := 8; // Operation Mode Mode 8=CSP
-	LiftRef				  : AXIS_REF;
-	_Lift				  : AxisPTP('Lift', LiftRef);
-	Lift_HMI			  : AxisPTP_HMI('Lift', _Lift, 'mm');
-	Lift_TcEvents		  : Axis_TcEvents('Lift', _Lift);
-
 	//
 	EncoderSpeedIn AT %I*	 : INT;
 	EncoderSpeed			 : AnalogInput('Encoder Speed', EncoderSpeedIn);
@@ -90,7 +83,7 @@ END_VAR
 VAR
 	_Override		: LREAL := 100.0;
 	Destination		: UDINT;
-	COEDriveControl : FB_COEDriveControl;
+	COEDriveControl : COEDriveControl;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
@@ -115,18 +108,17 @@ END_VAR]]></Declaration>
 		_WheelRight_StreamVelocity.Disable();
 		_WheelLeft.Stop();
 		_WheelRight.Stop();
-		_Lift.Stop();
+		COEDriveControl.Enable := FALSE;
 		NextMinorStep(SequenceState);
 
 	1:
-		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy AND NOT _Lift.Busy THEN
+		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
 			NextStep(SequenceState);
 		END_IF
 
 	10:
 		_WheelLeft.Disable();
 		_WheelRight.Disable();
-		_Lift.Disable();
 		NextStep(SequenceState);
 
 	20:
@@ -169,6 +161,7 @@ END_VAR]]></Declaration>
 	0:
 		ResetSafety();
 		NextStep(SequenceState);
+		COEDriveControl.Reset := TRUE;
 		SafetyResetTon(IN := FALSE);
 
 	10: // Wait for Safety signal propagation to drives
@@ -185,6 +178,7 @@ END_VAR]]></Declaration>
 
 	20:
 		ResetComponents(); // Call Reset on every component implementing I_Resettable
+		COEDriveControl.Reset := FALSE;
 		NextStep(SequenceState);
 
 	30:
@@ -242,13 +236,10 @@ CASE SequenceState OF
 		END_IF
 
 	20:
-		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Up);
 		NextMinorStep(SequenceState);
 
 	21:
-		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Up, 0.1) THEN
-			NextStep(SequenceState);
-		END_IF
+		NextStep(SequenceState);
 
 	30:
 		WaitTime(IN := TRUE, PT := T#5S);
@@ -258,13 +249,10 @@ CASE SequenceState OF
 		END_IF
 
 	40:
-		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
 		NextMinorStep(SequenceState);
 
 	41:
-		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
-			NextStep(SequenceState);
-		END_IF
+		NextStep(SequenceState);
 
 	50:
 		IF Navitrol_StopHoldRelease.Execute() THEN
@@ -330,11 +318,6 @@ Navitrol_HMI.RegisterWithParent(THIS^);
 Navitrol_GoToDestination.RegisterWithParent(THIS^);
 Navitrol_ReturnToRoute.RegisterWithParent(THIS^);
 Navitrol_StopHoldRelease.RegisterWithParent(THIS^);
-
-//
-_Lift.RegisterWithParent(THIS^);
-Lift_HMI.RegisterWithParent(THIS^);
-Lift_TcEvents.RegisterWithParent(THIS^);
 
 //
 _WheelLeft.RegisterWithParent(THIS^);
@@ -447,17 +430,6 @@ END_VAR]]></Declaration>
 END_CASE]]></ST>
       </Implementation>
     </Method>
-    <Property Name="Lift" Id="{9471ea76-42f0-4a3f-a9d3-ff190a56d6a4}" FolderPath="Machine\">
-      <Declaration><![CDATA[PROPERTY Lift : I_Axis_PTP]]></Declaration>
-      <Get Name="Get" Id="{79525b8f-4978-4208-ab89-0025cc816cd1}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[Lift := _Lift;]]></ST>
-        </Implementation>
-      </Get>
-    </Property>
     <Method Name="OnCyclicCall" Id="{1af674b7-aa0e-4a9f-951b-2be57a1bf86c}">
       <Declaration><![CDATA[METHOD OnCyclicCall
 VAR_INST
@@ -508,10 +480,8 @@ EncoderSpeed.Scale.InputMinimum		:= Encoder_HMI.Config.Speed_InputMinimum;
 EncoderSpeed.Scale.OutputMaximum	:= Encoder_HMI.Config.Speed_OutputMaximum;
 EncoderSpeed.Scale.OutputMinimum	:= Encoder_HMI.Config.Speed_OutputMinimum;
 
-
-COEDriveControl();
-
-
+//
+COEDriveControl(Manual := (_Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Manual));
 
 // (Diameter Wheel * 360deg)
 Navitrol_MeasurmentUpdateDifferentialDrive.EncoderCountWheelLeft  := TO_UDINT(_WheelLeft.ActualPosition * 1_000);
@@ -562,8 +532,7 @@ SafetyScannerHokuyo.Reset();]]></ST>
 	10:
 		_WheelLeft.Enable();
 		_WheelRight.Enable();
-		_Lift.Enable();
-		IF _WheelLeft.Enabled AND _WheelRight.Enabled AND _Lift.Enabled THEN
+		IF _WheelLeft.Enabled AND _WheelRight.Enabled THEN
 			NextStep(SequenceState);
 		END_IF
 
@@ -575,15 +544,6 @@ SafetyScannerHokuyo.Reset();]]></ST>
 		END_IF
 
 	30:
-		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
-		NextMinorStep(SequenceState);
-
-	31:
-		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
-			NextStep(SequenceState);
-		END_IF
-
-	40:
 		Starting := TRUE;
 END_CASE]]></ST>
       </Implementation>
@@ -615,21 +575,19 @@ END_VAR]]></Declaration>
 				_WheelRight_StreamVelocity.Disable();
 				_WheelLeft.Stop();
 				_WheelRight.Stop();
-				_Lift.Stop();
 				NextMinorStep(SequenceState);
 			END_IF
 		END_IF
 
 	1:
-		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy AND NOT _Lift.Busy THEN
+		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
 			NextStep(SequenceState);
 		END_IF
 
 	10:
 		_WheelLeft.Disable();
 		_WheelRight.Disable();
-		_Lift.Disable();
-		IF NOT _WheelLeft.Enabled AND NOT _WheelRight.Enabled AND NOT _Lift.Enabled THEN
+		IF NOT _WheelLeft.Enabled AND NOT _WheelRight.Enabled THEN
 			NextStep(SequenceState);
 		END_IF
 
@@ -659,11 +617,10 @@ END_IF]]></ST>
 		_WheelRight_StreamVelocity.Disable();
         _WheelLeft.Stop();
 		_WheelRight.Stop();
-		_Lift.Stop();
 		NextMinorStep(SequenceState);
 
 	1:
-		IF NOT _Lift.Busy AND NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
+		IF  NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
 			IF CompareLREAL(_WheelLeft.ActualVelocity, 0.0, 0.01) AND CompareLREAL(_WheelRight.ActualVelocity, 0.0, 0.01) THEN
 				NextStep(SequenceState);
 			END_IF
@@ -672,8 +629,7 @@ END_IF]]></ST>
 	10:
 		_WheelLeft.Disable();
 		_WheelRight.Disable();
-		_Lift.Disable();
-		IF NOT _WheelLeft.Enabled AND NOT _WheelRight.Enabled AND NOT _Lift.Enabled THEN
+		IF NOT _WheelLeft.Enabled AND NOT _WheelRight.Enabled THEN
 			NextStep(SequenceState);
 		END_IF
 
@@ -709,22 +665,18 @@ END_VAR]]></Declaration>
 	3:
 		_WheelLeft.Enable();
 		_WheelRight.Enable();
-        _WheelLeft_StreamVelocity.Enable();
+		_WheelLeft_StreamVelocity.Enable();
 		_WheelRight_StreamVelocity.Enable();
-		_Lift.Enable();
-		IF _WheelLeft.Enabled AND _WheelRight.Enabled AND _Lift.Enabled THEN
+		IF _WheelLeft.Enabled AND _WheelRight.Enabled THEN
 			NextStep(SequenceState);
 		END_IF
 
 	10:
 		Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Release_ESTOP;
-		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
 		NextStep(SequenceState);
 
 	20:
-		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
-			NextStep(SequenceState);
-		END_IF
+		NextStep(SequenceState);
 
 	30:
 		IF Navitrol_GoToDestination.Execute(Destination) THEN

@@ -31729,29 +31729,6 @@
             },
             "USEMAPPING": true
         },
-        "ADS.PLC1.MAIN.AmrModule.Lift_HMI.AxisPTP_HMI": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "HIDDEN": false,
-            "MAPPING": "PLC1::MAIN::AmrModule::Lift_HMI::AxisPTP_HMI",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:server#/definitions/ADS-PLC1.CoreMotionNc2.ST_AxisPTP_HMI"
-                    },
-                    {
-                        "addSymbol": true,
-                        "propertyOrder": 5,
-                        "userGroups": [
-                            "Admin",
-                            "__SystemAdministrators"
-                        ]
-                    }
-                ]
-            },
-            "USEMAPPING": true
-        },
         "ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -31806,7 +31783,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 57,
+                        "propertyOrder": 52,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"
@@ -40868,7 +40845,6 @@
                 "ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.Statemachine_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Encoder_HMI.Encoder_HMI": 3,
-                "ADS.PLC1.MAIN.AmrModule.Lift_HMI.AxisPTP_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Recipe_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.WheelLeft_HMI.AxisPTP_HMI": 3,

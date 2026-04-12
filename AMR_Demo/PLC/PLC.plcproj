@@ -34,9 +34,6 @@
     <Compile Include="AMR\DUT\ST_AmrModule_HMI.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AMR\FB_COEDriveControl.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="AMR\Interface\I_AmrModule.TcIO">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +64,12 @@
     <Compile Include="Components\Encoder\Encoder_HMI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Components\Nanotec\COEDriveControl.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Nanotec\DUT\ST_Nanotec_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Components\Navitrol\Common types\ST_SectionHeader.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -85,34 +88,37 @@
     <Compile Include="Components\Navitrol\Interface\I_Navitrol_GoToDestination.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\Navitrol\Interface\I_Navitrol_ReturnToRoute.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Components\Navitrol\Interface\I_Navitrol_InitializePosition.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Components\Navitrol\Interface\I_Navitrol_Status.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Interface\I_Navitrol_OmniDriveMotorControl.TcIO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_ReturnToRoute.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_Status.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Components\Navitrol\Interface\I_Navitrol_StreamVelocity.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg1001_InitializePosition.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Msg1016_MeasurmentUpdateDifferentialDrive.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\Navitrol\Msg1001_InitializePosition.TcPOU">
+    <Compile Include="Components\Navitrol\Msg3001_HoldRelease.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg3002_NavitrolStatus.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Msg3005_GoToDestination.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Msg3024_ReturnToRoute.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Components\Navitrol\Msg3001_HoldRelease.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1100\ST_1100_Position_initialization_started.TcDUT">
@@ -136,6 +142,9 @@
     <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1126\ST_1126_Motor_control_omni_response.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3101\ST_3101_HoldReleased.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\E_3102_Error_status.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -154,16 +163,10 @@
     <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3105\ST_3105_GoToDestinationResult.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3101\ST_3101_HoldReleased.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3124\ST_3124_ReturnToRouteResponse.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Navitrol to Supervisor response\U_Recived_bytes_from_Navitrol.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Components\Navitrol\Msg3002_NavitrolStatus.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Navitrol_StreamVelocity.TcPOU">
@@ -188,6 +191,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1026\ST_1026_Measurement_update_generic_omni_drive.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3001\ST_3001_ReleaseHoldState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\E_3002_Set_ESTOP.TcDUT">
@@ -233,9 +239,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3005\ST_3005_GoToDestination.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3001\ST_3001_ReleaseHoldState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3024\ST_3024_ReturnToRoute.TcDUT">
@@ -315,8 +318,13 @@
     <Folder Include="Components" />
     <Folder Include="Components\Accelerometer %28EP3751%29\DUT" />
     <Folder Include="Components\Encoder\DUT" />
+    <Folder Include="Components\Encoder" />
+    <Folder Include="Components\Accelerometer %28EP3751%29" />
+    <Folder Include="Components\Nanotec" />
+    <Folder Include="Components\Nanotec\DUT" />
     <Folder Include="Components\Navitrol" />
     <Folder Include="Components\Navitrol\Common types" />
+    <Folder Include="Components\Navitrol\HMI" />
     <Folder Include="Components\Navitrol\Interface" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1100" />
@@ -325,18 +333,19 @@
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1116" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1126" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1126\Components" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3101" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\Sections" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\Sections\1" />
-    <Folder Include="Components\Navitrol\HMI" />
-    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3101" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3105" />
     <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3124" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1001" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1016" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1026" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1026\Components" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3001" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections" />
@@ -346,12 +355,8 @@
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\6\Components" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\8" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\8\Components" />
-    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1016" />
-    <Folder Include="Components\Encoder" />
-    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3001" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3005" />
     <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3024" />
-    <Folder Include="Components\Accelerometer %28EP3751%29" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PLC.tmc">
@@ -438,8 +443,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -515,14 +520,14 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Boolean">System.Boolean</Type>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Boolean">System.Boolean</Type>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

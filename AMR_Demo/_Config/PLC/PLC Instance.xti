@@ -15,6 +15,22 @@
 				</OwnerB>
 			</OwnerA>
 		</UnrestoredVarLinks>
+		<UnrestoredVarLinks ImportTime="2026-04-12T09:55:25">
+			<OwnerA Name="InputDst" Prefix="TIPC^PLC^PLC Instance" Type="1">
+				<OwnerB Name="TIID^CANOpen (EL6751)^Box 2 (PD4-CB59M024035-E-08)">
+					<Link VarA="MAIN.AmrModule.COEDriveControl.iActVel" TypeA="INT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="TxPDO 3^Inputs^VarIn-0" RestoreInfo="ANotFound"/>
+					<Link VarA="MAIN.AmrModule.COEDriveControl.siModeOfOperationStatus" TypeA="SINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000003}" VarB="TxPDO 1^Inputs^VarIn-1" RestoreInfo="ANotFound"/>
+					<Link VarA="MAIN.AmrModule.COEDriveControl.wCOEStatus" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="TxPDO 1^Inputs^VarIn-0" RestoreInfo="ANotFound"/>
+				</OwnerB>
+			</OwnerA>
+			<OwnerA Name="OutputSrc" Prefix="TIPC^PLC^PLC Instance" Type="2">
+				<OwnerB Name="TIID^CANOpen (EL6751)^Box 2 (PD4-CB59M024035-E-08)">
+					<Link VarA="MAIN.AmrModule.COEDriveControl.iSetVel" TypeA="INT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="RxPDO 3^Outputs^VarOut-0" RestoreInfo="ANotFound"/>
+					<Link VarA="MAIN.AmrModule.COEDriveControl.siModeOfOperation" TypeA="SINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000003}" VarB="RxPDO 1^Outputs^VarOut-1" RestoreInfo="ANotFound"/>
+					<Link VarA="MAIN.AmrModule.COEDriveControl.wCOEControl" TypeA="WORD" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="RxPDO 1^Outputs^VarOut-0" RestoreInfo="ANotFound"/>
+				</OwnerB>
+			</OwnerA>
+		</UnrestoredVarLinks>
 		<Contexts>
 			<Context>
 				<Id>0</Id>
@@ -33,12 +49,13 @@
 	<Mappings>
 		<OwnerA>
 			<OwnerB Name="TIID^CANOpen (EL6751)^Box 2 (PD4-CB59M024035-E-08)">
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.iActVel" VarB="TxPDO 3^Inputs^VarIn-0"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.siModeOfOperationStatus" VarB="TxPDO 1^Inputs^VarIn-1"/>
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.wCOEStatus" VarB="TxPDO 1^Inputs^VarIn-0"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.iSetVel" VarB="RxPDO 3^Outputs^VarOut-0"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.siModeOfOperation" VarB="RxPDO 1^Outputs^VarOut-1"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.wCOEControl" VarB="RxPDO 1^Outputs^VarOut-0"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.ActVel" VarB="TxPDO 3^Inputs^VarIn-0"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.COEStatus" VarB="TxPDO 1^Inputs^VarIn-0"/>
+				<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.ModeOfOperationStatus" VarB="TxPDO 1^Inputs^VarIn-1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.COEControl" VarB="RxPDO 1^Outputs^VarOut-0"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.ModeOfOperation" VarB="RxPDO 1^Outputs^VarOut-1"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.MotorTypeClosedLoop" VarB="RxPDO 1^Outputs^VarOut-2"/>
+				<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.SetVel" VarB="RxPDO 3^Outputs^VarOut-0"/>
 			</OwnerB>
 			<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^IO Link (EL6224-0090)">
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Port1 (AHK5_14//ZIOB//16//BFR//)^IO-Link Port1^Position"/>
@@ -75,10 +92,6 @@
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_X" VarB="AI Gyro X Samples 1 (Real32)^Samples[0]"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Y" VarB="AI Gyro Y Samples 1 (Real32)^Samples[0]"/>
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Z" VarB="AI Gyro Z Samples 1 (Real32)^Samples[0]"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Lift">
-				<Link VarA="PlcTask Inputs^MAIN.AmrModule.LiftRef.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.AmrModule.LiftRef.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^WheelLeft">
 				<Link VarA="PlcTask Inputs^MAIN.AmrModule.WheelLeftRef.NcToPlc" VarB="Outputs^ToPlc"/>

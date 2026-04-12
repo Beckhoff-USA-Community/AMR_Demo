@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="COEDriveControl" Id="{0571b62c-2acb-4152-b3de-473329beaf34}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK COEDriveControl
+VAR_INPUT
+	Enable	   : BOOL;
+	Reset	   : BOOL;
+	SetVelIncr : INT;
+	Manual	   : BOOL;
+END_VAR
+
+VAR_OUTPUT
+	Ready	   : BOOL;
+	Faulted	   : BOOL;
+	ActVelIncr : INT;
+END_VAR
+
+VAR
+	COEStatus			  AT %I* : WORD;
+	COEControl			  AT %Q* : WORD;
+	ModeOfOperation		  AT %Q* : SINT := 2;
+	ModeOfOperationStatus AT %I* : SINT;
+	ActVel				  AT %I* : INT;
+	SetVel				  AT %Q* : INT;
+	MotorTypeClosedLoop	  AT %Q* : UDINT := 65;
+	SetupMode					 : BOOL;
+	Seq							 : UDINT;
+	WriteDelay					 : TON;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
+	{ attribute 'TcHmiSymbol.AddSymbol.UserGroups' := '__SystemAdministrators, Admin' }
+	HMI : ST_Nanotec_HMI;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Interfaces with the Elmo Drive, to maintain the internal state machine (DS-402)
+// Check interface document for DS-402 and Beckhoff EL7211 manual for more information
+IF Manual THEN
+	Enable := HMI.JogBwd OR HMI.JogFwd;
+	IF HMI.JogBwd THEN
+		SetVelIncr := -50;
+	END_IF
+
+	IF HMI.JogFwd THEN
+		SetVelIncr := 50;
+	END_IF
+END_IF
+
+HMI.Name	   := 'Lift';
+HMI.ActVelIncr := ActVelIncr;
+HMI.Faulted	   := Faulted;
+HMI.Ready	   := Ready;
+//
+IF NOT SetupMode THEN
+	IF (COEStatus AND 16#006F) = 16#0027 THEN (*State 4*)
+		Ready := TRUE;
+		IF Enable THEN
+			COEControl := 16#000F;
+		ELSE
+			COEControl := 16#0006;
+		END_IF;
+	ELSIF (COEStatus AND 16#006F) = 16#0021 THEN (*State 2*)
+		Ready := FALSE;
+		IF Enable THEN
+			COEControl := 16#0007;
+		ELSIF Reset THEN
+			COEControl := 16#0080;
+		ELSE
+			COEControl := 16#0006;
+		END_IF;
+	ELSIF (COEStatus AND 16#000F) = 16#0008 THEN (*State F*)
+		Ready	:= FALSE;
+		Faulted := TRUE;
+		Enable	:= FALSE;
+		IF Reset THEN
+			COEControl := 16#0080;
+		ELSE
+			COEControl := 16#0000;
+		END_IF;
+	ELSIF (COEStatus AND 16#004F) = 16#0040 THEN (*State 1*) //For Elmo
+		Ready	:= FALSE;
+		Faulted := FALSE;
+		IF Reset THEN
+			COEControl := 16#0080;
+		ELSE
+			COEControl := 16#0006;
+		END_IF;
+	ELSIF (COEStatus AND 16#006F) = 16#0023 THEN (*State 3*)
+		Ready := FALSE;
+		IF Enable THEN
+			COEControl := 16#000F;
+		END_IF;
+	ELSIF (COEStatus AND 16#000F) = 16#0007 THEN (*State 7*)
+		Ready := FALSE;
+	END_IF;
+
+	ActVelIncr := ActVel;
+	SetVel	   := SetVelIncr;
+ELSE
+	CASE Seq OF
+		0:
+			COEControl		:= 0;
+			ModeOfOperation := 0;
+			WriteDelay(IN := FALSE, PT := T#250MS);
+
+		10:
+			COEControl := 16#06;
+			WriteDelay(IN := TRUE, PT := T#250MS);
+			IF WriteDelay.Q THEN
+				IF COEStatus.0 AND COEStatus.5 AND COEStatus.9 THEN
+					WriteDelay(IN := FALSE);
+					Seq := 20;
+				END_IF
+			END_IF
+
+		20:
+			ModeOfOperation := 16#FE;
+			COEControl		:= 16#07;
+			WriteDelay(IN := TRUE, PT := T#250MS);
+			IF WriteDelay.Q THEN
+				IF COEStatus.0 AND COEStatus.1 AND COEStatus.4 AND COEStatus.5 AND COEStatus.9 THEN
+					WriteDelay(IN := FALSE);
+					Seq := 30;
+				END_IF
+			END_IF
+
+		30:
+			COEControl := 16#0F;
+			WriteDelay(IN := TRUE, PT := T#250MS);
+			IF WriteDelay.Q THEN
+				IF COEStatus.0 AND COEStatus.1 AND COEStatus.2 AND COEStatus.4 AND COEStatus.5 AND COEStatus.9 THEN
+					WriteDelay(IN := FALSE);
+					Seq := 40;
+				END_IF
+			END_IF
+
+		40:
+			IF ModeOfOperationStatus = -2 THEN
+				Seq := 50;
+			END_IF
+
+		50:
+			COEControl := 16#1F;
+			IF COEStatus.0 AND COEStatus.1 AND COEStatus.2 AND COEStatus.4 AND COEStatus.5 AND COEStatus.9 AND COEStatus.12 THEN
+				WriteDelay(IN := FALSE);
+				Seq := 60;
+			END_IF
+	END_CASE
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

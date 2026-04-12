@@ -1047,7 +1047,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{5BE01ACC-7EED-C678-3F6E-A33F1DA8C7DE}">
+	<Instance TmcHash="{85309B3F-C4CC-4CEB-60B8-4646E07960CC}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1056,10 +1056,6 @@ External Setpoint Generation:
 			</Var>
 			<Var>
 				<Name>MAIN.AmrModule.WheelRightRef.NcToPlc</Name>
-				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-			</Var>
-			<Var>
-				<Name>MAIN.AmrModule.LiftRef.NcToPlc</Name>
 				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 			</Var>
 			<Var>
@@ -1100,15 +1096,15 @@ External Setpoint Generation:
 				<Type GUID="{0EEF712F-51FC-BB35-61EF-E2A4EF0B0D48}">ST_EP3751</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.COEDriveControl.wCOEStatus</Name>
+				<Name>MAIN.AmrModule.COEDriveControl.COEStatus</Name>
 				<Type>WORD</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.COEDriveControl.siModeOfOperationStatus</Name>
+				<Name>MAIN.AmrModule.COEDriveControl.ModeOfOperationStatus</Name>
 				<Type>SINT</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.COEDriveControl.iActVel</Name>
+				<Name>MAIN.AmrModule.COEDriveControl.ActVel</Name>
 				<Type>INT</Type>
 			</Var>
 		</Vars>
@@ -1120,15 +1116,6 @@ External Setpoint Generation:
 			</Var>
 			<Var>
 				<Name>MAIN.AmrModule.WheelRightRef.PlcToNc</Name>
-				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-			</Var>
-			<Var>
-				<Name>MAIN.AmrModule.Lift_CanOpMode</Name>
-				<Comment><![CDATA[ Operation Mode Mode 8=CSP]]></Comment>
-				<Type>BYTE</Type>
-			</Var>
-			<Var>
-				<Name>MAIN.AmrModule.LiftRef.PlcToNc</Name>
 				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 			</Var>
 			<Var>
@@ -1160,16 +1147,20 @@ External Setpoint Generation:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.COEDriveControl.wCOEControl</Name>
+				<Name>MAIN.AmrModule.COEDriveControl.COEControl</Name>
 				<Type>WORD</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.COEDriveControl.siModeOfOperation</Name>
+				<Name>MAIN.AmrModule.COEDriveControl.ModeOfOperation</Name>
 				<Type>SINT</Type>
 			</Var>
 			<Var>
-				<Name>MAIN.AmrModule.COEDriveControl.iSetVel</Name>
+				<Name>MAIN.AmrModule.COEDriveControl.SetVel</Name>
 				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.MotorTypeClosedLoop</Name>
+				<Type>UDINT</Type>
 			</Var>
 		</Vars>
 	</Instance>
