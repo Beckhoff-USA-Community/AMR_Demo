@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
+	<LicenseInfo>
+		<SystemId>{F5E9FDA5-14D3-7C03-F32A-BE89B2DDB341}</SystemId>
+		<IssueTime>2026-04-10T19:27:00</IssueTime>
+		<ExpireTime>2026-04-18T00:00:00</ExpireTime>
+		<LicenseKey>e6c93c6841a03ff01dc97946f4d2a88fb77206555b275e6a2f5b129e4fa2b0b3f28b6a8aa144a5000fada76001dbd651b13b6369eae4dc54ccfb88dcaf76d84133034ec23343298694299b7545a0f3df02bfbebf3837fa0881f64adc6731493e5e25e7f45eee4cdeafe97bd78068c007ed880ec2ad4658b568be926d878b3ef5033e7708209310685e1b11db0acc8843d586a24b7e78fcb511dfff5d77f56505e8f6698d2b1a0b8ab86ef160be20da45731c59d40efad7f329241be521363555f2c65cc65f46c78b38074e9e4fb684c1aacfb93519e6f13f6a6935ade7c0fdee9d5c21f444dfc49785372c2effdc02a2c5d15a445fc1b4b636b2b926bb9b376e</LicenseKey>
+		<License>
+			<LicenseId>{A2091C4C-7D04-4202-B173-9984E7125BC0}</LicenseId>
+			<Name>TC3 HMI Targets</Name>
+			<Instances>3</Instances>
+		</License>
+		<License>
+			<LicenseId>{AC534BD2-49E1-4025-9C78-0BC8AE4A36A9}</LicenseId>
+			<Name>TC3 HMI Targets Pack 2</Name>
+			<OrderNo>TF2055</OrderNo>
+		</License>
+	</LicenseInfo>
+</TcLicenseInfo>

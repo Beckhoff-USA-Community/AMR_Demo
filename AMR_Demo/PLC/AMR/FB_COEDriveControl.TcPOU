@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_COEDriveControl" Id="{451e0373-d44c-40a1-9dd9-b5997fed5f5d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_COEDriveControl
+VAR_INPUT
+	xEnable		: BOOL;
+	xReset		: BOOL;
+	iSetVelIncr : INT;
+END_VAR
+
+VAR_OUTPUT
+	xReady		: BOOL;
+	xFaulted	: BOOL;
+	iActVelIncr : INT;
+END_VAR
+
+VAR
+	wCOEStatus		  AT %I* : WORD;
+	wCOEControl		  AT %Q* : WORD;
+	siModeOfOperation AT %Q* : SINT := 2;
+    siModeOfOperationStatus AT %I* : SINT;
+	iActVel			  AT %I* : INT;
+	iSetVel			  AT %Q* : INT;
+	SetupMode				 : BOOL;
+	Seq						 : UDINT;
+	WriteDelay				 : TON;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Interfaces with the Elmo Drive, to maintain the internal state machine (DS-402)
+// Check interface document for DS-402 and Beckhoff EL7211 manual for more information
+IF NOT SetupMode THEN
+	IF (wCOEStatus AND 16#006F) = 16#0027 THEN (*State 4*)
+		xReady := TRUE;
+		IF xEnable THEN
+			wCOEControl := 16#000F;
+		ELSE
+			wCOEControl := 16#0006;
+		END_IF;
+	ELSIF (wCOEStatus AND 16#006F) = 16#0021 THEN (*State 2*)
+		xReady := FALSE;
+		IF xEnable THEN
+			wCOEControl := 16#0007;
+		ELSIF xReset THEN
+			wCOEControl := 16#0080;
+		ELSE
+			wCOEControl := 16#0006;
+		END_IF;
+	ELSIF (wCOEStatus AND 16#000F) = 16#0008 THEN (*State F*)
+		xReady	 := FALSE;
+		xFaulted := TRUE;
+		xEnable	 := FALSE;
+		IF xReset THEN
+			wCOEControl := 16#0080;
+		ELSE
+			wCOEControl := 16#0000;
+		END_IF;
+	ELSIF (wCOEStatus AND 16#004F) = 16#0040 THEN (*State 1*) //For Elmo
+		//ELSIF (wCOEStatus AND 16#006F) = 16#0060 THEN (*State 1*)
+		xReady	 := FALSE;
+		xFaulted := FALSE;
+		IF xReset THEN
+			wCOEControl := 16#0080;
+		ELSE
+			wCOEControl := 16#0006;
+		END_IF;
+	ELSIF (wCOEStatus AND 16#006F) = 16#0023 THEN (*State 3*)
+		xReady := FALSE;
+		IF xEnable THEN
+			wCOEControl := 16#000F;
+		END_IF;
+	ELSIF (wCOEStatus AND 16#000F) = 16#0007 THEN (*State 7*)
+		xReady := FALSE;
+	END_IF;
+
+	iActVelIncr := iActVel;
+	iSetVel		:= iSetVelIncr;
+ELSE
+	CASE Seq OF
+		0:
+			wCOEControl		  := 0;
+			siModeOfOperation := 0;
+			WriteDelay(IN := FALSE, PT := T#250MS);
+
+		10:
+			wCOEControl := 16#06;
+			WriteDelay(IN := TRUE, PT := T#250MS);
+			IF WriteDelay.Q THEN
+				IF wCOEStatus.0 AND wCOEStatus.5 AND wCOEStatus.9 THEN
+					WriteDelay(IN := FALSE);
+					Seq := 20;
+				END_IF
+			END_IF
+
+		20:
+			siModeOfOperation := 16#FE;
+			wCOEControl		  := 16#07;
+			WriteDelay(IN := TRUE, PT := T#250MS);
+			IF WriteDelay.Q THEN
+				IF wCOEStatus.0 AND wCOEStatus.1 AND wCOEStatus.4 AND wCOEStatus.5 AND wCOEStatus.9 THEN
+					WriteDelay(IN := FALSE);
+					Seq := 30;
+				END_IF
+			END_IF
+
+		30:
+			wCOEControl := 16#0F;
+			WriteDelay(IN := TRUE, PT := T#250MS);
+			IF WriteDelay.Q THEN
+				IF wCOEStatus.0 AND wCOEStatus.1 AND wCOEStatus.2 AND wCOEStatus.4 AND wCOEStatus.5 AND wCOEStatus.9 THEN
+					WriteDelay(IN := FALSE);
+					Seq := 40;
+				END_IF
+			END_IF
+
+		40:
+			IF siModeOfOperationStatus = -2 THEN
+				Seq := 50;
+			END_IF
+
+		50:
+			wCOEControl := 16#1F;
+			IF wCOEStatus.0 AND wCOEStatus.1 AND wCOEStatus.2 AND wCOEStatus.4 AND wCOEStatus.5 AND wCOEStatus.9 AND wCOEStatus.12 THEN
+				WriteDelay(IN := FALSE);
+				Seq := 60;
+			END_IF
+	END_CASE
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

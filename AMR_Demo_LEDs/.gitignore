@@ -14,7 +14,7 @@
 *.plcproj.bak
 *.plcproj.orig
 *.tpy
-*.tclrs
+#*.tclrs
 #*.compiled-library
 #*.library
 *.compileinfo

@@ -11,14 +11,14 @@
 		<Image Id="8" AddrType="4" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Box File="Box 1 (CANopen Slave).xti" Id="1"/>
+		<Box File="Box 2 (PD4-CB59M024035-E-08).xti" Id="1"/>
 		<CanOpen>
 			<Fcxxxx>
-				<DevSettings BusyIntEnabled="true" DisableSlots="true" NetId="000000000601" FifoSize="5" CycleDivider="1"/>
+				<DevSettings BusyIntEnabled="true" DisableSlots="true" NetId="000000000601" EquiCycleTime="20000" FifoSize="5" CycleDivider="1"/>
 				<DevParameter CycleTime="20000" InputShift="60"/>
 				<EquiParameter RelationShiftCycle="0"/>
 			</Fcxxxx>
-			<BusParameter NodeId="127" Baudrate="2" CobIdSync="128" TxPdoWindowSize="30" CycleDivider="1" MaxLoPrioQueue="100" Bt1="28" TimerTick="3" BusActiveDivider="119" TxBusyTime="1000" TimeIntegral="2000" WdTimeoutInCycleTime="50000"/>
+			<BusParameter NodeId="127" CobIdSync="128" TxPdoWindowSize="30" CycleDivider="1" MaxLoPrioQueue="100" Bt1="20" TimerTick="2" BusActiveDivider="125" TxBusyTime="500" TimeIntegral="1000" WdTimeoutInCycleTime="25000"/>
 		</CanOpen>
 	</Device>
 </TcSmItem>

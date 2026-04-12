@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="3240037548" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="8fe8a63f-0d28-45ee-9754-00faca34d14e" name="" mapState="true" mapDiag="true" groupOrderId="1" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="1991408819" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="8fe8a63f-0d28-45ee-9754-00faca34d14e" name="" mapState="true" mapDiag="true" groupOrderId="1" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="e9b0885a-e9e3-45a1-8281-1a1c46802f56">
       <Network Id="0910bd23-aaf8-4ad7-b60b-55d0edc46819" name="Network1" networkName="SS1_TO_STO" intId="1" networkOrderId="0">
@@ -60,7 +60,7 @@
               </outPorts>
               <parameterPorts>
                 <functionBlockHasParamPorts Id="76649278-3c31-4c88-84b7-397883ab1c8f">
-                  <parameterPort Id="1f3d2543-a104-4528-9747-69dbca1cf722" name="Delay Time (ms)" portName="Delay Time (ms)" portNum="8" objectIndex="0" varId="0" filter="0" portDataType="0" timing="1000" userFbPortName="Delay Time (ms)" useInUserFb="false" />
+                  <parameterPort Id="1f3d2543-a104-4528-9747-69dbca1cf722" name="Delay Time (ms)" portName="Delay Time (ms)" portNum="8" objectIndex="0" varId="0" filter="0" portDataType="0" timing="2500" userFbPortName="Delay Time (ms)" useInUserFb="false" />
                 </functionBlockHasParamPorts>
               </parameterPorts>
             </fBMon>
@@ -192,17 +192,20 @@
           <variableHasTargetUsages Id="4e416827-e586-4e70-b908-a2629e4d5c75">
             <variableUsages Id="1f88a163-9e20-4646-9116-2525c8153cb4">
               <usages>
-                <variableUsagesHasUsages Id="de218fbe-e0b3-4ff3-95fa-29fd433980f1">
-                  <aliasDeviceIoUsage Id="cf57512b-29e2-409a-bba7-771d45e543b3" sdsId="14" channelId="1" functionId="-150929151" />
+                <variableUsagesHasUsages Id="91f5091c-1083-4247-a15e-c46ed8a917f5">
+                  <aliasDeviceIoUsage Id="e0829170-784c-4ecc-addd-7298bc646f8a" sdsId="12" channelId="1" functionId="1879113985" />
                 </variableUsagesHasUsages>
-                <variableUsagesHasUsages Id="ad0e13a3-fc60-40e1-8bcc-d8d04d1af55c">
-                  <aliasDeviceIoUsage Id="7708ca08-f137-4e80-98e8-93b1379573bb" sdsId="14" channelId="9" functionId="-150928895" />
+                <variableUsagesHasUsages Id="3333718e-ba9a-4d6c-bc26-af1ec0f93a48">
+                  <aliasDeviceIoUsage Id="4a05da0b-f5cd-4644-887a-fbbbe2d48443" sdsId="14" channelId="1" functionId="-150929151" />
                 </variableUsagesHasUsages>
-                <variableUsagesHasUsages Id="ea742ed1-afc4-424a-adc8-cfda1729aa2a">
-                  <aliasDeviceIoUsage Id="b4306fd8-ccae-4ece-8562-c52d046fe9d9" sdsId="15" channelId="1" functionId="-150929151" />
+                <variableUsagesHasUsages Id="61f5620b-fa03-4d94-af1c-cc22da76a53c">
+                  <aliasDeviceIoUsage Id="95528de0-f6f1-4914-95e3-28d721f634b9" sdsId="14" channelId="9" functionId="-150928895" />
                 </variableUsagesHasUsages>
-                <variableUsagesHasUsages Id="94006de2-9ccd-40c1-aa7b-f2d975fb25da">
-                  <aliasDeviceIoUsage Id="39e539e0-00cc-4928-825f-e1da12cf7131" sdsId="15" channelId="9" functionId="-150928895" />
+                <variableUsagesHasUsages Id="4ffbbd67-a080-449b-9a38-82140dccc9ec">
+                  <aliasDeviceIoUsage Id="56a6a2cd-9904-43fb-8a46-584585fcbe7b" sdsId="15" channelId="1" functionId="-150929151" />
+                </variableUsagesHasUsages>
+                <variableUsagesHasUsages Id="214a03ea-af1d-4479-bbce-9a12ba03a4ef">
+                  <aliasDeviceIoUsage Id="e0e51d4c-3091-4eef-b395-0ae98ce0f589" sdsId="15" channelId="9" functionId="-150928895" />
                 </variableUsagesHasUsages>
               </usages>
             </variableUsages>

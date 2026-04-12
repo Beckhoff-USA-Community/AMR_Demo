@@ -29,6 +29,15 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000038}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BYTE</Name>
+			<BitSize>56</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>7</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000040}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..7] OF BYTE</Name>
 			<BitSize>64</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
@@ -56,9 +65,9 @@
 		<EtherCAT SlaveType="5" AdsServerAddress="0000000006010000" FixedAdsServerNetId="true" PdiType="#x0408" ExecIo="true" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="35" FoeType="1" VendorId="#x00000002" ProductCode="#x1a5f3052" RevisionNo="#x00160000" InfoDataAddr="true" InfoDataNetId="true" OwnAddrExtern="true" TimeoutStateChange1="5000" TimeoutStateChange3="10000" TimeoutStateChange4="1000" TimeoutMailbox2="2000" GenerateOwnNetId="true" InitializeOwnNetId="true" PortPhys="51" MaxSlotCount="126" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6751 CANopen Master" Desc="EL6751">
 			<SyncMan>001000042600010001000000500000040004001026010000</SyncMan>
 			<SyncMan>001400042200010002000000500000040004001422010000</SyncMan>
-			<SyncMan>001811002600010003000000000000000000001826010000</SyncMan>
+			<SyncMan>001815002600010003000000000000000000001826010000</SyncMan>
 			<SyncMan>002414002200010004000000000000000000002422010000</SyncMan>
-			<Fmmu>0000000000000000000000020000000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001800020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000002400010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 			<BootStrapData>0010140200181402</BootStrapData>
@@ -66,7 +75,7 @@
 			<SuTask>#x02010030</SuTask>
 			<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DcMode>
 			<DcMode>444353594e430000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000090d00300000000070100000000000000000000000000000000000000000000000000000000000000</DcMode>
-			<Pdo Name="Box 1 (CANopen Slave)_IN" Index="#x1a00" Flags="#x0011" SyncMan="3">
+			<Pdo Name="Box 2 (PD4-CB59M024035-E-08)_IN" Index="#x1a00" Flags="#x0011" SyncMan="3">
 				<Entry Name="TxPDO_1" Index="#x6000" Sub="#x01" Flags="#x00000100">
 					<Type GUID="{18071995-0000-0000-0000-002000000018}">ARRAY [0..2] OF BYTE</Type>
 				</Entry>
@@ -80,9 +89,9 @@
 					<Type GUID="{18071995-0000-0000-0000-002000000020}">ARRAY [0..3] OF BYTE</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="Box 1 (CANopen Slave)_OUT" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="2">
+			<Pdo Name="Box 2 (PD4-CB59M024035-E-08)_OUT" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="2">
 				<Entry Name="RxPDO_1" Index="#x7000" Sub="#x01" Flags="#x00000100">
-					<Type GUID="{18071995-0000-0000-0000-002000000018}">ARRAY [0..2] OF BYTE</Type>
+					<Type GUID="{18071995-0000-0000-0000-002000000038}">ARRAY [0..6] OF BYTE</Type>
 				</Entry>
 				<Entry Name="RxPDO_2" Index="#x7000" Sub="#x02" Flags="#x00000100">
 					<Type GUID="{18071995-0000-0000-0000-002000000040}">ARRAY [0..7] OF BYTE</Type>
@@ -95,7 +104,7 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="CANOpen (EL6751)" Index="#x1a80" Flags="#x0011" SyncMan="3">
-				<Entry Name="Box 1 (CANopen Slave)_NodeState" Index="#xa000" Sub="#x01" Flags="#x00000100">
+				<Entry Name="Box 2 (PD4-CB59M024035-E-08)_NodeState" Index="#xa000" Sub="#x01" Flags="#x00000100">
 					<DefaultDataMask>1f1f</DefaultDataMask>
 					<Type>USINT</Type>
 				</Entry>
@@ -114,7 +123,7 @@
 				<Entry Name="CANOpen (EL6751)_DiagFlag" Index="#xf100" Sub="#x02" Flags="#x00000100">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Box 1 (CANopen Slave)_DiagFlag" Index="#xa000" Sub="#x02" Flags="#x00000100">
+				<Entry Name="Box 2 (PD4-CB59M024035-E-08)_DiagFlag" Index="#xa000" Sub="#x02" Flags="#x00000100">
 					<Type>BIT</Type>
 				</Entry>
 				<Entry>

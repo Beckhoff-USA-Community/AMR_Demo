@@ -57,6 +57,7 @@
       ]
     },
     "AccessConfig": {
+      "title": "AccessConfig",
       "type": "array",
       "items": {
         "allOf": [
@@ -87,6 +88,7 @@
       }
     },
     "BorderRadius": {
+      "title": "BorderRadius",
       "type": "object",
       "engineeringColumns": [
         "topLeft",
@@ -235,6 +237,7 @@
       ]
     },
     "BorderStyle": {
+      "title": "BorderStyle",
       "definitions": {
         "style": {
           "type": "string",
@@ -277,6 +280,7 @@
       ]
     },
     "BorderWidth": {
+      "title": "BorderWidth",
       "type": "object",
       "engineeringColumns": [
         "left",
@@ -425,6 +429,7 @@
       ]
     },
     "BoxShadowList": {
+      "title": "BoxShadowList",
       "type": "array",
       "items": {
         "title": "BoxShadow definition",
@@ -567,6 +572,7 @@
       "minItems": 0
     },
     "ClassNameList": {
+      "title": "ClassNameList",
       "type": "array",
       "items": {
         "type": "string"
@@ -574,6 +580,7 @@
       "minItems": 0
     },
     "Color": {
+      "title": "Color",
       "anyOf": [
         {
           "$ref": "#/definitions/SolidColor"
@@ -588,10 +595,12 @@
       "default": null
     },
     "ContentPath": {
+      "title": "ContentPath",
       "type": "string",
       "minLength": 1
     },
     "ContextReference": {
+      "title": "ContextReference",
       "type": "object"
     },
     "Control": {
@@ -601,6 +610,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.System"
     },
     "ControlAccessRight": {
+      "title": "ControlAccessRight",
       "type": "object",
       "description": "An access right which is checked by controls. In the Schema a defaultValue of true mean access is granted, false is denied, null is ask parent.",
       "properties": {
@@ -643,58 +653,72 @@
       ]
     },
     "ControlAccessRightName": {
+      "title": "ControlAccessRightName",
       "type": "string"
     },
     "ControlNamespace": {
+      "title": "ControlNamespace",
       "type": "string",
       "minLength": 1
     },
     "ControlPropertyName": {
+      "title": "ControlPropertyName",
       "type": "string"
     },
     "ControlType": {
+      "title": "ControlType",
       "type": "string",
       "minLength": 1
     },
     "DOMEvent": {
+      "title": "DOMEvent",
       "type": "object",
       "frameworkInstanceOf": "Event"
     },
     "DOMMouseEvent": {
+      "title": "DOMMouseEvent",
       "type": "object",
       "frameworkInstanceOf": "MouseEvent"
     },
     "DOMErrorEvent": {
+      "title": "DOMErrorEvent",
       "type": "object",
       "frameworkInstanceOf": "ErrorEvent"
     },
     "DOMInputEvent": {
+      "title": "DOMInputEvent",
       "type": "object",
       "frameworkInstanceOf": "InputEvent"
     },
     "DOMFocusEvent": {
+      "title": "DOMFocusEvent",
       "type": "object",
       "frameworkInstanceOf": "FocusEvent"
     },
     "DOMPointerEvent": {
+      "title": "DOMPointerEvent",
       "type": "object",
       "frameworkInstanceOf": "PointerEvent"
     },
     "DOMTouchEvent": {
+      "title": "DOMTouchEvent",
       "type": "object",
       "frameworkInstanceOf": "TouchEvent"
     },
     "DOMWheelEvent": {
+      "title": "DOMWheelEvent",
       "type": "object",
       "frameworkInstanceOf": "WheelEvent"
     },
     "Empty": {
+      "title": "Empty",
       "type": "string",
       "enum": [
         ""
       ]
     },
     "EnumMapping": {
+      "title": "EnumMapping",
       "type": "object",
       "patternProperties": {
         "^-?\\d+$": {
@@ -712,9 +736,11 @@
       ]
     },
     "FontFamily": {
+      "title": "FontFamily",
       "type": "string"
     },
     "FontSizeUnit": {
+      "title": "FontSizeUnit",
       "type": "string",
       "enum": [
         "px",
@@ -723,6 +749,7 @@
       "default": "px"
     },
     "FontStyle": {
+      "title": "FontStyle",
       "type": "string",
       "enum": [
         "Normal",
@@ -733,6 +760,7 @@
       "default": "Normal"
     },
     "FontWeight": {
+      "title": "FontWeight",
       "type": "string",
       "enum": [
         "Normal",
@@ -742,11 +770,13 @@
       "default": "Normal"
     },
     "Fraction": {
+      "title": "Fraction",
       "type": "number",
       "minimum": 0,
       "maximum": 1
     },
     "Function": {
+      "title": "Function",
       "type": "object",
       "definitions": {
         "value": {
@@ -907,12 +937,14 @@
       ]
     },
     "FunctionList": {
+      "title": "FunctionList",
       "type": "array",
       "items": {
         "$ref": "#/definitions/Function"
       }
     },
     "HorizontalAlignment": {
+      "title": "HorizontalAlignment",
       "type": "string",
       "enum": [
         "Left",
@@ -921,14 +953,17 @@
       ]
     },
     "HTMLElement": {
+      "title": "HTMLElement",
       "type": "object",
       "frameworkInstanceOf": "HTMLElement"
     },
     "Id": {
+      "title": "Id",
       "type": "string",
       "minLength": 1
     },
     "Inputmode": {
+      "title": "Inputmode",
       "description": "Defines which keyboard layout should be loaded in the system keyboard when interacting. The exact layout file is defined in the project. \nThe most common one are: 'numeric', 'decimal', 'text'. Own project keywords are possible. \n'skip' ignores a focusIn, 'none' closes a keyboard on focusIn.",
       "anyOf": [
         {
@@ -950,10 +985,12 @@
       "default": "text"
     },
     "Interval": {
+      "title": "Interval",
       "type": "string",
       "frameworkMetaType": "IntervalName"
     },
     "LinearGradientColor": {
+      "title": "LinearGradientColor",
       "type": "object",
       "propertiesMeta": [
         {
@@ -996,11 +1033,13 @@
       ]
     },
     "Locale": {
+      "title": "Locale",
       "default": "en",
       "description": "(Deprecated, use ProjectLocale from general) A list of locales for which we have a localization file in the project.",
       "type": "string"
     },
     "MeasurementUnit": {
+      "title": "MeasurementUnit",
       "type": "string",
       "enum": [
         "px",
@@ -1009,6 +1048,7 @@
       "default": "px"
     },
     "MeasurementUnitOrFactor": {
+      "title": "MeasurementUnitOrFactor",
       "type": "string",
       "enum": [
         "px",
@@ -1019,9 +1059,11 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiGrid.MeasurementUnitOrFactor"
     },
     "MeasurementValue": {
+      "title": "MeasurementValue",
       "type": "number"
     },
     "MultipleRecipeReferences": {
+      "title": "MultipleRecipeReferences",
       "description": "Refers to one or more recipe types of the server.",
       "type": "array",
       "items": {
@@ -1029,6 +1071,7 @@
       }
     },
     "MultipleRecipeTypeReferences": {
+      "title": "MultipleRecipeTypeReferences",
       "description": "Refers to one or more recipe types of the server.",
       "type": "array",
       "items": {
@@ -1036,6 +1079,7 @@
       }
     },
     "Padding": {
+      "title": "Padding",
       "type": "object",
       "engineeringColumns": [
         "left",
@@ -1184,10 +1228,12 @@
       ]
     },
     "Path": {
+      "title": "Path",
       "type": "string",
       "minLength": 1
     },
     "PixelPadding": {
+      "title": "PixelPadding",
       "type": "object",
       "engineeringColumns": [
         "left",
@@ -1336,12 +1382,14 @@
       ]
     },
     "PixelUnit": {
+      "title": "PixelUnit",
       "type": "string",
       "enum": [
         "px"
       ]
     },
     "PositiveNumber": {
+      "title": "PositiveNumber",
       "allOf": [
         {
           "$ref": "tchmi:general#/definitions/Number"
@@ -1352,16 +1400,19 @@
       ]
     },
     "RecipeReference": {
+      "title": "RecipeReference",
       "description": "Refers to one recipe of the server.",
       "type": "string",
       "minLength": 1
     },
     "RecipeTypeReference": {
+      "title": "RecipeTypeReference",
       "description": "Refers to one recipe type of the server.",
       "type": "string",
       "minLength": 1
     },
     "ScaleMode": {
+      "title": "ScaleMode",
       "type": "string",
       "enum": [
         "None",
@@ -1373,6 +1424,7 @@
       "default": "None"
     },
     "ScrollMode": {
+      "title": "ScrollMode",
       "type": "string",
       "enum": [
         "No",
@@ -1381,6 +1433,7 @@
       ]
     },
     "ServerEvent": {
+      "title": "ServerEvent",
       "anyOf": [
         {
           "title": "Message",
@@ -1565,6 +1618,7 @@
       ]
     },
     "SizeMode": {
+      "title": "SizeMode",
       "type": "string",
       "enum": [
         "Value",
@@ -1573,6 +1627,7 @@
       "default": "Value"
     },
     "SizeModeWithContent": {
+      "title": "SizeModeWithContent",
       "type": "string",
       "enum": [
         "Value",
@@ -1582,6 +1637,7 @@
       "default": "Value"
     },
     "SolidColor": {
+      "title": "SolidColor",
       "type": "object",
       "properties": {
         "color": {
@@ -1665,14 +1721,17 @@
       ]
     },
     "Symbol": {
+      "title": "Symbol",
       "type": "object",
       "frameworkInstanceOf": "TcHmi.Symbol"
     },
     "ThemeName": {
+      "title": "ThemeName",
       "type": "string",
       "default": "Base"
     },
     "ToggleState": {
+      "title": "ToggleState",
       "type": "string",
       "enum": [
         "Normal",
@@ -1681,6 +1740,7 @@
       "default": "Normal"
     },
     "TransformList": {
+      "title": "TransformList",
       "definitions": {
         "transform": {
           "anyOf": [
@@ -1778,7 +1838,7 @@
                   "$ref": "#/definitions/MeasurementValue"
                 },
                 "zUnit": {
-                  "$ref": "#/definitions/MeasurementUnit"
+                  "$ref": "#/definitions/PixelUnit"
                 }
               },
               "required": [
@@ -2132,7 +2192,7 @@
                   "$ref": "#/definitions/MeasurementValue"
                 },
                 "zUnit": {
-                  "$ref": "#/definitions/MeasurementUnit"
+                  "$ref": "#/definitions/PixelUnit"
                 }
               },
               "required": [
@@ -2279,6 +2339,7 @@
       }
     },
     "Trigger": {
+      "title": "Trigger",
       "definitions": {
         "action": {
           "anyOf": [
@@ -3012,6 +3073,7 @@
       ]
     },
     "TriggerList": {
+      "title": "TriggerList",
       "type": "array",
       "items": {
         "$ref": "#/definitions/Trigger"
@@ -3019,13 +3081,16 @@
       "minItems": 1
     },
     "TypeRef": {
+      "title": "TypeRef",
       "type": "string"
     },
     "UserControlPath": {
+      "title": "UserControlPath",
       "type": "string",
       "minLength": 1
     },
     "VerticalAlignment": {
+      "title": "VerticalAlignment",
       "type": "string",
       "enum": [
         "Top",
@@ -3034,6 +3099,7 @@
       ]
     },
     "VirtualControlRightMappingList": {
+      "title": "VirtualControlRightMappingList",
       "type": "array",
       "items": {
         "type": "object",
@@ -3063,6 +3129,7 @@
       "description": "Allows a mapping of rights to parent control virtual rights. For example the 'operate' right of this control can be configured to react on a custom 'canStartPump' right of a parent control."
     },
     "Visibility": {
+      "title": "Visibility",
       "type": "string",
       "enum": [
         "Visible",
@@ -3112,6 +3179,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiPopup"
     },
     "TcHmi.Controls.System.TcHmiPopup.TargetFile": {
+      "title": "TargetFile",
       "type": "object",
       "properties": {
         "path": {
@@ -3360,6 +3428,7 @@
       }
     },
     "TcHmi.Controls.System.TcHmiPopup.ResultEventObject": {
+      "title": "ResultEventObject",
       "type": "object",
       "properties": {
         "result": {}
@@ -3370,6 +3439,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiPopup.ResultEventObject"
     },
     "TcHmi.Controls.System.TcHmiPopup.ButtonPressedEventObject": {
+      "title": "ButtonPressedEventObject",
       "type": "object",
       "properties": {
         "name": {
@@ -3974,6 +4044,7 @@
       }
     },
     "TcHmi.Controls.System.TcHmiGrid.MeasurementUnitOrFactor": {
+      "title": "MeasurementUnitOrFactor",
       "description": "Defines if the number defines a pixel value (px), percent value (42%) or grow factor (2).\nThe grow factor determines how much the items will grow relative to the rest of the items when positive free space is distributed.",
       "type": "string",
       "enum": [
@@ -4295,6 +4366,7 @@
           "$ref": "tchmi:framework#/definitions/AccessConfig"
         },
         "icon": {
+          "title": "Icon",
           "type": "object",
           "properties": {
             "iconPath": {
@@ -4798,6 +4870,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiButton.StateSymbol": {
+      "title": "StateSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -4810,6 +4883,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiButton.StateChangedEventObject": {
+      "title": "StateChangedEventObject",
       "type": "object",
       "properties": {
         "control": {
@@ -4900,6 +4974,7 @@
       "title": "ChartBarGraphDescriptionDefinitionList",
       "type": "array",
       "items": {
+        "title": "BarGraphDescription",
         "type": "object",
         "engineeringColumns": [
           "legendName"
@@ -5529,6 +5604,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.InputProcessingPoint": {
+      "title": "InputProcessingPoint",
       "type": "string",
       "enum": [
         "Change",
@@ -5537,6 +5613,7 @@
       "default": "Change"
     },
     "TcHmi.Controls.Beckhoff.ContentTabs.OverflowMode": {
+      "title": "OverflowMode",
       "type": "string",
       "enum": [
         "Popup",
@@ -5555,6 +5632,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiCalculator"
     },
     "TcHmi.Controls.Beckhoff.TcHmiCalculator.LayoutName": {
+      "title": "LayoutName",
       "type": "string",
       "enum": [
         "Standard",
@@ -5570,6 +5648,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiCheckbox.StateSymbol": {
+      "title": "StateSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -5582,6 +5661,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiCheckbox.TextPosition": {
+      "title": "TextPosition",
       "type": "string",
       "enum": [
         "Left",
@@ -5589,6 +5669,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiCheckbox.StateChangedEventObject": {
+      "title": "StateChangedEventObject",
       "type": "object",
       "properties": {
         "control": {
@@ -5629,6 +5710,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiCombobox.DropDownStyle": {
+      "title": "DropDownStyle",
       "type": "string",
       "enum": [
         "Classic",
@@ -5637,6 +5719,7 @@
       "default": "Classic"
     },
     "TcHmi.Controls.Beckhoff.TcHmiCombobox.ImagePosition": {
+      "title": "ImagePosition",
       "type": "string",
       "enum": [
         "LeftOfText",
@@ -5722,6 +5805,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiCombobox.SelectionChangedEventObject": {
+      "title": "SelectionChangedEventObject",
       "type": "object",
       "properties": {
         "id": {
@@ -5760,6 +5844,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiCombobox.EnumDataSymbol"
     },
     "TcHmi.Controls.Beckhoff.TcHmiCombobox.EnumDataSymbol": {
+      "title": "EnumDataSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -5794,6 +5879,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiDatagrid.DataSymbol": {
+      "title": "DataSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -5811,6 +5897,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Column",
             "type": "object",
             "engineeringColumns": [
               "name",
@@ -6136,6 +6223,7 @@
           }
         },
         {
+          "title": "SimpleColumn",
           "type": "object",
           "propertiesMeta": [
             {
@@ -6442,6 +6530,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiDatagrid.DataDefinitionList": {
+      "title": "DataDefinitionList",
       "anyOf": [
         {
           "type": "array",
@@ -6777,6 +6866,96 @@
             }
           ],
           "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "title": "Definition for a date time input control",
+          "properties": {
+            "minValue": {
+              "$ref": "tchmi:general#/definitions/DateTime"
+            },
+            "maxValue": {
+              "$ref": "tchmi:general#/definitions/DateTime"
+            },
+            "resetToLastValidValue": {
+              "type": "boolean"
+            }
+          },
+          "propertiesMeta": [
+            {
+              "name": "minValue",
+              "displayName": "Min Value",
+              "category": "General",
+              "displayPriority": 10,
+              "description": "The minimal value of the date time input. No restrictions if it's unset.",
+              "defaultValue": null,
+              "defaultValueInternal": null
+            },
+            {
+              "name": "maxValue",
+              "displayName": "Max Value",
+              "category": "General",
+              "displayPriority": 10,
+              "description": "The maximal value of the date time input. No restrictions if it's unset.",
+              "defaultValue": null,
+              "defaultValueInternal": null
+            },
+            {
+              "name": "resetToLastValidValue",
+              "displayName": "Reset to Last Valid Value",
+              "category": "General",
+              "displayPriority": 10,
+              "description": "Whether the displayed text is reset to the last valid value on focus out.",
+              "defaultValue": null,
+              "defaultValueInternal": false
+            }
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "title": "Definition for a timespan input control",
+          "properties": {
+            "minValue": {
+              "$ref": "tchmi:general#/definitions/TimeSpan"
+            },
+            "maxValue": {
+              "$ref": "tchmi:general#/definitions/TimeSpan"
+            },
+            "resetToLastValidValue": {
+              "type": "boolean"
+            }
+          },
+          "propertiesMeta": [
+            {
+              "name": "minValue",
+              "displayName": "Min Value",
+              "category": "General",
+              "displayPriority": 10,
+              "description": "The minimal value of the timespan input. No restrictions if it's unset.",
+              "defaultValue": null,
+              "defaultValueInternal": null
+            },
+            {
+              "name": "maxValue",
+              "displayName": "Max Value",
+              "category": "General",
+              "displayPriority": 10,
+              "description": "The maximal value of the timespan input. No restrictions if it's unset.",
+              "defaultValue": null,
+              "defaultValueInternal": null
+            },
+            {
+              "name": "resetToLastValidValue",
+              "displayName": "Reset to Last Valid Value",
+              "category": "General",
+              "displayPriority": 10,
+              "description": "Whether the displayed text is reset to the last valid value on focus out.",
+              "defaultValue": null,
+              "defaultValueInternal": false
+            }
+          ],
+          "additionalProperties": false
         }
       ]
     },
@@ -6784,6 +6963,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiDatagrid"
     },
     "TcHmi.Controls.Beckhoff.TcHmiDatagrid.DataChangedEventObject": {
+      "title": "DataChangedEventObject",
       "type": "object",
       "properties": {
         "index": {
@@ -6814,6 +6994,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiDateTimeDisplay"
     },
     "TcHmi.Controls.Beckhoff.TcHmiDateTimeDisplay.TimeDisplayLayout": {
+      "title": "TimeDisplayLayout",
       "type": "string",
       "enum": [
         "Time",
@@ -6850,6 +7031,15 @@
     },
     "TcHmiDateTimePicker": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiDateTimePicker"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiDateTimePicker.OverrideTimeZone": {
+      "title": "TcHmiDateTimePickerOverrideTimeZone",
+      "type": "string",
+      "enum": [
+        "UserConfig",
+        "UTC"
+      ],
+      "default": "UserConfig"
     },
     "TcHmi.Controls.Beckhoff.TcHmiEllipse": {
       "type": "object",
@@ -7088,6 +7278,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.TcHmiEventGrid.MenuBarPosition": {
+      "title": "MenuBarPosition",
       "type": "string",
       "enum": [
         "Top",
@@ -7305,6 +7496,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.TcHmiEventLine.TextOverflow": {
+      "title": "TextOverflow",
       "type": "string",
       "enum": [
         "Ellipsis",
@@ -7319,6 +7511,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiFileExplorer.MenuBarPosition": {
+      "title": "MenuBarPosition",
       "type": "string",
       "enum": [
         "Top",
@@ -7327,6 +7520,7 @@
       "default": "Top"
     },
     "TcHmi.Controls.Beckhoff.TcHmiFileExplorer.NameArray": {
+      "title": "NameArray",
       "type": "array",
       "items": {
         "type": "string",
@@ -7461,6 +7655,7 @@
       "title": "ChartBarGraphDescriptionDefinitionList",
       "type": "array",
       "items": {
+        "title": "BarGraphDescription",
         "type": "object",
         "engineeringColumns": [
           "legendName"
@@ -7861,6 +8056,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiInput"
     },
     "TcHmi.Controls.Beckhoff.TcHmiKeyboard.ProjectKeyboardLayouts": {
+      "title": "ProjectKeyboardLayouts",
       "type": "string",
       "description": "A path of a keyboard layout in the project."
     },
@@ -7878,6 +8074,7 @@
       "description": "Array of keys.",
       "type": "array",
       "items": {
+        "title": "Key",
         "type": "object",
         "engineeringColumns": [
           "code",
@@ -7942,6 +8139,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.TcHmiKeyboard.ValidationLevel": {
+      "title": "ValidationLevel",
       "type": "string",
       "enum": [
         "None",
@@ -7969,6 +8167,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiKeyboard.KeyPressedEventObjects": {
+      "title": "KeyPressedEventObjects",
       "type": "array",
       "items": {
         "type": "object",
@@ -8018,6 +8217,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiKeyboard.KeyPressedEventObjects"
     },
     "TcHmi.Controls.Beckhoff.TcHmiKeyboard.Layout": {
+      "title": "Layout",
       "type": "object",
       "properties": {
         "name": {
@@ -8036,10 +8236,19 @@
       },
       "additionalProperties": false
     },
+    "TcHmi.Controls.Beckhoff.TcHmiKeyboard.NameArray": {
+      "title": "NameArray",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "TcHmiKeyboardLayout": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiKeyboard.Layout"
     },
     "TcHmi.Controls.Beckhoff.TcHmiKeyboard.LayoutFileEventObject": {
+      "title": "LayoutFileEventObject",
       "type": "object",
       "properties": {
         "layoutFile": {
@@ -8052,6 +8261,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiKeyboard.LayoutFileEventObject"
     },
     "TcHmi.Controls.Beckhoff.TcHmiKeyboard.LayoutEventObject": {
+      "title": "LayoutEventObject",
       "type": "object",
       "properties": {
         "layout": {
@@ -8086,6 +8296,7 @@
       "title": "ChartPieGraphDescriptionDefinitionList",
       "type": "array",
       "items": {
+        "title": "PieGraphDescription",
         "type": "object",
         "engineeringColumns": [
           "name",
@@ -8368,6 +8579,7 @@
       "title": "ChartLineGraphDescriptionDefinitionList",
       "type": "array",
       "items": {
+        "title": "LineGraphDescription",
         "type": "object",
         "engineeringColumns": [
           "yAxisId",
@@ -8591,6 +8803,7 @@
           "colorRanges": {
             "type": "array",
             "items": {
+              "title": "ColorRange",
               "type": "object",
               "propertiesMeta": [
                 {
@@ -9475,6 +9688,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiNumericInput"
     },
     "TcHmi.Controls.Beckhoff.TcHmiNumericInput.Value": {
+      "title": "Value",
       "anyOf": [
         {
           "$ref": "tchmi:general#/definitions/Number"
@@ -9488,6 +9702,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiNumericInput.ValueType": {
+      "title": "ValueType",
       "type": "string",
       "enum": [
         "Number",
@@ -9505,6 +9720,7 @@
       "default": "Right"
     },
     "TcHmi.Controls.Beckhoff.TcHmiNumericInput.DecimalPrecisionMode": {
+      "title": "DecimalPrecisionMode",
       "type": "string",
       "enum": [
         "Truncate",
@@ -9529,6 +9745,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.TcHmiObjectBrowser.DataSymbol": {
+      "title": "DataSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -9548,6 +9765,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiObjectBrowser.ColumnName": {
+      "title": "ColumnName",
       "type": "string",
       "enum": [
         "Name",
@@ -9831,6 +10049,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.TcHmiObjectBrowser.PathEventObject": {
+      "title": "PathEventObject",
       "type": "object",
       "properties": {
         "path": {
@@ -9954,6 +10173,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiRadioButton.StateSymbol": {
+      "title": "StateSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -9966,6 +10186,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiRadioButton.TextPosition": {
+      "title": "TextPosition",
       "type": "string",
       "enum": [
         "Left",
@@ -9979,6 +10200,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiRadioButton.StateSymbol"
     },
     "TcHmi.Controls.Beckhoff.TcHmiRadioButton.StateChangedEventObject": {
+      "title": "StateChangedEventObject",
       "type": "object",
       "properties": {
         "control": {
@@ -10004,6 +10226,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiRecipeEdit.NameArray": {
+      "title": "NameArray",
       "type": "array",
       "items": {
         "type": "string",
@@ -10014,6 +10237,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiRecipeEdit"
     },
     "TcHmi.Controls.Beckhoff.TcHmiRecipeEdit.RecipeEventObject": {
+      "title": "RecipeEventObject",
       "type": "object",
       "properties": {
         "name": {
@@ -10029,6 +10253,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiRecipeEdit.RecipeEventObject"
     },
     "TcHmi.Controls.Beckhoff.TcHmiRecipeEdit.RecipeNameEventObject": {
+      "title": "RecipeNameEventObject",
       "type": "object",
       "properties": {
         "name": {
@@ -10048,6 +10273,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
     },
     "TcHmi.Controls.Beckhoff.TcHmiRecipeSelect.NameArray": {
+      "title": "NameArray",
       "type": "array",
       "items": {
         "type": "string",
@@ -10058,6 +10284,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiRecipeSelect"
     },
     "TcHmi.Controls.Beckhoff.TcHmiRecipeSelect.RecipeNameEventObject": {
+      "title": "RecipeNameEventObject",
       "type": "object",
       "properties": {
         "name": {
@@ -10093,6 +10320,7 @@
       "title": "LineGraphDescriptionList",
       "type": "array",
       "items": {
+        "title": "LineGraphDescription",
         "type": "object",
         "engineeringColumns": [
           "lineWidth"
@@ -10227,6 +10455,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiSparkline.ChartStart": {
+      "title": "ChartStart",
       "anyOf": [
         {
           "title": "Time",
@@ -10247,6 +10476,7 @@
       "default": "First"
     },
     "TcHmi.Controls.Beckhoff.TcHmiSparkline.ChartEnd": {
+      "title": "ChartEnd",
       "anyOf": [
         {
           "title": "Time",
@@ -10451,6 +10681,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTabNavigation"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTabNavigation.TabAlignment": {
+      "title": "TabAlignment",
       "type": "string",
       "enum": [
         "Top",
@@ -10503,6 +10734,7 @@
           "$ref": "tchmi:framework#/definitions/AccessConfig"
         },
         "icon": {
+          "title": "Icon",
           "type": "object",
           "properties": {
             "iconPath": {
@@ -10714,6 +10946,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTextblock"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTextblock.ScrollMode": {
+      "title": "ScrollMode",
       "type": "string",
       "enum": [
         "Never",
@@ -10732,6 +10965,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTextbox"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTextbox.ScrollMode": {
+      "title": "ScrollMode",
       "type": "string",
       "enum": [
         "Never",
@@ -10793,6 +11027,7 @@
       "default": "None"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTimespanInput.ValueSymbol": {
+      "title": "ValueSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -10815,6 +11050,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTimespanPicker"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTimespanPicker.ValueSymbol": {
+      "title": "ValueSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -10966,6 +11202,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.TcHmiTreeView.DataSymbol": {
+      "title": "DataSymbol",
       "allOf": [
         {
           "$ref": "tchmi:framework#/definitions/Symbol"
@@ -10983,6 +11220,7 @@
         {
           "type": "array",
           "items": {
+            "title": "Column",
             "type": "object",
             "engineeringColumns": [
               "name",
@@ -11311,6 +11549,7 @@
           }
         },
         {
+          "title": "SimpleColumn",
           "type": "object",
           "propertiesMeta": [
             {
@@ -11646,6 +11885,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TchmiTreeView.DataChangeEventObject": {
+      "title": "DataChangeEventObject",
       "type": "object",
       "properties": {
         "index": {
@@ -11670,6 +11910,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TchmiTreeView.DataChangeEventObject"
     },
     "TcHmi.Controls.Beckhoff.TchmiTreeView.IndexEventObject": {
+      "title": "IndexEventObject",
       "type": "object",
       "properties": {
         "index": {
@@ -11685,6 +11926,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TchmiTreeView.IndexEventObject"
     },
     "TcHmi.Controls.Beckhoff.TchmiTreeView.UpdateTableTypeEventObject": {
+      "title": "UpdateTableTypeEventObject",
       "type": "object",
       "properties": {
         "updateTableType": {
@@ -11835,6 +12077,7 @@
       "additionalProperties": false
     },
     "TcHmi.Controls.Beckhoff.TcHmiTrendLineChart.ChartEnd": {
+      "title": "ChartEnd",
       "anyOf": [
         {
           "title": "Time",
@@ -11851,7 +12094,8 @@
             "Latest"
           ]
         }
-      ]
+      ],
+      "default": "Latest"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTrendLineChart.ChartLineGraphDescriptionDefinitionList": {
       "$schema": "http://json-schema.org/draft-04/schema",
@@ -12089,6 +12333,7 @@
           "colorRanges": {
             "type": "array",
             "items": {
+              "title": "ColorRange",
               "type": "object",
               "propertiesMeta": [
                 {
@@ -12224,6 +12469,7 @@
       "default": "ZoomX"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTrendLineChart.ChartStart": {
+      "title": "ChartStart",
       "anyOf": [
         {
           "title": "Time",
@@ -12240,7 +12486,8 @@
             "First"
           ]
         }
-      ]
+      ],
+      "default": "First"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTrendLineChart.TimePreset": {
       "$schema": "http://json-schema.org/draft-04/schema",
@@ -13091,6 +13338,7 @@
       }
     },
     "TcHmi.Controls.Beckhoff.TcHmiTrendSparkline.ChartStart": {
+      "title": "ChartStart",
       "anyOf": [
         {
           "title": "Time",
@@ -13111,6 +13359,7 @@
       "default": "First"
     },
     "TcHmi.Controls.Beckhoff.TcHmiTrendSparkline.ChartEnd": {
+      "title": "ChartEnd",
       "anyOf": [
         {
           "title": "Time",
@@ -13342,6 +13591,7 @@
       ]
     },
     "TcHmi.Controls.Beckhoff.TcHmiUserGuidance.ProgressBarAlignment": {
+      "title": "ProgressBarAlignment",
       "type": "string",
       "enum": [
         "Top",
@@ -13371,6 +13621,7 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiUserManagement"
     },
     "TcHmi.Controls.Beckhoff.TcHmiUserManagement.AccessConfig": {
+      "title": "AccessConfig",
       "type": "array",
       "items": {
         "allOf": [

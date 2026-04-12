@@ -442,7 +442,7 @@
         "value": {
           "objectType": "Symbol",
           "valueType": "tchmi:general#/definitions/String",
-          "symbolExpression": "%f%GetModeName(%pp%StatemachineHMI::CurrentMode%/pp%) + ' - ' + TcHmi.Functions.TcHmiExtendedControls.EnumToString(%pp%StatemachineHMI::CurrentState%/pp%).replace('ePMLState_', '')%/f%"
+          "symbolExpression": "%f%TcHmi.Functions.TcHmiExtendedControls.EnumToString(%pp%StatemachineHMI::CurrentState%/pp%).replace('ePMLState_', '')%/f%"
         },
         "asyncWait": true
       }
@@ -458,7 +458,7 @@
         "value": {
           "objectType": "Symbol",
           "valueType": "tchmi:general#/definitions/String",
-          "symbolExpression": "%f%GetModeName(%pp%StatemachineHMI::CurrentMode%/pp%) + ' - ' + TcHmi.Functions.TcHmiExtendedControls.EnumToString(%pp%StatemachineHMI::CurrentState%/pp%).replace('ePMLState_', '')%/f%"
+          "symbolExpression": "%f%TcHmi.Functions.TcHmiExtendedControls.EnumToString(%pp%StatemachineHMI::CurrentState%/pp%).replace('ePMLState_', '')%/f%"
         },
         "asyncWait": true
       }

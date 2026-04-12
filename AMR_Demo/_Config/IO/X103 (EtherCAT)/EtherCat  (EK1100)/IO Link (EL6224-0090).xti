@@ -38,18 +38,18 @@
 		<ImageId>1000</ImageId>
 		<Xml>
 			<Port>
-				<FileName>BEI_Sensors-DHx5-RGY-20220321-IODD1.1.xml</FileName>
+				<FileName>BEI_Sensors-AHx5-ZIO-20220404-IODD1.1.xml</FileName>
 				<VendorName>BEI Sensors SAS</VendorName>
 				<VendorLogo>C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Config\Io\IOLink\BEI_Sensors-logo.png</VendorLogo>
-				<DeviceName>DHO5_14//RGYX//EPROG//GMR//</DeviceName>
-				<DeviceIcon>C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Config\Io\IOLink\BEI_Sensors-DHO5_M12-icon.png</DeviceIcon>
-				<DeviceSymbol>C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Config\Io\IOLink\BEI_Sensors-DHO5_M12-pic.png</DeviceSymbol>
-				<ProductId>DHO514-PROG-008</ProductId>
-				<DeviceFamilyName>Incremental rotary encoder</DeviceFamilyName>
-				<DeviceText>DHO5 - Incremental 58mm - Alu body - Holl. shaft - 14mm shaft - 4,75-30Vdc - IO-link multiplexed on Z, programmable output HTL/TTL - Prog. channels - 1 to 10000ppr - 8 pinouts M12 connector - Side</DeviceText>
+				<DeviceName>AHK5_14//ZIOB//16//BFR//</DeviceName>
+				<DeviceIcon>C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Config\Io\IOLink\BEI_Sensors-AHK5-M12-icon.png</DeviceIcon>
+				<DeviceSymbol>C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Config\Io\IOLink\BEI_Sensors-AHK5-M12-pic.png</DeviceSymbol>
+				<ProductId>AHK514-16BT-001</ProductId>
+				<DeviceFamilyName>Absolute rotary Encoder</DeviceFamilyName>
+				<DeviceText>AHK5 - Mag. singleturn 58mm - Alu body - Blind shaft - 14mm shaft - 18-30 Vdc - I/O Link (COM3) - Binary - 16 bits - M12 5 PINS - Side</DeviceText>
 				<Flags>0x0060070a</Flags>
 				<Features>0x00000023</Features>
-				<DirectParameter>0000000300000468000011010AC3000000000000</DirectParameter>
+				<DirectParameter>0000000400000468000011010A83000000000000</DirectParameter>
 				<Parameter>
 					<Name>Direct Parameters - Page 1</Name>
 					<ObjId>V_DirectParameters_1</ObjId>
@@ -372,8 +372,8 @@
 						<Datatype>String</Datatype>
 						<Length>512</Length>
 						<BitOffset>0</BitOffset>
-						<Value>DHx5-RGY</Value>
-						<DefaultValue>DHx5-RGY</DefaultValue>
+						<Value>AHx5-ZIO</Value>
+						<DefaultValue>AHx5-ZIO</DefaultValue>
 						<Access>ro</Access>
 						<Description/>
 					</Items>
@@ -406,8 +406,8 @@
 						<Datatype>String</Datatype>
 						<Length>512</Length>
 						<BitOffset>0</BitOffset>
-						<Value>Incremental encoder configurable by IO-Link</Value>
-						<DefaultValue>Incremental encoder configurable by IO-Link</DefaultValue>
+						<Value>Absolute single-turn IO-Link encoder</Value>
+						<DefaultValue>Absolute single-turn IO-Link encoder</DefaultValue>
 						<Access>ro</Access>
 						<Description/>
 					</Items>
@@ -544,53 +544,6 @@
 					</Items>
 				</Parameter>
 				<Parameter>
-					<Name>Output Voltage Level</Name>
-					<ObjId>V_Output_Encoder</ObjId>
-					<Index>0x46</Index>
-					<ByteLenth>1</ByteLenth>
-					<Items>
-						<Name>Output Voltage Level</Name>
-						<Subindex>0x0</Subindex>
-						<Datatype>BOOL</Datatype>
-						<Length>1</Length>
-						<BitOffset>0</BitOffset>
-						<Value/>
-						<DefaultValue/>
-						<Access>rw</Access>
-						<Description>Encoder incremental output volage</Description>
-						<Enums>
-							<Value>0x0</Value>
-							<Text>TTL</Text>
-						</Enums>
-						<Enums>
-							<Value>0x1</Value>
-							<Text>HTL</Text>
-						</Enums>
-					</Items>
-				</Parameter>
-				<Parameter>
-					<Name>Incremental Resolution</Name>
-					<ObjId>V_Resolution</ObjId>
-					<Index>0x47</Index>
-					<ByteLenth>2</ByteLenth>
-					<Items>
-						<Name>Incremental Resolution</Name>
-						<Subindex>0x0</Subindex>
-						<Datatype>UINT16</Datatype>
-						<Length>16</Length>
-						<BitOffset>0</BitOffset>
-						<Value/>
-						<DefaultValue/>
-						<Access>rw</Access>
-						<Description>Encoder resolution will be 4 times the value entered</Description>
-						<Ranges>
-							<lowerValue>1</lowerValue>
-							<upperValue>10000</upperValue>
-							<Text/>
-						</Ranges>
-					</Items>
-				</Parameter>
-				<Parameter>
 					<Name>Rotation Direction</Name>
 					<ObjId>V_Rotation_Direction</ObjId>
 					<Index>0x48</Index>
@@ -601,27 +554,27 @@
 						<Datatype>BOOL</Datatype>
 						<Length>1</Length>
 						<BitOffset>0</BitOffset>
-						<Value/>
-						<DefaultValue/>
+						<Value>0</Value>
+						<DefaultValue>0</DefaultValue>
 						<Access>rw</Access>
 						<Description>Rotation Direction</Description>
 						<Enums>
 							<Value>0x0</Value>
-							<Text>CW / [B before A]</Text>
+							<Text>CW</Text>
 						</Enums>
 						<Enums>
 							<Value>0x1</Value>
-							<Text>CCW / [A before B]</Text>
+							<Text>CCW</Text>
 						</Enums>
 					</Items>
 				</Parameter>
 				<Parameter>
-					<Name>Set Zero Pulse</Name>
-					<ObjId>V_set_Zero_pulse_button</ObjId>
-					<Index>0x49</Index>
+					<Name>Set Position Preset</Name>
+					<ObjId>V_set_Preset_button</ObjId>
+					<Index>0x41</Index>
 					<ByteLenth>1</ByteLenth>
 					<Items>
-						<Name>Set Zero Pulse</Name>
+						<Name>Set Position Preset</Name>
 						<Subindex>0x0</Subindex>
 						<Datatype>UINT8</Datatype>
 						<Length>8</Length>
@@ -629,59 +582,48 @@
 						<Value/>
 						<DefaultValue/>
 						<Access>wo</Access>
-						<Description>Press to set the current position as zero.</Description>
+						<Description>Press to set the preset value as current position.</Description>
 						<Enums>
 							<Value>0x1</Value>
-							<Text>Set Zero Pulse</Text>
+							<Text>Set Position Preset</Text>
 						</Enums>
 					</Items>
 				</Parameter>
 				<Parameter>
-					<Name>Z pulse width</Name>
-					<ObjId>V_Z_pulse_width</ObjId>
-					<Index>0x4a</Index>
-					<ByteLenth>1</ByteLenth>
+					<Name>Postion Preset</Name>
+					<ObjId>V_Position_Preset</ObjId>
+					<Index>0x43</Index>
+					<ByteLenth>2</ByteLenth>
 					<Items>
-						<Name>Z pulse width</Name>
+						<Name>Postion Preset</Name>
 						<Subindex>0x0</Subindex>
-						<Datatype>UINT8</Datatype>
-						<Length>8</Length>
+						<Datatype>UINT16</Datatype>
+						<Length>16</Length>
 						<BitOffset>0</BitOffset>
 						<Value>0</Value>
 						<DefaultValue>0</DefaultValue>
 						<Access>rw</Access>
-						<Description>Z pulse width</Description>
-						<Enums>
-							<Value>0x0</Value>
-							<Text>90°</Text>
-						</Enums>
-						<Enums>
-							<Value>0x1</Value>
-							<Text>180°</Text>
-						</Enums>
-						<Enums>
-							<Value>0x2</Value>
-							<Text>270°</Text>
-						</Enums>
-						<Enums>
-							<Value>0x3</Value>
-							<Text>360°</Text>
-						</Enums>
+						<Description>Value applied as position when activating Set Position Preset button</Description>
+						<Ranges>
+							<lowerValue>0</lowerValue>
+							<upperValue>65535</upperValue>
+							<Text/>
+						</Ranges>
 					</Items>
 				</Parameter>
 				<Parameter>
-					<Name>Factory Setup Mode</Name>
+					<Name>Enter in Factory setup mode</Name>
 					<ObjId>V_Setup_Mode</ObjId>
 					<Index>0x4b</Index>
 					<ByteLenth>1</ByteLenth>
 					<Items>
-						<Name>Factory Setup Mode</Name>
+						<Name>Enter in Factory setup mode</Name>
 						<Subindex>0x0</Subindex>
 						<Datatype>BOOL</Datatype>
 						<Length>1</Length>
 						<BitOffset>0</BitOffset>
-						<Value/>
-						<DefaultValue/>
+						<Value>0</Value>
+						<DefaultValue>0</DefaultValue>
 						<Access>rw</Access>
 						<Description>Mode used for factory calibration</Description>
 						<Enums>
@@ -690,7 +632,7 @@
 						</Enums>
 						<Enums>
 							<Value>0x1</Value>
-							<Text>Setup</Text>
+							<Text>Factory</Text>
 						</Enums>
 					</Items>
 				</Parameter>
@@ -705,10 +647,10 @@
 						<Datatype>UINT8</Datatype>
 						<Length>8</Length>
 						<BitOffset>0</BitOffset>
-						<Value/>
-						<DefaultValue/>
+						<Value>1</Value>
+						<DefaultValue>1</DefaultValue>
 						<Access>rw</Access>
-						<Description>Speed window calculation time</Description>
+						<Description>Speed window calculation time in millisecond</Description>
 						<Enums>
 							<Value>0x0</Value>
 							<Text>20 ms</Text>
@@ -734,8 +676,8 @@
 						<Datatype>UINT8</Datatype>
 						<Length>8</Length>
 						<BitOffset>0</BitOffset>
-						<Value/>
-						<DefaultValue/>
+						<Value>16</Value>
+						<DefaultValue>16</DefaultValue>
 						<Access>rw</Access>
 						<Description>Singleturn absolute position resolution</Description>
 						<Enums>
@@ -1029,7 +971,7 @@
 								<ConditionSubindex>0x0</ConditionSubindex>
 								<ConditionValue>0x0</ConditionValue>
 								<Variable>
-									<ObjectId>V_set_Zero_pulse_button</ObjectId>
+									<ObjectId>V_set_Preset_button</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1039,7 +981,7 @@
 									<ButtonValue>1</ButtonValue>
 								</Variable>
 								<Variable>
-									<ObjectId>V_Output_Encoder</ObjectId>
+									<ObjectId>V_Position_Preset</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1050,26 +992,6 @@
 								</Variable>
 								<Variable>
 									<ObjectId>V_Rotation_Direction</ObjectId>
-									<Subindex>0</Subindex>
-									<Gradient>0.000000</Gradient>
-									<Offset>0.000000</Offset>
-									<Unit/>
-									<Access>rw</Access>
-									<DisplayFormat/>
-									<ButtonValue/>
-								</Variable>
-								<Variable>
-									<ObjectId>V_Resolution</ObjectId>
-									<Subindex>0</Subindex>
-									<Gradient>0.000000</Gradient>
-									<Offset>0.000000</Offset>
-									<Unit/>
-									<Access>rw</Access>
-									<DisplayFormat/>
-									<ButtonValue/>
-								</Variable>
-								<Variable>
-									<ObjectId>V_Z_pulse_width</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1239,7 +1161,7 @@
 								<ConditionSubindex>0x0</ConditionSubindex>
 								<ConditionValue>0x0</ConditionValue>
 								<Variable>
-									<ObjectId>V_set_Zero_pulse_button</ObjectId>
+									<ObjectId>V_set_Preset_button</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1249,7 +1171,7 @@
 									<ButtonValue>1</ButtonValue>
 								</Variable>
 								<Variable>
-									<ObjectId>V_Output_Encoder</ObjectId>
+									<ObjectId>V_Position_Preset</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1260,26 +1182,6 @@
 								</Variable>
 								<Variable>
 									<ObjectId>V_Rotation_Direction</ObjectId>
-									<Subindex>0</Subindex>
-									<Gradient>0.000000</Gradient>
-									<Offset>0.000000</Offset>
-									<Unit/>
-									<Access>rw</Access>
-									<DisplayFormat/>
-									<ButtonValue/>
-								</Variable>
-								<Variable>
-									<ObjectId>V_Resolution</ObjectId>
-									<Subindex>0</Subindex>
-									<Gradient>0.000000</Gradient>
-									<Offset>0.000000</Offset>
-									<Unit/>
-									<Access>rw</Access>
-									<DisplayFormat/>
-									<ButtonValue/>
-								</Variable>
-								<Variable>
-									<ObjectId>V_Z_pulse_width</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1496,7 +1398,7 @@
 								<ConditionSubindex>0x0</ConditionSubindex>
 								<ConditionValue>0x0</ConditionValue>
 								<Variable>
-									<ObjectId>V_set_Zero_pulse_button</ObjectId>
+									<ObjectId>V_set_Preset_button</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1506,7 +1408,7 @@
 									<ButtonValue>1</ButtonValue>
 								</Variable>
 								<Variable>
-									<ObjectId>V_Output_Encoder</ObjectId>
+									<ObjectId>V_Position_Preset</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1517,26 +1419,6 @@
 								</Variable>
 								<Variable>
 									<ObjectId>V_Rotation_Direction</ObjectId>
-									<Subindex>0</Subindex>
-									<Gradient>0.000000</Gradient>
-									<Offset>0.000000</Offset>
-									<Unit/>
-									<Access>rw</Access>
-									<DisplayFormat/>
-									<ButtonValue/>
-								</Variable>
-								<Variable>
-									<ObjectId>V_Resolution</ObjectId>
-									<Subindex>0</Subindex>
-									<Gradient>0.000000</Gradient>
-									<Offset>0.000000</Offset>
-									<Unit/>
-									<Access>rw</Access>
-									<DisplayFormat/>
-									<ButtonValue/>
-								</Variable>
-								<Variable>
-									<ObjectId>V_Z_pulse_width</ObjectId>
 									<Subindex>0</Subindex>
 									<Gradient>0.000000</Gradient>
 									<Offset>0.000000</Offset>
@@ -1725,7 +1607,7 @@
 			<BootStrapData>0010f400f410f400</BootStrapData>
 			<DcMode>4672656552756e0000000000000000004672656552756e00000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
 			<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000010100000000000000000000000000000000000000000000000000000000000000</DcMode>
-			<MBoxUserCmdData>020003001c0000000b00000000000000150009030000000000000000000000003000800114000000030000006804000011010a00c3000000000023004f626a656374203830303000</MBoxUserCmdData>
+			<MBoxUserCmdData>020003001c0000000b00000000000000150009030000000000000000000000003000800114000000040000006804000011010a0083000000000023004f626a656374203830303000</MBoxUserCmdData>
 			<MBoxUserCmdData>020003001c0000000b0000000000000015000903000000000000000000000000301080011400000000000000000000000000000000000000000000004f626a656374203830313000</MBoxUserCmdData>
 			<MBoxUserCmdData>020003001c0000000b0000000000000015000903000000000000000000000000302080011400000000000000000000000000000000000000000000004f626a656374203830323000</MBoxUserCmdData>
 			<MBoxUserCmdData>020003001c0000000b0000000000000015000903000000000000000000000000303080011400000000000000000000000000000000000000000000004f626a656374203830333000</MBoxUserCmdData>
@@ -1885,7 +1767,7 @@
 				<ModuleIdent>2308354</ModuleIdent>
 				<ModuleIdent>2308355</ModuleIdent>
 				<Module Id="#x03090002" Type="IO-Link Slave" Class="">
-					<Name>Port1 (Device(0x00000004))</Name>
+					<Name>Port1 (AHK5_14//ZIOB//16//BFR//)</Name>
 					<ImageId>1001</ImageId>
 					<ModuleData>02000000ffffffff000000000000000000000000000000000000000000000000</ModuleData>
 					<PdoIndex>6656</PdoIndex>
