@@ -45,7 +45,7 @@ VAR
 	Encoder_HMI				 : Encoder_HMI('Mouser DHK Encoder', EncoderSpeed, EncoderPosition);
 
 	// Safety
-	SafetyResetELM		 : SafetyResetPulse('Safety Reset') := (PulseDuration := T#250MS);
+	SafetyResetELM		 : SafetyResetPulse('Safety Reset');
 	SafetyGroupReset	 : SafetyResetPulse('Safety Reset');
 	SafetyInputGroup	 : SafetyGroup_TcEvents('Safety Input Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
 	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
@@ -695,7 +695,7 @@ END_VAR]]></Declaration>
 		NextMinorStep(SequenceState);
 
 	1: // Wait for Safety signal propagation to drives
-		SafetyResetTon(IN := TRUE, PT := T#250MS);
+		SafetyResetTon(IN := TRUE, PT := T#200MS);
 		IF SafetyResetTon.Q THEN
 			SafetyResetELM.Execute();
 			NextMinorStep(SequenceState);

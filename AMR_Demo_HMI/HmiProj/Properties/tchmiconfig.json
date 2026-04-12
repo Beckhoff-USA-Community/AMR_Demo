@@ -9,7 +9,7 @@
   },
   "projectVersion": "1.0.0.0",
   "tcHmiServer": {
-    "websocketIntervalTime": 1000,
+    "websocketIntervalTime": 500,
     "websocketTimeout": 20000,
     "websocketSystemTimeout": 60000,
     "websocketSubscriptionMode": null,
