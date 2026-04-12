@@ -236,23 +236,33 @@ CASE SequenceState OF
 		END_IF
 
 	20:
+		COEDriveControl.SetVelIncr := 50;
+		COEDriveControl.Enable	   := TRUE;
 		NextMinorStep(SequenceState);
 
 	21:
-		NextStep(SequenceState);
+		IF EncoderPositionIn >= 20_000 THEN
+			COEDriveControl.Enable := FALSE;
+			NextStep(SequenceState);
+		END_IF
 
 	30:
-		WaitTime(IN := TRUE, PT := T#5S);
+		WaitTime(IN := TRUE, PT := T#2S);
 		IF WaitTime.Q THEN
 			WaitTime(IN := FALSE);
 			NextStep(SequenceState);
 		END_IF
 
 	40:
+		COEDriveControl.SetVelIncr := -50;
+		COEDriveControl.Enable	   := TRUE;
 		NextMinorStep(SequenceState);
 
 	41:
-		NextStep(SequenceState);
+		IF EncoderPositionIn <= -20_000 THEN
+			COEDriveControl.Enable := FALSE;
+			NextStep(SequenceState);
+		END_IF
 
 	50:
 		IF Navitrol_StopHoldRelease.Execute() THEN

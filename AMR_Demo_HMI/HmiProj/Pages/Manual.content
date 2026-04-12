@@ -14,6 +14,8 @@
 </div>
 <div id="EP3751Panel_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/EP3751Panel.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI%/s%">
 </div>
+<div id="CustomPanel_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/NanotecPanel.usercontrol" data-tchmi-top="350" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.COEDriveControl.HMI%/s%">
+</div>
 </div>
 </div>
 </div>

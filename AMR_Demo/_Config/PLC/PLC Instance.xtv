@@ -1047,7 +1047,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{85309B3F-C4CC-4CEB-60B8-4646E07960CC}">
+	<Instance TmcHash="{81F6132A-C1BD-BEDF-885E-2866FEA16153}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -1105,6 +1105,10 @@ External Setpoint Generation:
 			</Var>
 			<Var>
 				<Name>MAIN.AmrModule.COEDriveControl.ActVel</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.AmrModule.COEDriveControl.ActPos</Name>
 				<Type>INT</Type>
 			</Var>
 		</Vars>

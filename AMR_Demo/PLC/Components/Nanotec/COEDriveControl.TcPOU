@@ -21,6 +21,7 @@ VAR
 	ModeOfOperation		  AT %Q* : SINT := 2;
 	ModeOfOperationStatus AT %I* : SINT;
 	ActVel				  AT %I* : INT;
+	ActPos				  AT %I* : INT;
 	SetVel				  AT %Q* : INT;
 	MotorTypeClosedLoop	  AT %Q* : UDINT := 65;
 	SetupMode					 : BOOL;
@@ -144,7 +145,8 @@ ELSE
 				Seq := 60;
 			END_IF
 	END_CASE
-END_IF]]></ST>
+END_IF
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

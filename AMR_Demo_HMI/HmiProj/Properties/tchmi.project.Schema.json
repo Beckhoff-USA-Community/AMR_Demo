@@ -156,6 +156,22 @@
       "frameworkUserControlConfig": "Popups\\PanelPopups\\EP3751.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/EP3751"
+    },
+    "Nanotec": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Popups\\PanelPopups\\Nanotec.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Nanotec"
+    },
+    "NanotecPanel": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\Panels\\NanotecPanel.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/NanotecPanel"
     }
   }
 }

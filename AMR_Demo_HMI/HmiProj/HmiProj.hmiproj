@@ -277,6 +277,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Popups\PackMLSelection.usercontrol</DependentUpon>
     </Content>
+    <Content Include="Popups\PanelPopups\Nanotec.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Popups\PanelPopups\Nanotec.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Popups\PanelPopups\Nanotec.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Popups\PanelPopups\EP3751.usercontrol">
       <SubType>Content</SubType>
     </Content>
@@ -368,6 +375,13 @@
     <Content Include="UserControls\Panels\AxisPTPPanel.usercontrol.json">
       <SubType>Content</SubType>
       <DependentUpon>UserControls\Panels\AxisPTPPanel.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\Panels\NanotecPanel.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Panels\NanotecPanel.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Panels\NanotecPanel.usercontrol</DependentUpon>
     </Content>
     <Content Include="UserControls\Panels\EncoderPanel.usercontrol">
       <SubType>Content</SubType>

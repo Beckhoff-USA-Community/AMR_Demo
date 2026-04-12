@@ -14328,6 +14328,97 @@
                 ],
                 "type": "object"
             },
+            "ADS-PLC1.ST_Nanotec_HMI": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.Core.ST_HmiFunction"
+                    ],
+                    "TcExtends": "Core.ST_HmiFunction"
+                },
+                "properties": {
+                    "ActVelIncr": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "Faulted": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "HmiEnabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "JogBwd": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "JogFwd": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "Name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "Ready": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Name",
+                    "HmiEnabled",
+                    "JogFwd",
+                    "JogBwd",
+                    "Ready",
+                    "Faulted",
+                    "ActVelIncr"
+                ],
+                "type": "object"
+            },
             "ADS-PLC1.ST_Navitrol_HMI": {
                 "additionalProperties": false,
                 "attributes": {
@@ -31683,6 +31774,29 @@
             },
             "USEMAPPING": true
         },
+        "ADS.PLC1.MAIN.AmrModule.COEDriveControl.HMI": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::MAIN::AmrModule::COEDriveControl::HMI",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_Nanotec_HMI"
+                    },
+                    {
+                        "addSymbol": true,
+                        "propertyOrder": 18,
+                        "userGroups": [
+                            " Admin",
+                            "__SystemAdministrators"
+                        ]
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -40843,6 +40957,7 @@
             "SYMBOLS": {
                 "ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.AmrModule_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.Statemachine_HMI": 3,
+                "ADS.PLC1.MAIN.AmrModule.COEDriveControl.HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Encoder_HMI.Encoder_HMI": 3,
                 "ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI": 3,

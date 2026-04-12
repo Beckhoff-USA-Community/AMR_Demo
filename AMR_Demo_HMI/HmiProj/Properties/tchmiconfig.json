@@ -98,6 +98,9 @@
       "url": "Popups/PanelPopups/File.usercontrol"
     },
     {
+      "url": "Popups/PanelPopups/Nanotec.usercontrol"
+    },
+    {
       "url": "Popups/PanelPopups/NcAxis.usercontrol"
     },
     {
@@ -120,6 +123,9 @@
     },
     {
       "url": "UserControls/Panels/FilePanel.usercontrol"
+    },
+    {
+      "url": "UserControls/Panels/NanotecPanel.usercontrol"
     },
     {
       "url": "UserControls/Panels/NavitrolPanel.usercontrol"
