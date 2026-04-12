@@ -65,7 +65,7 @@ IF NOT PT1Initialized THEN
 END_IF
 
 // Update PT1 parameters from inputs (allows runtime tuning)
-PT1Params.fKp := 0.8;
+PT1Params.fKp := 0.9;
 PT1Params.tT1 := FilterTimeConstant;
 // Apply velocity smoothing if enabled
 IF EnableSmoothing THEN
