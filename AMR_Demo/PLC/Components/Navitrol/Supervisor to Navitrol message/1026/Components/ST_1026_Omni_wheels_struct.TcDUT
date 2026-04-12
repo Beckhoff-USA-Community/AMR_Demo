@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1026_Omni_wheels_struct" Id="{c116c078-6ebb-40c4-9433-a8137c6e3714}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1026_Omni_wheels_struct :
+	STRUCT
+		Steer_angle : REAL;
+		Wheel_speed : REAL;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

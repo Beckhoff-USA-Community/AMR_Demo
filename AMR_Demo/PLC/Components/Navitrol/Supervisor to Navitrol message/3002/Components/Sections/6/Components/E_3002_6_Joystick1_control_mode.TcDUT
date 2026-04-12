@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="E_3002_6_Joystick1_control_mode" Id="{c9324d8c-5be4-4399-bb8e-3c998b977f51}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE E_3002_6_Joystick1_control_mode : (
+		No_control	   := 0,
+		Old_control	   := 1,
+		Vector_control := 2
+	) UINT;
+END_TYPE
+
+(*
+Selects the joystick 1 control mode:
+	0 - No control
+Joystick 1 x and y values are ignored.
+	1 - Old control
+	Not recommended
+	Navitrol activates manual mode. Curvature is calculated directly from joystick 1 x value and the speed from joystick 1 y value.
+2 - Vector control
+	Recommended
+	Navitrol activates manual mode. A unit vector is calculated from joystick 1 xy-values. The speed comes from the length of the vector (Positive when y is positive) and the curvature from its angle from the Y-axis.
+	For example AGV drives forward and curves right when x and y are positive.
+	For more information, see "Joystick System" chapter from Web Interface document
+
+*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

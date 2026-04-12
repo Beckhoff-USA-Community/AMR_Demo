@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1101_Position_initialized" Id="{43a82b49-8e9a-4bd3-a77a-516810f5c448}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1101_Position_initialized EXTENDS ST_SupervisorHeader :
+	STRUCT
+		X					  : REAL;  //	X-map coordinate OF the new position in meters
+		Y					  : REAL;  //	Y-map coordinate of the new position in meters
+		H					  : REAL;  //	Heading of the new position on the map in radians
+		Floor				  : UDINT; //		The floor of the new position
+		Initialization_result : E_1101_Initialization_result;
+		Position_confidence	  : UINT; //		Position confidence percentage (1 - 100%)Describes how well the laser measurements in the new position matches the seen environment.	
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

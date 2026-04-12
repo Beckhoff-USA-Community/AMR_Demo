@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3105_GoToDestinationResult" Id="{bc938614-64d7-49f1-b5c8-e0b5d97bb4e4}">
+    <Declaration><![CDATA[TYPE ST_3105_GoToDestinationResult EXTENDS ST_SupervisorHeader :
+	STRUCT
+		DestinationID : UDINT;
+		GoToResult	  : UDINT;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3101_HoldReleased" Id="{ddec8ec0-1545-44d9-8f38-6ab1b3d57c06}">
+    <Declaration><![CDATA[TYPE ST_3101_HoldReleased EXTENDS ST_SupervisorHeader :
+	STRUCT
+		ReleaseStopHoldResult : UINT;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

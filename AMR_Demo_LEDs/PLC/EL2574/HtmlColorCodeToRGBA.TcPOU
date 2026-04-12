@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="HtmlColorCodeToRGBA" Id="{5de090ec-0bb3-485f-b4de-26104377cfce}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION HtmlColorCodeToRGBA : ARRAY [0..3] OF USINT
+VAR_INPUT
+	ColorCode : STRING(9);
+END_VAR
+VAR
+	toConvert : STRING;
+	converted : ARRAY [0..3] OF USINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// allow the user to pass in the # as optional
+IF FIND(ColorCode,'#') = 1 THEN
+	toConvert := right(ColorCode, len(ColorCode)-1);
+ELSE
+	toConvert := ColorCode;
+END_IF
+
+// check for a valid string, i.e. must be 6 or 8 chars long.
+IF NOT(len(toConvert) = 6 OR len(toConvert) = 8) THEN
+	RETURN;
+END_IF
+
+// allow 6 or 8 hex codes
+IF len(toConvert) = 6 THEN
+	toConvert := concat(toConvert,'00');
+END_IF
+
+HEXSTR_TO_DATA( toConvert, ADR(converted), SIZEOF(converted));
+HtmlColorCodeToRGBA := converted;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

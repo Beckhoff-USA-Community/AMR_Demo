@@ -1,0 +1,125 @@
+# Navigation software parameter file
+#
+# THIS FILE IS AUTOMATICALLY FORMATTED BY NAVIGATION SOFTWARE
+# CHANGES TO COMMENTS ARE LOST DURING AUTOMATIC FORMATTING
+#
+# Text starting with '#' are regarded as comments
+# Actual data lines start with parameter type:
+#  I - signed integer (32 bit)
+#  U - unsigned integer (32 bit)
+#  F - floating point number (32 bit)
+#  S - string
+# Data line fields are separated with a comma ','
+# Syntax for parameters:
+# TYPE,NAME,VALUE
+#
+
+I,simulate_scanners,                                               1 # Enables scanner simulation even when rest of the sw is not simulated.
+I,ignore_env_seg_machine_type,                                       1 # 
+
+
+# Parameters specific to each vehicle type
+I,machine_type_id,                                             10017 # Id of vehicle type
+U,machine_type_key,                                       3665344577 # Verification key of machine type id
+F,dim_front,                                                0.500000 # AGV lengthwise dimension from navigation point to the front end. Positive value.; min 0.010000, max 100.000000
+F,dim_rear,                                                -0.500000 # AGV lengthwise dimension from navigation point to the rear end. Negative value.; min -100.000000, max -0.010000
+F,dim_left,                                                 0.350000 # AGV dimension from navigation point to the left side. Positive value.; min 0.010000, max 100.000000
+F,dim_right,                                               -0.350000 # AGV dimension from navigation point to the right side. Negative value.; min -100.000000, max -0.010000
+I,scanner_model_front,                                            13 # Front scanner model: 0 = Sick Ethernet, 1 = Sick S300, 2 = Omron OS32C, 3 = P+F R2000 UHD 4 = obsolete, 5 = Leuze RSL400, 6 = Hokuyo UAM-05LP, 7 = Keyence SZ-V 32N, 8 = Sick uScan, 9 = Sick S300 TCP/IP, 10 = Reserved, 11 = Quanergy M1, 12 = Hokuyo SCIP, 13 = Navitec proprietary, 15 = DDS, 16 = Leuze RSL200, 17 = Sick Compact, 18 = Vanjee WLR-719; min 0, max 18
+I,scanner_model_rear,                                             13 # Rear scanner model. Value range same as in scanner_model_front.; min 0, max 18
+I,scan_rear_front_selection,                                       3 # Defines which scanners are connected: 0 = no scanners, 1 = rear scanner only, 2 = front scanner only, 3 = both rear and front scanners; min 0, max 3
+I,scan_rear_front_localization_selection,                          3 # Defines which scanners are used for localization: 0 = no scanners, 1 = rear scanner only, 2 = front scanner only, 3 = both rear and front scanners; min 0, max 3
+S,front_scanner_ip,                                     192.168.56.1 # Front scanner IP, e.g. 10.10.6.101.
+S,rear_scanner_ip,                                      192.168.56.1 # Rear scanner IP, e.g. 10.10.6.102.
+I,front_scanner_port,                                          12221 # Front scanner port: Sick 2111, PEF 80, Omron 44818, Velodyne 2368, Hokuyo 10940, Leuze 9999, Keyence 8800, QuanergyM1 4141
+I,rear_scanner_port,                                           12222 # Rear scanner port: Sick 2111, PEF 80, Omron 44818, Velodyne 2368, Hokuyo 10940, Leuze 9999, Keyence 8800, QuanergyM1 4141
+F,scan_delay_ms,                                           40.000000 # Delay of scanner measurement [ms] relative to odometry measurements. Negative if scanner measurement is older than odometry.; min -500.000000, max 500.000000
+I,control_interval_us,                                         30000 # Requested or expected nominal control interval [us].; min 1000, max 100000
+F,control_interval_error_ratio,                              2.00000 # Defines how much measured control interval can deviate from requested/nominal (e.g. 1.3 means 30%).; min 1.100000, max 10.000000
+I,control_interval_max_stdev_us,			       10000 #
+I,odo_max_interval_stdev_us,                                   10000 #
+
+
+# Parameters that need to be calibrated for each individual vehicle
+I,machine_id,                                                      1 # Machine ID number reported to fleet control and other systems.; min 1, max 65535
+F,wheel_track,                                              0.700000 # Distance between the centers of the differential drive wheels.; min 0.010000, max 50.000000
+F,scan_rear_x,                                             -0.453700 # Rear scanner lengthwise mounting position relative to navigation point. Positive is towards the front of the machine.
+F,scan_rear_y,                                             -0.348000 # Rear scanner lateral mounting position relative to navigation point. Positive is left from the machine center line.
+F,scan_front_x,                                             0.453700 # Front scanner lengthwise mounting position relative to navigation point. Positive is towards the front of the machine.
+F,scan_front_y,                                             0.348000 # Front scanner lateral mounting position relative to navigation point. Positive is left from the machine center line.
+F,scan_rear_sen_ang,                                     -135.000000 # Rear scanner mounting angle relative to machine frame. Scanner's X-axis is towards the right side of the scanner. Therefore a scanner that points towards the front of the machine has a mounting angle of -90 degrees.; min -180.000000, max 180.000000
+F,scan_front_sen_ang,                                      45.000000 # Front scanner mounting angle relative to machine frame. Scanner's X-axis is towards the right side of the scanner. Therefore a scanner that points towards the front of the machine has a mouting angle of -90 degrees.; min -180.000000, max 180.000000
+S,supervisor_eth_ip_arr[0],                                127.0.0.1 # Supervisor IP address. Needed if Supervisor works as a server.
+I,supervisor_eth_server_arr[0],                			   0 # Server mode: 0=client, 1=server
+I,supervisor_eth_port_arr[0],                  			2000 # Supervisor communication port (1-65535)
+I,supervisor_eth_enabled_arr[0],                                   1 # Enables Supervisor interface, parameter value 1 enables the feature.; min 0, max 1
+I,supervisor_eth_endianness_arr[0],            			   0 # Endianness: 0=little endian, 1=big endian
+
+# General positioning parameters
+F,loc_xy_max_corr,                                        0.00150000 # Sets an upper threshold to the position corrections in the xy-plane. Position corrections larger than this are limited to the specified value.; min 0.000000, max 0.020000
+F,loc_h_max_corr,                                           0.150000 # Sets an upper threshold to the heading corrections. Heading corrections larger than this are limited to the specified value [deg].; min 0.000000, max 0.600000
+
+# Automatic odometry correction parameters
+F,odo_err_est_alpha,                                      0.00200000 # Positioning error averaging weight, must be higher than odo_auto_corr_alpha_*.; min 0.000100, max 0.100000
+F,odo_auto_corr_alpha_dh,                                 0.00100000 # Relative amount of averaged positioning error applied on odometry turning rate correction, must be lower than odo_err_est_alpha, set to 0 to disable, ex. value 0.001.; min 0.000000, max 0.100000
+F,odo_auto_corr_alpha_ds,                                 0.00100000 # Relative amount of averaged positioning error applied on odometry distance correction, must be lower than odo_err_est_alpha, set to 0 to disable, ex. value 0.001.; min 0.000000, max 0.100000
+F,odo_auto_corr_alpha_h,                                  0.00100000 # Relative amount of averaged positioning error applied on odometry heading correction, must be lower than odo_err_est_alpha, set to 0 to disable, ex. value 0.001.; min 0.000000, max 0.100000
+
+# General position controller parameters
+I,pc_predict_ms,                                                120   # Motor controller delay from output value change to change in feedback.; min 0, max 700
+F,pc_pid_heading_p,                                        10.000000 # Position control gain for the heading error. The higher the gain the faster the AGV tries to minimize the heading error on the route.; min 0.100000, max 100.000000
+F,pc_pid_dist_p,                                           15.000000 # Position control gain for the distance error. The higher the gain the faster the AGV tries to minimize the distance error on the route.; min 0.100000, max 100.000000
+F,max_turn_rate_deg_p_s,                                   90.000000 # Maximum turning rate of the vehicle. Limits AGV's speed on the trajectory.
+
+# Speed controller parameters
+F,mot_ctrl_max_wheel_v_fw,                                  2.200000 # Default maximum drive wheel velocity when driving forwards [m/s]
+F,mot_ctrl_max_wheel_v_bw,                                  2.200000 # Default maximum drive wheel velocity when driving in reverse [m/s]
+F,mot_ctrl_max_wheel_acc,                                   0.800000 # Default maximum drive wheel acceleration [m/s^2]. The reference speed is ramped up based on this value.
+F,mot_ctrl_max_wheel_dec,                                   1.000000 # Default maximum drive wheel deceleration [m/s^2]. The reference speed is ramped down based on this value.
+F,mot_ctrl_left_dist_scale,                           0.000001395555 # Convert encoder pulses of the left wheel to driven distance [m] (differential drive).
+F,mot_ctrl_right_dist_scale,                          0.000001395555 # Convert encoder pulses of the left wheel to driven distance [m] (differential drive).
+I,mot_ctrl_left_inv_out,                                             0 # Output inversion for the left wheel of diff drive: 0 = disabled, 1 = enabled
+I,mot_ctrl_right_inv_out,                                            0 # Output inversion for the right wheel of diff drive: 0 = disabled, 1 = enabled
+
+#other
+F,blink_ahead_min_dist,                                     1.000000 # defines the minimum distance ahead of the curve where the blinker is activated
+F,blink_curvature,                                          0.500000 # defines how sharp curves shall activate the blinking, curvature=1/radius
+F,blink_ahead_gain,                                         2.000000 # speed factor extending the distance ahead of the curve where the blinker is activated
+
+#Battery parameters
+I,extbatt_if_type,                                                 5 # External battery interface type: -1 = disabled, 0 = MasterVolt, 1 = SL BMS, 2 = Jungheinrich, 3 = RoboteQ, 4 = Voltabox, 5 = Ethernet Supervisor (min ver 4), 6 = MEB battery, 7 = JLN; min -1, max 7
+I,battery_percentage_from_mot_ctrl,                                1 # 1 to read battery percentage from motor controller, 0 to calculate it from battery voltage; min 0, max 1
+I,extbatt_if_max_interval_ms,                                  10000 # Maximum update interval (ms)
+F,battery_alert_percentage,                                 0.000000 # %
+F,battery_alert_voltage,                                    0.000000
+F,battery_voltage_gain,                                     0.800000
+F,battery_empty_voltage,                                   24.000000
+F,battery_voltage1,                                        25.400000
+F,battery_percentage1,                                      5.000000
+F,battery_voltage2,                                        26.850000
+F,battery_percentage2,                                     60.000000
+F,battery_full_voltage,                                    29.100000
+
+# General position initialization parameters
+I,pos_init_max_wait_time,                                      10000
+F,pos_ini_min_conf,                                        70.000000
+I,pos_ini_min_reflectors_seen,                                     0 # Minimum number of reflectors required to be seen when initializing position
+F,pos_ini_max_reflector_pos_err,                           0.0500000 # Maximum position error of reflectors during position initialization
+
+I,stop_and_hold_mode, 						   3 # Defines release behavior at StopAndHold point after stopping: -1 = ignore stopAndHold points, 0 = release with timer, 1 = release with supervisor actuator section signal, 2 = release with fleet control signal, 3 = release with supervisor message 3011, 4 = Custom release logic
+
+# Return to Route 
+I,route_driver_enabled,						     1 # Enables standalone/route drive feature.
+F,rtr_already_on_route_dist,                                       0.1 # If the distance to nearest route segment point is smaller than this value AGV is considered to be on route. The return route is calculated but not driven; min 0.010000, max 0.500000
+F,rtr_control_point_dist,                                          5  # Defines the maximum distance from close point (see rtr_max_dist) to a custom return to route target point. 
+F,rtr_control_point_end_smooth_dist,                               0.8 # Defines the smooth distance before the end of a custom return to route path
+F,rtr_control_point_start_smooth_dist,                             0.8 # Defines the smooth distance at the start of a custom return to route path
+F,rtr_max_dist,                                                    2.0 # The defined route points must be inside this distance (m) from the navigation point to be checked as potential return close points
+F,rtr_max_head_diff,                                              270.0 # Final route angle and current pose ang diff should be less than this param
+F,rtr_max_head_err_deg,                                            5.0 # The maximum heading error when checking if the AGV is already on the route and return to route is not needed
+F,rtr_safe_steer_angle_margin_deg,                                 4.0 # For very limited steering cases the margin to the steering angle limits determines route acceptance, if the margin exceeds this limit the shortest route is selected; min 0.010000, max 10.000000
+F,rtr_speed,                                                       0.3 # The maximum speed  (m/s) during the return to route drive
+I,rtr_use_custom_route,                                              1 # 0 = Shortest route for omni, 1 = Custom route for Diff/Steer drive, 2 = Custom route for limited omni wheels; min 0, max 2
+
+
+

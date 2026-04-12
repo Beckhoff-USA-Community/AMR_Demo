@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="I_EL2574_CommandMode" Id="{9e1d6b56-c140-4016-ab10-10fb09994ec2}">
+    <Declaration><![CDATA[INTERFACE I_EL2574_CommandMode]]></Declaration>
+    <Method Name="ClearAll" Id="{ddbfbf8d-afd6-4289-abf9-9a91f02d8d26}">
+      <Declaration><![CDATA[METHOD PUBLIC ClearAll : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="ColorGradient2Point" Id="{b8e37bc5-2fc5-46a5-952f-b830e7a0da67}">
+      <Declaration><![CDATA[METHOD PUBLIC ColorGradient2Point : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color1		   : STRING(9);
+	Color2		   : STRING(9);
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="ColorGradient3Point" Id="{e504f2bc-d50e-4c83-ac39-d9bd6226494c}">
+      <Declaration><![CDATA[METHOD PUBLIC ColorGradient3Point : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color1		   : STRING(9);
+	Color2		   : STRING(9);
+	Color3		   : STRING(9);
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="ColorGradient4Point" Id="{def678a4-1f63-41e8-8b80-57172180d32a}">
+      <Declaration><![CDATA[METHOD PUBLIC ColorGradient4Point : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color1		   : STRING(9);
+	Color2		   : STRING(9);
+	Color3		   : STRING(9);
+	Color4		   : STRING(9);
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="CopyPixels" Id="{ec8868a6-2c91-4b18-bc89-67b3fbba902d}">
+      <Declaration><![CDATA[METHOD PUBLIC CopyPixels : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	TargetPosition : UINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="FillColor" Id="{e252aec3-c246-4b07-815b-51b8bcc54383}">
+      <Declaration><![CDATA[METHOD PUBLIC FillColor : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Red			   : USINT;
+	Green		   : USINT;
+	Blue		   : USINT;
+	White		   : USINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="Invert" Id="{6de096d0-b6f6-43d7-b8a3-86cb87fe58dd}">
+      <Declaration><![CDATA[METHOD PUBLIC Invert : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="MovePixels" Id="{c9e148f3-465a-4c0b-a0f1-7748d69602da}">
+      <Declaration><![CDATA[METHOD PUBLIC MovePixels : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	TargetPosition : UINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="RotateLeft" Id="{aabb1b3c-3bd1-455b-bab4-029c493316ee}">
+      <Declaration><![CDATA[METHOD PUBLIC RotateLeft : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Shift		   : UINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="RotateRight" Id="{65e6d0f7-7542-4fe8-8a55-044dab716e3d}">
+      <Declaration><![CDATA[METHOD PUBLIC RotateRight : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Shift		   : UINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="Send" Id="{0f9d1e39-8749-4d9e-a623-08e99d0b3c0d}">
+      <Declaration><![CDATA[METHOD PUBLIC Send : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="SendAndUpdate" Id="{00f65c04-81d7-4ee2-aa8a-f46eb5cb47af}">
+      <Declaration><![CDATA[METHOD PUBLIC SendAndUpdate : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="Update" Id="{a41aeb5d-8389-4d37-bb55-2414457c5d0a}">
+      <Declaration><![CDATA[METHOD PUBLIC Update : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

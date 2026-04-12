@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="EP3751_Accelerometer_HMI" Id="{f8ec9d09-616a-4dab-9965-542afba73c73}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EP3751_Accelerometer_HMI EXTENDS HmiFunction
+VAR
+	EP3751 : REFERENCE TO ST_EP3751;
+END_VAR
+
+VAR
+	{ attribute 'TcHmiSymbol.AddSymbol' }
+	{ attribute 'TcHmiSymbol.AddSymbol.UserGroups' := '__SystemAdministrators, Admin' }
+	EP3751_HMI : ST_EP3751_HMI;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="ControlObject" Id="{b27e024b-4881-4d2f-b217-fc814c8aecdf}">
+      <Declaration><![CDATA[PROPERTY ControlObject : I_Base]]></Declaration>
+      <Set Name="Set" Id="{f6888996-ddca-4350-b6d3-b2132dd910b4}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="CyclicLogic" Id="{8777097f-67fa-4d8c-9be0-b34b9b110830}">
+      <Declaration><![CDATA[METHOD CyclicLogic
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NOT __ISVALIDREF(EP3751) THEN
+	RETURN;
+END_IF
+
+EP3751_HMI.HmiEnabled := Enabled;
+EP3751_HMI.Name		  := Name;
+EP3751_HMI.ACC_X	  := EP3751.ACC_X;
+EP3751_HMI.ACC_Y	  := EP3751.ACC_Y;
+EP3751_HMI.ACC_Z	  := EP3751.ACC_Z;
+EP3751_HMI.Gyro_X	  := EP3751.Gyro_X;
+EP3751_HMI.Gyro_Y	  := EP3751.Gyro_Y;
+EP3751_HMI.Gyro_Z	  := EP3751.Gyro_Z;
+IF NOT ((EP3751_HMI.Gyro_X = 0) AND (EP3751_HMI.Gyro_Z = 0)) THEN
+	EP3751_HMI.Roll := TO_REAL(ATAN(EP3751_HMI.Gyro_Y / (SQRT(EP3751_HMI.Gyro_X * EP3751_HMI.Gyro_X + EP3751_HMI.Gyro_Z * EP3751_HMI.Gyro_Z))) * 360.0 / (2 * PI));
+END_IF
+
+IF NOT ((EP3751_HMI.Gyro_Y = 0) AND (EP3751_HMI.Gyro_Z = 0)) THEN
+	EP3751_HMI.Pitch := TO_REAL(ATAN(EP3751_HMI.Gyro_X / (SQRT(EP3751_HMI.Gyro_Y * EP3751_HMI.Gyro_Y + EP3751_HMI.Gyro_Z * EP3751_HMI.Gyro_Z))) * 360.0 / (2 * PI));
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{271d495d-77a7-46da-90d1-9a46f448fd95}">
+      <Declaration><![CDATA[(*FB_Init is always available implicitly and it is used primarily for initialization.
+The return value is not evaluated. For a specific influence, you can also declare the
+methods explicitly and provide additional code there with the standard initialization
+code. You can evaluate the return value.*)
+METHOD FB_Init : BOOL
+VAR_INPUT
+	(* TRUE: the retain variables are initialized (reset warm / reset cold)*)
+	bInitRetains : BOOL;
+
+	(* TRUE: the instance will be copied to the copy code afterward (online change)   *)
+	bInCopyCode : BOOL;
+	Name		: Core.T_MaxString;
+	EP3751		: REFERENCE TO  ST_EP3751;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ControlType	 := 'EP3751';
+LinkObject	 := 'EP3751_HMI';
+THIS^.EP3751 REF= EP3751;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_Encoder_HMI" Id="{4ac4e9a7-ea1c-4e44-820b-ce9159a28136}">
+    <Declaration><![CDATA[TYPE ST_Encoder_HMI EXTENDS ST_HmiFunction :
+	STRUCT
+		Config			 : ST_EncoderConfig_HMI;
+		ActualSpeed		 : LREAL;
+		ActualPosition	 : LREAL;
+		RawValueSpeed	 : INT;
+		RawValuePosition : UINT;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

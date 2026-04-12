@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CTComPlcObjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{04634D64-599B-5FB4-6507-80C5DF08FE2C}" AutoDeleteType="true">EL2574_IO_Status</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Busy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Transmit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Send_Acknowledge</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Update_Acknowledge</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Command_Acknowledge</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Command_Reject</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Warning</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Input_Cycle_Counter_Bit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Input_Cycle_Counter_Bit1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{856F9BE6-FB23-1EF5-87E6-F29DFB3D0878}" AutoDeleteType="true">EL2574_IO_Control_Color</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Red</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Green</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Blue</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>White</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{5DE92F41-9117-5ED2-FF3D-33B9D04DE69D}" AutoDeleteType="true">EL2574_IO_Control</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>Execute</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Send</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Update</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Command</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Index</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Length</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Parameter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Color</Name>
+				<Type GUID="{856F9BE6-FB23-1EF5-87E6-F29DFB3D0878}">EL2574_IO_Control_Color</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<Instance TmcHash="{E3636868-60D2-EFEE-7BD1-6C0892B5C520}">
+		<Vars VarGrpType="1">
+			<Name>PlcTask Inputs</Name>
+			<Var>
+				<Name>MAIN.LED1.pdo.Status</Name>
+				<Type GUID="{04634D64-599B-5FB4-6507-80C5DF08FE2C}">EL2574_IO_Status</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED2.pdo.Status</Name>
+				<Type GUID="{04634D64-599B-5FB4-6507-80C5DF08FE2C}">EL2574_IO_Status</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED3.pdo.Status</Name>
+				<Type GUID="{04634D64-599B-5FB4-6507-80C5DF08FE2C}">EL2574_IO_Status</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED4.pdo.Status</Name>
+				<Type GUID="{04634D64-599B-5FB4-6507-80C5DF08FE2C}">EL2574_IO_Status</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED5.pdo.Status</Name>
+				<Type GUID="{04634D64-599B-5FB4-6507-80C5DF08FE2C}">EL2574_IO_Status</Type>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" AreaNo="1">
+			<Name>PlcTask Outputs</Name>
+			<Var>
+				<Name>MAIN.LED1.pdo.Control</Name>
+				<Type GUID="{5DE92F41-9117-5ED2-FF3D-33B9D04DE69D}">EL2574_IO_Control</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED2.pdo.Control</Name>
+				<Type GUID="{5DE92F41-9117-5ED2-FF3D-33B9D04DE69D}">EL2574_IO_Control</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED3.pdo.Control</Name>
+				<Type GUID="{5DE92F41-9117-5ED2-FF3D-33B9D04DE69D}">EL2574_IO_Control</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED4.pdo.Control</Name>
+				<Type GUID="{5DE92F41-9117-5ED2-FF3D-33B9D04DE69D}">EL2574_IO_Control</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.LED5.pdo.Control</Name>
+				<Type GUID="{5DE92F41-9117-5ED2-FF3D-33B9D04DE69D}">EL2574_IO_Control</Type>
+			</Var>
+		</Vars>
+	</Instance>
+</TcSmItem>

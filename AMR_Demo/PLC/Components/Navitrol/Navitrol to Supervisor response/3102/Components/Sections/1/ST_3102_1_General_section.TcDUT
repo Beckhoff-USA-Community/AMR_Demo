@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3102_1_General_section" Id="{383d353c-4768-4ac8-a35d-60547ccfa5dc}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_3102_1_General_section EXTENDS ST_SectionHeader :
+	STRUCT
+		Battery_voltage : REAL; // V
+		On_route		: UINT; // 1 on route, 0 not on route
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

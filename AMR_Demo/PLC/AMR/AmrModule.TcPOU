@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="AmrModule" Id="{1c221102-f9eb-45b9-a8a9-c8f3619c7ca3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK AmrModule EXTENDS PackMLModule IMPLEMENTS I_AmrModule
+VAR
+	Events			  : TcEventClass('AMR Module');
+	EventReactor	  : EventReactorPackMLVisitor('Event Reaction', THIS^);
+	SyncedSquareWaves : SyncedSquareWaves('Waves');
+
+	//
+	Navitrol_TcpIpConnection				   : TcpIpConnection('Navitrol Connection');
+	Navitrol_Status							   : Msg3002_NavitrolStatus('Navitrol Status', Navitrol_TcpIpConnection); // Send AMR status and recieve Navitrol status
+	Navitrol_InitializePosition				   : Msg1001_InitializePosition('Navitrol Initialize Position', Navitrol_TcpIpConnection);
+	Navitrol_MeasurmentUpdateDifferentialDrive : Msg1016_MeasurmentUpdateDifferentialDrive('Navitrol Drive Control', Navitrol_TcpIpConnection);
+	Navitrol_GoToDestination				   : Msg3005_GoToDestination('Navitrol Go To Destination', Navitrol_TcpIpConnection);
+	Navitrol_ReturnToRoute					   : Msg3024_ReturnToRoute('Navitrol return to route', Navitrol_TcpIpConnection);
+	Navitrol_StopHoldRelease				   : Msg3001_HoldRelease('Navitrol release hold', Navitrol_TcpIpConnection);
+
+	// Wheel Left
+	WheelLeftRef			  : AXIS_REF;
+	_WheelLeft				  : AxisPTP('Wheel Left', WheelLeftRef);
+	WheelLeft_HMI			  : AxisPTP_HMI('Wheel Left', _WheelLeft, '°');
+	WheelLeft_TcEvents		  : Axis_TcEvents('Wheel Left', _WheelLeft);
+	_WheelLeft_StreamVelocity : Navitrol_StreamVelocity('Velocity Stream Wheel Left', WheelLeftRef);
+
+	// Wheel Right
+	WheelRightRef			   : AXIS_REF;
+	_WheelRight				   : AxisPTP('Wheel Right', WheelRightRef);
+	WheelRight_HMI			   : AxisPTP_HMI('Wheel Right', _WheelRight, '°');
+	WheelRight_TcEvents		   : Axis_TcEvents('Wheel Right', _WheelRight);
+	_WheelRight_StreamVelocity : Navitrol_StreamVelocity('Velocity Stream Wheel Right', WheelRightRef);
+
+	// Lift Motor
+	Lift_CanOpMode AT %Q* : BYTE := 8; // Operation Mode Mode 8=CSP
+	LiftRef				  : AXIS_REF;
+	_Lift				  : AxisPTP('Lift', LiftRef);
+	Lift_HMI			  : AxisPTP_HMI('Lift', _Lift, 'mm');
+	Lift_TcEvents		  : Axis_TcEvents('Lift', _Lift);
+
+	//
+	EncoderSpeedIn AT %I*	 : INT;
+	EncoderSpeed			 : AnalogInput('Encoder Speed', EncoderSpeedIn);
+	EncoderPositionIn AT %I* : INT;
+	EncoderPosition			 : AnalogInput('Encoder Position', EncoderPositionIn);
+	Encoder_HMI				 : Encoder_HMI('Mouser DHK Encoder', EncoderSpeed, EncoderPosition);
+
+	// Safety
+	SafetyResetELM		 : SafetyResetPulse('Safety Reset');
+	SafetyGroupReset	 : SafetyResetPulse('Safety Reset');
+	SafetyInputGroup	 : SafetyGroup_TcEvents('Safety Input Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
+	SafetyMotionGroup	 : SafetyGroup_TcEvents('Safety Motion Group')	   := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
+	SafetyLiftSpeedGroup : SafetyGroup_TcEvents('Safety Lift Speed Group') := (ResetFunction := SafetyGroupReset, AutoResetFaults := TRUE);
+	SafetyReset			 : SafetyResetPulse('Safety Reset');
+	SafetyEstop			 : SafetyEstopFB_TcEvents('E-Stop')		  := (ResetFunction := SafetyReset, SafetyGroup := SafetyInputGroup);
+	SafetyScannerLeuze	 : SafetyMonFB_TcEvents('Leuze Scanner')  := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
+	SafetyScannerHokuyo	 : SafetyMonFB_TcEvents('Hokuyo Scanner') := (ActiveAlarm := TRUE, SafetyGroup := SafetyInputGroup, ActiveName := 'obstructed!');
+
+	// EP
+	EP3751_IO AT %I*		 : ST_EP3751;
+	EP3751_Accelerometer_HMI : EP3751_Accelerometer_HMI('EP3751 - Gyro', EP3751_IO);
+END_VAR
+
+VAR
+	(* PackML State Statemachine     
+        Aborting    = Transition to error state        
+        Aborted     = Error State or Started
+        Clearing    = Error Reset
+        Stopped     = Idle, no error, manual operation of devices
+        Stopping    = Stop transition to Stopped
+        Starting    = Start System in Automatic
+        Execute     = Running & Stream Velocity
+        Suspending  = Stop AMR due to Safety Scanner
+        Suspended   = Wait for Safety Scanner OK
+        Unsuspending= Resume movement            
+    *)
+END_VAR
+
+VAR
+	AmrModule_HMI		   : AmrModule_HMI('AMR Module', _Statemachine, THIS^);
+	_BypassScanners AT %Q* : BOOL;
+	Navitrol_HMI		   : Navitrol_HMI('Navitrol', Navitrol_Status, Navitrol_TcpIpConnection);
+END_VAR
+
+VAR PERSISTENT
+	{ attribute 'TcHmiSymbol.AddSymbol' }
+	{ attribute 'TcHmiSymbol.AddSymbol.UserGroups' := '__SystemAdministrators, Admin' }
+	Recipe_HMI : ST_Recipe;
+END_VAR
+
+VAR
+	_Override		: LREAL := 100.0;
+	Destination		: UDINT;
+	COEDriveControl : FB_COEDriveControl;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{e8c7b93a-9c8e-409c-a9b9-237ad71a7294}" />
+    <Folder Name="Initialize" Id="{70b9343c-77d9-49a3-90a5-9b646639ca3b}" />
+    <Folder Name="Machine" Id="{3cb7e1c0-f151-4fc7-922b-b09d2ff3f440}" />
+    <Folder Name="States" Id="{266cb699-2a1c-4b60-a97a-504958dd686b}" />
+    <Method Name="Aborted" Id="{891fb87f-feb4-48c1-98ab-a221a17d7c8f}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Aborted : BOOL;]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Aborting" Id="{70a04c7d-38eb-4377-8903-9ad09a18a33a}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Aborting  : BOOL;
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		_WheelLeft_StreamVelocity.Disable();
+		_WheelRight_StreamVelocity.Disable();
+		_WheelLeft.Stop();
+		_WheelRight.Stop();
+		_Lift.Stop();
+		NextMinorStep(SequenceState);
+
+	1:
+		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy AND NOT _Lift.Busy THEN
+			NextStep(SequenceState);
+		END_IF
+
+	10:
+		_WheelLeft.Disable();
+		_WheelRight.Disable();
+		_Lift.Disable();
+		NextStep(SequenceState);
+
+	20:
+		Aborting := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="AmrEvents" Id="{20209a8a-b938-4426-b8b7-08f157976bc9}">
+      <Declaration><![CDATA[METHOD AmrEvents]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NOT SafetyEstop.OK THEN
+	Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Set_ESTOP;
+END_IF
+
+IF Navitrol_TcpIpConnection.ConnectionState <> E_SocketConnectionState.eSOCKET_CONNECTED THEN
+	IF Statemachine.Mode.CurrentMode <> E_PMLProtectedUnitMode.Manual THEN
+		Events.RaiseEvent(E_AmrModule.NavitrolComError);
+	END_IF
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="BypassScanners" Id="{0e35f052-4ed1-4eae-a587-5e74f332ef1f}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY BypassScanners : BOOL]]></Declaration>
+      <Set Name="Set" Id="{d01f4abc-5232-4e1c-ac15-d9e3d4d0e43a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_BypassScanners := BypassScanners;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Clearing" Id="{38c82f24-323d-4651-9766-fc6b20da26f6}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Clearing : BOOL;
+VAR_INST
+	SafetyResetTon : TON;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		ResetSafety();
+		NextStep(SequenceState);
+		SafetyResetTon(IN := FALSE);
+
+	10: // Wait for Safety signal propagation to drives
+		SafetyResetTon(IN := TRUE, PT := T#200MS);
+		IF SafetyResetTon.Q THEN
+			SafetyResetELM.Execute();
+			NextMinorStep(SequenceState);
+		END_IF
+
+	11:
+		IF NOT SafetyResetELM.Busy THEN
+			NextStep(SequenceState);
+		END_IF
+
+	20:
+		ResetComponents(); // Call Reset on every component implementing I_Resettable
+		NextStep(SequenceState);
+
+	30:
+		Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Release_ESTOP;
+		Clearing								   := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Execute" Id="{bd2e22d5-11e6-49a2-b88c-3b7b5106d820}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Execute : BOOL;
+VAR_INST
+	WaitTime : TON;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF (NOT SafetyScannerLeuze.OK OR NOT SafetyScannerHokuyo.OK) AND NOT _BypassScanners THEN
+	Statemachine.ChangeState(E_PmlCommand.Suspend);
+	RETURN;
+END_IF
+
+CASE SequenceState OF
+	0:
+		WaitTime(IN := FALSE);
+		IF Navitrol_Status.NavitrolStatus.State = E_3102_State.HOLD_STATE THEN
+			SequenceState := 11;
+		ELSIF Navitrol_Status.NavitrolStatus.State = E_3102_State.AUTO_STATE THEN
+			SequenceState := 11;
+		ELSE
+			NextStep(SequenceState);
+		END_IF
+
+	10:
+		IF Navitrol_GoToDestination.Execute(Destination) THEN
+			NextMinorStep(SequenceState);
+		END_IF
+
+	11:
+		IF Navitrol_Status.NavitrolStatus.State = E_3102_State.HOLD_STATE THEN
+			IF Destination = 4 THEN
+				Destination := 1;
+			ELSE
+				Destination := Destination + 1;
+			END_IF
+
+			WaitTime(IN := FALSE);
+			NextStep(SequenceState);
+		END_IF
+
+		// Route ended - simulation route
+		WaitTime(IN := TRUE, PT := T#1S);
+		IF WaitTime.Q THEN
+			WaitTime(IN := FALSE);
+			IF Navitrol_Status.NavitrolStatus.State = E_3102_State.STANDBY_STATE THEN
+				SequenceState := 0;
+			END_IF
+		END_IF
+
+	20:
+		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Up);
+		NextMinorStep(SequenceState);
+
+	21:
+		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Up, 0.1) THEN
+			NextStep(SequenceState);
+		END_IF
+
+	30:
+		WaitTime(IN := TRUE, PT := T#5S);
+		IF WaitTime.Q THEN
+			WaitTime(IN := FALSE);
+			NextStep(SequenceState);
+		END_IF
+
+	40:
+		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
+		NextMinorStep(SequenceState);
+
+	41:
+		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
+			NextStep(SequenceState);
+		END_IF
+
+	50:
+		IF Navitrol_StopHoldRelease.Execute() THEN
+			NextMinorStep(SequenceState);
+		END_IF
+
+	51:
+		IF Navitrol_Status.NavitrolStatus.State = E_3102_State.AUTO_STATE THEN
+			WaitTime(IN := FALSE);
+			SequenceState := 11;
+		END_IF
+
+		// Route ended - simulation route
+		WaitTime(IN := TRUE, PT := T#1S);
+		IF WaitTime.Q THEN
+			WaitTime(IN := FALSE);
+			IF Navitrol_Status.NavitrolStatus.State = E_3102_State.STANDBY_STATE THEN
+				SequenceState := 0;
+			END_IF
+
+			IF Navitrol_Status.NavitrolStatus.State = E_3102_State.HOLD_STATE THEN
+				SequenceState := 50;
+			END_IF
+		END_IF
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{11bebe7b-f5aa-4649-b653-f25163a7158f}" FolderPath="Constructor\">
+      <Declaration><![CDATA[(*FB_Init is always available implicitly and it is used primarily for initialization.
+The return value is not evaluated. For a specific influence, you can also declare the
+methods explicitly and provide additional code there with the standard initialization
+code. You can evaluate the return value.*)
+METHOD FB_Init : BOOL
+VAR_INPUT
+	(* TRUE: the retain variables are initialized (reset warm / reset cold)*)
+	bInitRetains : BOOL;
+
+	(* TRUE: the instance will be copied to the copy code afterward (online change)   *)
+	bInCopyCode : BOOL;
+	Name		: Core.T_MaxString;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Events.GenerateTcEvents(Name, ADR(TC_Events.AmrModule), SIZEOF(ST_AmrModule));
+Events.RegisterWithParent(THIS^);
+EventReactor.RegisterWithParent(THIS^);
+AmrModule_HMI.RegisterWithParent(THIS^);
+SyncedSquareWaves.RegisterWithParent(THIS^);
+_Statemachine.RegisterWithParent(THIS^);
+_Statemachine.Name := _Name;
+
+//
+Navitrol_TcpIpConnection.IP				  := '127.0.0.1';
+Navitrol_TcpIpConnection.PollTime		  := T#1MS;
+Navitrol_TcpIpConnection.Port			  := 2000;
+Navitrol_TcpIpConnection.ReceiveTimeout	  := T#10S;
+Navitrol_TcpIpConnection.ReconnectionTime := T#10S;
+Navitrol_TcpIpConnection.SendInterval	  := T#1MS;
+Navitrol_TcpIpConnection.RegisterWithParent(THIS^);
+Navitrol_Status.RegisterWithParent(THIS^);
+Navitrol_InitializePosition.RegisterWithParent(THIS^);
+Navitrol_MeasurmentUpdateDifferentialDrive.RegisterWithParent(THIS^);
+Navitrol_HMI.RegisterWithParent(THIS^);
+Navitrol_GoToDestination.RegisterWithParent(THIS^);
+Navitrol_ReturnToRoute.RegisterWithParent(THIS^);
+Navitrol_StopHoldRelease.RegisterWithParent(THIS^);
+
+//
+_Lift.RegisterWithParent(THIS^);
+Lift_HMI.RegisterWithParent(THIS^);
+Lift_TcEvents.RegisterWithParent(THIS^);
+
+//
+_WheelLeft.RegisterWithParent(THIS^);
+WheelLeft_HMI.RegisterWithParent(THIS^);
+WheelLeft_TcEvents.RegisterWithParent(THIS^);
+_WheelLeft_StreamVelocity.RegisterWithParent(THIS^);
+
+//
+_WheelRight.RegisterWithParent(THIS^);
+WheelRight_HMI.RegisterWithParent(THIS^);
+WheelRight_TcEvents.RegisterWithParent(THIS^);
+_WheelRight_StreamVelocity.RegisterWithParent(THIS^);
+
+//
+SafetyInputGroup.RegisterWithParent(THIS^);
+SafetyLiftSpeedGroup.RegisterWithParent(THIS^);
+SafetyMotionGroup.RegisterWithParent(THIS^);
+SafetyEstop.RegisterWithParent(THIS^);
+SafetyScannerLeuze.RegisterWithParent(THIS^);
+SafetyScannerHokuyo.RegisterWithParent(THIS^);
+SafetyScannerLeuze.SetEventReactions(0,
+									 0,
+									 0,
+									 0,
+									 0);
+
+SafetyScannerHokuyo.SetEventReactions(0,
+									  0,
+									  0,
+									  0,
+									  0);
+
+SafetyResetELM.RegisterWithParent(THIS^);
+
+//
+EncoderSpeed.RegisterWithParent(THIS^);
+EncoderPosition.RegisterWithParent(THIS^);
+Encoder_HMI.RegisterWithParent(THIS^);
+
+//
+EP3751_Accelerometer_HMI.RegisterWithParent(THIS^);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Initializing" Id="{c8083393-3d77-421f-ac74-5801e126b038}" FolderPath="Initialize\">
+      <Declaration><![CDATA[(* This Module will be done initializeing when ModuleInitialized := TRUE;, subequently all subitems will be called to be initialized*)
+METHOD Initializing
+VAR_INST
+	UnitModeConfig : FB_PMLUnitModeConfig;
+	SequenceState  : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		UnitModeConfig(eMode						  := E_PMLProtectedUnitMode.Production,
+					   sName						  := 'Production',
+					   bDisableClearing				  := FALSE,
+					   bDisableStarting				  := FALSE,
+					   bDisableSuspended			  := FALSE,
+					   bDisableStopping				  := FALSE,
+					   bDisableAborting				  := FALSE,
+					   bDisableHolding				  := TRUE,
+					   bDisableHeld					  := TRUE,
+					   bDisableUnholding			  := TRUE,
+					   bDisableSuspending			  := FALSE,
+					   bDisableUnsuspending			  := FALSE,
+					   bDisableResetting			  := TRUE,
+					   bDisableIdle					  := TRUE,
+					   bDisableCompleting			  := TRUE,
+					   bDisableComplete				  := TRUE,
+					   bEnableUnitModeChangeStopped	  := TRUE,
+					   bEnableUnitModeChangeIdle	  := FALSE,
+					   bEnableUnitModeChangeSuspended := FALSE,
+					   bEnableUnitModeChangeExecute	  := FALSE,
+					   bEnableUnitModeChangeAborted	  := TRUE,
+					   bEnableUnitModeChangeHeld	  := FALSE,
+					   bEnableUnitModeChangeComplete  := FALSE,
+					   bError						  =>,
+					   nErrorId						  =>);
+
+		UnitModeConfig(eMode						  := E_PMLProtectedUnitMode.Manual,
+					   sName						  := 'Manual',
+					   bDisableClearing				  := FALSE,
+					   bDisableStarting				  := FALSE,
+					   bDisableSuspended			  := TRUE,
+					   bDisableStopping				  := FALSE,
+					   bDisableAborting				  := FALSE,
+					   bDisableHolding				  := TRUE,
+					   bDisableHeld					  := TRUE,
+					   bDisableUnholding			  := TRUE,
+					   bDisableSuspending			  := TRUE,
+					   bDisableUnsuspending			  := TRUE,
+					   bDisableResetting			  := TRUE,
+					   bDisableIdle					  := TRUE,
+					   bDisableCompleting			  := TRUE,
+					   bDisableComplete				  := TRUE,
+					   bEnableUnitModeChangeStopped	  := TRUE,
+					   bEnableUnitModeChangeIdle	  := FALSE,
+					   bEnableUnitModeChangeSuspended := FALSE,
+					   bEnableUnitModeChangeExecute	  := FALSE,
+					   bEnableUnitModeChangeAborted	  := TRUE,
+					   bEnableUnitModeChangeHeld	  := FALSE,
+					   bEnableUnitModeChangeComplete  := FALSE,
+					   bError						  =>,
+					   nErrorId						  =>);
+
+		SequenceState := SequenceState + 10;
+
+	10:
+		ModuleInitialized := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Lift" Id="{9471ea76-42f0-4a3f-a9d3-ff190a56d6a4}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY Lift : I_Axis_PTP]]></Declaration>
+      <Get Name="Get" Id="{79525b8f-4978-4208-ab89-0025cc816cd1}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Lift := _Lift;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="OnCyclicCall" Id="{1af674b7-aa0e-4a9f-951b-2be57a1bf86c}">
+      <Declaration><![CDATA[METHOD OnCyclicCall
+VAR_INST
+	HmiEnableDisable : HmiEnableDisableAllVisitor;
+	SetOverride		 : SetAllOverrideVisitor;
+	ProductionRT	 : R_TRIG;
+	AutoResetTon	 : TON;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ProductionRT(CLK := _Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Production);
+IF _Statemachine.Mode.CurrentMode = E_PMLProtectedUnitMode.Manual THEN
+	HmiEnableDisable.EnableHmi(THIS^);
+	IF Navitrol_HMI.NavitrolHasControl THEN
+		_WheelLeft_StreamVelocity.Enable();
+		_WheelRight_StreamVelocity.Enable();
+	ELSE
+		_WheelLeft_StreamVelocity.Disable();
+		_WheelRight_StreamVelocity.Disable();
+	END_IF
+ELSE
+	HmiEnableDisable.DisableHmi(THIS^);
+	AmrModule_HMI.Enable();
+	IF ProductionRT.Q THEN
+		_WheelLeft_StreamVelocity.Disable();
+		_WheelRight_StreamVelocity.Disable();
+	END_IF
+END_IF
+
+IF (_Statemachine.CurrentState = E_PMLState.Aborted) OR (_Statemachine.CurrentState = E_PMLState.Stopped) THEN
+	AutoResetTon(IN := NOT AutoResetTon.Q, PT := T#1S);
+	IF AutoResetTon.Q THEN
+		SafetyScannerLeuze.Reset();
+		SafetyScannerHokuyo.Reset();
+	END_IF;
+END_IF
+
+//
+SetOverride.Set(THIS^, _Override);
+AmrEvents();
+
+//
+EncoderPosition.Scale.InputMaximum	:= Encoder_HMI.Config.Position_InputMaximum;
+EncoderPosition.Scale.InputMinimum	:= Encoder_HMI.Config.Position_InputMinimum;
+EncoderPosition.Scale.OutputMaximum := Encoder_HMI.Config.Position_OutputMaximum;
+EncoderPosition.Scale.OutputMinimum := Encoder_HMI.Config.Position_OutputMinimum;
+EncoderSpeed.Scale.InputMaximum		:= Encoder_HMI.Config.Speed_InputMaximum;
+EncoderSpeed.Scale.InputMinimum		:= Encoder_HMI.Config.Speed_InputMinimum;
+EncoderSpeed.Scale.OutputMaximum	:= Encoder_HMI.Config.Speed_OutputMaximum;
+EncoderSpeed.Scale.OutputMinimum	:= Encoder_HMI.Config.Speed_OutputMinimum;
+
+
+COEDriveControl();
+
+
+
+// (Diameter Wheel * 360deg)
+Navitrol_MeasurmentUpdateDifferentialDrive.EncoderCountWheelLeft  := TO_UDINT(_WheelLeft.ActualPosition * 1_000);
+Navitrol_MeasurmentUpdateDifferentialDrive.EncoderCountWheelRight := TO_UDINT(_WheelRight.ActualPosition * 1_000);
+_WheelLeft_StreamVelocity.SetTargetVelocity(((360 * Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedLeft) / (PI * AMR_CONSTANT.WHEEL_DIAMETER)));
+_WheelRight_StreamVelocity.SetTargetVelocity(((360 * Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedRight) / (PI * AMR_CONSTANT.WHEEL_DIAMETER)));]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Override" Id="{51b25a69-95dc-4c63-80ad-d72d67aeab6f}" FolderPath="Machine\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Override : LREAL]]></Declaration>
+      <Set Name="Set" Id="{81673d3a-e0de-4ca7-8817-7af98515d670}">
+        <Declaration><![CDATA[]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Override := Override;
+
+//SetOverrideVisitor.SetOverride(THIS^, _Override);]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="ResetSafety" Id="{5ce7d83a-270f-4848-8c17-71c097ef28d9}" FolderPath="Machine\">
+      <Declaration><![CDATA[METHOD ResetSafety 
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SafetyEstop.Reset();
+SafetyScannerLeuze.Reset();
+SafetyScannerHokuyo.Reset();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Starting" Id="{9c45b7a4-6e33-4ec5-9d89-2d3bd77ea4c2}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Starting  : BOOL;]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		IF Navitrol_InitializePosition.InitializePosition(21.23,
+														  36.92,
+														  TO_REAL(DEGREE_TO_RADIAN(90)),
+														  0) THEN
+			Destination := 1;
+			NextMinorStep(SequenceState);
+		END_IF
+
+	1:
+		IF Navitrol_Status.NavitrolStatus.State = E_3102_State.STANDBY_STATE OR Navitrol_Status.NavitrolStatus.State = E_3102_State.HOLD_STATE OR Navitrol_Status.NavitrolStatus.State = E_3102_State.AUTO_STATE THEN
+			NextStep(SequenceState);
+		END_IF
+
+	10:
+		_WheelLeft.Enable();
+		_WheelRight.Enable();
+		_Lift.Enable();
+		IF _WheelLeft.Enabled AND _WheelRight.Enabled AND _Lift.Enabled THEN
+			NextStep(SequenceState);
+		END_IF
+
+	20:
+		_WheelLeft_StreamVelocity.Enable();
+		_WheelRight_StreamVelocity.Enable();
+		IF _WheelLeft_StreamVelocity.Enabled AND _WheelRight_StreamVelocity.Enabled THEN
+			NextStep(SequenceState);
+		END_IF
+
+	30:
+		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
+		NextMinorStep(SequenceState);
+
+	31:
+		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
+			NextStep(SequenceState);
+		END_IF
+
+	40:
+		Starting := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Statemachine" Id="{1806b39c-5a57-475a-91c8-2d1caefcb1d6}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY Statemachine : I_Statemachine]]></Declaration>
+      <Get Name="Get" Id="{937c7eb2-5a44-4520-8995-633489117e5c}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Statemachine := _Statemachine;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Stopped" Id="{9b841cc8-57ec-4822-95af-bfc0fccaa213}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Stopped  : BOOL;]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stopping" Id="{444b7cab-8165-4493-9364-5870f6f0fa44}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Stopping  : BOOL;]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0: // Wait AMR not moving
+		IF Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedLeft = 0.0 AND Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedRight = 0.0 THEN
+			IF CompareLREAL(_WheelLeft.ActualVelocity, 0.0, 0.01) AND CompareLREAL(_WheelRight.ActualVelocity, 0.0, 0.01) THEN
+				_WheelLeft_StreamVelocity.Disable();
+				_WheelRight_StreamVelocity.Disable();
+				_WheelLeft.Stop();
+				_WheelRight.Stop();
+				_Lift.Stop();
+				NextMinorStep(SequenceState);
+			END_IF
+		END_IF
+
+	1:
+		IF NOT _WheelLeft.Busy AND NOT _WheelRight.Busy AND NOT _Lift.Busy THEN
+			NextStep(SequenceState);
+		END_IF
+
+	10:
+		_WheelLeft.Disable();
+		_WheelRight.Disable();
+		_Lift.Disable();
+		IF NOT _WheelLeft.Enabled AND NOT _WheelRight.Enabled AND NOT _Lift.Enabled THEN
+			NextStep(SequenceState);
+		END_IF
+
+	20:
+		Stopping := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Suspended" Id="{e3cc274d-c867-4a03-9b8f-3544d46916fc}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Suspended : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF SafetyScannerLeuze.OK AND SafetyScannerHokuyo.OK THEN
+	Statemachine.ChangeState(E_PmlCommand.Unsuspend);
+	RETURN;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Suspending" Id="{dec90ed0-77bf-457e-936a-5fc3fec9eb20}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Suspending : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Set_ESTOP;
+		_WheelLeft_StreamVelocity.Disable();
+		_WheelRight_StreamVelocity.Disable();
+        _WheelLeft.Stop();
+		_WheelRight.Stop();
+		_Lift.Stop();
+		NextMinorStep(SequenceState);
+
+	1:
+		IF NOT _Lift.Busy AND NOT _WheelLeft.Busy AND NOT _WheelRight.Busy THEN
+			IF CompareLREAL(_WheelLeft.ActualVelocity, 0.0, 0.01) AND CompareLREAL(_WheelRight.ActualVelocity, 0.0, 0.01) THEN
+				NextStep(SequenceState);
+			END_IF
+		END_IF
+
+	10:
+		_WheelLeft.Disable();
+		_WheelRight.Disable();
+		_Lift.Disable();
+		IF NOT _WheelLeft.Enabled AND NOT _WheelRight.Enabled AND NOT _Lift.Enabled THEN
+			NextStep(SequenceState);
+		END_IF
+
+	20:
+		Suspending := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Unsuspending" Id="{de1802a6-f615-4d07-ac3d-6c92137a80ac}" FolderPath="States\">
+      <Declaration><![CDATA[METHOD Unsuspending : BOOL
+VAR_INST
+	SafetyResetTon : TON;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE SequenceState OF
+	0:
+		SafetyScannerLeuze.Reset();
+		SafetyScannerHokuyo.Reset();
+		NextMinorStep(SequenceState);
+
+	1: // Wait for Safety signal propagation to drives
+		SafetyResetTon(IN := TRUE, PT := T#200MS);
+		IF SafetyResetTon.Q THEN
+			SafetyResetELM.Execute();
+			NextMinorStep(SequenceState);
+		END_IF
+
+	2:
+		IF NOT SafetyResetELM.Busy THEN
+			NextMinorStep(SequenceState);
+		END_IF
+
+	3:
+		_WheelLeft.Enable();
+		_WheelRight.Enable();
+        _WheelLeft_StreamVelocity.Enable();
+		_WheelRight_StreamVelocity.Enable();
+		_Lift.Enable();
+		IF _WheelLeft.Enabled AND _WheelRight.Enabled AND _Lift.Enabled THEN
+			NextStep(SequenceState);
+		END_IF
+
+	10:
+		Navitrol_Status.SupervisorStatus.Set_Estop := E_3002_Set_ESTOP.Release_ESTOP;
+		_Lift.MoveAbsolute(Recipe_HMI.LiftPosition_Down);
+		NextStep(SequenceState);
+
+	20:
+		IF NOT _Lift.Busy AND NOT _Lift.Error AND CompareLREAL(_Lift.ActualPosition, Recipe_HMI.LiftPosition_Down, 0.1) THEN
+			NextStep(SequenceState);
+		END_IF
+
+	30:
+		IF Navitrol_GoToDestination.Execute(Destination) THEN
+			Unsuspending := TRUE;
+		END_IF
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="WheelLeft" Id="{07d526e4-da46-4030-a31c-5443c9beb91d}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY WheelLeft : I_Axis_PTP]]></Declaration>
+      <Get Name="Get" Id="{f708dc1f-4208-45e4-9094-91bbe6715b9a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[WheelLeft := _WheelLeft;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="WheelLeftStreamVelocity" Id="{8ff43664-3f36-4dfe-9c81-7ac82a636faf}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY WheelLeftStreamVelocity : I_Navitrol_StreamVelocity]]></Declaration>
+      <Get Name="Get" Id="{726ae53e-4ea7-495c-a1e8-80607272cb2b}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[WheelLeftStreamVelocity := _WheelLeft_StreamVelocity;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="WheelRight" Id="{dac9ab76-8132-4c15-9c87-e5558dc74cae}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY WheelRight : I_Axis_PTP]]></Declaration>
+      <Get Name="Get" Id="{30851b7e-5892-4828-8cec-f8c0da923b77}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[WheelRight := _WheelRight;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="WheelRightStreamVelocity" Id="{b2ab07a8-841c-4c8a-8859-f5e505fb56d2}" FolderPath="Machine\">
+      <Declaration><![CDATA[PROPERTY WheelRightStreamVelocity : I_Navitrol_StreamVelocity]]></Declaration>
+      <Get Name="Get" Id="{ac0373bf-021b-48f8-895e-187bd91d5d36}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[WheelRightStreamVelocity := _WheelRight_StreamVelocity;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>

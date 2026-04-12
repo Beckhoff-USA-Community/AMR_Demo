@@ -1,0 +1,76 @@
+{
+    "ENABLE_TWO_FACTOR_AUTHENTICATION": 0,
+    "EXCLUDE_SYSTEM_ADMINISTRATOR_FROM_LOCKOUT": false,
+    "MAX_INVALID_LOGIN_ATTEMPTS": 0,
+    "PASSWORD_BLACKLIST": "",
+    "PASSWORD_ENABLE_AGING": false,
+    "PASSWORD_FORCE_COMPLEX": 0,
+    "PASSWORD_HISTORY_SIZE": 0,
+    "PASSWORD_MAXIMUM_AGE": "P90D",
+    "PASSWORD_MINIMUM_LENGTH": 1,
+    "USERS": {
+        "Administrator": {
+            "ALGORITHM": 1,
+            "ENABLED": true,
+            "LAST_PASSWORD_CHANGE": "2025-09-24T20:41:20.2092585Z",
+            "PASSWORD": "ffb10f2de631415aeb14607a61841826fd34a332ba20c77ea5167879bfdd490eec1508162ce55bfd7e3f0e150dc954d705460a221c5d9617971a007731992073",
+            "PASSWORD_HISTORY": [],
+            "SALT": "Y+3vwFrQsn4pGY7Qr3jUj6UvE2VjRAjXIsWV5Z1D8b5pOAVD3uxz13GA8a0udXPP8OhpE3GNfveHdehXg9aDNg==",
+            "TWO_FACTOR_AUTHENTICATION_ENABLED": false
+        },
+        "Operator": {
+            "ALGORITHM": 1,
+            "ENABLED": true,
+            "LAST_PASSWORD_CHANGE": "2025-09-24T20:41:28.41934Z",
+            "PASSWORD": "cc94c87ff9cc70cbbeab721000932a5ae74004c7fdda0513c5ae5efefd8492983708badcfc7a0e108f872faf3304260740b697f49d0f38dc54991cae01644b5b",
+            "PASSWORD_HISTORY": [],
+            "SALT": "Ib9W0T5WhNQ4QM8iqYV/Qem0ynIdQay8hUDpRw7isSINwOU1MlWhyPQdgmlt9LeIBZYOfOUuX+EhW0aZud0UYg==",
+            "TWO_FACTOR_AUTHENTICATION_ENABLED": false
+        },
+        "__SystemAdministrator": {
+            "ALGORITHM": 1,
+            "ENABLED": true,
+            "LAST_PASSWORD_CHANGE": "2025-07-08T11:35:40.8416415Z",
+            "PASSWORD": "488243562b49c9a9f8df3ebd1e77816eb4961c340608e402a956ba3471d1088accfd0ee127df0f0db64c03e47635680b4a7d7139e7ac8c2d5dd739576bdab276",
+            "PASSWORD_HISTORY": [],
+            "SALT": "ecGGSn6kuS1sWsCVAMzbsZdswi/4oyLbFH6BSvCJekw7LW7u2NEvPE1H3NCk9Mb/+yPFFsLkuOSJtSQWye82ZA==",
+            "SECRET": {
+                "algorithm": 0,
+                "configuration": 0,
+                "iv": "",
+                "value": ""
+            },
+            "TWO_FACTOR_AUTHENTICATION_ENABLED": false
+        },
+        "__SystemGuest": {
+            "ALGORITHM": 0,
+            "ENABLED": true,
+            "LAST_PASSWORD_CHANGE": "1970-01-01T00:00:00Z",
+            "PASSWORD": "",
+            "PASSWORD_HISTORY": [],
+            "SALT": "",
+            "SECRET": {
+                "algorithm": 0,
+                "configuration": 0,
+                "iv": "",
+                "value": ""
+            },
+            "TWO_FACTOR_AUTHENTICATION_ENABLED": false
+        },
+        "__SystemUser": {
+            "ALGORITHM": 0,
+            "ENABLED": true,
+            "LAST_PASSWORD_CHANGE": "1970-01-01T00:00:00Z",
+            "PASSWORD": "",
+            "PASSWORD_HISTORY": [],
+            "SALT": "",
+            "SECRET": {
+                "algorithm": 0,
+                "configuration": 0,
+                "iv": "",
+                "value": ""
+            },
+            "TWO_FACTOR_AUTHENTICATION_ENABLED": false
+        }
+    }
+}

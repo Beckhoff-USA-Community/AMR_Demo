@@ -1,0 +1,9 @@
+{
+    "targetSystems": {
+        "Local": {
+            "address": "5.132.149.215.1.1",
+            "enabled": true,
+            "readOnly": false
+        }
+    }
+}

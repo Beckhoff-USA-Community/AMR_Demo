@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_SectionHeader" Id="{5c2c15c7-a5cb-47df-9929-7e75441fbeb3}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_SectionHeader :
+	STRUCT
+		Section_ID	   : UINT;
+		Section_length : UDINT;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

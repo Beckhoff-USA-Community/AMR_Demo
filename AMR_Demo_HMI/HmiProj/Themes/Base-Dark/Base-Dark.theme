@@ -1,0 +1,262 @@
+{
+  "controlTypeValues": {
+    "TcHmi.Controls.Beckhoff.TcHmiCombobox": {
+      "attributes": {
+        "DataHeight": 40.0,
+        "MaxListHeight": 200.0
+      },
+      "themedResources": {}
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiInput": {
+      "attributes": {
+        "AutoSelectText": true
+      },
+      "themedResources": {}
+    },
+    "TcHmi.Controls.TcHmiExtendedControls.LabeledInput": {
+      "attributes": {
+        "AutoSelectText": true
+      },
+      "themedResources": {}
+    },
+    "TcHmi.Controls.TcHmiExtendedControls.LabeledNumericInput": {
+      "attributes": {
+        "AutoSelectText": true
+      },
+      "themedResources": {}
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiLocalizationSelect": {
+      "attributes": {
+        "DataHeight": 40.0,
+        "MaxListHeight": 200.0
+      },
+      "themedResources": {}
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiNumericInput": {
+      "attributes": {
+        "AutoSelectText": true
+      },
+      "themedResources": {}
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiTextbox": {
+      "attributes": {
+        "AutoSelectText": true
+      },
+      "themedResources": {}
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiThemeSelect": {
+      "attributes": {
+        "DataHeight": 40.0,
+        "MaxListHeight": 200.0
+      },
+      "themedResources": {}
+    }
+  },
+  "controlClassValues": {
+    "background": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(42, 42, 42, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-blue": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(23, 93, 184, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-dark-gray": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(53, 52, 52, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-green": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(81, 215, 119, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-grey": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(185, 185, 185, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-highlight": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(102, 16, 242, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-none": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "None"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-orange": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(251, 167, 18, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "background-red": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(239, 73, 73, 1)"
+        }
+      },
+      "themedResources": {}
+    },
+    "border-large": {
+      "attributes": {
+        "BorderWidth": null,
+        "BorderStyle": null
+      },
+      "themedResources": {}
+    },
+    "border-small": {
+      "attributes": {
+        "BorderStyle": null,
+        "BorderWidth": null
+      },
+      "themedResources": {}
+    },
+    "grid-gap": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "grid-padding": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "grouping-container": {
+      "attributes": {
+        "BackgroundColor": {
+          "color": "rgba(255, 255, 255, 0.1019607)"
+        }
+      },
+      "themedResources": {}
+    },
+    "icon-button": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "icon-dark": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "interaction": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "main-header": {
+      "attributes": {
+        "BorderStyle": {
+          "left": "None",
+          "right": "None",
+          "top": "None",
+          "bottom": "Solid"
+        },
+        "BorderWidth": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 1,
+          "leftUnit": "px",
+          "rightUnit": "px",
+          "topUnit": "px",
+          "bottomUnit": "px"
+        },
+        "BackgroundColor": {
+          "color": "rgba(42, 42, 44, 1)"
+        },
+        "BorderColor": {
+          "color": "rgba(70, 70, 70, 1)"
+        },
+        "BorderRadius": {
+          "topLeft": 0.0,
+          "topRight": 0.0,
+          "bottomLeft": 0.0,
+          "bottomRight": 0.0,
+          "topLeftUnit": "px",
+          "topRightUnit": "px",
+          "bottomLeftUnit": "px",
+          "bottomRightUnit": "px"
+        }
+      },
+      "themedResources": {}
+    },
+    "main-nav": {
+      "attributes": {
+        "BorderStyle": {
+          "left": "None",
+          "right": "Solid",
+          "top": "None",
+          "bottom": "None"
+        },
+        "BorderWidth": {
+          "left": 0,
+          "right": 1,
+          "top": 0,
+          "bottom": 0,
+          "leftUnit": "px",
+          "rightUnit": "px",
+          "topUnit": "px",
+          "bottomUnit": "px"
+        },
+        "BackgroundColor": {
+          "color": "rgba(42, 42, 44, 1)"
+        },
+        "BorderColor": {
+          "color": "rgba(70, 70, 70, 1)"
+        },
+        "BorderRadius": {
+          "bottomRight": 0.0,
+          "topLeftUnit": "px",
+          "topRightUnit": "px",
+          "bottomLeftUnit": "px",
+          "bottomRightUnit": "px"
+        }
+      },
+      "themedResources": {}
+    },
+    "no-interaction": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "slide-in": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "slide-out": {
+      "attributes": {},
+      "themedResources": {}
+    },
+    "text-centered": {
+      "attributes": {
+        "TextVerticalAlignment": "Center",
+        "TextHorizontalAlignment": "Center"
+      },
+      "themedResources": {}
+    }
+  },
+  "$schema": "./../../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.2.110/runtimes/native1.12-tchmi/Schema/ThemeDescription.Schema.json"
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables Crc="913460191" Id="033e816e-303e-4a12-b889-449796eba7dd" FileFormatVersion="1.0">
+  <Variable Id="190d331e-dafd-49f8-b767-b340f3e7fc58">
+    <Name>EStop_OK</Name>
+    <SourceUsages>
+      <FbPortUsage Id="465f10a8-a664-4016-8405-6a078853303a">
+        <ModelElementId>0944c2d8-92f7-4e86-a454-19af21f7345b</ModelElementId>
+      </FbPortUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="f3642f46-5c9d-49d3-9243-65e6ba7bd22b">
+        <ModelElementId>7cd4c6b0-b74a-4756-b908-ae6a1f0e3b82</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="f1277388-0da9-4ee1-8ce1-3e301b42a380">
+    <Name>Scanner_OK</Name>
+    <SourceUsages>
+      <FbPortUsage Id="8bd30734-04dd-4e25-812a-1bdbd78d3b68">
+        <ModelElementId>d1edbb31-cc35-4878-807e-81cc65a08232</ModelElementId>
+      </FbPortUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="606eac8c-ad86-47a8-b8ae-5a9ce82acc51">
+        <ModelElementId>827e5ff7-edda-41b4-8069-ad4dbf487e72</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+</GlobalVariables>

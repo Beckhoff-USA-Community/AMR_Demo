@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="EL2574_CommandMode" Id="{2cd5a5e4-7e0c-4426-8ad1-3e413dc45c43}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EL2574_CommandMode IMPLEMENTS I_EL2574_CommandMode
+VAR
+	totalPixels : UDINT;
+	pdo			: EL2574_IO;
+	commands	: Queue;
+	errored		: BOOL;
+END_VAR
+
+VAR CONSTANT
+	MAX_PIXELS			   : UDINT := 2048;
+	COMMAND_NOP			   : USINT := 16#00;
+	COMMAND_FILL		   : USINT := 16#01;
+	COMMAND_CLEAR		   : USINT := 16#02;
+	COMMAND_COPY		   : USINT := 16#03;
+	COMMAND_MOVE		   : USINT := 16#04;
+	COMMAND_ROTATE_LEFT	   : USINT := 16#05;
+	COMMAND_ROTATE_RIGHT   : USINT := 16#06;
+	COMMAND_REVERSE		   : USINT := 16#07;
+	COMMAND_GRADIENT_START : USINT := 16#08;
+	COMMAND_GRADIENT_END   : USINT := 16#09;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{13a82de9-4f8a-4a80-b967-569c03eb2e40}" />
+    <Folder Name="Private" Id="{4c7fe514-74f4-4a16-8106-2a3809e78b40}" />
+    <Method Name="ClearAll" Id="{56169e2e-9670-4ba9-bd63-02768aef08f2}">
+      <Declaration><![CDATA[METHOD PUBLIC ClearAll : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_CLEAR;
+command.Index	   := 0;
+command.Length	   := 0;
+command.Parameter  := 0;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+ClearAll := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ColorGradient2Point" Id="{48ecaf23-71df-48f2-a2ad-344be1ea5af8}">
+      <Declaration><![CDATA[METHOD PUBLIC ColorGradient2Point : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color1		   : STRING(9);
+	Color2		   : STRING(9);
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[EnqueueGradientStart(StartPosition, NumberOfPixels, Color1);
+EnqueueGradientEnd(StartPosition, NumberOfPixels, Color2);
+ColorGradient2Point := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ColorGradient3Point" Id="{aec45eb8-681a-4415-b1ca-fecc4239846a}">
+      <Declaration><![CDATA[METHOD PUBLIC ColorGradient3Point : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color1		   : STRING(9);
+	Color2		   : STRING(9);
+	Color3		   : STRING(9);
+END_VAR
+
+VAR
+	segmentSize		 : UINT;
+	finalSegmentSize : UINT;
+	midpointStart	 : UINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NumberOfPixels < 3 THEN
+	RETURN;
+END_IF
+
+segmentSize		 := NumberOfPixels / 2;
+finalSegmentSize := NumberOfPixels - segmentSize;
+midpointStart	 := StartPosition + segmentSize;
+EnqueueGradientStart(StartPosition, segmentSize, Color1);
+EnqueueGradientEnd(StartPosition, segmentSize, Color2);
+EnqueueGradientStart(midpointStart, finalSegmentSize, Color2);
+EnqueueGradientEnd(midpointStart, finalSegmentSize, Color3);
+ColorGradient3Point := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ColorGradient4Point" Id="{279306f6-4990-49a0-a42f-15498e8aeeb4}">
+      <Declaration><![CDATA[METHOD PUBLIC ColorGradient4Point : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color1		   : STRING(9);
+	Color2		   : STRING(9);
+	Color3		   : STRING(9);
+	Color4		   : STRING(9);
+END_VAR
+
+VAR
+	segmentSize		 : UINT;
+	finalSegmentSize : UINT;
+	firstThirdStart	 : UINT;
+	secondThirdStart : UINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NumberOfPixels < 3 THEN
+	RETURN;
+END_IF
+
+segmentSize		 := NumberOfPixels / 3;
+firstThirdStart	 := StartPosition + segmentSize;
+secondThirdStart := StartPosition + segmentSize * 2;
+finalSegmentSize := NumberOfPixels - (segmentSize * 2);
+EnqueueGradientStart(StartPosition, segmentSize, Color1);
+EnqueueGradientEnd(StartPosition, segmentSize, Color2);
+EnqueueGradientStart(firstThirdStart, segmentSize, Color2);
+EnqueueGradientEnd(firstThirdStart, segmentSize, Color3);
+EnqueueGradientStart(secondThirdStart, finalSegmentSize, Color3);
+EnqueueGradientEnd(secondThirdStart, finalSegmentSize, Color4);
+ColorGradient4Point := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CopyPixels" Id="{bc79b7ea-10e7-4bef-a348-37501b7b14fc}">
+      <Declaration><![CDATA[METHOD PUBLIC CopyPixels : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	TargetPosition : UINT;
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_COPY;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := TargetPosition;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+CopyPixels := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CyclicCall" Id="{def75bbc-807b-47e6-bf4f-e01d4433d29b}">
+      <Declaration><![CDATA[METHOD PUBLIC CyclicCall
+VAR_INPUT
+END_VAR
+
+VAR
+	sendCommand : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF pdo.Status.Busy THEN
+	RETURN;
+END_IF
+
+IF pdo.Status.Transmit THEN
+	RETURN;
+END_IF
+
+IF commands.IsEmpty THEN
+	RETURN;
+END_IF
+
+IF NOT commands.TryDequeue(sendCommand) THEN
+	errored := TRUE;
+	RETURN;
+END_IF
+
+pdo.Control.Send		:= sendCommand.Send;
+pdo.Control.Update		:= sendCommand.Update;
+pdo.Control.Command		:= sendCommand.Command;
+pdo.Control.Index		:= sendCommand.Index;
+pdo.Control.Length		:= sendCommand.Length;
+pdo.Control.Parameter	:= sendCommand.Parameter;
+pdo.Control.Color.Red	:= sendCommand.ColorRed;
+pdo.Control.Color.Green := sendCommand.ColorGreen;
+pdo.Control.Color.Blue	:= sendCommand.ColorBlue;
+pdo.Control.Color.White := sendCommand.ColorWhite;
+pdo.Control.Execute		:= NOT pdo.Control.Execute;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="EnqueueGradientEnd" Id="{3119968d-855e-4d09-912d-cfd498946e0d}" FolderPath="Private\">
+      <Declaration><![CDATA[METHOD PRIVATE EnqueueGradientEnd
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color		   : STRING(9);
+END_VAR
+
+VAR
+	convertedColor : ARRAY[0..3] OF USINT;
+	command		   : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[convertedColor	   := HtmlColorCodeToRGBA(Color);
+command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_GRADIENT_END;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := 0;
+command.ColorRed   := convertedColor[0];
+command.ColorGreen := convertedColor[1];
+command.ColorBlue  := convertedColor[2];
+command.ColorWhite := convertedColor[3];
+commands.Enqueue(command);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="EnqueueGradientStart" Id="{e55cc804-dd45-4c01-9943-55d1fe60da05}" FolderPath="Private\">
+      <Declaration><![CDATA[METHOD PRIVATE EnqueueGradientStart
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Color		   : STRING(9);
+END_VAR
+
+VAR
+	convertedColor : ARRAY[0..3] OF USINT;
+	command		   : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[convertedColor	   := HtmlColorCodeToRGBA(Color);
+command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_GRADIENT_START;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := 0;
+command.ColorRed   := convertedColor[0];
+command.ColorGreen := convertedColor[1];
+command.ColorBlue  := convertedColor[2];
+command.ColorWhite := convertedColor[3];
+commands.Enqueue(command);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{aa551d80-5b8e-4256-a32d-f4d9414486c6}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode	 : BOOL; // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	TotalPixels	 : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.totalPixels := TotalPixels;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FillColor" Id="{6792f5c9-3dfc-4e89-85f9-427311bba449}">
+      <Declaration><![CDATA[METHOD PUBLIC FillColor : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Red			   : USINT;
+	Green		   : USINT;
+	Blue		   : USINT;
+	White		   : USINT;
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_FILL;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := 0;
+command.ColorRed   := Red;
+command.ColorGreen := Green;
+command.ColorBlue  := Blue;
+command.ColorWhite := White;
+commands.Enqueue(command);
+FillColor := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="HasError" Id="{6e5c01c6-b410-4a7a-8492-4333bb3fefe2}">
+      <Declaration><![CDATA[PROPERTY PUBLIC HasError : BOOL]]></Declaration>
+      <Get Name="Get" Id="{c5dc5562-c067-4736-83b6-1241529ad130}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[HasError := errored;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Invert" Id="{a7bb8660-0295-44ac-a1e3-8be371d1861b}">
+      <Declaration><![CDATA[METHOD PUBLIC Invert : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_REVERSE;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := 0;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+Invert := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="IsBusy" Id="{b1f021b8-be8a-488e-b74d-193b07250730}">
+      <Declaration><![CDATA[PROPERTY PUBLIC IsBusy : BOOL]]></Declaration>
+      <Get Name="Get" Id="{11fabf13-49f0-434f-8cfb-3c9bed94f0b0}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsBusy := pdo.Status.Busy OR NOT commands.IsEmpty;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="MovePixels" Id="{656238bf-0b3f-42be-b525-c1bbf2b123b0}">
+      <Declaration><![CDATA[METHOD PUBLIC MovePixels : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	TargetPosition : UINT;
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_MOVE;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := TargetPosition;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+MovePixels := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="RotateLeft" Id="{f733ac63-db3d-4031-b985-20ca382e9a17}">
+      <Declaration><![CDATA[METHOD PUBLIC RotateLeft : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Shift		   : UINT;
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_ROTATE_LEFT;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := Shift;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+RotateLeft := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="RotateRight" Id="{b39cf190-9fa7-452f-a9c9-1199d27034e7}">
+      <Declaration><![CDATA[METHOD PUBLIC RotateRight : I_EL2574_CommandMode
+VAR_INPUT
+	StartPosition  : UINT;
+	NumberOfPixels : UINT;
+	Shift		   : UINT;
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_ROTATE_RIGHT;
+command.Index	   := StartPosition;
+command.Length	   := NumberOfPixels;
+command.Parameter  := Shift;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+RotateRight := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Send" Id="{b87cdb91-a8a6-450f-9225-e053a58ae108}">
+      <Declaration><![CDATA[METHOD PUBLIC Send : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := TRUE;
+command.Update	   := FALSE;
+command.Command	   := COMMAND_NOP;
+command.Index	   := 0;
+command.Length	   := 0;
+command.Parameter  := 0;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+Send := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SendAndUpdate" Id="{640be88b-1d88-4067-9c46-575ffd86626f}">
+      <Declaration><![CDATA[METHOD PUBLIC SendAndUpdate : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := TRUE;
+command.Update	   := TRUE;
+command.Command	   := COMMAND_NOP;
+command.Index	   := 0;
+command.Length	   := 0;
+command.Parameter  := 0;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+SendAndUpdate := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Update" Id="{0ff6b473-2a51-4f6e-9813-a0697fa48f76}">
+      <Declaration><![CDATA[METHOD PUBLIC Update : I_EL2574_CommandMode
+VAR_INPUT
+END_VAR
+
+VAR
+	command : EL2574_Command;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[command.Send	   := FALSE;
+command.Update	   := TRUE;
+command.Command	   := COMMAND_NOP;
+command.Index	   := 0;
+command.Length	   := 0;
+command.Parameter  := 0;
+command.ColorRed   := 0;
+command.ColorGreen := 0;
+command.ColorBlue  := 0;
+command.ColorWhite := 0;
+commands.Enqueue(command);
+Update := THIS^;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

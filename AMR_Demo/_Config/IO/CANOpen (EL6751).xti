@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CDevEL6751Def" SubType="87">
+	<Device Id="4" DevType="87" AmsPort="28676" AmsNetId="0.0.0.0.6.1" RemoteName="CANOpen (EL6751)">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Ecat>
+				<EtherCATDeviceId>23</EtherCATDeviceId>
+				<EtherCATDeviceName>TIID^X103 (EtherCAT)^EtherCat  (EK1100)^CAN Open (EL6751)</EtherCATDeviceName>
+			</Ecat>
+		</AddressInfo>
+		<Image Id="8" AddrType="4" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+		<Box File="Box 2 (PD4-CB59M024035-E-08).xti" Id="1"/>
+		<CanOpen>
+			<Fcxxxx>
+				<DevSettings BusyIntEnabled="true" DisableSlots="true" NetId="000000000601" EquiCycleTime="20000" FifoSize="5" CycleDivider="1"/>
+				<DevParameter CycleTime="20000" InputShift="60"/>
+				<EquiParameter RelationShiftCycle="0"/>
+			</Fcxxxx>
+			<BusParameter NodeId="127" CobIdSync="128" TxPdoWindowSize="30" CycleDivider="1" MaxLoPrioQueue="100" Bt1="20" TimerTick="2" BusActiveDivider="125" TxBusyTime="500" TimeIntegral="1000" WdTimeoutInCycleTime="25000"/>
+		</CanOpen>
+	</Device>
+</TcSmItem>

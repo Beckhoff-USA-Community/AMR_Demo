@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_EncoderConfig_HMI" Id="{78b477e2-be73-422f-bd81-fb6c81c9fd20}">
+    <Declaration><![CDATA[TYPE ST_EncoderConfig_HMI :
+	STRUCT
+		Speed_InputMinimum	   : LREAL := -32768;
+		Speed_InputMaximum	   : LREAL := 32767;
+		Speed_OutputMinimum	   : LREAL := -32768;
+		Speed_OutputMaximum	   : LREAL := 32767;
+		Position_InputMinimum  : LREAL := -32768;
+		Position_InputMaximum  : LREAL := 32767;
+		Position_OutputMinimum : LREAL := -32768;
+		Position_OutputMaximum : LREAL := 32767;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

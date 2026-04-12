@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Msg3005_GoToDestination" Id="{b41e672b-b6ee-4e23-b4d2-86e86c024c8f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Msg3005_GoToDestination EXTENDS TcpIpCommandResultFilter IMPLEMENTS I_Navitrol_GoToDestination
+VAR
+	Command				  : ST_TcpIpPayload;
+	ReceiveBuffer		  : U_Recived_bytes_from_Navitrol;
+	GoToDestination		  : ST_3005_GoToDestination;
+	GoToDestinationResult : ST_3105_GoToDestinationResult;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{4595185a-7768-430b-88ec-53857a1ff0fc}">
+      <Declaration><![CDATA[METHOD Execute : BOOL;
+VAR_INPUT
+	DestinationID : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF TcpIpConnection.ConnectionState = eSOCKET_CONNECTED THEN
+	F_SetHeaderInfo(GoToDestination);
+	MEMSET(ADR(Command), 0, SIZEOF(Command));
+	GoToDestination.DestinationID := DestinationId;
+	Command.Size				  := SIZEOF(GoToDestination);
+	MEMCPY(ADR(Command.Data), ADR(GoToDestination), Command.Size);
+	TcpIpConnection.SendCommand(ADR(Command));
+	CommandActive := TRUE;
+	Execute		  := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Result" Id="{cdc0419f-55a5-48a8-9ced-52f9fa4859de}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Result : UDINT]]></Declaration>
+      <Get Name="Get" Id="{215a9d99-089a-404b-aed7-fea2a00ddaf5}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Result := GoToDestinationResult.GoToResult;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="UpdateCommandResult" Id="{fe4866d6-12d8-4527-8cf5-70fe5ac812e4}">
+      <Declaration><![CDATA[METHOD UpdateCommandResult
+VAR_INPUT
+	Response : POINTER TO ST_TcpIpPayload;
+END_VAR
+
+VAR_INST
+	ReceiveCounter : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MEMCPY(ADR(ReceiveBuffer), ADR(Response^.Data), SIZEOF(ReceiveBuffer));
+IF ReceiveBuffer.Header.Message_ID = 3105 THEN
+	ReceiveCounter := ReceiveCounter + 1;
+	MEMCPY(destAddr := ADR(GoToDestinationResult), srcAddr := ADR(ReceiveBuffer), n := SIZEOF(GoToDestinationResult));
+	CommandActive := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

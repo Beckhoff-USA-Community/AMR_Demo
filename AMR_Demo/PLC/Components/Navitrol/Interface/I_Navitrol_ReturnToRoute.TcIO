@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Navitrol_ReturnToRoute" Id="{c4407225-1f67-420c-9c79-03200eb2cba7}">
+    <Declaration><![CDATA[INTERFACE I_Navitrol_ReturnToRoute EXTENDS I_Base
+]]></Declaration>
+    <Method Name="Execute" Id="{1b4d220f-8e03-4f39-999d-fbfa901564cf}">
+      <Declaration><![CDATA[METHOD Execute : BOOL]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1116_Motor_Control_Differential" Id="{b869ac35-589e-4837-b1d4-cb40db2e4d0e}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1116_Motor_Control_Differential EXTENDS ST_SupervisorHeader :
+	STRUCT
+		Message_number			: UDINT; //Identification number for individual messages. NOTE: This value must match with the latest Odometer update message number sent by the Supervisor.
+		Speed_Left				: REAL;	 // Reference speed for left wheel (m/s)
+		Speed_Right				: REAL;	 // Reference speed for right wheel (m/s)
+		Errors_Stopping_driving : UINT;	 //0 no errors, 1 error stopping driving
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

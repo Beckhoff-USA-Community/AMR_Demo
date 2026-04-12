@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_3124_ReturnToRouteResponse" Id="{af8bd2e8-2448-4e75-9468-fea904caf3ce}">
+    <Declaration><![CDATA[TYPE ST_3124_ReturnToRouteResponse EXTENDS ST_SupervisorHeader :
+	STRUCT
+        ReturnToRouteResult : UDINT;
+	END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

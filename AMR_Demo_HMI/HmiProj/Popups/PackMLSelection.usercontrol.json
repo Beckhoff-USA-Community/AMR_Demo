@@ -1,0 +1,24 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setStatemachineHMI",
+      "propertyGetterName": "getStatemachineHMI",
+      "refTo": "",
+      "name": "data-tchmi-statemachinehmi",
+      "displayName": "StatemachineHMI",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.Core.ST_PackMLStatemachine_HMI",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "StatemachineHMI"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.133/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

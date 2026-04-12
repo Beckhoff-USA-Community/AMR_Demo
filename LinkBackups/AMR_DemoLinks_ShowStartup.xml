@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<VarLinks>
+	<OwnerA Name="TIID^X103 (EtherCAT)">
+		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Safety PLC (EL2911)">
+			<Link VarA="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO"/>
+			<Link VarA="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
+			<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
+			<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^Hokuyo Scanner (UAM-05LECA)">
+			<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_27 TxPDO" VarB="Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE"/>
+			<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_27 RxPDO" VarB="Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE"/>
+		</OwnerB>
+	</OwnerA>
+	<OwnerA Name="TINC^NC-Task 1 SAF^Axes^WheelLeft">
+		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)">
+			<Link VarA="Drive^Inputs^In^nDataIn1" VarB="DRV Following error actual value^Following error actual value"/>
+			<Link VarA="Drive^Inputs^In^nDcOutputTime" VarB="InfoData^DcOutputShift"/>
+			<Link VarA="Drive^Inputs^In^nState1" VarB="DRV Statusword^Statusword"/>
+			<Link VarA="Drive^Inputs^In^nState2" VarB="DRV Statusword^Statusword" Size="8" OffsB="8"/>
+			<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle0" Size="1" OffsA="1"/>
+			<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState0"/>
+			<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="DRV Controlword^Controlword"/>
+			<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="DRV Controlword^Controlword" Size="8" OffsB="8"/>
+			<Link VarA="Drive^Outputs^Out^nDataOut1" VarB="DRV Target position^Target position"/>
+			<Link VarA="Enc^Inputs^In^nDataIn1" VarB="FB Position^Position"/>
+			<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
+			<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle0" Size="1" OffsA="1"/>
+			<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState0"/>
+		</OwnerB>
+	</OwnerA>
+	<OwnerA Name="TINC^NC-Task 1 SAF^Axes^WheelRight">
+		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 2 (ELM7231-9018)">
+			<Link VarA="Drive^Inputs^In^nDataIn1" VarB="DRV Following error actual value^Following error actual value"/>
+			<Link VarA="Drive^Inputs^In^nDcOutputTime" VarB="InfoData^DcOutputShift"/>
+			<Link VarA="Drive^Inputs^In^nState1" VarB="DRV Statusword^Statusword"/>
+			<Link VarA="Drive^Inputs^In^nState2" VarB="DRV Statusword^Statusword" Size="8" OffsB="8"/>
+			<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle0" Size="1" OffsA="1"/>
+			<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState0"/>
+			<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="DRV Controlword^Controlword"/>
+			<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="DRV Controlword^Controlword" Size="8" OffsB="8"/>
+			<Link VarA="Drive^Outputs^Out^nDataOut1" VarB="DRV Target position^Target position"/>
+			<Link VarA="Enc^Inputs^In^nDataIn1" VarB="FB Position^Position"/>
+			<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
+			<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle0" Size="1" OffsA="1"/>
+			<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState0"/>
+		</OwnerB>
+	</OwnerA>
+	<OwnerA Name="TIPC^PLC^PLC Instance">
+		<OwnerB Name="TIID^CANOpen (EL6751)^Box 2 (PD4-CB59M024035-E-08)">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.iActVel" VarB="TxPDO 3^Inputs^VarIn-0"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.siModeOfOperationStatus" VarB="TxPDO 1^Inputs^VarIn-1"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.COEDriveControl.wCOEStatus" VarB="TxPDO 1^Inputs^VarIn-0"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.iSetVel" VarB="RxPDO 3^Outputs^VarOut-0"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.siModeOfOperation" VarB="RxPDO 1^Outputs^VarOut-1"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.COEDriveControl.wCOEControl" VarB="RxPDO 1^Outputs^VarOut-0"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^IO Link (EL6224-0090)">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderPositionIn" VarB="Port1 (AHK5_14//ZIOB//16//BFR//)^IO-Link Port1^Position"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EncoderSpeedIn" VarB="Port1 (AHK5_14//ZIOB//16//BFR//)^IO-Link Port1^Speed"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 1 (ELM7231-9018)">
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Motion 2 (ELM7231-9018)">
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyResetELM.Reset" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^FSOE^Connection ErrAck"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^EtherCat  (EK1100)^Safety PLC (EL2911)">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^Diag" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^Diag"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyEstop.InfoData^State" VarB="Function Block Info Data^Inputs.EStop.EStop1 Info Data^State"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyInputGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Inputs Info Data^Diag"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyInputGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Inputs Info Data^State"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^Diag" VarB="TwinSAFE Group Info Data^Motion Info Data^Diag"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyMotionGroup.InfoData^State" VarB="TwinSAFE Group Info Data^Motion Info Data^State"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^Diag"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerHokuyo.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerHokuyo Info Data^State"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^Diag" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^Diag"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.SafetyScannerLeuze.InfoData^State" VarB="Function Block Info Data^Inputs.AreaScanner.ScannerLeuze Info Data^State"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Inputs.ErrorAcknowledgement_1"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyGroupReset.Reset" VarB="StandardOutputs^Motion.ErrorAcknowledgement_13"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyInputGroup.Run" VarB="StandardOutputs^Inputs.Run_18"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyMotionGroup.Run" VarB="StandardOutputs^Motion.Run_20"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.SafetyReset.Reset" VarB="StandardOutputs^Inputs.Reset_11"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule._BypassScanners" VarB="StandardOutputs^Inputs.BypassScanners_25"/>
+		</OwnerB>
+		<OwnerB Name="TIID^X103 (EtherCAT)^Gyroscope (EP3751-0260)">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_X" VarB="AI Acc X Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_Y" VarB="AI Acc Y Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^ACC_Z" VarB="AI Acc Z Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_X" VarB="AI Gyro X Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Y" VarB="AI Gyro Y Samples 1 (Real32)^Samples[0]"/>
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.EP3751_IO^Gyro_Z" VarB="AI Gyro Z Samples 1 (Real32)^Samples[0]"/>
+		</OwnerB>
+		<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Lift">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.LiftRef.NcToPlc" VarB="Outputs^ToPlc"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.LiftRef.PlcToNc" VarB="Inputs^FromPlc"/>
+		</OwnerB>
+		<OwnerB Name="TINC^NC-Task 1 SAF^Axes^WheelLeft">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.WheelLeftRef.NcToPlc" VarB="Outputs^ToPlc"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.WheelLeftRef.PlcToNc" VarB="Inputs^FromPlc"/>
+		</OwnerB>
+		<OwnerB Name="TINC^NC-Task 1 SAF^Axes^WheelRight">
+			<Link VarA="PlcTask Inputs^MAIN.AmrModule.WheelRightRef.NcToPlc" VarB="Outputs^ToPlc"/>
+			<Link VarA="PlcTask Outputs^MAIN.AmrModule.WheelRightRef.PlcToNc" VarB="Inputs^FromPlc"/>
+		</OwnerB>
+	</OwnerA>
+</VarLinks>

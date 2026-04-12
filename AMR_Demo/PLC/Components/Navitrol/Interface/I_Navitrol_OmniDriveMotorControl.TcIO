@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Navitrol_OmniDriveMotorControl" Id="{1fbfdd5b-d5a6-4d0d-8de7-eec24baec004}">
+    <Declaration><![CDATA[INTERFACE I_Navitrol_OmniDriveMotorControl EXTENDS I_Base]]></Declaration>
+  </Itf>
+</TcPlcObject>

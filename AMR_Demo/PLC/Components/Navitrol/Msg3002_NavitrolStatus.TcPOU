@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Msg3002_NavitrolStatus" Id="{0ad2d1b3-a026-4051-b631-30c9c5f84423}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Msg3002_NavitrolStatus EXTENDS TcpIpCommandResultFilter IMPLEMENTS I_Navitrol_Status
+VAR
+	CycleTime		  : TIME := T#100MS; //maximum interval 1 second
+	Timer			  : TON;
+	Command			  : ST_TcpIpPayload;
+	ReceiveBuffer	  : U_Recived_bytes_from_Navitrol;
+	Supervisor_Status : ST_3002_Supervisor_Status;
+	Navitrol_status	  : ST_3102_Navitrol_status;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="CyclicLogic" Id="{38ed6b6e-d9ff-411d-aef6-4aea099e5bc6}">
+      <Declaration><![CDATA[METHOD CyclicLogic]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.CyclicLogic();
+Timer(IN := NOT Timer.Q, PT := CycleTime);
+IF Timer.Q AND TcpIpConnection.ConnectionState = eSOCKET_CONNECTED THEN
+	F_SetHeaderInfo(Supervisor_Status);
+	F_SetSectionHeaderInfo(Supervisor_Status.Manual_section);
+	F_SetSectionHeaderInfo(Supervisor_Status.Battery_section);
+	MEMSET(ADR(Command), 0, SIZEOF(Command));
+	Command.Size := SIZEOF(Supervisor_Status);
+	MEMCPY(ADR(Command.Data), ADR(Supervisor_Status), Command.Size);
+	TcpIpConnection.SendCommand(ADR(Command));
+	CommandActive := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="NavitrolStatus" Id="{f380a5dd-a7fc-41d6-8523-e946e6423408}">
+      <Declaration><![CDATA[PROPERTY NavitrolStatus : REFERENCE TO ST_3102_Navitrol_status]]></Declaration>
+      <Get Name="Get" Id="{63fc1aa6-8e88-4b9a-8c46-1b42d35b1154}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[NavitrolStatus REF= Navitrol_status;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="SupervisorStatus" Id="{d364014a-7ad2-4251-8cdb-edbd948ae274}">
+      <Declaration><![CDATA[PROPERTY SupervisorStatus : REFERENCE TO ST_3002_Supervisor_Status]]></Declaration>
+      <Get Name="Get" Id="{660a7054-ae99-4766-b466-b16c92ccff9b}">
+        <Declaration><![CDATA[VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[SupervisorStatus REF= Supervisor_Status;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="UpdateCommandResult" Id="{1a4e6bd8-e8a3-4831-8629-4db1d87295eb}">
+      <Declaration><![CDATA[METHOD UpdateCommandResult
+VAR_INPUT
+	Response : POINTER TO ST_TcpIpPayload;
+END_VAR
+
+VAR_INST
+	ReceiveCounter : UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MEMCPY(ADR(ReceiveBuffer), ADR(Response^.Data), SIZEOF(ReceiveBuffer));
+IF ReceiveBuffer.Header.Message_ID = 3102 THEN
+	ReceiveCounter := ReceiveCounter + 1;
+	MEMCPY(destAddr := ADR(Navitrol_status), srcAddr := ADR(ReceiveBuffer), n := SIZEOF(Navitrol_status));
+	CommandActive := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

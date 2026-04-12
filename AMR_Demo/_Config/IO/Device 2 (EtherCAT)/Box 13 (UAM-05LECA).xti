@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000003}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..2] OF BIT</Name>
+			<BitSize>3</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>3</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<BitSize>4</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<BitSize>1</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000008}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BYTE</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000010}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BYTE</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>2</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
+			<BitSize>6</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000000000000000000000000000000000000000000000008000008000000080800080000000800080008080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00ccccccffffccccccccccffccccffcccccccfccccccccfcccccfcfffccfffcfccccfccffccffccfcccfcccffccffcccfccfcccffccffcccfccfcccffccffcccfccfcccffccffcccfcccfccffccffccfccccfcfffccfffcfcccccfccccccccfcccccccffccccffccccccccccffffcccccc</ImageData>
+		<ImageData Id="1001">424d2a030000000000008a0000007c000000100000000e0000000100180000000000a0020000000000000000000000000000000000000000ff0000ff0000ff000000000000ff4247527380c2f52860b81e152085eb01403333138066662640666606a09999093c0ad703245c8f3200000000000000000000000004000000000000000000000000000000acfffe348b883f9d98105d59325858475c5d4a62603b56533a5250455d5b485d5f2f5b5c0b656049b9b24fc0bd96ffffb1fdfc3d8b8a3e928e074c49203e3f334042354446283a392535342f3e40333f431d404303524f46aca75ac1be9bffffc8ffff427f813a7c7b1f51513c4b4e4645495b5c6076777b72717558545a454349384b5019555542959361b4b5b3ffffc8ffff4783833674741b4d4d374a4f4a4e53676d72888e93878a8f64676c494b5334474e144d4f3d8b8a67b7b8b6ffffb7fbfa498f8e35827f105350204c4d2a4b4e30535635585b39585b3150532c494e1d484b0751513e97946ac5c2abffffb9f2f3539191579c9953949270a0a16e97996793946795966e979a6a909471969a6e9b9e4e919260b0af78c8c7b1ffffdef9fd26474a4970725b8486547479628085577a7e5b80846282885a777e647b8358747b56808548787c316163d4fffff6f9ff555d6416262c1f33381c2e351f32391b353c1c363d20373f2f424a313d4724303a1b30381c343a5d7379e4f7fefffbfffef6fdc8c7d0bbbec6181f2808121c14222e22323e2b3945262f3c181b292a2c37c6c8d3caccd6fbfcfffbfdfffffafffff8fffffaff86808b0f0f1b1a1d2b0e1421151a291b1e2d171727221c2d201928988f9cfffbfffff8fffffafffffbfffff4fc90858f170f1a0a06120d0d1b1211211b172a1812251f1728150b1c0d03132016239c929efffbfffffcfffffdffcfc8cd19111818101b1f1b271c1928241b2f21162a27182d312237261a2c2a1f2f241a2728202bdad7e0fbfdffedf1f2585b5f1b191f14101b1f1d2929243331263a4a3b505b475e422f443c2e403c32422b222f272630666e75ebf7fbf6ffff7f86892023282a2933282834292433392d413d2a3f452f475641574f40554c42523d364337394197a3a9efffff</ImageData>
+	</ImageDatas>
+	<Box Id="13" Disabled="true" BoxType="9099" BoxFlags="#x00000020">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x0080" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" EoeType="3" FoeType="1" VendorId="#x00000832" ProductCode="#x00000002" RevisionNo="#x00000100" InfoDataAddr="true" TimeoutStateChange1="5000" TimeoutStateChange4="1000" TimeoutMailbox1="1000" TimeoutMailbox2="3000" PortPhys="17" MaxSlotCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="UAM-05LECA" Desc="UAM-05LECA">
+			<SyncMan>001000042600010001000000800000040004001026010000</SyncMan>
+			<SyncMan>001400042200010002000000800000040004001422010000</SyncMan>
+			<SyncMan>001837006400010003000000000000003700001864010000</SyncMan>
+			<SyncMan>001c37002000010004000000000000003700001c20010000</SyncMan>
+			<Fmmu>0000000000000000001800020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001c00010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<SwitchPortData>0100000000000000000000000000000000000000426f785f31335f5f55414d5f30354c0000000000000000000000000000000000000000000000000000000000</SwitchPortData>
+			<BootStrapData>0010000400140004</BootStrapData>
+			<Pdo Name="FSoE TxPDO-Map For Area Input Mode" Index="#x1a00" Flags="#x0091" SyncMan="3">
+				<Entry Name="FSOE__Command" Index="#x6000" Sub="#x02">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection1 Detection" Index="#x6001" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection2 Detection" Index="#x6001" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection3 Detection" Index="#x6001" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection4 Detection" Index="#x6001" Sub="#x04">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection5 Detection" Index="#x6001" Sub="#x05">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000003}">ARRAY [0..2] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Warning1 Detection" Index="#x6001" Sub="#x07">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Warning2 Detection" Index="#x6001" Sub="#x08">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Warning3 Detection" Index="#x6001" Sub="#x09">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Warning4 Detection" Index="#x6001" Sub="#x0a">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_0" Index="#x6000" Sub="#x04">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection1 Muting_Override" Index="#x6001" Sub="#x0c">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection2 Muting_Override" Index="#x6001" Sub="#x0d">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection3 Muting_Override" Index="#x6001" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection4 Muting_Override" Index="#x6001" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection5 Muting_Override" Index="#x6001" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000003}">ARRAY [0..2] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection1 Reset Request" Index="#x6001" Sub="#x12">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection2 Reset Request" Index="#x6001" Sub="#x13">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection3 Reset Request" Index="#x6001" Sub="#x14">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection4 Reset Request" Index="#x6001" Sub="#x15">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection5 Reset Request" Index="#x6001" Sub="#x16">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000003}">ARRAY [0..2] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_1" Index="#x6000" Sub="#x05">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Operation Mode" Index="#x6001" Sub="#x18">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Laser Off Mode" Index="#x6001" Sub="#x19">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Lockout State" Index="#x6001" Sub="#x1a">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Error State" Index="#x6001" Sub="#x1b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Reference Error Status" Index="#x6001" Sub="#x1c">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Contamination Error" Index="#x6001" Sub="#x1d">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Contamination Warning" Index="#x6001" Sub="#x1e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_2" Index="#x6000" Sub="#x06">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Operating Area Number" Index="#x6001" Sub="#x21">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_3" Index="#x6000" Sub="#x07">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Error Code" Index="#x6001" Sub="#x22">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_4" Index="#x6000" Sub="#x08">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_5" Index="#x6000" Sub="#x09">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_6" Index="#x6000" Sub="#x0a">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_7" Index="#x6000" Sub="#x0b">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_8" Index="#x6000" Sub="#x0c">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_9" Index="#x6000" Sub="#x0d">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_10" Index="#x6000" Sub="#x0e">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_11" Index="#x6000" Sub="#x0f">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_12" Index="#x6000" Sub="#x10">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Connection ID" Index="#x6000" Sub="#x03">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="FSoE RxPDO-Map For Area Input Mode" Index="#x1600" InOut="1" Flags="#x0091" SyncMan="2">
+				<Entry Name="FSOE__Command" Index="#x7000" Sub="#x02">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 1" Index="#x7001" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 2" Index="#x7001" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 3" Index="#x7001" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 4" Index="#x7001" Sub="#x04">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 5" Index="#x7001" Sub="#x05">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 6" Index="#x7001" Sub="#x06">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 7" Index="#x7001" Sub="#x07">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Area Input 8" Index="#x7001" Sub="#x08">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection1 Reset In" Index="#x7001" Sub="#x09">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection2 Reset In" Index="#x7001" Sub="#x0a">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection3 Reset In" Index="#x7001" Sub="#x0b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection4 Reset In" Index="#x7001" Sub="#x0c">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection5 Reset In" Index="#x7001" Sub="#x0d">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000003}">ARRAY [0..2] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_0" Index="#x7000" Sub="#x04">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection1 Muting 1" Index="#x7001" Sub="#x0f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection1 Muting 2" Index="#x7001" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection2 Muting 1" Index="#x7001" Sub="#x11">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection2 Muting 2" Index="#x7001" Sub="#x12">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection3 Muting 1" Index="#x7001" Sub="#x13">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection3 Muting 2" Index="#x7001" Sub="#x14">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection4 Muting 1" Index="#x7001" Sub="#x15">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection4 Muting 2" Index="#x7001" Sub="#x16">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection5 Muting 1" Index="#x7001" Sub="#x17">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection5 Muting 2" Index="#x7001" Sub="#x18">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection1 Override" Index="#x7001" Sub="#x19">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection2 Override" Index="#x7001" Sub="#x1a">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection3 Override" Index="#x7001" Sub="#x1b">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection4 Override" Index="#x7001" Sub="#x1c">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Protection5 Override" Index="#x7001" Sub="#x1d">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_1" Index="#x7000" Sub="#x05">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Laser Off Mode" Index="#x7001" Sub="#x1f">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__Restart Safety Function" Index="#x7001" Sub="#x20">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000006}">ARRAY [0..5] OF BIT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_2" Index="#x7000" Sub="#x06">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_3" Index="#x7000" Sub="#x07">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_4" Index="#x7000" Sub="#x08">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_5" Index="#x7000" Sub="#x09">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_6" Index="#x7000" Sub="#x0a">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_7" Index="#x7000" Sub="#x0b">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_8" Index="#x7000" Sub="#x0c">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_9" Index="#x7000" Sub="#x0d">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_10" Index="#x7000" Sub="#x0e">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_11" Index="#x7000" Sub="#x0f">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__">
+					<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
+				</Entry>
+				<Entry Name="FSOE__CRC_12" Index="#x7000" Sub="#x10">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="FSOE__Connection ID" Index="#x7000" Sub="#x03">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<CoeProfile ProfileNo="12784521"/>
+			<Slot Name="Slot 1">
+				<SlotData>0000010001000000010000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>12841040</ModuleIdent>
+				<ModuleIdent>12841041</ModuleIdent>
+				<Module Id="#x0309000d" Type="Area Input Mode" Class="Safety">
+					<Name>Module 1 (Area Input Mode)</Name>
+					<ImageId>1001</ImageId>
+					<ModuleData>3208000050f0c300000008000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6656</PdoIndex>
+					<PdoIndex>5632</PdoIndex>
+					<CoeProfile ProfileNo="#x00001389"/>
+				</Module>
+			</Slot>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

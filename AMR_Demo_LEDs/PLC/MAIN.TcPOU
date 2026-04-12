@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="MAIN" Id="{a70d75b9-d4f5-4238-a7f8-34cf979da90d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	BackgroundColor		   : STRING(9) := '#fffafa';
+	BackgroundColorRGB	   : ARRAY[0..3] OF USINT;
+	DisplaySection		   : Section := Section.Linux;
+	LED1				   : EL2574_CommandMode(10);
+	LED2				   : EL2574_CommandMode(10);
+	LED3				   : EL2574_CommandMode(10);
+	LED4				   : EL2574_CommandMode(10);
+	LED5				   : EL2574_CommandMode(10);
+	onChange			   : r_Trig;
+	previousDisplaySection : Section;
+	State				   : (Idle,
+		Clear,
+		SetColor,
+		SetColorUpdate);
+	UpdateTon : TON;
+	start	  : UINT;
+	end		  : UINT;
+END_VAR
+
+VAR CONSTANT
+	WHITE  : ARRAY[0..2] OF USINT := [255, 255, 255];
+	RED	   : ARRAY[0..2] OF USINT := [255, 0, 0];
+	BLUE   : ARRAY[0..2] OF USINT := [0, 0, 255];
+	GREEN  : ARRAY[0..2] OF USINT := [0, 255, 0];
+	YELLOW : ARRAY[0..2] OF USINT := [255, 255, 0];
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[BackgroundColorRGB := HtmlColorCodeToRGBA(BackgroundColor);
+CASE State OF
+	Idle:
+		onChange(CLK := previousDisplaySection <> DisplaySection);
+		IF OnChange.Q THEN
+			PreviousDisplaySection := DisplaySection;
+			LED1.ClearAll();
+			LED2.ClearAll();
+			LED3.ClearAll();
+			LED4.FillColor(0,
+						   75,
+						   BackgroundColorRGB[0],
+						   BackgroundColorRGB[1],
+						   BackgroundColorRGB[2],
+						   0);
+
+			LED5.FillColor(0,
+						   75,
+						   BackgroundColorRGB[0],
+						   BackgroundColorRGB[1],
+						   BackgroundColorRGB[2],
+						   0);
+
+			State := Clear;
+		END_IF
+
+	Clear:
+		UpdateTon(IN := TRUE, PT := T#100MS);
+		IF UpdateTon.Q THEN
+			UpdateTon(IN := FALSE);
+			LED1.Update();
+			LED2.Update();
+			LED3.Update();
+			LED4.Update();
+			LED5.Update();
+			State := SetColor;
+		END_IF
+
+	SetColor:
+		CASE DisplaySection OF
+			Section.None:
+			Section.Accelerometer:
+				LED2.FillColor(3,
+							   3,
+							   GREEN[0],
+							   GREEN[1],
+							   GREEN[2],
+							   0);
+
+			Section.Drives:
+				LED1.FillColor(0,
+							   100,
+							   RED[0],
+							   RED[1],
+							   RED[2],
+							   0);
+
+				LED2.FillColor(0,
+							   2,
+							   RED[0],
+							   RED[1],
+							   RED[2],
+							   0);
+
+				LED3.ClearAll();
+
+			Section.Linux:
+				LED2.FillColor(4,
+							   5,
+							   WHITE[0],
+							   WHITE[1],
+							   WHITE[2],
+							   0);
+
+				LED3.ClearAll();
+
+			Section.Safety:
+				LED1.FillColor(0,
+							   100,
+							   YELLOW[0],
+							   YELLOW[1],
+							   YELLOW[2],
+							   0);
+
+				LED2.FillColor(0,
+							   2,
+							   YELLOW[0],
+							   YELLOW[1],
+							   YELLOW[2],
+							   0);
+
+				LED3.FillColor(0,
+							   100,
+							   YELLOW[0],
+							   YELLOW[1],
+							   YELLOW[2],
+							   0);
+
+			Section.Converter:
+				LED2.FillColor(0,
+							   2,
+							   0,
+							   0,
+							   0,
+							   0);
+
+				LED2.FillColor(3,
+							   3,
+							   BLUE[0],
+							   BLUE[1],
+							   BLUE[2],
+							   0);
+
+				LED2.FillColor(4,
+							   5,
+							   0,
+							   0,
+							   0,
+							   0);
+		END_CASE
+
+		State := SetColorUpdate;
+
+	SetColorUpdate:
+		UpdateTon(IN := TRUE, PT := T#100MS);
+		IF UpdateTon.Q THEN
+			UpdateTon(IN := FALSE);
+			LED1.Update();
+			LED2.Update();
+			LED3.Update();
+			LED4.Update();
+			LED5.Update();
+			State := IDLE;
+		END_IF
+END_CASE
+
+LED1.CyclicCall();
+LED2.CyclicCall();
+LED3.CyclicCall();
+LED4.CyclicCall();
+LED5.CyclicCall();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

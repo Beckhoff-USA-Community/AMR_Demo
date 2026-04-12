@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="EL2574_IO" Id="{3a2e2c72-e9de-4a66-8bf2-dc001d5b2ae1}">
+    <Declaration><![CDATA[TYPE EL2574_IO :
+	STRUCT
+		Status	AT %I* : EL2574_IO_Status;
+		Control AT %Q* : EL2574_IO_Control;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

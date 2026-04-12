@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1126_Supervisor_status_out" Id="{9519fea1-d1e8-4343-b81b-00aec3d11a25}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1126_Supervisor_status_out :
+	STRUCT
+		Navitrol_error : BIT; //	Navitrol has ANY error active AND is unable TO drive.
+		Reserved_1	   : BIT;
+		Reserved_2	   : BIT;
+		Reserved_3	   : BIT;
+		Reserved_4	   : BIT;
+		Reserved_5	   : BIT;
+		Reserved_6	   : BIT;
+		Brake_release  : BIT;  //	Navitrol requests Supevisor to release brakes to start driving
+		Reserved	   : BYTE; //	Not in use	
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

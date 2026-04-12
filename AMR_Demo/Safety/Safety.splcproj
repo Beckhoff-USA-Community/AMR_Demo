@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Crc="3551604722" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{000acbe6-97ec-42fc-bfbf-5a8a5eb50f7f}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TwinCAT3SafePlcProject</RootNamespace>
+    <AssemblyName>TwinCAT3SafePlcProject</AssemblyName>
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetSystem>EL6900</TargetSystem>
+    <ProgrammingLanguage>Graphical Editor</ProgrammingLanguage>
+    <Worker>Beckhoff</Worker>
+    <IntProjName>Safety</IntProjName>
+    <IsNewCreated>false</IsNewCreated>
+    <SPlcProjVersion>1.8.0.0</SPlcProjVersion>
+    <NextSdsId>29</NextSdsId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="GVLs\GVL1.sgvl" />
+    <None Include="Inputs\Alias Devices\BypassScanners.sds" />
+    <None Include="Inputs\Alias Devices\EL2911, 4 Safety PLC.sds" />
+    <None Include="Inputs\Alias Devices\Hokuyo Scanner %28UAM-05LECA%29 - Module 1 %28Area Input Mode%29.sds" />
+    <None Include="Inputs\Alias Devices\Reset.sds" />
+    <None Include="Inputs\Alias Devices\Run.sds" />
+    <None Include="Inputs\Inputs.sal" />
+    <None Include="Inputs\Inputs.sal.diagram">
+      <DependentUpon>Inputs\Inputs.sal</DependentUpon>
+      <Visible>false</Visible>
+    </None>
+    <None Include="Motion\Alias Devices\ErrorAcknowledgement.sds" />
+    <None Include="Motion\Alias Devices\Motion 1 %28ELM7231-9018%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="Motion\Alias Devices\Motion 2 %28ELM7231-9018%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="Motion\Alias Devices\Run.sds" />
+    <None Include="Motion\Motion.sal" />
+    <None Include="Motion\Motion.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>Motion\Motion.sal</DependentUpon>
+    </None>
+    <None Include="TargetSystemConfig.xml">
+      <Visible>false</Visible>
+    </None>
+    <None Include="User FBs\PlcToSafeSignal.ufb" />
+    <None Include="User FBs\PlcToSafeSignal.ufb.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>User FBs\PlcToSafeSignal.ufb</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GVLs" />
+    <Folder Include="Inputs" />
+    <Folder Include="Inputs\Alias Devices" />
+    <Folder Include="Motion" />
+    <Folder Include="Motion\Alias Devices" />
+    <Folder Include="User FBs" />
+    <None Include="Inputs\Alias Devices\ErrorAcknowledgement.sds" />
+  </ItemGroup>
+</Project>

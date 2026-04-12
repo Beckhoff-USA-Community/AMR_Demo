@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_AmrModule" Id="{9169f098-efd6-41e1-afc0-6d9ff7eb0ed9}">
+    <Declaration><![CDATA[INTERFACE I_AmrModule EXTENDS I_Module, I_Override, I_ContainStatemachine]]></Declaration>
+    <Property Name="BypassScanners" Id="{d566d36b-114b-40f2-8f6b-e4a3ca2303e3}">
+      <Declaration><![CDATA[PROPERTY BypassScanners : BOOL]]></Declaration>
+      <Set Name="Set" Id="{55b94751-aca6-4434-9d1f-0206cf8e4ea4}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Lift" Id="{270e6659-b12d-4f79-9298-601355dd78e8}">
+      <Declaration><![CDATA[PROPERTY Lift : I_Axis_PTP]]></Declaration>
+      <Get Name="Get" Id="{904335e2-75c1-4137-bfbf-6ce633d9cd9e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="ResetSafety" Id="{e0e00371-221d-45c1-b6b2-bf77f57b2c83}">
+      <Declaration><![CDATA[METHOD ResetSafety]]></Declaration>
+    </Method>
+    <Property Name="WheelLeft" Id="{66ae7755-ec64-4bb3-895f-f309104d0c75}">
+      <Declaration><![CDATA[PROPERTY WheelLeft : I_Axis_PTP]]></Declaration>
+      <Get Name="Get" Id="{1807b374-3a18-4b5e-a8b3-004fcf038e51}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="WheelLeftStreamVelocity" Id="{eafbd0ef-345f-4c82-8272-d8ac2e243871}">
+      <Declaration><![CDATA[PROPERTY WheelLeftStreamVelocity : I_Navitrol_StreamVelocity]]></Declaration>
+      <Get Name="Get" Id="{8cfb8182-d1a0-414d-8461-a562cd9811a8}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="WheelRight" Id="{d12793d9-ce17-41bc-a334-ee8282413127}">
+      <Declaration><![CDATA[PROPERTY WheelRight : I_Axis_PTP]]></Declaration>
+      <Get Name="Get" Id="{2980ebb1-8327-4166-a784-7f5c327088fc}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="WheelRightStreamVelocity" Id="{3c89224c-f66e-45e7-9d3a-49fb63920154}">
+      <Declaration><![CDATA[PROPERTY WheelRightStreamVelocity : I_Navitrol_StreamVelocity]]></Declaration>
+      <Get Name="Get" Id="{a377acdd-ff76-4e82-b6b2-ef81c1ceb807}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

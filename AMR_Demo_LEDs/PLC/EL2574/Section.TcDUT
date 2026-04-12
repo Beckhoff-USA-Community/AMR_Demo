@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="Section" Id="{7cb335f0-7507-42fc-aaa8-2d41baa56d9c}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE Section : (
+		None := 0,
+		Accelerometer,
+		Drives,
+		Converter,
+		Linux,
+		Safety
+	);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

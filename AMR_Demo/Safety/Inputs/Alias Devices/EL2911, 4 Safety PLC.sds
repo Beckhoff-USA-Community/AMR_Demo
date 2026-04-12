@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SafetyDeviceDesc Crc="2857464062" FileFormatVersion="1.9">
+  <AliasDeviceType>
+    <Type>4</Type>
+    <SubType>2911</SubType>
+    <VendorId>2</VendorId>
+  </AliasDeviceType>
+  <SDSID>12</SDSID>
+  <SafetyAliasDevice>
+    <ObjectId>0</ObjectId>
+    <LinkingMode>Local</LinkingMode>
+    <ConnectionId>12</ConnectionId>
+    <ConnectionMode>slave</ConnectionMode>
+    <ConnectionType>FSoE</ConnectionType>
+    <MapDiag>false</MapDiag>
+    <MapInputs>false</MapInputs>
+    <MapOutputs>false</MapOutputs>
+    <MapState>false</MapState>
+    <ModuleFaultIsComErr>false</ModuleFaultIsComErr>
+    <SafeAddress>0</SafeAddress>
+    <Watchdog>100</Watchdog>
+    <ComErrAck Type="Unset" />
+    <Params>
+      <Param Index="4120" SubIndex="1">02000000</Param>
+      <Param Index="4320" SubIndex="1">0000</Param>
+      <Param Index="4320" SubIndex="2">0000</Param>
+      <Param Index="32768" SubIndex="3">00</Param>
+      <Param Index="32768" SubIndex="4">00</Param>
+      <Param Index="32768" SubIndex="18">E803</Param>
+      <Param Index="32784" SubIndex="1">00</Param>
+      <Param Index="32784" SubIndex="2">01</Param>
+      <Param Index="32784" SubIndex="4">00</Param>
+      <Param Index="32785" SubIndex="1">1400</Param>
+      <Param Index="32785" SubIndex="2">0200</Param>
+      <Param Index="32785" SubIndex="4">1400</Param>
+      <Param Index="32785" SubIndex="5">0200</Param>
+      <Param Index="32785" SubIndex="7">1400</Param>
+      <Param Index="32785" SubIndex="8">0200</Param>
+      <Param Index="32785" SubIndex="10">1400</Param>
+      <Param Index="32785" SubIndex="11">0200</Param>
+      <Param Index="61520" SubIndex="1">5F0B0000</Param>
+      <Messages>
+        <IO>
+          <Name>FSoE Command</Name>
+          <Index>28704</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>USINT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>8</BitSize>
+          <BitOffsMessage>0</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSOUT Module.Output</Name>
+          <Index>28673</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>8</BitOffsMessage>
+          <BitOffsData>0</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSOUT Module.ErrAck</Name>
+          <Index>28674</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>9</BitOffsMessage>
+          <BitOffsData>1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSIN Module.ErrAck</Name>
+          <Index>28690</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>10</BitOffsMessage>
+          <BitOffsData>2</BitOffsData>
+        </IO>
+        <IO>
+          <Name />
+          <Index>0</Index>
+          <SubIndex>0</SubIndex>
+          <DataType />
+          <Direction>Out</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>5</BitSize>
+          <BitOffsMessage>11</BitOffsMessage>
+          <BitOffsData>3</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSoE CRC 000</Name>
+          <Index>28704</Index>
+          <SubIndex>3</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>16</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSoE Connection ID</Name>
+          <Index>28704</Index>
+          <SubIndex>2</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>Out</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>32</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSoE Command</Name>
+          <Index>24608</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>USINT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>8</BitSize>
+          <BitOffsMessage>0</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSOUT Module.Module Fault</Name>
+          <Index>24578</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>8</BitOffsMessage>
+          <BitOffsData>0</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSIN Module.Channel 1.Input</Name>
+          <Index>24593</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>9</BitOffsMessage>
+          <BitOffsData>1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSIN Module.Channel 2.Input</Name>
+          <Index>24593</Index>
+          <SubIndex>2</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>10</BitOffsMessage>
+          <BitOffsData>2</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSIN Module.Channel 3.Input</Name>
+          <Index>24593</Index>
+          <SubIndex>3</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>11</BitOffsMessage>
+          <BitOffsData>3</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSIN Module.Channel 4.Input</Name>
+          <Index>24593</Index>
+          <SubIndex>4</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>12</BitOffsMessage>
+          <BitOffsData>4</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSIN Module.Module Fault</Name>
+          <Index>24594</Index>
+          <SubIndex>1</SubIndex>
+          <DataType>BIT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>1</BitSize>
+          <BitOffsMessage>13</BitOffsMessage>
+          <BitOffsData>5</BitOffsData>
+        </IO>
+        <IO>
+          <Name />
+          <Index>0</Index>
+          <SubIndex>0</SubIndex>
+          <DataType />
+          <Direction>In</Direction>
+          <SafetyType>SafetySil3</SafetyType>
+          <BitSize>2</BitSize>
+          <BitOffsMessage>14</BitOffsMessage>
+          <BitOffsData>6</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSoE CRC 000</Name>
+          <Index>24608</Index>
+          <SubIndex>3</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>16</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+        <IO>
+          <Name>FSoE Connection ID</Name>
+          <Index>24608</Index>
+          <SubIndex>2</SubIndex>
+          <DataType>UINT</DataType>
+          <Direction>In</Direction>
+          <SafetyType>ProtocolData</SafetyType>
+          <BitSize>16</BitSize>
+          <BitOffsMessage>32</BitOffsMessage>
+          <BitOffsData>-1</BitOffsData>
+        </IO>
+      </Messages>
+      <InternalDirectMappings />
+    </Params>
+  </SafetyAliasDevice>
+</SafetyDeviceDesc>

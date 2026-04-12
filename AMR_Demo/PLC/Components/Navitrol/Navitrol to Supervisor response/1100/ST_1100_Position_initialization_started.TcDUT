@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_1100_Position_initialization_started" Id="{da62d4de-c1a5-46c7-a24c-b038a481be71}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ST_1100_Position_initialization_started EXTENDS ST_SupervisorHeader :
+	STRUCT
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

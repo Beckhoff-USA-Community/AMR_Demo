@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="E_3002_2_Enable_manual_control" Id="{bf3ac82e-90d0-4903-868d-30605172a7e7}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE E_3002_2_Enable_manual_control : (
+		Enable_control	:= 0,
+		Disable_control := 1
+	) UINT;
+END_TYPE
+
+(*
+Used to enable manual control from this section:
+	0 - Enable control
+Navitrol will activate manual mode and sets WARNING_ETH_MANUAL_MODE. This section can be used to drive the AGV.
+	1 - Disable control
+Navitrol will ignore any controls from this section.
+*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

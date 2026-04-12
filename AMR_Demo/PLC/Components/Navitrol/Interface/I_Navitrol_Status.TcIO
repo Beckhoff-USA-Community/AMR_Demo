@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Navitrol_Status" Id="{7ac7d435-60e1-4a15-87fc-37a90cb0290c}">
+    <Declaration><![CDATA[INTERFACE I_Navitrol_Status EXTENDS I_Base]]></Declaration>
+    <Property Name="NavitrolStatus" Id="{9548df37-72b0-4048-ae13-ddf49fcf6d42}">
+      <Declaration><![CDATA[PROPERTY NavitrolStatus : REFERENCE TO ST_3102_Navitrol_status]]></Declaration>
+      <Get Name="Get" Id="{ada27984-74c3-40b5-8c13-3a22cba6736a}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="SupervisorStatus" Id="{763d941c-23c4-4b11-b5c4-ad294a709585}">
+      <Declaration><![CDATA[PROPERTY SupervisorStatus : REFERENCE TO ST_3002_Supervisor_Status]]></Declaration>
+      <Get Name="Get" Id="{fca9dc9e-076d-4a48-9f4a-530550fbfe14}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

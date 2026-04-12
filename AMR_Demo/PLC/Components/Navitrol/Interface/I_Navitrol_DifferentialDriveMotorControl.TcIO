@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Navitrol_DifferentialDriveMotorControl" Id="{97616823-74e5-495a-83c2-13fac271ce1f}">
+    <Declaration><![CDATA[INTERFACE I_Navitrol_DifferentialDriveMotorControl EXTENDS I_Base]]></Declaration>
+    <Property Name="EncoderCountWheelLeft" Id="{1fcf0bed-4046-42af-8921-756eadccb392}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY EncoderCountWheelLeft : UDINT]]></Declaration>
+      <Set Name="Set" Id="{d69b0908-2b0d-4753-9181-949b64d22321}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="EncoderCountWheelRight" Id="{12a9c58c-d9bb-446b-bff5-fd4cf5a3ec9c}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY EncoderCountWheelRight : UDINT]]></Declaration>
+      <Set Name="Set" Id="{f424712b-9be8-452a-b47a-204498c9a71c}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="SetPointSpeedLeft" Id="{29035341-e30a-4fe8-899a-12d6762aec54}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY SetPointSpeedLeft : REAL]]></Declaration>
+      <Get Name="Get" Id="{758616dd-80f3-4952-94c5-ae8ad7d3bf57}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="SetPointSpeedRight" Id="{0439bb2d-2c01-41aa-8355-9c9995d9df87}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY SetPointSpeedRight : REAL]]></Declaration>
+      <Get Name="Get" Id="{ac6de7f1-b155-456f-8b2c-df7b7b7bfdab}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

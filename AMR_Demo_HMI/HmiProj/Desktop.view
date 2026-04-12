@@ -1,0 +1,619 @@
+<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-min-width="100" data-tchmi-min-width-unit="%" data-tchmi-height-mode="Value" data-tchmi-min-height="100" data-tchmi-min-height-unit="%" data-tchmi-creator-viewport-width="1920" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-creator-viewport-height="1080">
+<div id="desktop-region" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-left="%ctrl%desktop-navigation::RenderedWidth%/ctrl%" data-tchmi-left-unit="px" data-tchmi-top="80" data-tchmi-top-unit="px" data-tchmi-bottom="2" data-tchmi-right="0" data-tchmi-scrolling="Yes" data-tchmi-scale-mode="None" data-tchmi-height-mode="Value">
+
+
+
+
+
+
+
+
+</div>
+<div id="desktop-navigation" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiAccordionNavigation" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="%ctrl%desktop-container-header::RenderedHeight%/ctrl%" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-bottom="0" data-tchmi-target-region="%ctrl%desktop-region%/ctrl%" data-tchmi-min-width="80" data-tchmi-max-width="300" data-tchmi-close-when-clicked="true" data-tchmi-show-back-button="false">
+
+<script data-tchmi-target-attribute="data-tchmi-navigation-items" type="application/json">
+[
+  {
+    "content": "Pages/Home.content",
+    "icon": "Images/Icons/home.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Home",
+    "name": "Home"
+  },
+  {
+    "content": "Pages/Manual.content",
+    "icon": "Images/Icons/manual.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Manual",
+    "name": "Manual"
+  },
+  {
+    "content": "Pages/Recipes.content",
+    "icon": "Images/Icons/recipes.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Settings",
+    "name": "Settings"
+  },
+  {
+    "content": "Pages/Events.content",
+    "icon": "Images/Icons/events.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Events",
+    "name": "Events"
+  },
+  {
+    "content": "Pages/Products.content",
+    "icon": "Images/Icons/camera.svg",
+    "id": "Products",
+    "name": "Products"
+  },
+  {
+    "icon": "Images/Icons/diagnostics.svg",
+    "iconHeight": 48.0,
+    "iconHeightUnit": "px",
+    "iconWidth": 48.0,
+    "iconWidthUnit": "px",
+    "id": "Diagnostics",
+    "name": "Diagnostics",
+    "subItems": [
+      {
+        "name": "Trends",
+        "id": "Trends",
+        "content": "Pages/Diagnostics/Trends.content",
+        "icon": "Images/Icons/trends.svg",
+        "iconWidth": 48.0,
+        "iconWidthUnit": "px",
+        "iconHeight": 48.0,
+        "iconHeightUnit": "px"
+      },
+      {
+        "name": "EtherCAT",
+        "id": "EtherCAT",
+        "content": "Pages/Diagnostics/EtherCAT.content",
+        "icon": "Images/Icons/ethercat.svg",
+        "iconWidth": 48.0,
+        "iconWidthUnit": "px",
+        "iconHeight": 48.0,
+        "iconHeightUnit": "px"
+      },
+      {
+        "name": "System",
+        "id": "System",
+        "content": "Pages/Diagnostics/System.content",
+        "icon": "Images/Icons/system-diag.svg",
+        "iconWidth": 48.0,
+        "iconWidthUnit": "px",
+        "iconHeight": 48.0,
+        "iconHeightUnit": "px"
+      }
+    ]
+  }
+]
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "main-nav"
+]
+</script>
+</div>
+<div id="desktop-popup-settings" data-tchmi-type="TcHmi.Controls.System.TcHmiPopup" data-tchmi-height="450" data-tchmi-height-unit="px" data-tchmi-left="537" data-tchmi-left-unit="px" data-tchmi-top="295" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px" data-tchmi-header-text="Settings" data-tchmi-modal="true" data-tchmi-creator-visibility="Collapsed">
+
+<script data-tchmi-target-attribute="data-tchmi-target-file" type="application/json">
+{
+  "path": "Popups/Settings.content"
+}
+</script>
+
+
+</div>
+<div id="desktop-container-header" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0">
+<div id="desktop-container-settings" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-top="-2" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-right="0" data-tchmi-tooltip="Settings">
+<div id="desktop-settings-btn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-src="Images/Icons/settings.svg">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "icon-dark"
+]
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "ControlApiFunction",
+        "active": true,
+        "control": "desktop-popup-settings",
+        "fn": "open",
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="desktop-header" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiHeader" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="-1" data-tchmi-top-unit="px" data-tchmi-right="80">
+    <script data-tchmi-target-attribute="data-tchmi-header-items" type="application/json">
+        [
+          {
+            "accessRights": [],
+            "altText": "Image",
+            "classList": [],
+            "image": "Images/Beckhoff_Logo.svg",
+            "itemAlign": "Left",
+            "itemType": "Image",
+            "minWidth": 128.0,
+            "minWidthUnit": "px",
+            "prefHeight": 95.0,
+            "prefHeightUnit": "px",
+            "prefWidth": 288.0,
+            "prefWidthUnit": "px",
+            "priority": "3"
+          },
+          {
+          "accessRights": [],
+          "altText": "Image",
+          "classList": [],
+          "image": "Imports/Images/navitec-logo-color-light-bg.svg",
+          "itemAlign": "Left",
+          "itemType": "Image",
+          "minWidth": 128.0,
+          "minWidthUnit": "px",
+          "prefHeight": 95.0,
+          "prefHeightUnit": "px",
+          "prefWidth": 288.0,
+          "prefWidthUnit": "px",
+          "priority": "3"
+        },
+          {
+            "accessRights": [],
+            "classList": [],
+            "filter": [
+              {
+                "path": "domain",
+                "comparator": "==",
+                "value": "TcHmiEventLogger"
+              },
+              {
+                "logic": "AND"
+              },
+              {
+                "path": "alarmState",
+                "comparator": "==",
+                "value": 0
+              },
+              {
+                "logic": "AND"
+              },
+              {
+                "path": "severity",
+                "comparator": ">=",
+                "value": 0
+              }
+            ],
+            "itemAlign": "Left",
+            "itemType": "EventLine",
+            "messageFormat": [
+              {
+                "name": "timeRaised"
+              },
+              {
+                "text": " | "
+              },
+              {
+                "name": "params::sourceName"
+              },
+              {
+                "text": " | "
+              },
+              {
+                "name": "text"
+              }
+            ],
+            "minWidth": 288.0,
+            "minWidthUnit": "px",
+            "prefHeight": 48.0,
+            "prefHeightUnit": "px",
+            "prefWidth": 800.0,
+            "prefWidthUnit": "px",
+            "priority": "5",
+            "sorting": [
+              {
+                "name": "timeRaised",
+                "order": "Descending"
+              }
+            ],
+            "textOverflow": "Ellipsis"
+          },
+          {
+            "accessRights": [],
+            "classList": [],
+            "itemAlign": "Right",
+            "itemType": "Time",
+            "minWidth": 96.0,
+            "minWidthUnit": "px",
+            "prefHeight": 48.0,
+            "prefHeightUnit": "px",
+            "prefWidth": 128.0,
+            "prefWidthUnit": "px",
+            "priority": "4",
+            "timeDisplayLayout": "TimeDateMultiLine"
+          }
+        ]
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "main-header"
+]
+</script>
+</div>
+<div id="desktop-grid-machinecontrol" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="46.3" data-tchmi-height-unit="%" data-tchmi-top="%f%%ctrl%Desktop::RenderedHeight%/ctrl%/2-%ctrl%desktop-grid-machinecontrol::RenderedHeight%/ctrl%/2%/f%" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-width-mode="Content" data-tchmi-zindex="2" data-tchmi-creator-locked="True">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 35.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": "%f%%ctrl%desktop-grid-machinecontrol::RenderedHeight%/ctrl%*0.4%/f%",
+    "widthMode": "Value",
+    "widthUnit": "px"
+  }
+]
+</script>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="desktop-uc-pmlcontrol" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-left="2" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/PackMLControl.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="10" data-tchmi-bottom-unit="px" data-tchmi-width="%f%%ctrl%desktop-grid-machinecontrol::RenderedHeight%/ctrl%*0.4-12%/f%" data-tchmi-statemachinehmi="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.Statemachine_HMI%/s%">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "interaction"
+]
+</script>
+</div>
+
+
+
+
+<div id="desktop-gird-showhidebtn" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "overflow": false
+  },
+  {
+    "height": 125.0,
+    "heightMode": "Value",
+    "heightUnit": "px"
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  }
+]
+</script>
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="desktop-btn-showhide" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-src="Images/Icons/right.svg">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "icon-button",
+  "icon-dark",
+  "interaction"
+]
+</script>
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "symbolExpression": "%ctrl%desktop-btn-showhide::Src%/ctrl%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "value": "Images/Icons/left.svg"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-grid-machinecontrol::ClassNames%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/ClassNameList",
+                  "value": [
+                    "no-interaction",
+                    "slide-out"
+                  ]
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-btn-showhide::Src%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "value": "Images/Icons/right.svg"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-grid-machinecontrol::ClassNames%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/ClassNameList",
+                  "value": [
+                    "no-interaction",
+                    "slide-in"
+                  ]
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%desktop-btn-showhide::Src%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Path",
+                  "value": "Images/Icons/left.svg"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+
+</div>
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "no-interaction"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onAttached",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "const element = TcHmi.Controls.get('desktop-grid-machinecontrol');",
+          "const button = TcHmi.Controls.get('desktop-btn-showhide');",
+          "const grid = element.getElement()[0];",
+          "",
+          "let isDragging = false;",
+          "let hasMoved = false;",
+          "let offsetY = 0;",
+          "let startY = 0;",
+          "let pointerId = null;",
+          "let dragThreshold = 5;",
+          "",
+          "grid.addEventListener('dragstart', function(e) {",
+          "  e.preventDefault();",
+          "});",
+          "",
+          "grid.style.userSelect = 'none';",
+          "grid.style.webkitUserSelect = 'none';",
+          "",
+          "button.getElement()[0].addEventListener('pointerdown', function(e) {",
+          "  isDragging = true;",
+          "  hasMoved = false;",
+          "  pointerId = e.pointerId;",
+          "",
+          "  startY = e.clientY;",
+          "",
+          "  let rect = grid.getBoundingClientRect();",
+          "  offsetY = e.clientY - rect.top;",
+          "});",
+          "",
+          "// Use document-level pointermove to catch movement outside element",
+          "document.addEventListener('pointermove', function(e) {",
+          "  let isLocked = new TcHmi.Symbol('%i%machineControlLocked%/i%').read();",
+          "  if (isLocked) return;",
+          "  if (!isDragging || e.pointerId !== pointerId) return;",
+          "",
+          "  let deltaY = Math.abs(e.clientY - startY);",
+          "",
+          "  if (deltaY > dragThreshold) {",
+          "      if (!hasMoved) {",
+          "          // First time crossing threshold - capture pointer for touch",
+          "          if (e.pointerType === 'touch') {",
+          "              grid.setPointerCapture(e.pointerId);",
+          "          }",
+          "          hasMoved = true;",
+          "      }",
+          "",
+          "      e.preventDefault();",
+          "      e.stopPropagation();",
+          "",
+          "      let newTop = e.clientY - offsetY;",
+          "",
+          "      element.setTop(newTop);",
+          "  }",
+          "});",
+          "",
+          "document.addEventListener('pointerup', function(e) {",
+          "  if (!isDragging || e.pointerId !== pointerId) return;",
+          "",
+          "  if (hasMoved) {",
+          "      e.preventDefault();",
+          "      e.stopPropagation();",
+          "      e.stopImmediatePropagation();",
+          "",
+          "      if (e.pointerType === 'touch' && grid.hasPointerCapture(e.pointerId)) {",
+          "          grid.releasePointerCapture(e.pointerId);",
+          "      }",
+          "  }",
+          "",
+          "  isDragging = false;",
+          "  pointerId = null;",
+          "});",
+          "",
+          "grid.addEventListener('pointercancel', function(e) {",
+          "  isDragging = false;",
+          "  hasMoved = false;",
+          "  pointerId = null;",
+          "});",
+          "",
+          "grid.addEventListener('click', function(e) {                    \t",
+          "  if (hasMoved) {",
+          "      e.preventDefault();",
+          "      e.stopPropagation();",
+          "      e.stopImmediatePropagation();",
+          "",
+          "      setTimeout(function() {",
+          "          hasMoved = false;",
+          "      }, 10);",
+          "",
+          "      return false;",
+          "  }",
+          "}, true);"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onResized",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "// sets CSS variable with current columns width of pml control",
+          "let element = document.getElementById('desktop-grid-machinecontrol');",
+          "",
+          "TcHmi.Symbol.readEx2('%ctrl%desktop-grid-machinecontrol::ColumnOptions[1]::width%/ctrl%', function(data) {",
+          "\telement.style.setProperty('--pmlcontrol-column-width', data.value + 'px');",
+          "});"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+
+</div>

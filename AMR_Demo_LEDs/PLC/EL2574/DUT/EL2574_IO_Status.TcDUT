@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="EL2574_IO_Status" Id="{2f30e890-dcdf-4d41-ae21-e3eff1cacc85}">
+    <Declaration><![CDATA[TYPE EL2574_IO_Status :
+	STRUCT
+		Busy					 : BIT;
+		Transmit				 : BIT;
+		Send_Acknowledge		 : BIT;
+		Update_Acknowledge		 : BIT;
+		Command_Acknowledge		 : BIT;
+		Command_Reject			 : BIT;
+		Warning					 : BIT;
+		Error					 : BIT;
+		Input_Cycle_Counter_Bit0 : BIT;
+		Input_Cycle_Counter_Bit1 : BIT;
+        {attribute 'hide'}
+		_reserved1				 : BIT;
+        {attribute 'hide'}
+		_reserved2				 : BIT;
+        {attribute 'hide'}
+		_reserved3				 : BIT;
+        {attribute 'hide'}
+		_reserved4				 : BIT;
+        {attribute 'hide'}
+		_reserved5				 : BIT;
+        {attribute 'hide'}
+		_reserved6				 : BIT;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

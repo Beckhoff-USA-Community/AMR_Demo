@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<BitSize>4</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000002}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BIT</Name>
+			<BitSize>2</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>2</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<BitSize>5</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>5</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{0E54145E-200F-476A-E558-E2C236C07130}" AutoDeleteType="true" ForceIecDecl="true">Status_20A76971_PLC_0E54145E</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Busy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Transmit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Send Acknowledge</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Update Acknowledge</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Command Acknowledge</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Command Reject</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Warning</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Input Cycle Counter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000011}">BIT2</Type>
+				<BitSize>2</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<Relations>
+				<Relation>
+					<Type GUID="{979B0B74-C706-0116-3B7C-F1DA38D9DB6C}">Status_20A76971</Type>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
+			<Name GUID="{C9F93E1F-331C-FC92-A8C2-B5E2E547FF61}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_C_I_C9F93E1F</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Status</Name>
+				<Type GUID="{0E54145E-200F-476A-E558-E2C236C07130}">Status_20A76971_PLC_0E54145E</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{9A2659AB-B4F1-D552-597B-DE277A9981FF}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_I_9A2659AB</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Status_Channel_1</Name>
+				<Type GUID="{C9F93E1F-331C-FC92-A8C2-B5E2E547FF61}">MDP5001_260_C_I_C9F93E1F</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Status_Channel_2</Name>
+				<Type GUID="{C9F93E1F-331C-FC92-A8C2-B5E2E547FF61}">MDP5001_260_C_I_C9F93E1F</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>TcDataArea</Name>
+					<Value>Input</Value>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{240E4737-A87F-701C-97D3-0EA228B16542}" AutoDeleteType="true" ForceIecDecl="true">Color_04D328AD_PLC_240E4737</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Red</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Green</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Blue</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>White</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<Relations>
+				<Relation>
+					<Type GUID="{AD89B197-85D6-E806-129C-6A7CFE80363D}">Color_04D328AD</Type>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
+			<Name GUID="{2240775D-C75A-6FAB-F8DE-E96CA0B7FE34}" AutoDeleteType="true" ForceIecDecl="true">Control_8C4AB2FC_PLC_2240775D</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>Execute</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Send</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Update</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Command</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Index</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Length</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Parameter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Color</Name>
+				<Type GUID="{240E4737-A87F-701C-97D3-0EA228B16542}">Color_04D328AD_PLC_240E4737</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<Relations>
+				<Relation>
+					<Type GUID="{5DC4CBC3-1E32-A2DA-BCA6-C19FB1C195EC}">Control_8C4AB2FC</Type>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
+			<Name GUID="{CB9B8BE2-E7C9-C3EA-050B-CFCD3D2236FB}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_C_O_CB9B8BE2</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>Control</Name>
+				<Type GUID="{2240775D-C75A-6FAB-F8DE-E96CA0B7FE34}">Control_8C4AB2FC_PLC_2240775D</Type>
+				<BitSize>96</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{03A57D4B-DB3B-8D35-58AC-B8F09745EBE7}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_O_03A57D4B</Name>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Control_Channel_1</Name>
+				<Type GUID="{CB9B8BE2-E7C9-C3EA-050B-CFCD3D2236FB}">MDP5001_260_C_O_CB9B8BE2</Type>
+				<BitSize>96</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Control_Channel_2</Name>
+				<Type GUID="{CB9B8BE2-E7C9-C3EA-050B-CFCD3D2236FB}">MDP5001_260_C_O_CB9B8BE2</Type>
+				<BitSize>96</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>TcDataArea</Name>
+					<Value>Output</Value>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{0CA4F1A9-F239-0F56-CA43-E7762E612A7A}" AutoDeleteType="true" ForceIecDecl="true">MDP5001_260_0CA4F1A9</Name>
+			<BitSize>224</BitSize>
+			<SubItem>
+				<Name>In</Name>
+				<Type GUID="{9A2659AB-B4F1-D552-597B-DE277A9981FF}">MDP5001_260_I_9A2659AB</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Out</Name>
+				<Type GUID="{03A57D4B-DB3B-8D35-58AC-B8F09745EBE7}">MDP5001_260_O_03A57D4B</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{8216A1AA-E985-52D9-ED17-8383C3D0B35C}" AutoDeleteType="true" ForceIecDecl="true">EL2574_C_I_8216A1AA</Name>
+			<BitSize>8</BitSize>
+			<SubItem>
+				<Name>WcState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InputToggle</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000042}" TcBaseType="true" CName="AmsAddr">AMSADDR</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>netId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>port</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d:%d</Printf>
+				<Parameter>.netId[0]</Parameter>
+				<Parameter>.netId[1]</Parameter>
+				<Parameter>.netId[2]</Parameter>
+				<Parameter>.netId[3]</Parameter>
+				<Parameter>.netId[4]</Parameter>
+				<Parameter>.netId[5]</Parameter>
+				<Parameter>.port</Parameter>
+			</Format>
+			<Format Name="Iec">
+				<Printf>(netId:=[%d.%d.%d.%d.%d.%d], port :=%d)</Printf>
+				<Parameter>.netId[0]</Parameter>
+				<Parameter>.netId[1]</Parameter>
+				<Parameter>.netId[2]</Parameter>
+				<Parameter>.netId[3]</Parameter>
+				<Parameter>.netId[4]</Parameter>
+				<Parameter>.netId[5]</Parameter>
+				<Parameter>.port</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{46DB36E4-801D-5688-CEB8-8123AF048A91}" AutoDeleteType="true" ForceIecDecl="true">EL2574_C_I_46DB36E4</Name>
+			<BitSize>80</BitSize>
+			<SubItem>
+				<Name>State</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AdsAddr</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{A17F9952-93D5-C851-E3B1-BC6EAD5E517B}" AutoDeleteType="true" ForceIecDecl="true">EL2574_I_A17F9952</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>WcState</Name>
+				<Type GUID="{8216A1AA-E985-52D9-ED17-8383C3D0B35C}">EL2574_C_I_8216A1AA</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InfoData</Name>
+				<Type GUID="{46DB36E4-801D-5688-CEB8-8123AF048A91}">EL2574_C_I_46DB36E4</Type>
+				<BitSize>80</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>TcDataArea</Name>
+					<Value>Input</Value>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{57047D7F-1583-6F36-91DF-5176304003B4}" AutoDeleteType="true" ForceIecDecl="true">EL2574_57047D7F</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>In</Name>
+				<Type GUID="{A17F9952-93D5-C851-E3B1-BC6EAD5E517B}">EL2574_I_A17F9952</Type>
+				<BitSize>96</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1002">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ffff00ffff00ffff00ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Box Id="2" BoxType="9099" BoxFlags="#x00000020">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" FoeType="1" VendorId="#x00000002" ProductCode="#x0a0e3052" RevisionNo="#x00100000" InfoDataAddr="true" TimeoutMailbox2="2000" DownloadSlotCfg="true" CheckRevisionNoType="3" PortPhys="51" DownloadSlotCfgIP="true" SdoUploadWithMaxLength="true" CreateDeviceDataType="true" DeviceDataTypePerSlotGrp="true" MaxSlotCount="4" MaxSlotGroupCount="1" SlotPdoIncrement="16" SlotIndexIncrement="16" Type="EL2574 4 Ch. Pixel LED Controller" Desc="EL2574">
+			<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
+			<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
+			<SyncMan>001130002400010003000000000000000c00001124010000</SyncMan>
+			<SyncMan>e01308002000010004000000000000000200e01320010000</SyncMan>
+			<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000e01300010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<BootStrapData>0010f400f410f400</BootStrapData>
+			<MBoxUserCmdData>004003000c0000000000000003000000000000000000000000000000000000002081f001040000000000100000</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000a0000001f000000030010000000000000000000000000000000000020f31005020000000100456e61626c6520446961674d65737361676520617320656d657267656e637900</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000900000009000000030000000500090300000000000000000000000020008012010000001b43686970205479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000900000009000000030000000700090300000000000000000000000020208012010000001b43686970205479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000900000009000000030000000800090300000000000000000000000020308012010000001b43686970205479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000900000009000000030000000600090300000000000000000000000020108012010000001b43686970205479706500</MBoxUserCmdData>
+			<Pdo Name="Status Channel 1" Index="#x1a00" Flags="#x0291" SyncMan="3">
+				<Entry Name="Status__Busy" Index="#x6000" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Transmit" Index="#x6000" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Send Acknowledge" Index="#x6000" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Update Acknowledge" Index="#x6000" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Acknowledge" Index="#x6000" Sub="#x05" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Reject" Index="#x6000" Sub="#x06" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Warning" Index="#x6000" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Error" Index="#x6000" Sub="#x0c" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Input Cycle Counter" Index="#x6000" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT2</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Control Channel 1" Index="#x1600" InOut="1" Flags="#x0290" SyncMan="2">
+				<Entry Name="Control__Execute" Index="#x7000" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Send" Index="#x7000" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Update" Index="#x7000" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="Control__Command" Index="#x7000" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Index" Index="#x7000" Sub="#x11" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Length" Index="#x7000" Sub="#x12" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Parameter" Index="#x7000" Sub="#x13" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Red" Index="#x7000" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Green" Index="#x7000" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Blue" Index="#x7000" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__White" Index="#x7000" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Extended Channel 1" Index="#x1601" InOut="1" Flags="#x0290">
+				<Entry Name="Extended Control__Execute" Index="#x7001" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Send" Index="#x7001" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Update" Index="#x7001" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Write" Index="#x7001" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Index" Index="#x7001" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 0" Index="#x7001" Sub="#x11" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 1" Index="#x7001" Sub="#x12" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 2" Index="#x7001" Sub="#x13" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 3" Index="#x7001" Sub="#x14" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 4" Index="#x7001" Sub="#x15" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 5" Index="#x7001" Sub="#x16" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 6" Index="#x7001" Sub="#x17" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 7" Index="#x7001" Sub="#x18" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Status Channel 2" Index="#x1a10" Flags="#x0291" SyncMan="3">
+				<Entry Name="Status__Busy" Index="#x6010" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Transmit" Index="#x6010" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Send Acknowledge" Index="#x6010" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Update Acknowledge" Index="#x6010" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Acknowledge" Index="#x6010" Sub="#x05" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Reject" Index="#x6010" Sub="#x06" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Warning" Index="#x6010" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Error" Index="#x6010" Sub="#x0c" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Input Cycle Counter" Index="#x6010" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT2</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Control Channel 2" Index="#x1610" InOut="1" Flags="#x0290" SyncMan="2">
+				<Entry Name="Control__Execute" Index="#x7010" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Send" Index="#x7010" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Update" Index="#x7010" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="Control__Command" Index="#x7010" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Index" Index="#x7010" Sub="#x11" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Length" Index="#x7010" Sub="#x12" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Parameter" Index="#x7010" Sub="#x13" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Red" Index="#x7010" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Green" Index="#x7010" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Blue" Index="#x7010" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__White" Index="#x7010" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Extended Channel 2" Index="#x1611" InOut="1" Flags="#x0290">
+				<Entry Name="Extended Control__Execute" Index="#x7011" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Send" Index="#x7011" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Update" Index="#x7011" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Write" Index="#x7011" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Index" Index="#x7011" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 0" Index="#x7011" Sub="#x11" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 1" Index="#x7011" Sub="#x12" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 2" Index="#x7011" Sub="#x13" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 3" Index="#x7011" Sub="#x14" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 4" Index="#x7011" Sub="#x15" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 5" Index="#x7011" Sub="#x16" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 6" Index="#x7011" Sub="#x17" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 7" Index="#x7011" Sub="#x18" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Status Channel 1" Index="#x1a20" Flags="#x0291" SyncMan="3">
+				<Entry Name="Status__Busy" Index="#x6020" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Transmit" Index="#x6020" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Send Acknowledge" Index="#x6020" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Update Acknowledge" Index="#x6020" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Acknowledge" Index="#x6020" Sub="#x05" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Reject" Index="#x6020" Sub="#x06" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Warning" Index="#x6020" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Error" Index="#x6020" Sub="#x0c" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Input Cycle Counter" Index="#x6020" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT2</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Control Channel 1" Index="#x1620" InOut="1" Flags="#x0290" SyncMan="2">
+				<Entry Name="Control__Execute" Index="#x7020" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Send" Index="#x7020" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Update" Index="#x7020" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="Control__Command" Index="#x7020" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Index" Index="#x7020" Sub="#x11" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Length" Index="#x7020" Sub="#x12" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Parameter" Index="#x7020" Sub="#x13" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Red" Index="#x7020" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Green" Index="#x7020" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Blue" Index="#x7020" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__White" Index="#x7020" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Extended Channel 1" Index="#x1621" InOut="1" Flags="#x0290">
+				<Entry Name="Extended Control__Execute" Index="#x7021" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Send" Index="#x7021" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Update" Index="#x7021" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Write" Index="#x7021" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Index" Index="#x7021" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 0" Index="#x7021" Sub="#x11" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 1" Index="#x7021" Sub="#x12" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 2" Index="#x7021" Sub="#x13" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 3" Index="#x7021" Sub="#x14" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 4" Index="#x7021" Sub="#x15" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 5" Index="#x7021" Sub="#x16" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 6" Index="#x7021" Sub="#x17" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 7" Index="#x7021" Sub="#x18" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Status Channel 2" Index="#x1a30" Flags="#x0291" SyncMan="3">
+				<Entry Name="Status__Busy" Index="#x6030" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Transmit" Index="#x6030" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Send Acknowledge" Index="#x6030" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Update Acknowledge" Index="#x6030" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Acknowledge" Index="#x6030" Sub="#x05" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Command Reject" Index="#x6030" Sub="#x06" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Warning" Index="#x6030" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__Error" Index="#x6030" Sub="#x0c" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Status__">
+					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+				</Entry>
+				<Entry Name="Status__Input Cycle Counter" Index="#x6030" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT2</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Control Channel 2" Index="#x1630" InOut="1" Flags="#x0290" SyncMan="2">
+				<Entry Name="Control__Execute" Index="#x7030" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Send" Index="#x7030" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__Update" Index="#x7030" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="Control__Command" Index="#x7030" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Index" Index="#x7030" Sub="#x11" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Length" Index="#x7030" Sub="#x12" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Parameter" Index="#x7030" Sub="#x13" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Red" Index="#x7030" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Green" Index="#x7030" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__Blue" Index="#x7030" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Control__Color__White" Index="#x7030" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Extended Channel 2" Index="#x1631" InOut="1" Flags="#x0290">
+				<Entry Name="Extended Control__Execute" Index="#x7031" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Send" Index="#x7031" Sub="#x02" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Update" Index="#x7031" Sub="#x03" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Write" Index="#x7031" Sub="#x04" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__">
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Index" Index="#x7031" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 0" Index="#x7031" Sub="#x11" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 1" Index="#x7031" Sub="#x12" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 2" Index="#x7031" Sub="#x13" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 3" Index="#x7031" Sub="#x14" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 4" Index="#x7031" Sub="#x15" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 5" Index="#x7031" Sub="#x16" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 6" Index="#x7031" Sub="#x17" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Extended Control__Segment__Element 7" Index="#x7031" Sub="#x18" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+			</Pdo>
+			<PlcDataTypes>
+				<PlcDataType GUID="{0CA4F1A9-F239-0F56-CA43-E7762E612A7A}">MDP5001_260_0CA4F1A9</PlcDataType>
+				<PlcDataType GUID="{0CA4F1A9-F239-0F56-CA43-E7762E612A7A}">MDP5001_260_0CA4F1A9</PlcDataType>
+				<PlcDataType GUID="{57047D7F-1583-6F36-91DF-5176304003B4}">EL2574_57047D7F</PlcDataType>
+			</PlcDataTypes>
+			<Slot Name="Slot Group 1 [2, 10], Slot 1" ImageId="1001">
+				<SlotData>0000010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2574</ModuleIdent>
+				<ModuleIdent>526862</ModuleIdent>
+				<Module Id="#x03090005" Type="ALED" Class="">
+					<Name>SlotGroup 1 (Slot 1, 2) (2xASYNC)</Name>
+					<ImageId>549</ImageId>
+					<ModuleData>020000000e0a0000000004000000000001000000000000000000000000000000</ModuleData>
+					<PdoIndex>6656</PdoIndex>
+					<PdoIndex>5632</PdoIndex>
+					<PdoIndex>5633</PdoIndex>
+					<CoeProfile ProfileNo="#x01041389"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 1 [2, 10], Slot 2" ImageId="1001">
+				<SlotData>0000010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2574</ModuleIdent>
+				<Module Id="#x03090006" Type="ALED" Class="">
+					<Name>SlotGroup 1 (Slot 1, 2) (2xASYNC)</Name>
+					<ImageId>549</ImageId>
+					<ModuleData>020000000e0a0000000004000000000002000000000000000000000000000000</ModuleData>
+					<PdoIndex>6672</PdoIndex>
+					<PdoIndex>5648</PdoIndex>
+					<PdoIndex>5649</PdoIndex>
+					<CoeProfile ProfileNo="#x01041389"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 2 [5, 13], Slot 1" ImageId="1001">
+				<SlotData>0100010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2574</ModuleIdent>
+				<ModuleIdent>526862</ModuleIdent>
+				<Module Id="#x03090007" Type="ALED" Class="">
+					<Name>SlotGroup 2 (Slot 3, 4) (2xASYNC)</Name>
+					<ImageId>549</ImageId>
+					<ModuleData>020000000e0a0000000004000000000001000000000000000000000000000000</ModuleData>
+					<PdoIndex>6688</PdoIndex>
+					<PdoIndex>5664</PdoIndex>
+					<PdoIndex>5665</PdoIndex>
+					<CoeProfile ProfileNo="#x01041389"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 2 [5, 13], Slot 2" ImageId="1001">
+				<SlotData>0100010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2574</ModuleIdent>
+				<Module Id="#x03090008" Type="ALED" Class="">
+					<Name>SlotGroup 2 (Slot 3, 4) (2xASYNC)</Name>
+					<ImageId>549</ImageId>
+					<ModuleData>020000000e0a0000000004000000000002000000000000000000000000000000</ModuleData>
+					<PdoIndex>6704</PdoIndex>
+					<PdoIndex>5680</PdoIndex>
+					<PdoIndex>5681</PdoIndex>
+					<CoeProfile ProfileNo="#x01041389"/>
+				</Module>
+			</Slot>
+			<SlotGroupData Name="SlotGroup 1 (Slot 1, 2)" ImageId="1000">
+				<SlotGroup>0</SlotGroup>
+				<ModuleGroupData Name="1 Channel Asynchronous" Type="1xASYNC" Class="Digital Output" ImageId="1001">
+					<Id>8193</Id>
+					<ModuleIdent>2574</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="1 Channel Synchronous" Type="1xSYNC" Class="Digital Output" ImageId="1001">
+					<Id>8194</Id>
+					<ModuleIdent>526862</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="2 Channel Asynchronous" Type="2xASYNC" Class="Digital Output" ImageId="1001">
+					<Id>8195</Id>
+					<ModuleIdent>2574</ModuleIdent>
+					<ModuleIdent>2574</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="Empty" Type="EMPTY2" Class="Empty" ImageId="1002">
+					<Id>258</Id>
+					<ModuleIdent>0</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+			</SlotGroupData>
+			<SlotGroupData Name="SlotGroup 2 (Slot 3, 4)" ImageId="1000">
+				<SlotGroup>1</SlotGroup>
+				<ModuleGroupData Name="1 Channel Asynchronous" Type="1xASYNC" Class="Digital Output" ImageId="1001">
+					<Id>8193</Id>
+					<ModuleIdent>2574</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="1 Channel Synchronous" Type="1xSYNC" Class="Digital Output" ImageId="1001">
+					<Id>8194</Id>
+					<ModuleIdent>526862</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="2 Channel Asynchronous" Type="2xASYNC" Class="Digital Output" ImageId="1001">
+					<Id>8195</Id>
+					<ModuleIdent>2574</ModuleIdent>
+					<ModuleIdent>2574</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="Empty" Type="EMPTY2" Class="Empty" ImageId="1002">
+					<Id>258</Id>
+					<ModuleIdent>0</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+			</SlotGroupData>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

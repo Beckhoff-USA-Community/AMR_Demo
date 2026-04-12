@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Navitrol_StreamVelocity" Id="{03e9eddb-7aaa-4ba8-bd03-bdd8811e85be}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Navitrol_StreamVelocity EXTENDS CyclicComponent IMPLEMENTS I_Navitrol_StreamVelocity
+VAR
+	Axis			   : REFERENCE TO AXIS_REF;
+	TargetVelocity	   : LREAL; // Desired velocity setpoint (signed)
+	_Enabled		   : BOOL;
+	McMoveVel1		   : MC_MoveVelocity;
+	McMoveVel2		   : MC_MoveVelocity;
+	McHalt			   : MC_Halt;
+	Toggle			   : BOOL  := FALSE;
+	LastVelocity	   : LREAL := 0.0;
+	FirstCycle		   : BOOL  := TRUE;
+	VelocityTolerance  : LREAL := 0.00001; // Threshold for issuing new command
+	AbsVelocity		   : LREAL;
+	Direction		   : MC_Direction;
+	StopActive		   : BOOL := FALSE;
+	_Error			   : BOOL;
+	_ErrorID		   : UDINT;
+	_Busy			   : BOOL;
+	EnableSmoothing	   : BOOL := TRUE;	  // Enable PT1 velocity smoothing
+	FilterTimeConstant : TIME := T#100MS; // PT1 time constant (tT1) - adjust for smoothing strength
+
+	// PT1 smoothing
+	PT1				: FB_CTRL_PT1;
+	PT1Params		: ST_CTRL_PT1_PARAMS;
+	GetCycleTime	: FB_CTRL_GET_TASK_CYCLETIME;
+	PT1Initialized	: BOOL := FALSE;
+	WorkingVelocity : LREAL; // The actual velocity setpoint being fed to NC (smoothed or raw)
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Enable" Id="{ad96f2f0-f611-4062-8de9-5acf9ebccf86}" />
+    <Folder Name="Result" Id="{f3e61b22-234d-41fb-b45e-fe4ada9812e1}" />
+    <Property Name="Busy" Id="{890d2ab8-a71b-40a5-8c6d-3247dd2d05ca}" FolderPath="Result\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Busy : BOOL]]></Declaration>
+      <Get Name="Get" Id="{d11f9a55-b800-4474-8b12-44bcd200e812}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Busy := _Busy;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="CyclicLogic" Id="{4b639b0d-d373-4ef9-84fc-ba710822fef1}">
+      <Declaration><![CDATA[METHOD CyclicLogic
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Initialize PT1 parameters once task cycle time is known
+IF NOT PT1Initialized THEN
+	GetCycleTime(eMode := eCTRL_MODE_ACTIVE);
+	IF GetCycleTime.bCycleTimeValid THEN
+		PT1Params.tTaskCycleTime := GetCycleTime.tTaskCycleTime;
+		PT1Params.tCtrlCycleTime := GetCycleTime.tTaskCycleTime; // Process every cycle
+		PT1Initialized			 := TRUE;
+	ELSE
+		// PT1 not ready yet - set defaults and exit early
+		WorkingVelocity := TargetVelocity;
+		RETURN;
+	END_IF
+END_IF
+
+// Update PT1 parameters from inputs (allows runtime tuning)
+PT1Params.fKp := 1;
+PT1Params.tT1 := FilterTimeConstant;
+// Apply velocity smoothing if enabled
+IF EnableSmoothing THEN
+	PT1(fIn			  := TargetVelocity,
+		fManSyncValue := TargetVelocity,
+		bSync		  := FALSE,
+		eMode		  := eCTRL_MODE_ACTIVE,
+		bHold		  := FALSE,
+		stParams	  := PT1Params);
+
+	WorkingVelocity := PT1.fOut;
+ELSE
+	// No smoothing - sync PT1 to current value
+	PT1(fIn			  := TargetVelocity,
+		fManSyncValue := TargetVelocity,
+		bSync		  := TRUE, // Sync to input when smoothing disabled
+		eMode		  := eCTRL_MODE_ACTIVE,
+		bHold		  := FALSE,
+		stParams	  := PT1Params);
+
+	WorkingVelocity := TargetVelocity;
+END_IF
+
+// Determine if we need to issue a new velocity command
+IF _Enabled THEN
+	// Check if we should stop (working velocity near zero)
+	IF ABS(WorkingVelocity) < VelocityTolerance THEN
+		// Issue stop command if not already stopping
+		IF NOT StopActive THEN
+			StopActive	 := TRUE;
+			LastVelocity := 0.0;
+		END_IF
+
+		// Execute stop with aborting buffer mode
+		McHalt(Axis := Axis, Execute := TRUE);
+
+		// Reset velocity FBs
+		McMoveVel1(Axis := Axis, Execute := FALSE);
+		McMoveVel2(Axis := Axis, Execute := FALSE);
+		_Busy	 := McHalt.Busy;
+		_Error	 := McHalt.Error;
+		_ErrorID := McHalt.ErrorID;
+	ELSE
+		// We have a non-zero target velocity
+		StopActive := FALSE;
+
+		// Reset stop FB
+		McHalt(Axis := Axis, Execute := FALSE);
+
+		// Calculate absolute velocity and direction
+		AbsVelocity := ABS(WorkingVelocity);
+		IF WorkingVelocity >= 0.0 THEN
+			Direction := MC_Positive_Direction;
+		ELSE
+			Direction := MC_Negative_Direction;
+		END_IF
+
+		// Check if velocity setpoint has changed significantly
+		IF ABS(WorkingVelocity - LastVelocity) > VelocityTolerance OR FirstCycle THEN
+			// Toggle between FB instances to achieve buffer aborting
+			Toggle		 := NOT Toggle;
+			LastVelocity := WorkingVelocity;
+			FirstCycle	 := FALSE;
+		END_IF
+
+		// Execute alternating MoveVelocity commands with BufferMode := MC_Aborting
+		McMoveVel1(Axis		  := Axis,
+				   Execute	  := _Enabled AND Toggle,
+				   Velocity	  := AbsVelocity,
+				   Direction  := Direction,
+				   BufferMode := MC_Aborting);
+
+		McMoveVel2(Axis		  := Axis,
+				   Execute	  := _Enabled AND NOT Toggle,
+				   Velocity	  := AbsVelocity,
+				   Direction  := Direction,
+				   BufferMode := MC_Aborting);
+
+		// Outputs
+		_Busy	 := McMoveVel1.Busy OR McMoveVel2.Busy;
+		_Error	 := McMoveVel1.Error OR McMoveVel2.Error;
+		_ErrorID := SEL(McMoveVel1.Error, McMoveVel2.ErrorID, McMoveVel1.ErrorID);
+	END_IF
+ELSE
+	// Reset when disabled
+	McMoveVel1(Axis := Axis, Execute := FALSE);
+	McMoveVel2(Axis := Axis, Execute := FALSE);
+	McHalt(Axis := Axis, Execute := FALSE);
+	FirstCycle := TRUE;
+	StopActive := FALSE;
+
+	// Sync PT1 to zero when disabled
+	PT1(fIn			  := 0.0,
+		fManSyncValue := 0.0,
+		bSync		  := TRUE,
+		eMode		  := eCTRL_MODE_ACTIVE,
+		bHold		  := FALSE,
+		stParams	  := PT1Params);
+
+	_Busy	 := FALSE;
+	_Error	 := FALSE;
+	_ErrorID := 0;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Disable" Id="{c0223a6c-7a65-47a6-b7cb-74d0fa38820e}" FolderPath="Enable\">
+      <Declaration><![CDATA[METHOD Disable
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_Enabled := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{8fac525a-7f73-4fcb-9176-f97e28402c68}" FolderPath="Enable\">
+      <Declaration><![CDATA[METHOD Enable
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_Enabled := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Enabled" Id="{bd83b2ed-a711-4b72-876f-1302d07160f3}" FolderPath="Enable\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Enabled : BOOL]]></Declaration>
+      <Get Name="Get" Id="{158884e4-b7cb-4e43-9c33-4360c36ee582}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Enabled := _Enabled;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="Error" Id="{ac5527d8-7f70-41c9-9778-02c2d8220a43}" FolderPath="Result\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Error : BOOL]]></Declaration>
+      <Get Name="Get" Id="{f287cb5d-5575-403f-857c-b0f7a391a740}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Error := _Error;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="ErrorId" Id="{f6adac4f-95f4-4a21-8810-52dbe9f6f9c2}" FolderPath="Result\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY ErrorId : UDINT]]></Declaration>
+      <Get Name="Get" Id="{2e44be61-fd83-4148-ad88-6b65383a93f6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[ErrorId := _ErrorId;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="FB_Init" Id="{0dc5c59b-b5e5-4aae-9fdd-c911385ba569}">
+      <Declaration><![CDATA[(*FB_Init is always available implicitly and it is used primarily for initialization.
+The return value is not evaluated. For a specific influence, you can also declare the
+methods explicitly and provide additional code there with the standard initialization
+code. You can evaluate the return value.*)
+METHOD FB_Init : BOOL
+VAR_INPUT
+	(* TRUE: the retain variables are initialized (reset warm / reset cold)*)
+	bInitRetains	: BOOL;
+	(* TRUE: the instance will be copied to the copy code afterward (online change)   *)
+	bInCopyCode	: BOOL;
+	Name	: Core.T_MaxString;
+    Axis		   : REFERENCE TO AXIS_REF;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.Axis REF= Axis;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetTargetVelocity" Id="{10685473-4fa9-4e5c-988c-b580df4c0e1f}">
+      <Declaration><![CDATA[METHOD SetTargetVelocity
+VAR_INPUT
+	TargetVelocity : LREAL; // Desired velocity setpoint (signed)
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.TargetVelocity := TargetVelocity;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

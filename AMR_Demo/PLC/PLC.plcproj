@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <SubObjectsSortedByName>true</SubObjectsSortedByName>
+    <DownloadApplicationInfo>true</DownloadApplicationInfo>
+    <WriteProductVersion>false</WriteProductVersion>
+    <GenerateTpy>false</GenerateTpy>
+    <ProgramVersion>3.1.4026.21</ProgramVersion>
+    <WriteBookmarksToFile>true</WriteBookmarksToFile>
+    <DeviceLogFilter>LOG_INFO, LOG_ERROR</DeviceLogFilter>
+    <Released>false</Released>
+    <ProjectGuid>{207d7263-bddd-4625-9614-ee5dd747cc9e}</ProjectGuid>
+    <Name>PLC</Name>
+    <Application>{5640443e-cc49-409a-9534-6c677bf8883e}</Application>
+    <TypeSystem>{1fa361b1-15fe-4ef1-b0f2-c94309141495}</TypeSystem>
+    <Implicit_Task_Info>{d4067fd0-10ea-4d46-9162-ac3b82842cf2}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{503257a9-0c5e-485b-ab9d-7c8cfbf18e2b}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{8ea91df4-eca4-44d2-bde4-0068e3d403f5}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{f24a0202-af47-4f73-9024-a660aaae031a}</LibraryReferences>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AMR\AMR_CONSTANT.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="AMR\DUT\ST_AxisRecipe.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AMR\DUT\ST_Recipe.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AMR\DUT\ST_AmrModule_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AMR\FB_COEDriveControl.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AMR\Interface\I_AmrModule.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AMR\AmrModule.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AMR\AmrModule_HMI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Accelerometer %28EP3751%29\DUT\ST_EP3751.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Accelerometer %28EP3751%29\DUT\ST_EP3751_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Accelerometer %28EP3751%29\EP3751_Accelerometer_HMI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DEGREE_TO_RADIAN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Encoder\DUT\ST_EncoderConfig_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Encoder\DUT\ST_Encoder_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Encoder\Encoder_HMI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Common types\ST_SectionHeader.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Common types\ST_SupervisorHeader.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\HMI\Navitrol_HMI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\HMI\ST_Navitrol_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_DifferentialDriveMotorControl.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_GoToDestination.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_ReturnToRoute.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_InitializePosition.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_Status.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_OmniDriveMotorControl.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Interface\I_Navitrol_StreamVelocity.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg1016_MeasurmentUpdateDifferentialDrive.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg1001_InitializePosition.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg3005_GoToDestination.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg3024_ReturnToRoute.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg3001_HoldRelease.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1100\ST_1100_Position_initialization_started.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1101\Components\E_1101_Initialization_result.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1101\ST_1101_Position_initialized.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1116\ST_1116_Motor_Control_Differential.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1126\Components\ST_1126_Omni_wheels_ref_struct.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1126\Components\ST_1126_Supervisor_status_out.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\1126\ST_1126_Motor_control_omni_response.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\E_3102_Error_status.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\E_3102_Position_initialize_status.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\E_3102_State.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\Sections\1\ST_3102_1_General_section.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3102\ST_3102_Navitrol_status.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3105\ST_3105_GoToDestinationResult.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3101\ST_3101_HoldReleased.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\3124\ST_3124_ReturnToRouteResponse.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol to Supervisor response\U_Recived_bytes_from_Navitrol.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Msg3002_NavitrolStatus.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Navitrol_StreamVelocity.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1001\ST_1001_Initialize_position.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1016\E_DriveControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1016\ST_1016_Measurement_update_differential_drive.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1026\Components\E_1026_Set_drive_mode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1026\Components\ST_1026_Omni_wheels_struct.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1026\Components\ST_1026_Supervisor_status_bits.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\1026\ST_1026_Measurement_update_generic_omni_drive.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\E_3002_Set_ESTOP.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\E_3002_Status.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\2\Components\E_3002_2_Enable_manual_control.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\2\Components\E_3002_2_Inactive_Active.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\2\ST_3002_2_Manual_section.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\6\Components\E_3002_6_Joystick1_control_mode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\6\Components\E_3002_6_Joystick2_control_mode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\6\Components\E_3002_6_Steer_type_selection.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\6\ST_3002_6_Remote_control_section.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\8\Components\ST_3002_8_Binary_data.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\8\Components\ST_3002_8_Error_status.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\8\ST_3002_8_Battery_section.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\F_SetSectionHeaderInfo.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3002\ST_3002_Supervisor_Status.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3005\ST_3005_GoToDestination.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3001\ST_3001_ReleaseHoldState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\3024\ST_3024_ReturnToRoute.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Navitrol\Supervisor to Navitrol message\F_SetHeaderInfo.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="Core">
+      <DefaultResolution>Core, * (Beckhoff Automation LLC)</DefaultResolution>
+      <Namespace>Core</Namespace>
+      <Parameters>
+        <Parameter ListName="COREPARAMETER" xmlns="">
+          <Key>TRACELEVEL</Key>
+          <Value>TcEventSeverityExt.Warning</Value>
+        </Parameter>
+      </Parameters>
+    </PlaceholderReference>
+    <PlaceholderReference Include="CoreComponents">
+      <DefaultResolution>CoreComponents, * (Beckhoff Automation LLC)</DefaultResolution>
+      <Namespace>CoreComponents</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="CoreMotionNc2">
+      <DefaultResolution>CoreMotionNc2, * (Beckhoff Automation LLC)</DefaultResolution>
+      <Namespace>CoreMotionNc2</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_ControllerToolbox">
+      <DefaultResolution>Tc2_ControllerToolbox, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_ControllerToolbox</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_EtherCAT">
+      <DefaultResolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_EtherCAT</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_MC2">
+      <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_MC2</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_TcpIp">
+      <DefaultResolution>Tc2_TcpIp, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_TcpIp</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_JsonXml">
+      <DefaultResolution>Tc3_JsonXml, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_JsonXml</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Module">
+      <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Module</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_PackML_V3">
+      <DefaultResolution>Tc3_PackML_V3, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_PackML_V3</Namespace>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AMR" />
+    <Folder Include="AMR\DUT" />
+    <Folder Include="AMR\Interface" />
+    <Folder Include="Components" />
+    <Folder Include="Components\Accelerometer %28EP3751%29\DUT" />
+    <Folder Include="Components\Encoder\DUT" />
+    <Folder Include="Components\Navitrol" />
+    <Folder Include="Components\Navitrol\Common types" />
+    <Folder Include="Components\Navitrol\Interface" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1100" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1101" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1101\Components" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1116" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1126" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\1126\Components" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\Sections" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3102\Components\Sections\1" />
+    <Folder Include="Components\Navitrol\HMI" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3101" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3105" />
+    <Folder Include="Components\Navitrol\Navitrol to Supervisor response\3124" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1001" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1026" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1026\Components" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\2" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\2\Components" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\6" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\6\Components" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\8" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3002\Components\Sections\8\Components" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\1016" />
+    <Folder Include="Components\Encoder" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3001" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3005" />
+    <Folder Include="Components\Navitrol\Supervisor to Navitrol message\3024" />
+    <Folder Include="Components\Accelerometer %28EP3751%29" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PLC.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="Core">
+      <Resolution>Core, 1.3.0 (Beckhoff Automation LLC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="CoreComponents">
+      <Resolution>CoreComponents, 1.3.1 (Beckhoff Automation LLC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="CoreMotionNc2">
+      <Resolution>CoreMotionNc2, 1.3.0 (Beckhoff Automation LLC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_ControllerToolbox">
+      <Resolution>Tc2_ControllerToolbox, 3.6.5.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_DataExchange">
+      <Resolution>Tc2_DataExchange, 3.4.2.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Drive">
+      <Resolution>Tc2_Drive, 3.3.14.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_EtherCAT">
+      <Resolution>Tc2_EtherCAT, 3.7.1.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_IoFunctions">
+      <Resolution>Tc2_IoFunctions, 3.4.5.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Math">
+      <Resolution>Tc2_Math, 3.5.1.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_MC2">
+      <Resolution>Tc2_MC2, 3.3.72.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_MC2_Drive">
+      <Resolution>Tc2_MC2_Drive, 3.3.53.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_NC">
+      <Resolution>Tc2_NC, 3.3.11.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_NCI">
+      <Resolution>Tc2_NCI, 3.3.19.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_NcKinematicTransformation">
+      <Resolution>Tc2_NcKinematicTransformation, 3.2.11.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_PlcInterpolation">
+      <Resolution>Tc2_PlcInterpolation, 3.3.23.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_SerialCom">
+      <Resolution>Tc2_SerialCom, 3.4.6.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Standard">
+      <Resolution>Tc2_Standard, 3.4.5.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_System">
+      <Resolution>Tc2_System, 3.10.1.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_TcpIp">
+      <Resolution>Tc2_TcpIp, 3.4.4.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Utilities">
+      <Resolution>Tc2_Utilities, 3.10.1.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_DynamicMemory">
+      <Resolution>Tc3_DynamicMemory, 1.1.4.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_EventLogger">
+      <Resolution>Tc3_EventLogger, 3.3.13.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_JsonXml">
+      <Resolution>Tc3_JsonXml, 3.4.7.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_Module">
+      <Resolution>Tc3_Module, 3.4.5.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_PackML_V3">
+      <Resolution>Tc3_PackML_V3, 1.0.6.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+  </ItemGroup>
+  <ProjectExtensions>
+    <PlcProjectOptions>
+      <XmlArchive>
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
+      <v n="Name">"&lt;ProjectRoot&gt;"</v>
+      <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+        <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
+        <o>
+          <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
+        <o>
+          <v n="Name">"{29BD8D0C-3586-4548-BB48-497B9A01693F}"</v>
+          <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+            <v>Metrics</v>
+            <o>
+              <v n="Name">"Metrics"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
+            <v>NamingConventions</v>
+            <o>
+              <v n="Name">"NamingConventions"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
+            <v>Rules</v>
+            <o>
+              <v n="Name">"Rules"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
+          </d>
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
+        <o>
+          <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{8A0FB252-96EB-4DCC-A5B4-B4804D05E2D6}</v>
+        <o>
+          <v n="Name">"{8A0FB252-96EB-4DCC-A5B4-B4804D05E2D6}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="Boolean">
+            <v>WriteLineIDs</v>
+            <v>True</v>
+          </d>
+        </o>
+        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <o>
+          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>DisabledWarningIds</v>
+            <v>410,5410</v>
+          </d>
+        </o>
+        <v>{eeeeeeee-3909-4298-8022-501ac3238667}</v>
+        <o>
+          <v n="Name">"{eeeeeeee-3909-4298-8022-501ac3238667}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{F66C7017-BDD8-4114-926C-81D6D687E35F}</v>
+        <o>
+          <v n="Name">"{F66C7017-BDD8-4114-926C-81D6D687E35F}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="Boolean">
+            <v>CalcActiveTransOnly</v>
+            <v>True</v>
+          </d>
+        </o>
+      </d>
+      <d n="Values" t="Hashtable" />
+    </o>
+        </Data>
+        <TypeList>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
+    </PlcProjectOptions>
+  </ProjectExtensions>
+</Project>

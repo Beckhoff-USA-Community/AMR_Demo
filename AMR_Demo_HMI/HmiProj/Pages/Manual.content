@@ -1,0 +1,21 @@
+<div id="Manual_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-creator-viewport-width="1536" data-tchmi-creator-viewport-height="1000" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-right="0" data-tchmi-bottom="0">
+
+<div id="manual-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
+<div id="TcHmiGrid_1" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="-290" data-tchmi-bottom="-193" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
+<div id="PackMLPanel_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/PackMLStatemachinePanel.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.Statemachine_HMI%/s%">
+</div>
+<div id="NavitrolPanel1_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="220" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/NavitrolPanel.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI%/s%">
+</div>
+<div id="AxisPTPPanel_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/AxisPTPPanel.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.Lift_HMI.AxisPTP_HMI%/s%">
+</div>
+<div id="AxisPTPPanel_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/AxisPTPPanel.usercontrol" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.WheelLeft_HMI.AxisPTP_HMI%/s%">
+</div>
+<div id="AxisPTPPanel_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="220" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/AxisPTPPanel.usercontrol" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.WheelRight_HMI.AxisPTP_HMI%/s%">
+</div>
+<div id="CustomPanel_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/EncoderPanel.usercontrol" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.Encoder_HMI.Encoder_HMI%/s%">
+</div>
+<div id="EP3751Panel_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/EP3751Panel.usercontrol" data-tchmi-top="350" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI%/s%">
+</div>
+</div>
+</div>
+</div>
