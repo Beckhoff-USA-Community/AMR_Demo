@@ -34,6 +34,8 @@
   "icon-dark"
 ]
 </script>
+
+
 </div>
 <div id="ncaxis-btn-jogright_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/CoreButton.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-icon="Images/Icons/right.svg" data-tchmi-button="%pp%data::JogFwd%/pp%">
 <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
@@ -41,6 +43,8 @@
   "icon-dark"
 ]
 </script>
+
+
 </div>
 </div>
 

@@ -24,12 +24,11 @@
 ]
 </script>
 <div id="TcHmiHtmlHost_AGVMap" data-tchmi-type="TcHmi.Controls.System.TcHmiHtmlHost" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
-<svg id="agvMap" width="100%" height="100%" viewBox="-3 -2 56 58" style="border: 1px solid #ccc; background: #b9b9b9;">
+<svg id="agvMap" width="100%" height="100%" viewbox="-3 -2 56 58" style="border: 1px solid #ccc; background: #b9b9b9;">
     <defs>
         <!-- AGV shape definition (triangle pointing up) -->
         <g id="agvShape">
-            <path d="M -0.4,-0.6 L 0.4,-0.6 L 0.4,0.6 L -0.4,0.6 Z"
-                  fill="#424242" stroke="#212121" stroke-width="0.08" />
+            <path d="M -0.4,-0.6 L 0.4,-0.6 L 0.4,0.6 L -0.4,0.6 Z" fill="#424242" stroke="#212121" stroke-width="0.08"></path>
         </g>
     </defs>
         <g id="gridLayer"></g>
@@ -53,11 +52,11 @@
     <div id="layerControls" style="position: absolute; bottom: 10px; right: 10px; background: rgba(73,73,73,0.95); padding: 10px; border-radius: 4px; font-family: Arial; font-size: 12px;">
         <div style="font-weight: bold; margin-bottom: 8px;">Layers</div>
         <label style="display: block; margin-bottom: 5px; cursor: pointer;">
-            <input type="checkbox" id="toggleSymbolicPoints" checked style="margin-right: 5px;">
+            <input type="checkbox" id="toggleSymbolicPoints" checked="" style="margin-right: 5px;">
             Destinations
         </label>
         <label style="display: block; cursor: pointer;">
-            <input type="checkbox" id="toggleWaypoints" checked style="margin-right: 5px;">
+            <input type="checkbox" id="toggleWaypoints" checked="" style="margin-right: 5px;">
             Waypoints
         </label>
     </div>
@@ -609,8 +608,7 @@
 
 </div>
 <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="Info-ScannerActive" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-text="Scanner Active" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="22" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-color="%tr%DefaultRed%/tr%" data-tchmi-text-font-weight="Bold" data-tchmi-right="20">
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%s%ADS.PLC1.MAIN.AmrModule.SafetyScannerHokuyo.OK%/s%",
     "actions": [
@@ -755,12 +753,10 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="Info-StationHold" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-text="Station Hold" data-tchmi-top="49" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="22" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-color="%tr%DefaultRed%/tr%" data-tchmi-text-font-weight="Bold" data-tchmi-right="20">
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%s%ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI::Status%/s%",
     "actions": [
@@ -819,8 +815,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="ScannerBypass-ToggleSwitch" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-height="35" data-tchmi-height-unit="px" data-tchmi-text="Scanner Bypassed" data-tchmi-width="140" data-tchmi-width-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-state-symbol="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.AmrModule_HMI::BypassScanners%/s%">
 </div>

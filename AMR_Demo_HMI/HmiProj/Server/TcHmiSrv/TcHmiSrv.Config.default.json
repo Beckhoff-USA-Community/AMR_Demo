@@ -14370,7 +14370,7 @@
                     "JogBwd": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:general#/definitions/BOOL"
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.Core.Button"
                             },
                             {
                                 "propertyOrder": 4
@@ -14380,7 +14380,7 @@
                     "JogFwd": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:general#/definitions/BOOL"
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.Core.Button"
                             },
                             {
                                 "propertyOrder": 3
@@ -31787,7 +31787,7 @@
                     },
                     {
                         "addSymbol": true,
-                        "propertyOrder": 18,
+                        "propertyOrder": 19,
                         "userGroups": [
                             " Admin",
                             "__SystemAdministrators"

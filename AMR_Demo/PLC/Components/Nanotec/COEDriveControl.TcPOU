@@ -35,12 +35,12 @@ END_VAR]]></Declaration>
       <ST><![CDATA[// Interfaces with the Elmo Drive, to maintain the internal state machine (DS-402)
 // Check interface document for DS-402 and Beckhoff EL7211 manual for more information
 IF Manual THEN
-	Enable := HMI.JogBwd OR HMI.JogFwd;
-	IF HMI.JogBwd THEN
+	Enable := HMI.JogBwd.Active OR HMI.JogFwd.Active;
+	IF HMI.JogBwd.Active THEN
 		SetVelIncr := -50;
 	END_IF
 
-	IF HMI.JogFwd THEN
+	IF HMI.JogFwd.Active THEN
 		SetVelIncr := 50;
 	END_IF
 END_IF
@@ -49,6 +49,7 @@ HMI.Name	   := 'Lift';
 HMI.ActVelIncr := ActVelIncr;
 HMI.Faulted	   := Faulted;
 HMI.Ready	   := Ready;
+HMI.HmiEnabled := Manual;
 //
 IF NOT SetupMode THEN
 	IF (COEStatus AND 16#006F) = 16#0027 THEN (*State 4*)
@@ -145,8 +146,7 @@ ELSE
 				Seq := 60;
 			END_IF
 	END_CASE
-END_IF
-]]></ST>
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

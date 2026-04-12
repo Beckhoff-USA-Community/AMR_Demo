@@ -251,8 +251,7 @@
 
 
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onStatePressed",
     "actions": [
@@ -412,8 +411,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div id="pmlcontrol-lbl-packml" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="true" data-tchmi-right="10" data-tchmi-bottom="0" data-tchmi-text-horizontal-alignment="Right" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="14" data-tchmi-left="10">
 
@@ -430,8 +428,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%pp%StatemachineHMI::CurrentState%/pp%",
     "actions": [
@@ -464,8 +461,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 </div>
 

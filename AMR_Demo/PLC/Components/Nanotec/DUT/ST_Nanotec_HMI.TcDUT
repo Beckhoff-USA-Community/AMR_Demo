@@ -3,8 +3,8 @@
   <DUT Name="ST_Nanotec_HMI" Id="{4383fe85-5e5c-4595-b313-f8d5bde2f215}">
     <Declaration><![CDATA[TYPE ST_Nanotec_HMI EXTENDS ST_HmiFunction :
 	STRUCT
-		JogFwd	   : BOOL;
-		JogBwd	   : BOOL;
+		JogFwd	   : Button;
+		JogBwd	   : Button;
 		Ready	   : BOOL;
 		Faulted	   : BOOL;
 		ActVelIncr : INT;

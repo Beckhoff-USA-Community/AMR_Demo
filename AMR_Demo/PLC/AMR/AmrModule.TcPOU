@@ -241,7 +241,7 @@ CASE SequenceState OF
 		NextMinorStep(SequenceState);
 
 	21:
-		IF EncoderPositionIn >= 20_000 THEN
+		IF EncoderPositionIn >= 28_000 THEN
 			COEDriveControl.Enable := FALSE;
 			NextStep(SequenceState);
 		END_IF
@@ -259,7 +259,7 @@ CASE SequenceState OF
 		NextMinorStep(SequenceState);
 
 	41:
-		IF EncoderPositionIn <= -20_000 THEN
+		IF EncoderPositionIn <= -28_000 THEN
 			COEDriveControl.Enable := FALSE;
 			NextStep(SequenceState);
 		END_IF

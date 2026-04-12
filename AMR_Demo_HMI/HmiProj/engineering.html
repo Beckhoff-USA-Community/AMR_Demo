@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>AMR Demo</title>
-  <meta name="tchmi-buildtime" content="2026-04-12T12:57:41">
+  <meta name="tchmi-buildtime" content="2026-04-12T13:34:08">
 
   <!-- target-densitydpi=device-dpi -->
   <meta name="viewport" content="initial-scale=1.0"><script>
@@ -340,25 +340,105 @@
 <script src="/Functions/GetKinematicStatus.js" defer=""></script>
 </head>
 <body class="tchmi-body-designer">
-	<div id="Manual_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-creator-viewport-width="1536" data-tchmi-creator-viewport-height="1000" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-creator-partial-key="/Pages/Manual.content">
+	<div id="Nanotec" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-creator-viewport-width="450" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-creator-viewport-height="250" data-tchmi-creator-partial-key="/Popups/PanelPopups/Nanotec.usercontrol">
+<div id="nanotec-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
+<div id="nanotec-grid-buttons" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-width-unit="px" data-tchmi-height-unit="px">
 
-<div id="manual-grid-main" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
-<div id="TcHmiGrid_1" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="-290" data-tchmi-bottom="-193" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
-<div id="PackMLPanel_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/PackMLStatemachinePanel.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.AmrModule_HMI.Statemachine_HMI%/s%">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "maxWidthUnit": "px",
+    "minWidthUnit": "px",
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "grouping-container"
+]
+</script>
+<div id="ncaxis-btn-jogleft_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/CoreButton.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-icon="Images/Icons/left.svg">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "icon-dark"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-button" type="application/json">
+{
+  "Active": "%pp%data::JogBwd%/pp%",
+  "_Active": false,
+  "_Name": null,
+  "_Permissive": {
+    "OK": true,
+    "Permissive": null,
+    "PermissiveReason": null,
+    "_OK": true
+  }
+}
+</script>
 </div>
-<div id="NavitrolPanel1_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="220" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/NavitrolPanel.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.Navitrol_HMI.Navitrol_HMI%/s%">
+<div id="ncaxis-btn-jogright_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/CoreButton.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-icon="Images/Icons/right.svg">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "icon-dark"
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-button" type="application/json">
+{
+  "Active": "%pp%data::JogFwd%/pp%",
+  "_Active": true,
+  "_Name": null,
+  "_Permissive": {
+    "OK": true,
+    "Permissive": null,
+    "PermissiveReason": null,
+    "_OK": true
+  }
+}
+</script>
 </div>
-<div id="AxisPTPPanel_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/AxisPTPPanel.usercontrol" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.WheelLeft_HMI.AxisPTP_HMI%/s%">
 </div>
-<div id="AxisPTPPanel_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="220" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/AxisPTPPanel.usercontrol" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.WheelRight_HMI.AxisPTP_HMI%/s%">
-</div>
-<div id="CustomPanel_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/EncoderPanel.usercontrol" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.Encoder_HMI.Encoder_HMI%/s%">
-</div>
-<div id="EP3751Panel_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/EP3751Panel.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.EP3751_Accelerometer_HMI.EP3751_HMI%/s%">
-</div>
-<div id="CustomPanel_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="160" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Panels/NanotecPanel.usercontrol" data-tchmi-top="350" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-data="%s%ADS.PLC1.MAIN.AmrModule.COEDriveControl.HMI%/s%">
-</div>
-</div>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 2.0,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "maxHeightUnit": "px",
+    "minHeightUnit": "px",
+    "overflow": false
+  }
+]
+</script>
 </div>
 </div>
 </body>

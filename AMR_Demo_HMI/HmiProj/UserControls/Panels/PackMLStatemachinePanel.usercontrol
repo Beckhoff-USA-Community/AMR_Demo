@@ -48,8 +48,7 @@
 </script>
 <div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="pmlpanel-ddt-state" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="True" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-label="State" data-tchmi-right="10" data-tchmi-value-font-size="16" data-tchmi-label-font-size="12" data-tchmi-label-to-value-ratio="1:2" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-value="Undefined">
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%pp%data::CurrentState%/pp%",
     "actions": [
@@ -66,8 +65,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div data-tchmi-grid-row-index="2" data-tchmi-grid-column-index="0" id="pmlpanel-ddt-mode" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="True" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-label="Mode" data-tchmi-right="10" data-tchmi-value-font-size="16" data-tchmi-label-font-size="12" data-tchmi-value="%f%GetModeName(%pp%data::CurrentMode%/pp%)%/f%" data-tchmi-label-to-value-ratio="1:2" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
 </div>
@@ -216,8 +214,7 @@
 ]
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
     "actions": [
@@ -359,8 +356,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 </div>
 </div>

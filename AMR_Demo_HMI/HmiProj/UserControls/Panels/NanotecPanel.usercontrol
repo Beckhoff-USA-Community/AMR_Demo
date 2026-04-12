@@ -155,12 +155,35 @@
   "bottom": "Solid"
 }
 </script>
+<div id="cylinderpanel-lbl-name_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-word-wrap="True" data-tchmi-right="0" data-tchmi-width-mode="Parent" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text="%pp%data::Name%/pp%" data-tchmi-bottom="0" data-tchmi-height-unit="px" data-tchmi-height-mode="Parent" data-tchmi-text-font-size="14">
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "None",
+  "right": "None",
+  "top": "None",
+  "bottom": "None"
+}
+</script>
+</div>
 </div>
 <div data-tchmi-grid-row-index="2" data-tchmi-grid-column-index="0" id="encoderpanel-ddt-speed_1" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="True" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-label="Speed" data-tchmi-label-to-value-ratio="1:2" data-tchmi-value-font-size="16" data-tchmi-value="%f%%pp%data::ActVelIncr%/pp%%/f%" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-label-font-size="12" data-tchmi-label-position="Right">
 
 
 </div>
-<div id="axisptppanel-si-enabled_1" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.StatusIndicator" data-tchmi-label-word-wrap="True" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="1" data-tchmi-top-unit="px" data-tchmi-label="Ready" data-tchmi-label-position="Right" data-tchmi-label-font-size="14" data-tchmi-label-font-style="Normal" data-tchmi-label-font-weight="Normal" data-tchmi-right="10" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-label-horizontal-alignment="Right" data-tchmi-label-vertical-alignment="Center" data-tchmi-grid-column-index="0" data-tchmi-fill-color-false="%tr%DefaultGrey%/tr%" data-tchmi-grid-row-index="1" data-tchmi-state-symbol="%pp%data::Ready%/pp%">
+<div id="axisptppanel-si-enabled_1" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.StatusIndicator" data-tchmi-label-word-wrap="True" data-tchmi-left="76" data-tchmi-left-unit="px" data-tchmi-top="1" data-tchmi-top-unit="px" data-tchmi-label="Ready" data-tchmi-label-position="Right" data-tchmi-label-font-size="14" data-tchmi-label-font-style="Normal" data-tchmi-label-font-weight="Normal" data-tchmi-right="10" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-label-horizontal-alignment="Right" data-tchmi-label-vertical-alignment="Center" data-tchmi-grid-column-index="0" data-tchmi-fill-color-false="%tr%DefaultGrey%/tr%" data-tchmi-grid-row-index="1" data-tchmi-state-symbol="%pp%data::Ready%/pp%">
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%pp%data::Status::Disabled%/pp%",
@@ -238,8 +261,7 @@
 
 </div>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
     "actions": [
@@ -282,6 +304,5 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>

@@ -18,8 +18,7 @@
 ]
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctrl%products-pdf::Page%/ctrl%",
     "actions": [
@@ -226,8 +225,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 <div id="products-grid-selection" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
 
 <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
@@ -284,8 +282,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onStatePressed",
     "actions": [
@@ -312,8 +309,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div id="TcHmiButton_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-text="Compact Motion " data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-word-wrap="True" data-tchmi-right="5" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-border-color="%tr%DefaultRed%/tr%">
 
@@ -339,8 +335,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onStatePressed",
     "actions": [
@@ -367,8 +362,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div id="TcHmiButton_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-left-unit="px" data-tchmi-text="DC/DC Converter" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-word-wrap="True" data-tchmi-right="5" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-border-color="%tr%DefaultBlue%/tr%" data-tchmi-left="5">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
@@ -393,8 +387,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onStatePressed",
     "actions": [
@@ -421,8 +414,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
@@ -468,8 +460,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onStatePressed",
     "actions": [
@@ -496,8 +487,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div id="TcHmiButton_5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="4" data-tchmi-grid-row-index="0" data-tchmi-left-unit="px" data-tchmi-text="Safety" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-word-wrap="True" data-tchmi-right="10" data-tchmi-bottom="10" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-border-color="%tr%DefaultYellow%/tr%" data-tchmi-left="5">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
@@ -522,8 +512,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onStatePressed",
     "actions": [
@@ -550,8 +539,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 </div>
 <div id="products-pdf" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiPdfViewer" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-file="/Presentation/AMR.pdf" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent">
@@ -577,7 +565,6 @@
   "bottom": "Solid"
 }
 </script>
-</div>
 </div>
 </div>
 </div>

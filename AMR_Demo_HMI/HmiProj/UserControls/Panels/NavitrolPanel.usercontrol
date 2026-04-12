@@ -182,8 +182,7 @@
 <div id="NavitrolStatus-Connected" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.StatusIndicator" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-label-word-wrap="True" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-state-symbol="%pp%data::CommunicationActive%/pp%" data-tchmi-label="Connection Active" data-tchmi-label-font-size="14">
 </div>
 <div data-tchmi-grid-row-index="2" data-tchmi-grid-column-index="0" id="navitrolpanel-ddt-state" data-tchmi-type="TcHmi.Controls.TcHmiExtendedControls.DataDisplayTile" data-tchmi-label-word-wrap="True" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-label="State" data-tchmi-right="10" data-tchmi-value-font-size="16" data-tchmi-label-font-size="12" data-tchmi-label-to-value-ratio="1:2" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-value="Undefined">
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "%pp%data::Status%/pp%",
     "actions": [
@@ -200,8 +199,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 <div id="navitrolpanel-ddt-manualControl" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleSwitch" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="3" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="Manual Mode
 Setpoint streaming" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="5" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-text-position="Left" data-tchmi-text-font-size="12" data-tchmi-state-symbol="%pp%data::ControlFromNavitrol%/pp%">
