@@ -579,6 +579,7 @@ END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[CASE SequenceState OF
 	0: // Wait AMR not moving
+		COEDriveControl.Enable := FALSE;
 		IF Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedLeft = 0.0 AND Navitrol_MeasurmentUpdateDifferentialDrive.SetPointSpeedRight = 0.0 THEN
 			IF CompareLREAL(_WheelLeft.ActualVelocity, 0.0, 0.01) AND CompareLREAL(_WheelRight.ActualVelocity, 0.0, 0.01) THEN
 				_WheelLeft_StreamVelocity.Disable();
@@ -627,6 +628,7 @@ END_IF]]></ST>
 		_WheelRight_StreamVelocity.Disable();
         _WheelLeft.Stop();
 		_WheelRight.Stop();
+        COEDriveControl.Enable := FALSE;
 		NextMinorStep(SequenceState);
 
 	1:

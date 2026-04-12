@@ -20,7 +20,7 @@ VAR
 	_ErrorID		   : UDINT;
 	_Busy			   : BOOL;
 	EnableSmoothing	   : BOOL := TRUE;	  // Enable PT1 velocity smoothing
-	FilterTimeConstant : TIME := T#200MS; // PT1 time constant (tT1) - adjust for smoothing strength
+	FilterTimeConstant : TIME := T#190MS; // PT1 time constant (tT1) - adjust for smoothing strength
 
 	// PT1 smoothing
 	PT1				: FB_CTRL_PT1;
@@ -65,7 +65,7 @@ IF NOT PT1Initialized THEN
 END_IF
 
 // Update PT1 parameters from inputs (allows runtime tuning)
-PT1Params.fKp := 0.75;
+PT1Params.fKp := 0.8;
 PT1Params.tT1 := FilterTimeConstant;
 // Apply velocity smoothing if enabled
 IF EnableSmoothing THEN
