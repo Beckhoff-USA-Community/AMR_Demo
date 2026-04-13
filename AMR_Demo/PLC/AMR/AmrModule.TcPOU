@@ -236,15 +236,34 @@ CASE SequenceState OF
 		END_IF
 
 	20:
-		COEDriveControl.SetVelIncr := 50;
-		COEDriveControl.Enable	   := TRUE;
+		//COEDriveControl.SetVelIncr := 50;
+		//COEDriveControl.Enable	   := TRUE;
 		NextMinorStep(SequenceState);
 
 	21:
-		IF EncoderPositionIn >= 28_000 THEN
-			COEDriveControl.Enable := FALSE;
-			NextStep(SequenceState);
-		END_IF
+		// 		IF EncoderPositionIn >= 28_000 THEN
+
+		// 			COEDriveControl.Enable := FALSE;
+
+		// 			NextStep(SequenceState);
+
+		// 		END_IF
+
+		// 
+
+		// 		{warning 'Remove this time after mechanics and nanotec motor is fixed and fully functional'}
+
+		// 		WaitTime(IN := TRUE, PT := T#5S);
+
+		// 		IF WaitTime.Q THEN
+
+		// 			COEDriveControl.Enable := FALSE;
+
+		// 			WaitTime(IN := FALSE);
+
+		// 			SetStep(SequenceState, 50);
+		// 		END_IF
+		NextStep(SequenceState);
 
 	30:
 		WaitTime(IN := TRUE, PT := T#2S);
@@ -254,15 +273,34 @@ CASE SequenceState OF
 		END_IF
 
 	40:
-		COEDriveControl.SetVelIncr := -50;
-		COEDriveControl.Enable	   := TRUE;
+		//COEDriveControl.SetVelIncr := -50;
+		//COEDriveControl.Enable	   := TRUE;
 		NextMinorStep(SequenceState);
 
 	41:
-		IF EncoderPositionIn <= -28_000 THEN
-			COEDriveControl.Enable := FALSE;
-			NextStep(SequenceState);
-		END_IF
+		// 		IF EncoderPositionIn <= -28_000 THEN
+
+		// 			COEDriveControl.Enable := FALSE;
+
+		// 			NextStep(SequenceState);
+
+		// 		END_IF
+
+		// 
+
+		// 		{warning 'Remove this time after mechanics and nanotec motor is fixed and fully functional'}
+
+		// 		WaitTime(IN := TRUE, PT := T#5S);
+
+		// 		IF WaitTime.Q THEN
+
+		//             COEDriveControl.Enable := FALSE;
+
+		// 			WaitTime(IN := FALSE);
+
+		// 			SetStep(SequenceState, 50);
+		// 		END_IF
+		NextStep(SequenceState);
 
 	50:
 		IF Navitrol_StopHoldRelease.Execute() THEN
