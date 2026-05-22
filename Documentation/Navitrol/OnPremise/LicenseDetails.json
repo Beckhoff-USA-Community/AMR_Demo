@@ -1,8 +1,0 @@
-{
-  "LicenseKey": "FDAFCC-388222",
-  "ActivationMode": "OnPremiseFloating",
-  "FileGenerationDate": "2026-04-01T11:19:30",
-  "Product": "NavigationSoftware",
-  "OnPremiseHostAddress": "http://localhost:14401",
-  "UseBeckhoffFingerprinting": false
-}

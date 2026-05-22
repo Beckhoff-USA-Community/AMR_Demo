@@ -1,8 +1,0 @@
-{
-  "LicenseKey": "FDAFCC-388222-49C0A0-B5BD71-F93053-6439BF",
-  "ActivationMode": "OnPremiseFloating",
-  "FileGenerationDate": "2026-04-01T11:19:26",
-  "Product": "NavigationSoftware",
-  "OnPremiseHostAddress": "http://localhost:14401",
-  "UseBeckhoffFingerprinting": false
-}
