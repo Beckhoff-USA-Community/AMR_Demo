@@ -28,6 +28,21 @@
 		</Plc>
 		<Safety>
 			<Project File="Safety.xti"/>
+			<Project GUID="{5DFBC338-C5E1-4819-B990-CAC683530E1A}" Name="ELM-Initial-ChA-Safe Motion" PrjFilePath="ELM-Initial-ChA-Safe Motion_1\ELM-Initial-ChA-Safe Motion.splcproj" TmcFilePath="ELM-Initial-ChA-Safe Motion_1\ELM-Initial-ChA-Safe Motion.tmc" GeneralArchiveSettings="#x000f" TargetArchiveSettings="#x0007" FileArchiveSettings="#x000e">
+				<Instance Id="#x01010020" KeepUnrestoredLinks="2">
+					<Name>ELM-Initial-ChA-Safe Motion Instance</Name>
+					<TmcDesc GUID="{72A6D5B8-E98C-4604-8B90-09D1F8AB38A9}">
+						<Name>Safety</Name>
+						<InitSequence>PO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+								<Name>Default</Name>
+							</Context>
+						</Contexts>
+					</TmcDesc>
+				</Instance>
+			</Project>
 		</Safety>
 		<Io>
 			<Device File="X103 (EtherCAT).xti" Id="2"/>

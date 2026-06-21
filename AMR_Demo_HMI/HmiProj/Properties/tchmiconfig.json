@@ -501,20 +501,6 @@
       "symbols": {
         "package": {}
       }
-    },
-    {
-      "name": "TcHmiExtendedControls",
-      "basePath": "/TcHmiExtendedControls",
-      "symbols": {
-        "package": {}
-      }
-    },
-    {
-      "name": "TcHmiToastNotification",
-      "basePath": "/TcHmiToastNotification",
-      "symbols": {
-        "package": {}
-      }
     }
   ],
   "keyboardLayouts": [

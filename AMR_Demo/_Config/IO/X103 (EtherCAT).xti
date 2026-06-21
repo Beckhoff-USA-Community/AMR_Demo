@@ -29,15 +29,11 @@
 	<Mappings>
 		<OwnerA>
 			<OwnerB Name="TIID^X103 (EtherCAT)">
-				<Link VarA="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO"/>
-				<Link VarA="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO"/>
 				<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE" VarB="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO"/>
 				<Link VarA="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE" VarB="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO"/>
 				<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_27 TxPDO" VarB="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE"/>
-				<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO" VarB="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE"/>
 				<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" VarB="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^FSOE"/>
 				<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_27 RxPDO" VarB="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE"/>
-				<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO" VarB="EtherCat  (EK1100)^Motion 1 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE"/>
 				<Link VarA="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" VarB="EtherCat  (EK1100)^Motion 2 (ELM7231-9018)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^FSOE"/>
 				<Link VarA="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE RxPDO-Map For Area Input Mode^FSOE" VarB="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionInputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_27 TxPDO"/>
 				<Link VarA="Hokuyo Scanner (UAM-05LECA)^Module 1 (Area Input Mode)^FSoE TxPDO-Map For Area Input Mode^FSOE" VarB="EtherCat  (EK1100)^Safety PLC (EL2911)^ConnectionOutputs^Inputs.Hokuyo Scanner (UAM-05LECA) - Module 1 (Area Input Mode)_27 RxPDO"/>

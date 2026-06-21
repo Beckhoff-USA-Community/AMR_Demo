@@ -316,10 +316,10 @@
 				<Entry>
 					<Type GUID="{18071995-0000-0000-0000-0020000000C8}">ARRAY [0..24] OF BYTE</Type>
 				</Entry>
-				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 TxPDO" Index="#x7000" Sub="#x02">
+				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" Index="#x7000" Sub="#x02">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
-				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 TxPDO" Index="#x7000" Sub="#x03">
+				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_29 TxPDO" Index="#x7000" Sub="#x03">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
 			</Pdo>
@@ -330,10 +330,10 @@
 				<Entry>
 					<Type GUID="{18071995-0000-0000-0000-0020000000C8}">ARRAY [0..24] OF BYTE</Type>
 				</Entry>
-				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_14 RxPDO" Index="#x6000" Sub="#x02">
+				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" Index="#x6000" Sub="#x02">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
-				<Entry Name="Motion.Motion 2 (ELM7231-9018) - Module 1 (SAFETY)_15 RxPDO" Index="#x6000" Sub="#x03">
+				<Entry Name="Motion.Motion 1 (ELM7231-9018) - Module 1 (SAFETY)_29 RxPDO" Index="#x6000" Sub="#x03">
 					<Type GUID="{B05FDAB7-3241-ACD3-D16C-0FDAF8825BC9}">FSOE_7</Type>
 				</Entry>
 			</Pdo>
@@ -423,7 +423,7 @@
 				<ModuleIdent>200</ModuleIdent>
 				<Module Id="#x03090017" Type="FSOUT" Class="FSOUT">
 					<Name>Module 2 (FSOUT)</Name>
-					<ImageId>549</ImageId>
+					<ImageId>551</ImageId>
 					<ModuleData>02000000c8000000000004000000000000000000000000000000000000000000</ModuleData>
 					<PdoIndex>6142</PdoIndex>
 				</Module>
@@ -433,7 +433,7 @@
 				<ModuleIdent>1950</ModuleIdent>
 				<Module Id="#x03090018" Type="DEVICEIO" Class="DEVICEIO">
 					<Name>Module 3 (DEVICEIO)</Name>
-					<ImageId>549</ImageId>
+					<ImageId>551</ImageId>
 					<ModuleData>020000009e070000000004000000000000000000000000000000000000000000</ModuleData>
 					<PdoIndex>7166</PdoIndex>
 				</Module>
@@ -443,7 +443,7 @@
 				<ModuleIdent>691</ModuleIdent>
 				<Module Id="#x03090019" Type="FSLOGIC" Class="FSLOGIC">
 					<Name>Module 4 (FSLOGIC)</Name>
-					<ImageId>549</ImageId>
+					<ImageId>551</ImageId>
 					<ModuleData>02000000b3020000000004000000000000000000000000000000000000000000</ModuleData>
 					<PdoIndex>7167</PdoIndex>
 					<PdoIndex>6143</PdoIndex>

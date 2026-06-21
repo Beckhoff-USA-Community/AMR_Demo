@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SafetyDeviceDesc Crc="1109319377" FileFormatVersion="1.9">
+<SafetyDeviceDesc Crc="4285467238" FileFormatVersion="1.9">
   <AliasDeviceType>
     <Type>4</Type>
     <SubType>1581785</SubType>
     <VendorId>2</VendorId>
   </AliasDeviceType>
-  <SDSID>29</SDSID>
+  <SDSID>10</SDSID>
   <SafetyAliasDevice>
-    <ObjectId>50921475</ObjectId>
-    <LinkingMode>Automatic</LinkingMode>
-    <ConnectionId>29</ConnectionId>
-    <ConnectionMode>master</ConnectionMode>
+    <ObjectId>0</ObjectId>
+    <LinkingMode>Local</LinkingMode>
+    <ConnectionId>10</ConnectionId>
+    <ConnectionMode>slave</ConnectionMode>
     <ConnectionType>FSoE</ConnectionType>
     <MapDiag>false</MapDiag>
     <MapInputs>false</MapInputs>
     <MapOutputs>false</MapOutputs>
     <MapState>false</MapState>
     <ModuleFaultIsComErr>false</ModuleFaultIsComErr>
-    <SafeAddress>2</SafeAddress>
+    <SafeAddress>0</SafeAddress>
     <Watchdog>100</Watchdog>
     <ComErrAck Type="Unset" />
     <Params>
@@ -557,7 +557,7 @@
           <Index>29184</Index>
           <SubIndex>1</SubIndex>
           <DataType>USINT</DataType>
-          <Direction>Out</Direction>
+          <Direction>In</Direction>
           <SafetyType>ProtocolData</SafetyType>
           <BitSize>8</BitSize>
           <BitOffsMessage>0</BitOffsMessage>
@@ -568,7 +568,7 @@
           <Index>63233</Index>
           <SubIndex>1</SubIndex>
           <DataType>BIT</DataType>
-          <Direction>Out</Direction>
+          <Direction>In</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>1</BitSize>
           <BitOffsMessage>8</BitOffsMessage>
@@ -579,7 +579,7 @@
           <Index>0</Index>
           <SubIndex>0</SubIndex>
           <DataType />
-          <Direction>Out</Direction>
+          <Direction>In</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>7</BitSize>
           <BitOffsMessage>9</BitOffsMessage>
@@ -590,7 +590,7 @@
           <Index>63233</Index>
           <SubIndex>2</SubIndex>
           <DataType>BIT</DataType>
-          <Direction>Out</Direction>
+          <Direction>In</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>1</BitSize>
           <BitOffsMessage>16</BitOffsMessage>
@@ -601,7 +601,7 @@
           <Index>0</Index>
           <SubIndex>0</SubIndex>
           <DataType />
-          <Direction>Out</Direction>
+          <Direction>In</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>7</BitSize>
           <BitOffsMessage>17</BitOffsMessage>
@@ -612,7 +612,7 @@
           <Index>29184</Index>
           <SubIndex>3</SubIndex>
           <DataType>UINT</DataType>
-          <Direction>Out</Direction>
+          <Direction>In</Direction>
           <SafetyType>ProtocolData</SafetyType>
           <BitSize>16</BitSize>
           <BitOffsMessage>24</BitOffsMessage>
@@ -623,7 +623,7 @@
           <Index>29184</Index>
           <SubIndex>2</SubIndex>
           <DataType>UINT</DataType>
-          <Direction>Out</Direction>
+          <Direction>In</Direction>
           <SafetyType>ProtocolData</SafetyType>
           <BitSize>16</BitSize>
           <BitOffsMessage>40</BitOffsMessage>
@@ -634,7 +634,7 @@
           <Index>25088</Index>
           <SubIndex>1</SubIndex>
           <DataType>USINT</DataType>
-          <Direction>In</Direction>
+          <Direction>Out</Direction>
           <SafetyType>ProtocolData</SafetyType>
           <BitSize>8</BitSize>
           <BitOffsMessage>0</BitOffsMessage>
@@ -645,7 +645,7 @@
           <Index>62977</Index>
           <SubIndex>1</SubIndex>
           <DataType>BIT</DataType>
-          <Direction>In</Direction>
+          <Direction>Out</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>1</BitSize>
           <BitOffsMessage>8</BitOffsMessage>
@@ -656,7 +656,7 @@
           <Index>0</Index>
           <SubIndex>0</SubIndex>
           <DataType />
-          <Direction>In</Direction>
+          <Direction>Out</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>7</BitSize>
           <BitOffsMessage>9</BitOffsMessage>
@@ -667,7 +667,7 @@
           <Index>62977</Index>
           <SubIndex>2</SubIndex>
           <DataType>BIT</DataType>
-          <Direction>In</Direction>
+          <Direction>Out</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>1</BitSize>
           <BitOffsMessage>16</BitOffsMessage>
@@ -678,7 +678,7 @@
           <Index>0</Index>
           <SubIndex>0</SubIndex>
           <DataType />
-          <Direction>In</Direction>
+          <Direction>Out</Direction>
           <SafetyType>SafetySil3</SafetyType>
           <BitSize>7</BitSize>
           <BitOffsMessage>17</BitOffsMessage>
@@ -689,7 +689,7 @@
           <Index>25088</Index>
           <SubIndex>3</SubIndex>
           <DataType>UINT</DataType>
-          <Direction>In</Direction>
+          <Direction>Out</Direction>
           <SafetyType>ProtocolData</SafetyType>
           <BitSize>16</BitSize>
           <BitOffsMessage>24</BitOffsMessage>
@@ -700,7 +700,7 @@
           <Index>25088</Index>
           <SubIndex>2</SubIndex>
           <DataType>UINT</DataType>
-          <Direction>In</Direction>
+          <Direction>Out</Direction>
           <SafetyType>ProtocolData</SafetyType>
           <BitSize>16</BitSize>
           <BitOffsMessage>40</BitOffsMessage>
@@ -4086,6 +4086,7 @@
           <BitOffsData>4080</BitOffsData>
         </IO>
       </InternalIOs>
+      <InternalDirectMappings />
     </Params>
   </SafetyAliasDevice>
 </SafetyDeviceDesc>
